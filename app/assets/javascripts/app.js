@@ -1,1 +1,1 @@
-angular.module('fitnessTracker', []);
+angular.module('fitnessTracker', ['ui.router', 'templates']);
