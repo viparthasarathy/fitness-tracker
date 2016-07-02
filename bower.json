@@ -1,0 +1,17 @@
+{
+  "name": "fitness-tracker",
+  "homepage": "https://github.com/viparthasarathy/fitness-tracker",
+  "authors": [
+    "viparthasarathy <viparthasarathy@gmail.com>"
+  ],
+  "description": "rails API + angular front end",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
