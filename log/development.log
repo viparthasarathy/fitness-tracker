@@ -60,3 +60,54 @@ Started GET "/assets/application.self-6aaa978c7429b47332e6171426fa197121ac79d0f3
 
 
 Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-02 10:27:08 -0700
+
+
+Started GET "/" for ::1 at 2016-07-02 10:28:30 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (277.8ms)
+Completed 200 OK in 290ms (Views: 289.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-02 10:28:30 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-02 10:28:30 -0700
+
+
+Started GET "/assets/app.self-a0dcbde4dd51384eefac149bad9ca9c4312b81c798a4604cef5c2a7c64d0b1f0.js?body=1" for ::1 at 2016-07-02 10:28:30 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-02 10:28:30 -0700
+
+
+Started GET "/assets/application.self-6aaa978c7429b47332e6171426fa197121ac79d0f37255370e2dfe59eed4112a.js?body=1" for ::1 at 2016-07-02 10:28:30 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-02 10:28:45 -0700
+
+
+Started GET "/" for ::1 at 2016-07-02 10:29:24 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (733.3ms)
+Completed 200 OK in 741ms (Views: 740.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-02 10:29:25 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-02 10:29:25 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-02 10:29:25 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-02 10:29:25 -0700
+
+
+Started GET "/assets/app.self-a0dcbde4dd51384eefac149bad9ca9c4312b81c798a4604cef5c2a7c64d0b1f0.js?body=1" for ::1 at 2016-07-02 10:29:25 -0700
+
+
+Started GET "/assets/application.self-6a3cf5192354f71615ac51034b3e97c20eda99643fcaf5bbe6d41ad59bd12167.js?body=1" for ::1 at 2016-07-02 10:29:25 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-02 10:29:25 -0700
