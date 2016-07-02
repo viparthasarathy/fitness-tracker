@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FinessTracker</title>
+  <title>FitnessTracker</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<body ng-app="fitnessTracker">
+  <div>
+  </div>
 </body>
 </html>
