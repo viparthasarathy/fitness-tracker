@@ -1,4 +1,4 @@
-function AuthenticationController() {
+function AuthenticationController($scope, $state, Auth) {
 
 }
 
