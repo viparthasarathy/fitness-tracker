@@ -1,5 +1,7 @@
-function UserController() {
-
+function UserController($scope, Auth) {
+  Auth.currentUser().then(function (user) {
+    $scope.user = user;
+  })
 }
 
 angular

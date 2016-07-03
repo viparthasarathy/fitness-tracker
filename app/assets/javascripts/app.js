@@ -14,7 +14,7 @@ angular
         })
         .state('user', {
           url: '/user',
-          template: 'user/_user.html',
+          templateUrl: 'user/_user.html',
           controller: 'UserController as UserCtrl'
         });
 
