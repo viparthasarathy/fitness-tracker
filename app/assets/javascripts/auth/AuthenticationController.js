@@ -1,13 +1,13 @@
 function AuthenticationController($scope, $state, Auth) {
   $scope.login = function() {
     Auth.login($scope.user).then(function() {
-      console.log("Signed in!")
+      $state.go('user')
     })
   }
 
   $scope.register = function() {
     Auth.register($scope.user).then(Function() {
-      console.log("Signed up!")
+      $state.go('user')
     });
   }
 }

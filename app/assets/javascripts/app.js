@@ -11,7 +11,12 @@ angular
           url: '/signin',
           templateUrl: 'auth/_signin.html',
           controller: 'AuthenticationController as AuthCtrl'
-        });
+        })
+        .state('profile', {
+          url: '/user',
+          template 'user/_user.html',
+          controller: 'UserController as UserCtrl'
+        })
 
         $urlRouterProvider.otherwise('/signin');
       });
