@@ -8,7 +8,7 @@ angular
           controller: 'AuthenticationController as AuthCtrl',
           onEnter: function($state, Auth) {
             Auth.currentUser().then(function (){
-              $state.go('home');
+              $state.go('user');
             })
           }
         })
@@ -18,7 +18,7 @@ angular
           controller: 'AuthenticationController as AuthCtrl',
           onEnter: function($state, Auth) {
             Auth.currentUser().then(function (){
-              $state.go('home');
+              $state.go('user');
             })
           }
         })
