@@ -6,7 +6,7 @@ function AuthenticationController($scope, $state, Auth) {
   }
 
   $scope.register = function() {
-    Auth.register($scope.user).then(Function() {
+    Auth.register($scope.user).then(function() {
       $state.go('user')
     });
   }

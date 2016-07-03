@@ -398,3 +398,172 @@ Started GET "/assets/auth/AuthenticationController.self-afb5270e37a7de7b047418df
 
 
 Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-03 11:00:01 -0700
+
+
+Started GET "/" for ::1 at 2016-07-03 11:48:43 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (1308.2ms)
+Completed 200 OK in 1335ms (Views: 1324.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/app.self-a08a59da8558b6b59e66629d8d1fde24e63b5a855db1b9d7399d0c820af49dbc.js?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-7827d7c5c74693b81bbb8f3f307c8eb03e6d55f45c0a33ec1049b2068740b588.js?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/auth/_signin.self-4ffa13ad27768039cc158b096b9c71000583968fbf93b7a804eaa3d7fd948919.js?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/auth/_signup.self-aaffda8b959fe2e056fe11a71f8e10a867cf2c0ab9af7356bf33171d3f6f9058.js?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/nav/NavigationController.self-5607d3e638a76248f7199e53af0fddda4d85ba32571ad4ff074222de0bb96fe9.js?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/nav/_nav.self-4c46cee7be5a4741d78e27a9914b8d8d4c97eccf48821dfab912097a49760fb5.js?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/user/UserController.self-1f81fef022d1d920c6d7d9b197a07c1eb2e9ff58d1c244d4835d42b9d7d892fb.js?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/user/_user.self-080a56e5a2fb08da1353c49c5ab17f442d234901379f604c3d89648841fae0e0.js?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/application.self-7c370d9536d7d0d6a0f7cd7f9826692acd93e4fb05ba46f7b630b879740343d3.js?body=1" for ::1 at 2016-07-03 11:48:45 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-03 11:48:48 -0700
+
+
+Started GET "/" for ::1 at 2016-07-03 11:49:20 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (443.9ms)
+Completed 200 OK in 460ms (Views: 458.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/app.self-a08a59da8558b6b59e66629d8d1fde24e63b5a855db1b9d7399d0c820af49dbc.js?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/auth/_signin.self-4ffa13ad27768039cc158b096b9c71000583968fbf93b7a804eaa3d7fd948919.js?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/auth/_signup.self-aaffda8b959fe2e056fe11a71f8e10a867cf2c0ab9af7356bf33171d3f6f9058.js?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/nav/NavigationController.self-5607d3e638a76248f7199e53af0fddda4d85ba32571ad4ff074222de0bb96fe9.js?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/nav/_nav.self-4c46cee7be5a4741d78e27a9914b8d8d4c97eccf48821dfab912097a49760fb5.js?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/user/UserController.self-1f81fef022d1d920c6d7d9b197a07c1eb2e9ff58d1c244d4835d42b9d7d892fb.js?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/user/_user.self-080a56e5a2fb08da1353c49c5ab17f442d234901379f604c3d89648841fae0e0.js?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/application.self-7c370d9536d7d0d6a0f7cd7f9826692acd93e4fb05ba46f7b630b879740343d3.js?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-d3c952b92241721cc73e5dac21ee46970c65c40e0551b490fa24666d45e6e7fc.js?body=1" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-03 11:49:20 -0700
+
+
+Started GET "/" for ::1 at 2016-07-03 11:49:56 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (422.3ms)
+Completed 200 OK in 431ms (Views: 430.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-d3c952b92241721cc73e5dac21ee46970c65c40e0551b490fa24666d45e6e7fc.js?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started GET "/assets/auth/_signin.self-4ffa13ad27768039cc158b096b9c71000583968fbf93b7a804eaa3d7fd948919.js?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started GET "/assets/auth/_signup.self-aaffda8b959fe2e056fe11a71f8e10a867cf2c0ab9af7356bf33171d3f6f9058.js?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started GET "/assets/nav/NavigationController.self-5607d3e638a76248f7199e53af0fddda4d85ba32571ad4ff074222de0bb96fe9.js?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started GET "/assets/nav/_nav.self-4c46cee7be5a4741d78e27a9914b8d8d4c97eccf48821dfab912097a49760fb5.js?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started GET "/assets/user/UserController.self-1f81fef022d1d920c6d7d9b197a07c1eb2e9ff58d1c244d4835d42b9d7d892fb.js?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started GET "/assets/user/_user.self-080a56e5a2fb08da1353c49c5ab17f442d234901379f604c3d89648841fae0e0.js?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started GET "/assets/application.self-7c370d9536d7d0d6a0f7cd7f9826692acd93e4fb05ba46f7b630b879740343d3.js?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started GET "/assets/app.self-1004946124e078a95f33a081a67e82a10c4a86937d30f592893cb2b5608d0f28.js?body=1" for ::1 at 2016-07-03 11:49:56 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-03 11:49:57 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-03 11:49:57 -0700

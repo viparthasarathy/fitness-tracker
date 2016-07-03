@@ -14,9 +14,9 @@ angular
         })
         .state('profile', {
           url: '/user',
-          template 'user/_user.html',
+          template: 'user/_user.html',
           controller: 'UserController as UserCtrl'
-        })
+        });
 
         $urlRouterProvider.otherwise('/signin');
       });
