@@ -1,4 +1,18 @@
-<h1>Sign In</h1>
+<div class="page-header">
+  <h1>Sign In</h1>
+</div>
+
+<form ng-submit="login()">
+  <div class="input-group">
+    <input type="email" class="form-control" placeholder="Email" ng-model="user.email">
+  </div>
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" ng-model"user.password">
+  </div>
+
+  <input type="submit" class="btn btn-succes" value="Sign In">
+</form>
+
 
 
 <p>Don't have an account? <a ui-sref="signup"> Click here to sign up. </a></p>
