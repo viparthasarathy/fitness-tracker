@@ -1,6 +1,6 @@
 angular
-  .module('fitnessTracker', ['ui.router', 'templates', 'Devise']);
-    .config(function($stateProvider, $urlRouteProvider) {
+  .module('fitnessTracker', ['ui.router', 'templates', 'Devise'])
+    .config(function($stateProvider, $urlRouterProvider) {
       $stateProvider
         .state('signup', {
           url: '/signup',

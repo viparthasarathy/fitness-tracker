@@ -148,3 +148,253 @@ DEPRECATION WARNING: `#timestamps` was called without specifying an option for `
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 
+
+
+Started GET "/" for ::1 at 2016-07-03 10:56:38 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (446.5ms)
+Completed 500 Internal Server Error in 465ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (couldn't find file 'angular-devise' with type 'application/javascript'
+Checked in these paths: 
+  /Users/viparthasarathy/Development/code/fitness-tracker/app/assets/images
+  /Users/viparthasarathy/Development/code/fitness-tracker/app/assets/javascripts
+  /Users/viparthasarathy/Development/code/fitness-tracker/app/assets/stylesheets
+  /Users/viparthasarathy/Development/code/fitness-tracker/vendor/assets/bower_components
+  /Users/viparthasarathy/Development/code/fitness-tracker/vendor/assets/stylesheets
+  /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/angular-rails-templates-1.0.0/vendor/assets/javascripts):
+    2: <html>
+    3: <head>
+    4:   <title>FitnessTracker</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all' %>
+    6:   <%= javascript_include_tag 'application' %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/javascripts/application.js:2
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2267630886437358409_70097817591700'
+  app/controllers/application_controller.rb:7:in `angular'
+
+
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.4ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.7ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (126.6ms)
+
+
+Started GET "/" for ::1 at 2016-07-03 10:56:39 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (couldn't find file 'angular-devise' with type 'application/javascript'
+Checked in these paths: 
+  /Users/viparthasarathy/Development/code/fitness-tracker/app/assets/images
+  /Users/viparthasarathy/Development/code/fitness-tracker/app/assets/javascripts
+  /Users/viparthasarathy/Development/code/fitness-tracker/app/assets/stylesheets
+  /Users/viparthasarathy/Development/code/fitness-tracker/vendor/assets/bower_components
+  /Users/viparthasarathy/Development/code/fitness-tracker/vendor/assets/stylesheets
+  /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/angular-rails-templates-1.0.0/vendor/assets/javascripts):
+    2: <html>
+    3: <head>
+    4:   <title>FitnessTracker</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all' %>
+    6:   <%= javascript_include_tag 'application' %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/javascripts/application.js:2
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2267630886437358409_70097817591700'
+  app/controllers/application_controller.rb:7:in `angular'
+
+
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.5ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (37.7ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/viparthasarathy/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (82.8ms)
+
+
+Started GET "/" for ::1 at 2016-07-03 10:57:29 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (1255.0ms)
+Completed 200 OK in 1262ms (Views: 1261.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-03 10:57:31 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-03 10:57:31 -0700
+
+
+Started GET "/assets/app.self-9cde72f556a0b32a1998092dc9bb337fa7797c092d831053a39ffaad2dc2d998.js?body=1" for ::1 at 2016-07-03 10:57:31 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-03 10:57:31 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-03 10:57:31 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-03 10:57:31 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-03 10:57:31 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-07-03 10:57:31 -0700
+
+
+Started GET "/assets/auth/_signup.self-b17de0cbeb8bb92dae486bbb93954d36cdd6b8136f47f423666cc2c5172ac124.js?body=1" for ::1 at 2016-07-03 10:57:31 -0700
+
+
+Started GET "/assets/auth/_signin.self-2dd69d7a2b1250455f3f4c83772a084879582d7a68cb60f502a7366813ea5487.js?body=1" for ::1 at 2016-07-03 10:57:31 -0700
+
+
+Started GET "/assets/application.self-7c370d9536d7d0d6a0f7cd7f9826692acd93e4fb05ba46f7b630b879740343d3.js?body=1" for ::1 at 2016-07-03 10:57:31 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-03 10:57:34 -0700
+
+
+Started GET "/" for ::1 at 2016-07-03 10:57:45 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (420.6ms)
+Completed 200 OK in 427ms (Views: 426.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-03 10:57:46 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-03 10:57:46 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-03 10:57:46 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-03 10:57:46 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-03 10:57:46 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-03 10:57:46 -0700
+
+
+Started GET "/assets/app.self-d1ac3be493a5ce40cabdcaf1581699c6adc936a4e82af28233919f15fe643e9c.js?body=1" for ::1 at 2016-07-03 10:57:46 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-07-03 10:57:46 -0700
+
+
+Started GET "/assets/auth/_signin.self-2dd69d7a2b1250455f3f4c83772a084879582d7a68cb60f502a7366813ea5487.js?body=1" for ::1 at 2016-07-03 10:57:46 -0700
+
+
+Started GET "/assets/auth/_signup.self-b17de0cbeb8bb92dae486bbb93954d36cdd6b8136f47f423666cc2c5172ac124.js?body=1" for ::1 at 2016-07-03 10:57:46 -0700
+
+
+Started GET "/assets/application.self-7c370d9536d7d0d6a0f7cd7f9826692acd93e4fb05ba46f7b630b879740343d3.js?body=1" for ::1 at 2016-07-03 10:57:46 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-03 10:57:46 -0700
+
+
+Started GET "/" for ::1 at 2016-07-03 10:58:10 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (424.7ms)
+Completed 200 OK in 434ms (Views: 433.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-03 10:58:10 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-03 10:58:10 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-03 10:58:10 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-03 10:58:10 -0700
+
+
+Started GET "/assets/app.self-b7a2104864db00358890eb8843ff9e39eca200e8774c53a6b36e4919226a48d0.js?body=1" for ::1 at 2016-07-03 10:58:10 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-03 10:58:10 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-03 10:58:10 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-07-03 10:58:10 -0700
+
+
+Started GET "/assets/auth/_signin.self-2dd69d7a2b1250455f3f4c83772a084879582d7a68cb60f502a7366813ea5487.js?body=1" for ::1 at 2016-07-03 10:58:10 -0700
+
+
+Started GET "/assets/auth/_signup.self-b17de0cbeb8bb92dae486bbb93954d36cdd6b8136f47f423666cc2c5172ac124.js?body=1" for ::1 at 2016-07-03 10:58:10 -0700
+
+
+Started GET "/assets/application.self-7c370d9536d7d0d6a0f7cd7f9826692acd93e4fb05ba46f7b630b879740343d3.js?body=1" for ::1 at 2016-07-03 10:58:10 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-03 10:58:10 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-03 10:58:24 -0700
+
+
+Started GET "/" for ::1 at 2016-07-03 11:00:01 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (416.6ms)
+Completed 200 OK in 423ms (Views: 422.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-03 11:00:01 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-03 11:00:01 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-03 11:00:01 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-03 11:00:01 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-03 11:00:01 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-03 11:00:01 -0700
+
+
+Started GET "/assets/app.self-b7a2104864db00358890eb8843ff9e39eca200e8774c53a6b36e4919226a48d0.js?body=1" for ::1 at 2016-07-03 11:00:01 -0700
+
+
+Started GET "/assets/auth/_signin.self-2dd69d7a2b1250455f3f4c83772a084879582d7a68cb60f502a7366813ea5487.js?body=1" for ::1 at 2016-07-03 11:00:01 -0700
+
+
+Started GET "/assets/auth/_signup.self-b17de0cbeb8bb92dae486bbb93954d36cdd6b8136f47f423666cc2c5172ac124.js?body=1" for ::1 at 2016-07-03 11:00:01 -0700
+
+
+Started GET "/assets/application.self-7c370d9536d7d0d6a0f7cd7f9826692acd93e4fb05ba46f7b630b879740343d3.js?body=1" for ::1 at 2016-07-03 11:00:01 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-afb5270e37a7de7b047418dfe9fa541269faf88092f7d4c2e45e38280eb73792.js?body=1" for ::1 at 2016-07-03 11:00:01 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-03 11:00:01 -0700
