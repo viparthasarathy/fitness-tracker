@@ -13,5 +13,5 @@ angular
           controller: 'AuthenticationController as AuthCtrl'
         });
 
-        $urlRouterProvider.otherwise('/top');
+        $urlRouterProvider.otherwise('/signin');
       });
