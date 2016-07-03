@@ -12,7 +12,7 @@ angular
           templateUrl: 'auth/_signin.html',
           controller: 'AuthenticationController as AuthCtrl'
         })
-        .state('profile', {
+        .state('user', {
           url: '/user',
           template: 'user/_user.html',
           controller: 'UserController as UserCtrl'
