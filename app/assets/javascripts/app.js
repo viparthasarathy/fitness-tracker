@@ -5,12 +5,22 @@ angular
         .state('signup', {
           url: '/signup',
           templateUrl: 'auth/_signup.html',
-          controller: 'AuthenticationController as AuthCtrl'
+          controller: 'AuthenticationController as AuthCtrl',
+          onEnter: function($state, Auth) {
+            Auth.currentUser().then(function (){
+              $state.go('home');
+            })
+          }
         })
         .state('signin', {
           url: '/signin',
           templateUrl: 'auth/_signin.html',
-          controller: 'AuthenticationController as AuthCtrl'
+          controller: 'AuthenticationController as AuthCtrl',
+          onEnter: function($state, Auth) {
+            Auth.currentUser().then(function (){
+              $state.go('home');
+            })
+          }
         })
         .state('user', {
           url: '/user',
