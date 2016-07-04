@@ -1,4 +1,4 @@
-function NavigationController($scope, Auth) {
+function NavigationController($scope, $state, Auth) {
   $scope.signedIn = Auth.isAuthenticated;
   $scope.logout = Auth.logout;
   Auth.currentUser().then(function (user) {
@@ -15,6 +15,7 @@ function NavigationController($scope, Auth) {
 
   $scope.$on('devise:logout', function(event, user) {
     $scope.user = {};
+    $state.go('signin')
   });
 }
 
