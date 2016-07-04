@@ -4,12 +4,14 @@
 
 <form ng-submit="register()">
   <div class="input-group">
-    <input type="email" class="form-control" placeholder="email" ng-model="user.email">
+    <label for="user_email">Email</label>
+    <input type="email" class="form-control" placeholder="example@example.com" ng-model="user.email">
+  </div>
+  <div class="input-group">
+    <label for="user_password">Password</label>
+    <input type="password" class="form-control" placeholder="example" ng-model="user.password">
   </div>
 
-  <div class="input-group">
-    <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
-  </div>
 
   <input type="submit" class="btn btn-success" value="Sign Up">
 </form>

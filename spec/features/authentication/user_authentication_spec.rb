@@ -1,40 +1,51 @@
 require 'rails_helper'
 
-before do
-  Capybara.javscript_driver = :webkit
-end
+describe 'authentication' do
 
-describe 'user registration', :js => true do
-
-  it 'allows users to register and redirects them to the home page' do
+  before do
+    Capybara.current_driver = :webkit
+    @user = FactoryGirl.create(:user)
   end
 
-  it 'does not allow users to register if they are missing a field' do
+  describe 'user sign in', :js => true do
+
+    it 'allows users to sign in with right information' do
+      fill_in "Email", with: @user.email
+      fill_in "Password", with: @user.password
+      click_button "Sign In"
+
+      expect(page).to have_content "Welcome #{@user.email}"
+      expect(page).to have_link "Log out"
+    end
+
+    it 'does not allow users to sign in with incorrect information' do
+    end
+
+    it 'renders appropriate errors for incorrect sign in' do
+    end
+
+    it 'does not allow logged in users to access the sign inpage' do
+    end
+
   end
 
-  it 'does not let users register if their password is too short' do
-  end
+  describe 'user sign up', :js => true do
 
-  it 'renders appropriate errors for missing fields or password length' do
-  end
+    it 'allows users to sign up and redirects them to the home page' do
+    end
 
-  it 'does not allow logged in users to access the page' do
-  end
+    it 'does not allow users to sign up if they are missing a field' do
+    end
 
-end
+    it 'does not let users sign up if their password is too short' do
+    end
 
-describe 'user login', :js => true do
+    it 'renders appropriate errors for missing fields or password length' do
+    end
 
-  it 'allows users to log in with right information' do
-  end
+    it 'does not allow logged in users to access the sign up page' do
+    end
 
-  it 'does not allow users to log in with incorrect information' do
-  end
-
-  it 'renders appropriate errors for incorrect login' do
-  end
-
-  it 'does not allow logged in users to access the page' do
   end
 
 end

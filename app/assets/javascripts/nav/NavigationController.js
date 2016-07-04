@@ -1,6 +1,6 @@
 function NavigationController($scope, $state, Auth) {
   $scope.signedIn = Auth.isAuthenticated;
-  $scope.logout = Auth.logout;
+  $scope.signout = Auth.logout;
   Auth.currentUser().then(function (user) {
     $scope.user = user;
   })
