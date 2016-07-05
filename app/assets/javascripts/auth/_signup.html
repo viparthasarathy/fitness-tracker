@@ -12,7 +12,7 @@
   <div ng-messages="signUpForm.email.$error" ng-if="signUpForm.email.$touched">
     <div ng-message="required">Please enter an email.</div>
     <div ng-message="email">Your email is not valid.</div>
-    <div ng-message="server">Something went wrong server-side.</div>
+    <div ng-message="server">{{serverEmailError}}</div>
 
   </div>
 
@@ -25,6 +25,7 @@
       <div ng-message="required">Please enter a password.</div>
       <div ng-message="minlength">Your password must be at least five characters.</div>
       <div ng-message="maxlength">Your password must be less than 128 characters (really?).</div>
+      <div ng-message="server">{{serverPasswordError}}</div>
     </div>
   </div>
 
