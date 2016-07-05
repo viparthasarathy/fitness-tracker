@@ -3,7 +3,7 @@ function AuthenticationController($scope, $state, Auth) {
     Auth.login($scope.user).then(function() {
       $state.go('user')
     }, function(error) {
-      $scope.signUpForm.password.$error.server = true;
+      $scope.signInForm.password.$error.server = true;
       $scope.serverPasswordError = "Invalid email/password combination."
     })
   }
