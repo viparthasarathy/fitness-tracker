@@ -7,11 +7,11 @@
 <form ng-submit="register()">
   <div class="input-group">
     <label for="user_email">Email</label>
-    <input name="email" type="email" class="form-control" ng-model="user.email">
+    <input required="required" name="email" type="email" class="form-control" ng-model="user.email">
   </div>
   <div class="input-group">
     <label for="user_password">Password</label>
-    <input name="password" type="password" class="form-control" ng-model="user.password">
+    <input required="required" minlength="5" maxlength="128" name="password" type="password" class="form-control" ng-model="user.password">
   </div>
 
 

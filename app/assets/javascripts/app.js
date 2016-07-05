@@ -1,5 +1,5 @@
 angular
-  .module('fitnessTracker', ['ui.router', 'templates', 'Devise'])
+  .module('fitnessTracker', ['ui.router', 'templates', 'Devise', 'ngMessages'])
     .config(function($stateProvider, $urlRouterProvider) {
       $stateProvider
         .state('signup', {
