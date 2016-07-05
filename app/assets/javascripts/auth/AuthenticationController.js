@@ -11,6 +11,7 @@ function AuthenticationController($scope, $state, Auth) {
     Auth.register($scope.user).then(function() {
       $state.go('user')
     }, function(error) {
+      $scope.signUpForm.email.$error.server = true;
       console.log(error);
     })
   }
