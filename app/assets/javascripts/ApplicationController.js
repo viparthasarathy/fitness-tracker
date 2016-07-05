@@ -1,4 +1,4 @@
-function NavigationController($scope, $state, Auth) {
+function ApplicationController($scope, $state, Auth) {
   $scope.signedIn = Auth.isAuthenticated;
   $scope.signout = Auth.logout;
   Auth.currentUser().then(function (user) {
@@ -19,6 +19,7 @@ function NavigationController($scope, $state, Auth) {
   });
 }
 
+
 angular
   .module('fitnessTracker')
-    .controller('NavigationController', NavigationController);
+    .controller('ApplicationController', ApplicationController);

@@ -27,7 +27,7 @@ angular
           templateUrl: 'user/_user.html',
           controller: 'UserController as UserCtrl',
           onEnter: function($state, Auth) {
-            if !Auth.isAuthenticated() { $state.go('signin'); }
+            if (!Auth.isAuthenticated()) { $state.go('signin'); }
           }
         });
 
