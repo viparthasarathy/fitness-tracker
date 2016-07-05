@@ -5432,3 +5432,297 @@ Started POST "/users/sign_in.json" for ::1 at 2016-07-04 14:08:25 -0700
 Processing by SessionsController#create as JSON
   Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
 Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-05 11:13:40 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/_notifications.html.erb (0.3ms)
+  Rendered layouts/application.html.erb within layouts/application (1325.8ms)
+  Rendered layouts/_notifications.html.erb (0.0ms)
+Completed 200 OK in 1345ms (Views: 1344.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-05 11:13:41 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-05 11:13:41 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-05 11:13:41 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-05 11:13:41 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-05 11:13:41 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-05 11:13:41 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-d3c952b92241721cc73e5dac21ee46970c65c40e0551b490fa24666d45e6e7fc.js?body=1" for ::1 at 2016-07-05 11:13:41 -0700
+
+
+Started GET "/assets/app.self-1d12578e3fb7f6c2dc450151c4e7bc609faededdbcfa9b0bba02b58861f6bdc7.js?body=1" for ::1 at 2016-07-05 11:13:41 -0700
+
+
+Started GET "/assets/user/UserController.self-1f81fef022d1d920c6d7d9b197a07c1eb2e9ff58d1c244d4835d42b9d7d892fb.js?body=1" for ::1 at 2016-07-05 11:13:41 -0700
+
+
+Started GET "/assets/auth/_signup.self-25faed149fb61aa0c8179e27424a58241b029968f77a1a41119f8586924d6f0a.js?body=1" for ::1 at 2016-07-05 11:13:41 -0700
+
+
+Started GET "/assets/nav/NavigationController.self-7aee31a2090f05bf3e5a4026d1b225b08e1b5f139cd21cba2247e950fc3ca549.js?body=1" for ::1 at 2016-07-05 11:13:41 -0700
+
+
+Started GET "/assets/nav/_nav.self-85119fc6d6378f92cb7ba2b62e7b52ea808321c7d8ca84fa0cc06801b20e8ff1.js?body=1" for ::1 at 2016-07-05 11:13:41 -0700
+
+
+Started GET "/assets/auth/_signin.self-579fc1ac742cdbd712884533d91955ae14acc85599f5b02a99a6efc520a3278d.js?body=1" for ::1 at 2016-07-05 11:13:42 -0700
+
+
+Started GET "/assets/user/_user.self-30d0d390d55fc976e15394785cc75359138c4e9e4f399d17e017dad39f5380be.js?body=1" for ::1 at 2016-07-05 11:13:42 -0700
+
+
+Started GET "/assets/application.self-7c370d9536d7d0d6a0f7cd7f9826692acd93e4fb05ba46f7b630b879740343d3.js?body=1" for ::1 at 2016-07-05 11:13:42 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-05 11:13:44 -0700
+
+
+Started GET "/" for ::1 at 2016-07-05 11:14:02 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/_notifications.html.erb (0.1ms)
+  Rendered layouts/application.html.erb within layouts/application (414.6ms)
+  Rendered layouts/_notifications.html.erb (0.0ms)
+Completed 200 OK in 424ms (Views: 423.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/app.self-7d4e5fb00ca601fba92923d86608d423b871deaf56f8d8f459edf2c6ac8dea70.js?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-d3c952b92241721cc73e5dac21ee46970c65c40e0551b490fa24666d45e6e7fc.js?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/user/UserController.self-1f81fef022d1d920c6d7d9b197a07c1eb2e9ff58d1c244d4835d42b9d7d892fb.js?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/auth/_signup.self-25faed149fb61aa0c8179e27424a58241b029968f77a1a41119f8586924d6f0a.js?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/nav/NavigationController.self-7aee31a2090f05bf3e5a4026d1b225b08e1b5f139cd21cba2247e950fc3ca549.js?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/nav/_nav.self-85119fc6d6378f92cb7ba2b62e7b52ea808321c7d8ca84fa0cc06801b20e8ff1.js?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/auth/_signin.self-579fc1ac742cdbd712884533d91955ae14acc85599f5b02a99a6efc520a3278d.js?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/user/_user.self-30d0d390d55fc976e15394785cc75359138c4e9e4f399d17e017dad39f5380be.js?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/application.self-7c370d9536d7d0d6a0f7cd7f9826692acd93e4fb05ba46f7b630b879740343d3.js?body=1" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-05 11:14:03 -0700
+
+
+Started GET "/" for ::1 at 2016-07-05 11:14:19 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/_notifications.html.erb (0.1ms)
+  Rendered layouts/application.html.erb within layouts/application (429.6ms)
+  Rendered layouts/_notifications.html.erb (0.0ms)
+Completed 200 OK in 444ms (Views: 443.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started GET "/assets/app.self-2aa1dcf49e957b6408de016c0b29dc291e29ac0829e42c85d8c60473b755eab5.js?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-d3c952b92241721cc73e5dac21ee46970c65c40e0551b490fa24666d45e6e7fc.js?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started GET "/assets/auth/_signin.self-579fc1ac742cdbd712884533d91955ae14acc85599f5b02a99a6efc520a3278d.js?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started GET "/assets/auth/_signup.self-25faed149fb61aa0c8179e27424a58241b029968f77a1a41119f8586924d6f0a.js?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started GET "/assets/nav/NavigationController.self-7aee31a2090f05bf3e5a4026d1b225b08e1b5f139cd21cba2247e950fc3ca549.js?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started GET "/assets/nav/_nav.self-85119fc6d6378f92cb7ba2b62e7b52ea808321c7d8ca84fa0cc06801b20e8ff1.js?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started GET "/assets/user/UserController.self-1f81fef022d1d920c6d7d9b197a07c1eb2e9ff58d1c244d4835d42b9d7d892fb.js?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started GET "/assets/user/_user.self-30d0d390d55fc976e15394785cc75359138c4e9e4f399d17e017dad39f5380be.js?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started GET "/assets/application.self-7c370d9536d7d0d6a0f7cd7f9826692acd93e4fb05ba46f7b630b879740343d3.js?body=1" for ::1 at 2016-07-05 11:14:19 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-05 11:14:20 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-05 11:14:20 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-05 11:14:33 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"Bob@yahoo.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"Bob@yahoo.com", "password"=>"[FILTERED]"}}}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "bob@yahoo.com"]]
+Completed 401 Unauthorized in 21ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-05 11:14:35 -0700
+
+
+Started POST "/users.json" for ::1 at 2016-07-05 11:16:49 -0700
+Processing by Devise::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'example@example.com' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "example@example.com"], ["encrypted_password", "$2a$10$tCOA9wEEtsI1G9BVPkmFO.e9YZQE2EYAdS4CbeALQF2.K7HjHecja"], ["created_at", "2016-07-05 18:16:49.911170"], ["updated_at", "2016-07-05 18:16:49.911170"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-07-05 18:16:49.914222"], ["current_sign_in_at", "2016-07-05 18:16:49.914222"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2016-07-05 18:16:49.914851"], ["id", 13]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 114ms (Views: 0.4ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/users.json" for ::1 at 2016-07-05 11:17:27 -0700
+Processing by Devise::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'example@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 74ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-07-05 11:17:30 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/_notifications.html.erb (0.1ms)
+  Rendered layouts/application.html.erb within layouts/application (427.2ms)
+  Rendered layouts/_notifications.html.erb (0.0ms)
+Completed 200 OK in 435ms (Views: 435.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/app.self-2aa1dcf49e957b6408de016c0b29dc291e29ac0829e42c85d8c60473b755eab5.js?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-d3c952b92241721cc73e5dac21ee46970c65c40e0551b490fa24666d45e6e7fc.js?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/auth/_signin.self-579fc1ac742cdbd712884533d91955ae14acc85599f5b02a99a6efc520a3278d.js?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/auth/_signup.self-25faed149fb61aa0c8179e27424a58241b029968f77a1a41119f8586924d6f0a.js?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/nav/NavigationController.self-7aee31a2090f05bf3e5a4026d1b225b08e1b5f139cd21cba2247e950fc3ca549.js?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/nav/_nav.self-85119fc6d6378f92cb7ba2b62e7b52ea808321c7d8ca84fa0cc06801b20e8ff1.js?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/user/_user.self-30d0d390d55fc976e15394785cc75359138c4e9e4f399d17e017dad39f5380be.js?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/application.self-7c370d9536d7d0d6a0f7cd7f9826692acd93e4fb05ba46f7b630b879740343d3.js?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/user/UserController.self-b153813bed64ddb01ec99478654ebbb66be7bfd89cc698f3c2cbe4899e429789.js?body=1" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-05 11:17:30 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-05 11:17:30 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 13]]
+Completed 201 Created in 13ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out.json" for ::1 at 2016-07-05 11:17:32 -0700
+Processing by SessionsController#destroy as JSON
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 204 No Content in 13ms (ActiveRecord: 0.3ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-05 11:17:32 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-05 11:17:40 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "example@example.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2016-07-05 18:17:40.794549"], ["sign_in_count", 2], ["updated_at", "2016-07-05 18:17:40.795199"], ["id", 13]]
+  [1m[35m (9.0ms)[0m  commit transaction
+Completed 201 Created in 89ms (Views: 0.4ms | ActiveRecord: 9.4ms)

@@ -9,7 +9,7 @@ angular
           onEnter: function($state, Auth) {
             Auth.currentUser().then(function (){
               $state.go('user');
-            });
+            })
           }
         })
         .state('signin', {
@@ -19,19 +19,15 @@ angular
           onEnter: function($state, Auth) {
             Auth.currentUser().then(function (){
               $state.go('user');
-            });
+            })
           }
         })
         .state('user', {
           url: '/user',
           templateUrl: 'user/_user.html',
-          controller: 'UserController as UserCtrl'
-          onEnter: function($state, $scope, Auth) {
-            Auth.currentUser().then(function(user) {
-              $scope.user = user;
-            }, function(error) {
-              $state.go('signin');
-            });
+          controller: 'UserController as UserCtrl',
+          onEnter: function($state, Auth) {
+            if !Auth.isAuthenticated() { $state.go('signin'); }
           }
         });
 
