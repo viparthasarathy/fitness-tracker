@@ -3,15 +3,31 @@
 </div>
 
 
-{{errors}}
-<form ng-submit="register()">
+
+<form name="signUpForm" ng-submit="register()">
   <div class="input-group">
     <label for="user_email">Email</label>
     <input required="required" name="email" type="email" class="form-control" ng-model="user.email">
   </div>
+  <div ng-messages="signUpForm.email.$error" ng-if="signUpForm.email.$touched">
+    <div ng-message="required">Please enter an email.</div>
+    <div ng-message="email">Your email is not valid.</div>
+
+  </div>
+
+
+
   <div class="input-group">
     <label for="user_password">Password</label>
     <input required="required" minlength="5" maxlength="128" name="password" type="password" class="form-control" ng-model="user.password">
+    <div ng-messages="signUpForm.password.$error" ng-if="signUpForm.password.$touched">
+      <div ng-message="required">Please enter a password.</div>
+      <div ng-message="minlength">Your password must be at least five characters.</div>
+      <div ng-message="maxlength">Your password must be less than 128 characters (really?).</div>
+    </div>
+    <div ng-messages="serverErrors" ng-show="signUpForm.$submitted" ng-cloak>
+      <p>Something happened!</p>
+    </div>
   </div>
 
 
