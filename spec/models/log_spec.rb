@@ -11,7 +11,7 @@ describe Log do
     expect(log).to respond_to(:user)
   end
 
-  context 'day related information' do
+  context 'days' do
 
     it 'has many days' do
     end
@@ -21,7 +21,7 @@ describe Log do
 
   end
 
-  context 'measurement related information' do
+  context 'measurements' do
 
     it 'has many measurements through days' do
     end
