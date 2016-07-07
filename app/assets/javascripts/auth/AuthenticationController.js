@@ -10,7 +10,7 @@ function AuthenticationController($scope, $state, Auth) {
 
   $scope.register = function() {
     Auth.register($scope.user).then(function() {
-      $state.go('user')
+      $state.go('log')
     }, function(error) {
       for (errorObject in error.data.errors) {
         if (errorObject == "email") {

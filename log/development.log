@@ -9454,3 +9454,38 @@ Migrating to CreateLogs (20160707214821)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+
+
+Started GET "/" for ::1 at 2016-07-07 15:50:17 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (1348.6ms)
+Completed 200 OK in 1366ms (Views: 1365.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/app.self-318bfd7b0e4b89f79b110e97d96daed54555fcdcf7b3b5b9c49a3a929e786017.js?body=1" for ::1 at 2016-07-07 15:50:19 -0700
+
+
+Started GET "/assets/log/UserController.self-941ee08f61bbdf4e042d34f5e2f02e0040c1f555b0b044e8f372c7479ed05bf2.js?body=1" for ::1 at 2016-07-07 15:50:19 -0700
+
+
+Started GET "/assets/log/_log.self-15a1b7953d93c699bb2424cbb659f8a432aab1a7697c95ca752945d8a6f3977a.js?body=1" for ::1 at 2016-07-07 15:50:19 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-07 15:50:19 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-07 16:01:28 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}}}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "example@example.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-07-07 21:03:13.102926"], ["current_sign_in_at", "2016-07-07 23:01:28.420024"], ["sign_in_count", 5], ["updated_at", "2016-07-07 23:01:28.420907"], ["id", 13]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 121ms (Views: 0.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-07 16:01:33 -0700

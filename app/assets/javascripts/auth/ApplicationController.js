@@ -15,7 +15,7 @@ function ApplicationController($scope, $state, Auth) {
 
   $scope.$on('devise:logout', function(event, user) {
     $scope.user = {};
-    $state.go('signin')
+    $state.go('login')
   });
 }
 
