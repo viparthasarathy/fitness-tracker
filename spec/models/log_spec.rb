@@ -11,30 +11,17 @@ describe Log do
     expect(log).to respond_to(:user)
   end
 
-  context 'days' do
+  context 'chapters' do
 
-    it 'has many days' do
+    it 'has many chapters' do
     end
 
-    it 'has a total days passed' do
-    end
-
-  end
-
-  context 'measurements' do
-
-    it 'has many measurements through days' do
-    end
-
-    it 'has a most recent measurement' do
-    end
-
-    it 'has a total change in measurements' do
+    it 'knows the most recent chapter' do
     end
 
   end
 
-  context 'calculations' do
+  context 'average calculations' do
 
     it 'has an average weekly change in measurement when attempting to lose' do
     end

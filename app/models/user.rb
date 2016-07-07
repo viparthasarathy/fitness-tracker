@@ -6,7 +6,4 @@ class User < ActiveRecord::Base
   has_one :log
   after_create :create_log
 
-
-  private
-  
 end
