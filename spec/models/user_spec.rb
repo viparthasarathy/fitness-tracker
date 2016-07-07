@@ -11,4 +11,9 @@ describe User do
     expect(user.email).to eq("me@gmail.com")
   end
 
+  it 'has a log on creation' do
+    user = FactoryGirl.create(:user)
+    expect(user.log).to be_a(Log)
+  end
+
 end
