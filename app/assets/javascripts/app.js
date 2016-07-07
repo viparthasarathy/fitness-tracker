@@ -8,7 +8,7 @@ angular
           controller: 'AuthenticationController as AuthCtrl',
           onEnter: function($state, Auth) {
             Auth.currentUser().then(function (){
-              $state.go('user');
+              $state.go('log');
             })
           }
         })
@@ -18,14 +18,14 @@ angular
           controller: 'AuthenticationController as AuthCtrl',
           onEnter: function($state, Auth) {
             Auth.currentUser().then(function (){
-              $state.go('user');
+              $state.go('log');
             })
           }
         })
-        .state('user', {
-          url: '/user',
-          templateUrl: 'user/_user.html',
-          controller: 'UserController as UserCtrl',
+        .state('log', {
+          url: '/log',
+          templateUrl: 'log/_log.html',
+          controller: 'LogController as LogCtrl',
           onEnter: function($state, Auth) {
             if (!Auth.isAuthenticated()) { $state.go('signin'); }
           }
