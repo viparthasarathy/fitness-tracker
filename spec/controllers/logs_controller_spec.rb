@@ -2,23 +2,34 @@ require 'rails_helper'
 
 describe LogsController do
 
-  before do
-    @user = FactoryGirl.create(:user)
-    login_as(@user, :scope => :user)
-  end
-
   describe 'GET #show' do
-    it 'assigns the current users log to @log' do
+    context 'logged in' do
+      before do
+        @user = FactoryGirl.create(:user)
+        login_as(@user, :scope => :user)
+        get :show, :format => :json
+        log_response = JSON.parse(response.body, symbolize_names: true)
+      end
+
+      it 'is a successful request' do
+        expect(response).to eq(200)
+      end
+
+      it 'returns the user log' do
+        expect(log_response[:id]).to eq(@user.log.id)
+      end
+
+      it 'contains references to the log chapters' do
+        get :show, :format => :json
+        expect(log_response[:chapters][0][:id]).to eq(@user.log.chapters.first.id)
+      end
     end
 
-    it 'redirects the user if they are not logged in' do
-    end
-
-    it 'returns @log in JSON format' do
-    end
-
-    it 'the JSON contains information regarding logs association' do
+    context 'logged out' do
+      it 'raises an unauthorized error' do
+        get :show, :format => :json
+        expect(response.status).to eq(401)
+      end
     end
   end
-
 end
