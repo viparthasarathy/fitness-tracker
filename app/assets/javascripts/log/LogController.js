@@ -1,6 +1,12 @@
 function LogController(logJSON) {
-  var logCtrl = this;
-  logCtrl.log = logJSON;
+  var LogCtrl = this;
+  LogCtrl.log = logJSON.data;
+  LogCtrl.chapters = LogCtrl.log.chapters;
+
+  LogCtrl.noCurrentChapter = function() {
+    LogCtrl.chapters[LogCtrl.length -1].completed_at !== null
+  }
+  debugger;
 }
 
 angular

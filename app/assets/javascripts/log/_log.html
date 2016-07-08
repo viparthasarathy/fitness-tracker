@@ -1,1 +1,6 @@
 <h1>Welcome to your fitness log, {{user.email}}.</h1>
+
+<h2>This log's id is {{LogCtrl.log.id}}</h2>
+
+
+<a href="#" ng-if="LogCtrl.noCurrentChapter()">This shouldn't show up this time!</a>
