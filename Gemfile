@@ -18,6 +18,8 @@ gem 'angular-rails-templates'
 
 gem 'devise', '~> 3.4.0'
 
+gem 'active_model_serializers', '~> 0.10.0'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
