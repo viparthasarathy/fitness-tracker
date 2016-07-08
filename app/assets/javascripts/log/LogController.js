@@ -1,5 +1,6 @@
-function LogController($scope) {
-
+function LogController(logJSON) {
+  var logCtrl = this;
+  logCtrl.log = logJSON;
 }
 
 angular

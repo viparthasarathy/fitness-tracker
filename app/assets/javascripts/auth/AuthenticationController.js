@@ -22,7 +22,6 @@ function AuthenticationController($scope, $state, Auth) {
         }
       }
       $scope.signUpForm.email.$error.server = true;
-      console.log(error);
     })
   }
 }

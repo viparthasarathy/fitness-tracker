@@ -5,5 +5,5 @@ function LogService($http) {
 }
 
 angular
-  .module('app')
+  .module('fitnessTracker')
     .service('logService', LogService);

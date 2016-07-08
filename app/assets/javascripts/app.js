@@ -30,7 +30,7 @@ angular
             if (!Auth.isAuthenticated()) { $state.go('signin'); }
           },
           resolve: {
-            log: function(logService) {
+            logJSON: function(logService) {
               return logService.getLog();
             }
           }
