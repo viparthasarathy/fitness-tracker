@@ -28,9 +28,9 @@ Project Planning:
 
   1. JSON request to backend API for log object (in progress).
 
-  2. Link to create new chapter (in progress).
+  2. Link to current chapter if existent or otherwise link to create a new chapter (in progress).
 
-  3. Link to current and previous chapters.
+  3. Link to chapters index.
 
   4. List statistical information regarding:
 
