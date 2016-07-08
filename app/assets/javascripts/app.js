@@ -28,6 +28,11 @@ angular
           controller: 'LogController as LogCtrl',
           onEnter: function($state, Auth) {
             if (!Auth.isAuthenticated()) { $state.go('signin'); }
+          },
+          resolve: {
+            log: function(logService) {
+              return logService.getLog();
+            }
           }
         });
 
