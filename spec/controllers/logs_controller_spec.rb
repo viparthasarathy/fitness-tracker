@@ -6,6 +6,8 @@ describe LogsController, :type => :controller do
     context 'logged in' do
       before do
         @user = FactoryGirl.create(:user)
+        @log = @user.log
+        @chapter = FactoryGirl.create(:chapter, log: @log)
         sign_in @user
       end
 
