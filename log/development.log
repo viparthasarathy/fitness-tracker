@@ -9733,3 +9733,25 @@ Started POST "/users/sign_in.json" for ::1 at 2016-07-07 16:04:53 -0700
 Processing by SessionsController#create as JSON
   Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
 Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-07 19:03:36 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (1431.8ms)
+Completed 200 OK in 1451ms (Views: 1450.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/logs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-07 19:03:37 -0700
+
+
+Started GET "/assets/log/logService.self-923632fc85f46519f14d611977071689395551f2226391b4662b6a445cc51e68.js?body=1" for ::1 at 2016-07-07 19:03:37 -0700
+
+
+Started GET "/assets/logs.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2016-07-07 19:03:37 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-07 19:03:37 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
