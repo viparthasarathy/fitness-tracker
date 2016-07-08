@@ -22,9 +22,11 @@ Project Planning:
 
 1. User Authentication (complete).
 
+  1. Create log object and associate with User upon sign up (complete).
+
 2. Log Show Page (in progress).
 
-  1. Create log object and associate with User upon sign up (complete).
+  1. JSON request to backend API for log object (in progress).
 
   2. Link to create new chapter (in progress).
 

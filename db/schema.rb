@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160707214821) do
+ActiveRecord::Schema.define(version: 20160708193456) do
+
+  create_table "chapters", force: :cascade do |t|
+    t.float    "goal"
+    t.string   "title"
+    t.text     "description"
+    t.integer  "log_id"
+    t.date     "completed_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "chapters", ["log_id"], name: "index_chapters_on_log_id"
 
   create_table "logs", force: :cascade do |t|
     t.integer  "user_id"
