@@ -18,7 +18,3 @@
 
 # Ignore application configuration
 /config/application.yml
-
-# ignore notes
-
-/notes.md
