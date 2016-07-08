@@ -84,12 +84,12 @@ Project Planning:
 
 5. Entry Show Page / New Page.
 
-  1. Create entry model and unit tests.
+  1. Create entry model and unit tests, controller#new action.
 
     1. Database columns: created_at/date (date), chapter_id(int), notes (description). Future plans: total calorie consumption (int), total protein consumption(int), total carb consumption(int), total fat consumption(int).
 
   2. Option to add/edit weight and other additional measurements.
 
-    1. Database columns: entry_id(integer), weight(float), room for other measurements.
+    1. Database columns: entry_id(integer), weight(float), room for other measurements in the future.
 
-  3. Future: Option to add food entry which can auto-fill in / balance nutrient to calorie information.
+  3. Future: Option to add food entry which can auto-fill in / balance nutrient to calorie information, also option to edit said food entries/delete.
