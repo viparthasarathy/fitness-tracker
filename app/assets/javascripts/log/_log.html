@@ -3,4 +3,6 @@
 <h2>This log's id is {{LogCtrl.log.id}}</h2>
 
 
-<a href="#" ng-if="LogCtrl.noCurrentChapter()">This shouldn't show up this time!</a>
+<a href="#" ng-if="LogCtrl.noCurrentChapter()">Create a new chapter to track your progress.</a>
+
+<a href="#" ng-if="!LogCtrl.noCurrentChapter()">Head over to your current chapter to add new entries.</a>
