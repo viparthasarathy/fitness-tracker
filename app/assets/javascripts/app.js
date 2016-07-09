@@ -34,7 +34,12 @@ angular
               return logService.getLog();
             }
           }
-        });
+        })
+        .state('chapters' {
+          url: '/chapters',
+          templateUrl: 'chapters/_chapters',
+          controller: 'ChaptersController as ChaptersCtrl'
+        })
 
         $urlRouterProvider.otherwise('/signin');
       });
