@@ -14,7 +14,7 @@ describe ChaptersController, :type => :controller do
         @chapter_params[:created_at] = "LONG TIME AGO"
         @chapter_params[:completed_at] = "A WHILE BACK"
         post :create, { :format => :json, :chapter => @chapter_params }
-        chapter = JSON.parse(response.body)
+        chapter = JSON.parse(response.body, symbolize_names: true)
         expect(chapter.created_at).to_not eq("LONG TIME AGO")
         expect(chapter.completed_at).to eq(nil)
       end
