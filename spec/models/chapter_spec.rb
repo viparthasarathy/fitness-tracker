@@ -38,12 +38,17 @@ describe Chapter, :type => :model do
   context 'validations' do
     it 'requires the presence of a goal' do
       chapter = FactoryGirl.build(:chapter, goal: nil)
-      expect(chapter).to have(1).error_on(:goal)
+      expect(chapter).to have(2).error_on(:goal)
     end
 
     it 'requires the presence of a title' do
       chapter = FactoryGirl.build(:chapter, title: nil)
       expect(chapter).to have(1).error_on(:title)
+    end
+
+    it 'requires that goal is a number' do
+      chapter = FactoryGirl.build(:chapter, goal: "i wana get huuuge")
+      expect(chapter).to have(1).error_on(:goal)
     end
   end
 
