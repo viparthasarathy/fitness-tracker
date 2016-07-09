@@ -6,7 +6,6 @@ function LogController(logJSON) {
   LogCtrl.noCurrentChapter = function() {
     return LogCtrl.chapters[0].completed_at !== null
   }
-  debugger;
 }
 
 angular
