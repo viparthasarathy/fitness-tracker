@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Log do
+describe Log, :type => :model do
 
   it 'has valid factory' do
     expect(FactoryGirl.build(:log)).to be_valid
