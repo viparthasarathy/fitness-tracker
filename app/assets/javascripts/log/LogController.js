@@ -4,7 +4,7 @@ function LogController(logJSON) {
   LogCtrl.chapters = LogCtrl.log.chapters;
 
   LogCtrl.noCurrentChapter = function() {
-    return LogCtrl.chapters[LogCtrl.chapters.length - 1].completed_at !== null
+    return LogCtrl.chapters[0].completed_at !== null
   }
   debugger;
 }
