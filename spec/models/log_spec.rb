@@ -6,19 +6,22 @@ describe Log, :type => :model do
     expect(FactoryGirl.build(:log)).to be_valid
   end
 
-  it 'belongs to a user' do
-    log = FactoryGirl.build(:log)
-    expect(log).to respond_to(:user)
-  end
-
-  context 'chapters' do
+  context 'properties' do
+   before do
+     @log = FactoryGirl.build(:log)
+   end
 
     it 'has many chapters' do
+      expect(@log).to respond_to(:chapters)
     end
 
-    it 'knows the most recent chapter' do
+    it 'belongs to a user' do
+      expect(@log).to respond_to(:user)
     end
 
+    it 'responds to created at' do
+      expect(@log).to respond_to(:created_at)
+    end
   end
 
   context 'average calculations' do
