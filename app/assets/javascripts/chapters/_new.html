@@ -1,10 +1,22 @@
 
 <h2> New Chapter Page Placeholder </h2>
 
-<form name="newChapterForm">
-  <input name="goal" required="true" ng-model="newChapterCtrl.goal">
+<form name="newChapterForm" submit="newChapterCtrl.create()">
+  <div class="input-group">
+    <label for="goal">Goal</label>
+    <input id="goal" name="goal" required="true" ng-model="NewChapterCtrl.goal">
+  </div>
 
-  <input name="title" required="true" ng-model="newChapterCtrl.title">
+  <div class="input-group">
+    <label for="title">Title</label>
+    <input id="title" name="title" required="true" ng-model="NewChapterCtrl.title">
+  </div>
 
+  <div class="input-group">
+    <label for="description">Description</label>
+    <input name="description" ng-model="NewChapterCtrl.description">
+  </div>
+
+  <input type="submit" class="btn btn-success" value="Create Chapter">
 
 </form>

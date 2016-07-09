@@ -4,16 +4,16 @@
 
 <form name="signInForm" ng-submit="login()">
   <div class="input-group">
-    <label for="user_email">Email</label>
-    <input required="required" name="email" type="email" class="form-control" placeholder="example@example.com" ng-model="user.email">
+    <label for="email">Email</label>
+    <input id="email" required="required" name="email" type="email" class="form-control" placeholder="example@example.com" ng-model="user.email">
   </div>
   <div ng-messages="signInForm.email.$error" ng-if="signInForm.email.$touched">
     <div ng-message="required">Please enter an email.</div>
     <div ng-message="email">Your email is not valid.</div>
   </div>
   <div class="input-group">
-    <label for="user_password">Password</label>
-    <input required="required" minlength="5" maxlength="128" name="password" type="password" class="form-control" placeholder="example" ng-model="user.password">
+    <label for="password">Password</label>
+    <input id="password" required="required" minlength="5" maxlength="128" name="password" type="password" class="form-control" placeholder="example" ng-model="user.password">
   </div>
   <div ng-messages="signInForm.password.$error" ng-if="signInForm.password.$touched">
     <div ng-message="required">Please enter a password.</div>
