@@ -26,17 +26,10 @@ describe Log, :type => :model do
 
   context 'average calculations' do
 
-    it 'has an average weekly change in measurement when attempting to lose' do
-    end
-
-    it 'has an average weekly change in measurement when attempting to gain' do
-    end
-
-    it 'has an average weekly change in measurement when attempting to maintain' do
-    end
-
-    it 'has an average weekly change in measurement overall' do
-    end
+    it 'has an average weekly change in measurement when attempting to lose'
+    it 'has an average weekly change in measurement when attempting to gain'
+    it 'has an average weekly change in measurement when attempting to maintain'
+    it 'has an average weekly change in measurement overall'
 
   end
 

@@ -31,6 +31,8 @@ describe Chapter, :type => :model do
     it 'should responded to completed at' do
       expect(@chapter).to respond_to(:completed_at)
     end
+    it 'has many entries'
+    it 'has many measurements through entries'
   end
 
   context 'validations' do
@@ -45,25 +47,4 @@ describe Chapter, :type => :model do
     end
   end
 
-
-  context 'date' do
-    it 'has a start date'
-
-    it 'knows the total amount of days passed'
-
-    it 'stops counting the total amount of days when marked complete'
-  end
-
-
-  context 'entries' do
-    it 'has many entries'
-  end
-
-  context 'measurements' do
-    it 'has many measurements through entries'
-
-    it 'has a most recent measurement'
-
-    it 'has a total change in measurements'
-  end
 end
