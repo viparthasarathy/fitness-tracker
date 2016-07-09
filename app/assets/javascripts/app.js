@@ -35,10 +35,25 @@ angular
             }
           }
         })
-        .state('chapters' {
+        .state('chapters', {
           url: '/chapters',
-          templateUrl: 'chapters/_chapters',
+          templateUrl: 'chapters/_chapters.html',
           controller: 'ChaptersController as ChaptersCtrl'
+        })
+        .state('chapters.new', {
+          url: '/new',
+          templateUrl: 'chapters/_new.html',
+          controller: 'NewChapterController as NewChapterCtrl'
+        })
+        .state('chapters.show', {
+          url: '/:id',
+          templateUrl: 'chapters/_show.html',
+          controller: 'ChapterController as ChapterCtrl'
+        })
+        .state('chapters.index', {
+          url: '/index',
+          templateUrl: 'chapters/_index.html',
+          controller: 'ChaptersIndexController as ChaptersIndexCtrl'
         })
 
         $urlRouterProvider.otherwise('/signin');
