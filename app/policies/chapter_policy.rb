@@ -4,4 +4,8 @@ class ChapterPolicy < ApplicationPolicy
     !record.log.previous_chapter_in_progress?
   end
 
+  def show?
+    record.log == user.log
+  end
+
 end
