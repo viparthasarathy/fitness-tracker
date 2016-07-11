@@ -8,7 +8,7 @@ function NewChapterController(chapterService, $state) {
     }).then(function(response) {
       $state.go('chapters.show', {id: response.data.id});
     }, function(error) {
-      $state.go('log')
+      $state.go('log');
     });
   }
 }

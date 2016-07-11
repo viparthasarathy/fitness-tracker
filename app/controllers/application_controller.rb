@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   after_filter :set_csrf_cookie_for_ng
 
+rescue_from Pundit::NotAuthorizedError do |exception|
+  render nothing: true, status: 403
+end
+
   def angular
     render 'layouts/application'
   end
