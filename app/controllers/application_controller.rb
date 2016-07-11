@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
     super || valid_authenticity_token?(session, request.headers['X-XSRF-TOKEN'])
   end
 
+  def user_log
+    current_user.log
+  end
+
 end

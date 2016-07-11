@@ -24,13 +24,23 @@ describe Log, :type => :model do
     end
   end
 
-  context 'average calculations' do
+  context 'chapter-related methods' do
+    before do
+      @log = FactoryGirl.create(:log)
+      @chapter_one = FactoryGirl.create(:chapter, log: @log)
+      @chapter_two = FactoryGirl.create(:chapter, title: "Hey!", log: @log)
+    end
 
+    it 'knows its latest chapter' do
+      expect(@log.latest_chapter).to eq(@chapter_two)
+    end
+  end
+
+  context 'average calculations' do
     it 'has an average weekly change in measurement when attempting to lose'
     it 'has an average weekly change in measurement when attempting to gain'
     it 'has an average weekly change in measurement when attempting to maintain'
     it 'has an average weekly change in measurement overall'
-
   end
 
 end
