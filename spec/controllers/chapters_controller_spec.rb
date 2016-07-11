@@ -17,16 +17,18 @@ describe ChaptersController, :type => :controller do
         post :create, { :format => :json, :chapter => @chapter_params}
         chapter = JSON.parse(response.body, symbolize_names: true)
         expect(chapter[:created_at]).to_not eq("LONG TIME AGO")
-        expect(chapter[:complted_at]).to eq(nil)
+        expect(chapter[:completed_at]).to eq(nil)
       end
 
       it 'does not let the user create a chapter unless they have a completed one' do
         post :create, {:format => :json, :chapter => @chapter_params}
         expect(response.status).to eq(201)
+        expect(@user.log.chapters.count).to eq(1)
+        expect(@user.log.latest_chapter.completed_at).to eq(nil)
         @chapter_params[:title] = "Diet #2"
         post :create, {:format => :json, :chapter => @chapter_params}
+        expect(@user.log.chapters.count).to eq(1)
         expect(response.status).to eq(403)
-        expect(@user.log.chapters.map(:title)).to_not include("Diet #2")
       end
 
       it 'creates a chapter' do
@@ -41,7 +43,7 @@ describe ChaptersController, :type => :controller do
       it 'raises an unauthorized error' do
         post :create, {:format => :json, :chapter => @chapter_params}
         expect(response.status).to eq(401)
-        expect(Chapter.first.title).to not_eq("Diet #1")
+        expect(Chapter.count).to eq(0)
       end
     end
   end
