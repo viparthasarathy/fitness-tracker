@@ -14,7 +14,7 @@ class ChaptersController < ApplicationController
   end
 
   def authorize_creation!
-    render nothing: true, status: 403 unless user_log.latest_chapter.try(:completed_at)
+    render nothing: true, status: 403 if user_log.has_chapter_in_progression
   end
 
 end

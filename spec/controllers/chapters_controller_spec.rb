@@ -24,7 +24,6 @@ describe ChaptersController, :type => :controller do
         post :create, {:format => :json, :chapter => @chapter_params}
         expect(response.status).to eq(201)
         expect(@user.log.chapters.count).to eq(1)
-        expect(@user.log.latest_chapter.completed_at).to eq(nil)
         @chapter_params[:title] = "Diet #2"
         post :create, {:format => :json, :chapter => @chapter_params}
         expect(@user.log.chapters.count).to eq(1)
