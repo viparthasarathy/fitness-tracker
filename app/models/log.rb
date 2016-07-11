@@ -6,7 +6,7 @@ class Log < ActiveRecord::Base
     chapters.second
   end
 
-  def has_chapter_in_progress?
+  def previous_chapter_in_progress?
     previous_chapter && !previous_chapter.completed_at
   end
 

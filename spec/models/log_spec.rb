@@ -35,10 +35,10 @@ describe Log, :type => :model do
       expect(@log.previous_chapter).to eq(@chapter_one)
     end
 
-    it 'knows whether it has a chapter in progress' do
-      expect(@log.has_chapter_in_progress?).to eq(true)
+    it 'knows whether its previous chapter is still in progress' do
+      expect(@log.previous_chapter_in_progress?).to eq(true)
       @log.previous_chapter.update(completed_at: Date.today)
-      expect(@log.has_chapter_in_progress?).to eq(false)
+      expect(@log.previous_chapter_in_progress?).to eq(false)
     end
   end
 
