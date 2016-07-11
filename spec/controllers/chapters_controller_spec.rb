@@ -19,6 +19,16 @@ describe ChaptersController, :type => :controller do
         expect(chapter.completed_at).to eq(nil)
       end
 
+      it 'does not let the user create a chapter unless they have a completed one' do
+        post :create, {:format => :json, :chapter => @chapter_params }
+        @chapter_params[:title] = "Diet #2"
+        post :create, {:format => :json, :chapter => @chapter_params }
+        expect(@user.log.chapters.map(:title).to_not include("Diet #2")
+      end
+
+
+
+
     end
 
     context 'logged out' do
