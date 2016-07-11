@@ -1,3 +1,3 @@
 class ChapterSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :created_at, :completed_at, :title, :description, :goal
 end

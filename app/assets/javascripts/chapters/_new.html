@@ -4,7 +4,7 @@
 <form name="newChapterForm" ng-submit="NewChapterCtrl.create()">
   <div class="input-group">
     <label for="goal">Goal</label>
-    <input id="goal" type="number" step="0.1" value="0.0" name="title" required="true" ng-model="NewChapterCtrl.goal">
+    <input id="goal" type="number" step="0.1" value="0.0" name="goal" required="true" ng-model="NewChapterCtrl.goal">
     <div ng-messages="newChapterForm.goal.$error" ng-if="newChapterForm.goal.$touched">
       <div ng-message="required">Please enter a goal.</div>
       <div ng-message="number">Please enter a number.</div>

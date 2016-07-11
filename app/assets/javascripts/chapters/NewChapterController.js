@@ -1,4 +1,4 @@
-function NewChapterController(chapterService) {
+function NewChapterController(chapterService, $state) {
   var NewChapterCtrl = this;
   NewChapterCtrl.create = function() {
     chapterService.createChapter({
@@ -6,9 +6,9 @@ function NewChapterController(chapterService) {
       title: NewChapterCtrl.title,
       description: NewChapterCtrl.description
     }).then(function(response) {
-      console.log(response);
+      $state.go('chapters.show', {id: response.data.id});
     }, function(error) {
-      console.log(error);
+      $state.go('log')
     });
   }
 }

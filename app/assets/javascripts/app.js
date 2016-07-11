@@ -43,7 +43,7 @@ angular
         .state('chapters.new', {
           url: '/new',
           templateUrl: 'chapters/_new.html',
-          controller: 'NewChapterController as NewChapterCtrl'
+          controller: 'NewChapterController as NewChapterCtrl',
         })
         .state('chapters.show', {
           url: '/:id',
