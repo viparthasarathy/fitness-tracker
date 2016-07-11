@@ -11,24 +11,24 @@ describe Chapter, :type => :model do
       @chapter = FactoryGirl.build(:chapter)
     end
 
-    it 'should respond to goal' do
+    it 'responds to goal' do
       expect(@chapter).to respond_to(:goal)
     end
 
-    it 'should belong to a log' do
+    it 'belongs to a log' do
       expect(@chapter).to respond_to(:log)
     end
 
-    it 'should respond to title' do
+    it 'responds to title' do
       expect(@chapter).to respond_to(:title)
     end
-    it 'should respond to description' do
+    it 'responds to description' do
       expect(@chapter).to respond_to(:description)
     end
-    it 'should respond to created at' do
+    it 'responds to created at' do
       expect(@chapter).to respond_to(:created_at)
     end
-    it 'should responded to completed at' do
+    it 'responds to completed at' do
       expect(@chapter).to respond_to(:completed_at)
     end
     it 'has many entries'

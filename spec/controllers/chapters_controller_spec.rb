@@ -15,9 +15,9 @@ describe ChaptersController, :type => :controller do
         @chapter_params[:created_at] = "LONG TIME AGO"
         @chapter_params[:completed_at] = "A WHILE BACK"
         post :create, { :format => :json, :chapter => @chapter_params}
-        chapter = JSON.parse(response.body, symbolize_names: true)
-        expect(chapter[:created_at]).to_not eq("LONG TIME AGO")
-        expect(chapter[:completed_at]).to eq(nil)
+        chapter_response = JSON.parse(response.body, symbolize_names: true)
+        expect(chapter_response[:created_at]).to_not eq("LONG TIME AGO")
+        expect(chapter_response[:completed_at]).to eq(nil)
       end
 
       it 'does not let the user create a chapter unless they have a completed one' do
@@ -47,7 +47,35 @@ describe ChaptersController, :type => :controller do
     end
   end
 
+  describe 'get #SHOW' do
+    context 'logged in' do
+      before do
+        @user = FactoryGirl.create(:user)
+        @chapter = FactoryGirl.create(:chapter, log: @user.log)
+        sign_in @user
+      end
+      context 'belongs to the user' do
+        it 'is successful' do
+          get :show, {:format => :json, :id => @chapter.id}
+          expect(response.status).to eq(200)
+        end
+
+        it 'returns the chapter' do
+          get :show, {:format => :json, :id => @chapter.id}
+          chapter_response = JSON.parse(response.body, symbolize_names: true)
+          expect(chapter_response[:id]).to eq(@chapter.id)
+        it 'contains references to the chapter entries'
+      end
+      context 'does not belong to the user' do
+        it 'raises an authorization error'
+      end
+    end
+    context 'logged out' do
+      it 'raises an authentication error'
+    end
+  end
+
   describe 'put #UPDATE' do
-    it 'should change the completed at value from nil to the current date for the most recent chapter'
+    it 'changes the completed at value from nil to the current date for the most recent chapter'
   end
 end
