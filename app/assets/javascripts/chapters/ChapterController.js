@@ -1,5 +1,6 @@
-function ChapterController() {
-
+function ChapterController(chapterJSON, $state) {
+  var ChapterCtrl = this;
+  
 }
 
 angular

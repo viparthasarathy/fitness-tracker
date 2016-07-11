@@ -48,7 +48,16 @@ angular
         .state('chapters.show', {
           url: '/:id',
           templateUrl: 'chapters/_show.html',
-          controller: 'ChapterController as ChapterCtrl'
+          controller: 'ChapterController as ChapterCtrl',
+          resolve: {
+            chapterJSON: function(chapterService, $stateParams, $state) {
+              return chapterService.getChapter($stateParams.id).then(function(response) {
+                response.data;
+              }, function(error) {
+                $state.go('log');
+              });
+            }
+          }
         })
         .state('chapters.index', {
           url: '/index',

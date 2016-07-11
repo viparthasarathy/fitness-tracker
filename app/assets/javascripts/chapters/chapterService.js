@@ -1,6 +1,9 @@
 function chapterService($http) {
   this.createChapter = function(chapter) {
-    return $http.post("/chapters", chapter)
+    return $http.post("/chapters", chapter);
+  }
+  this.getChapter = function(id) {
+    return $http.get("/chapters/" + id);
   }
 }
 

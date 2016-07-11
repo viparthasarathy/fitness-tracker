@@ -14125,3 +14125,503 @@ Processing by SessionsController#create as JSON
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
 [active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.93ms)
 Completed 201 Created in 10ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-07-11 15:58:46 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (1587.0ms)
+Completed 200 OK in 1607ms (Views: 1606.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/app.self-b48c6f696cd2d040f089a991b398e02ee291f9f84db955d098b2527a6e4cb349.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/angular-messages/angular-messages.self-610bd021345e5d730e9058e90ee044ea5dfc661c60d341488064a65acb8a83c7.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/auth/ApplicationController.self-f49ef3e335765d1109295d947cd3de3bd8736e04aacc0be9550f2b09d4b3e974.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-75b15f34882de9421181a4b5e57d4cab5f2c17566006eeb42a2b3db98631a7ee.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/chapters/ChapterController.self-a584da92cd0acdcc1b68a005db9f7d4e62f76422e1ddb80410a5d67e89750c0a.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/auth/_signin.self-89058e56fbd5244d78895d00bd70c38af3b45d0c2be86558d730279c6e924d39.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/chapters/ChaptersController.self-37fb8d85a43da3b07b73d74576e2585499e77fd02a2369b2c41d94403d559992.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/chapters/NewChapterController.self-6d9b8d9dfc998960d534d9324c164b0a82a2edfbd2ed997a631b861b5b6eaa19.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/chapters/ChaptersIndexController.self-2e6f989665648a7e239b051dba03d9f6d0b4500c5d300c9bfe5f60172489b6ec.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/auth/_signup.self-c255ec99c87d6a062b5814a8489b9529af1bd28ad28207fd009ebaeec9c43e4c.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/chapters/_chapters.self-7f1e097e0642517a605859e6cc6a3ce4cd94a02c225bc5f556bf0bfaceb45072.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/chapters/_index.self-5f624eb0d5579df47f594bdaef58f43ac308d220f443f3c6e89e903a7b5783e9.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/chapters/_new.self-be51d445a6113442191026d5959d22dd31b9e7ca5d27bb2fc29624bf1bf51542.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/chapters/chapterService.self-aa401fe6e38c5aa613a93649c1733a4ae825e62a1b34b8d632e0ebc7c6d52b2a.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/chapters/_show.self-170ea8d45e37c7804e4f30f3dcdff22aa89d2ae91c44489493aa3e27bcf717f7.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/log/_log.self-2ea84667aa103095e2fb112ffb6a7e702f18ca0a9e833d790c12ca9344e3100f.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/log/LogController.self-ed524ca3b2ef4a9e887b2072f771a39dad205c62b8d7248148fd83ff77fff150.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/log/logService.self-f02899ea58c99b064d484ae419487131371de84285bf2c9e4e3afe41aa59c62d.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/nav/_nav.self-d5ca55f6c191b9b0a7fee5ddedb5149c081a417146875a22a838e78f0c375c1e.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started GET "/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for ::1 at 2016-07-11 15:58:48 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-11 15:58:48 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (1.72ms)
+Completed 201 Created in 45ms (Views: 11.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/log" for ::1 at 2016-07-11 15:58:48 -0700
+Processing by LogsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.2ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mChapter Load (0.2ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."created_at" DESC[0m  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (27.69ms)
+Completed 200 OK in 78ms (Views: 45.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/chapters/7" for ::1 at 2016-07-11 15:58:52 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."created_at" DESC LIMIT 1[0m  [["id", 7]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-11 15:58:54 -0700
+
+
+Started GET "/" for ::1 at 2016-07-11 15:59:17 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (450.2ms)
+Completed 200 OK in 461ms (Views: 460.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/angular-messages/angular-messages.self-610bd021345e5d730e9058e90ee044ea5dfc661c60d341488064a65acb8a83c7.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/auth/ApplicationController.self-f49ef3e335765d1109295d947cd3de3bd8736e04aacc0be9550f2b09d4b3e974.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-75b15f34882de9421181a4b5e57d4cab5f2c17566006eeb42a2b3db98631a7ee.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/auth/_signin.self-89058e56fbd5244d78895d00bd70c38af3b45d0c2be86558d730279c6e924d39.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/auth/_signup.self-c255ec99c87d6a062b5814a8489b9529af1bd28ad28207fd009ebaeec9c43e4c.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/chapters/ChaptersController.self-37fb8d85a43da3b07b73d74576e2585499e77fd02a2369b2c41d94403d559992.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/chapters/ChaptersIndexController.self-2e6f989665648a7e239b051dba03d9f6d0b4500c5d300c9bfe5f60172489b6ec.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/chapters/NewChapterController.self-6d9b8d9dfc998960d534d9324c164b0a82a2edfbd2ed997a631b861b5b6eaa19.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/chapters/_chapters.self-7f1e097e0642517a605859e6cc6a3ce4cd94a02c225bc5f556bf0bfaceb45072.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/chapters/_index.self-5f624eb0d5579df47f594bdaef58f43ac308d220f443f3c6e89e903a7b5783e9.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/chapters/_new.self-be51d445a6113442191026d5959d22dd31b9e7ca5d27bb2fc29624bf1bf51542.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/chapters/_show.self-170ea8d45e37c7804e4f30f3dcdff22aa89d2ae91c44489493aa3e27bcf717f7.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/chapters/chapterService.self-aa401fe6e38c5aa613a93649c1733a4ae825e62a1b34b8d632e0ebc7c6d52b2a.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/log/LogController.self-ed524ca3b2ef4a9e887b2072f771a39dad205c62b8d7248148fd83ff77fff150.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/log/_log.self-2ea84667aa103095e2fb112ffb6a7e702f18ca0a9e833d790c12ca9344e3100f.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/log/logService.self-f02899ea58c99b064d484ae419487131371de84285bf2c9e4e3afe41aa59c62d.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/nav/_nav.self-d5ca55f6c191b9b0a7fee5ddedb5149c081a417146875a22a838e78f0c375c1e.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/app.self-02573240b01be3931846c79d3d1edd449300320fa4fefecd1320b901c3bdd7f5.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/chapters/ChapterController.self-f25a5df3c460126ee66e3ec8b37bc9a6f624371a89a1c28c9fe695af2603baec.js?body=1" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-11 15:59:18 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-11 15:59:18 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (1.66ms)
+Completed 201 Created in 18ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/log" for ::1 at 2016-07-11 15:59:18 -0700
+Processing by LogsController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mChapter Load (0.2ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."created_at" DESC[0m  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (4.26ms)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/chapters/7" for ::1 at 2016-07-11 15:59:19 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."created_at" DESC LIMIT 1[0m  [["id", 7]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-07-11 15:59:39 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (464.9ms)
+Completed 200 OK in 481ms (Views: 481.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/angular-messages/angular-messages.self-610bd021345e5d730e9058e90ee044ea5dfc661c60d341488064a65acb8a83c7.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/auth/ApplicationController.self-f49ef3e335765d1109295d947cd3de3bd8736e04aacc0be9550f2b09d4b3e974.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-75b15f34882de9421181a4b5e57d4cab5f2c17566006eeb42a2b3db98631a7ee.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/auth/_signin.self-89058e56fbd5244d78895d00bd70c38af3b45d0c2be86558d730279c6e924d39.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/auth/_signup.self-c255ec99c87d6a062b5814a8489b9529af1bd28ad28207fd009ebaeec9c43e4c.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/chapters/ChapterController.self-f25a5df3c460126ee66e3ec8b37bc9a6f624371a89a1c28c9fe695af2603baec.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/chapters/ChaptersController.self-37fb8d85a43da3b07b73d74576e2585499e77fd02a2369b2c41d94403d559992.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/chapters/NewChapterController.self-6d9b8d9dfc998960d534d9324c164b0a82a2edfbd2ed997a631b861b5b6eaa19.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/chapters/ChaptersIndexController.self-2e6f989665648a7e239b051dba03d9f6d0b4500c5d300c9bfe5f60172489b6ec.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/chapters/_chapters.self-7f1e097e0642517a605859e6cc6a3ce4cd94a02c225bc5f556bf0bfaceb45072.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/chapters/_index.self-5f624eb0d5579df47f594bdaef58f43ac308d220f443f3c6e89e903a7b5783e9.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/chapters/_new.self-be51d445a6113442191026d5959d22dd31b9e7ca5d27bb2fc29624bf1bf51542.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/chapters/chapterService.self-aa401fe6e38c5aa613a93649c1733a4ae825e62a1b34b8d632e0ebc7c6d52b2a.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/log/_log.self-2ea84667aa103095e2fb112ffb6a7e702f18ca0a9e833d790c12ca9344e3100f.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/chapters/_show.self-170ea8d45e37c7804e4f30f3dcdff22aa89d2ae91c44489493aa3e27bcf717f7.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/log/logService.self-f02899ea58c99b064d484ae419487131371de84285bf2c9e4e3afe41aa59c62d.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/log/LogController.self-ed524ca3b2ef4a9e887b2072f771a39dad205c62b8d7248148fd83ff77fff150.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/nav/_nav.self-d5ca55f6c191b9b0a7fee5ddedb5149c081a417146875a22a838e78f0c375c1e.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/app.self-8c2dbd49e7c3ac342d83df9861dc043273f340384f8889b2da8ade2b55475c24.js?body=1" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-11 15:59:40 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-11 15:59:40 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.84ms)
+Completed 201 Created in 18ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/log" for ::1 at 2016-07-11 15:59:40 -0700
+Processing by LogsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mChapter Load (0.1ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."created_at" DESC[0m  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (4.44ms)
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chapters/7" for ::1 at 2016-07-11 15:59:41 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."created_at" DESC LIMIT 1[0m  [["id", 7]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (0.76ms)
+Completed 200 OK in 7ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out.json" for ::1 at 2016-07-11 15:59:44 -0700
+Processing by SessionsController#destroy as JSON
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 204 No Content in 24ms (ActiveRecord: 0.3ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-11 15:59:45 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users.json" for ::1 at 2016-07-11 15:59:52 -0700
+Processing by Devise::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"Bob@yahoo.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"Bob@yahoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'bob@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "bob@yahoo.com"], ["encrypted_password", "$2a$10$w38FxXb8JFqRZ/EBVn9mX.NHJLzM6FXTkPiPYDwG2e1l1x/eJWtla"], ["created_at", "2016-07-11 22:59:53.040074"], ["updated_at", "2016-07-11 22:59:53.040074"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "logs" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)  [["user_id", 2], ["created_at", "2016-07-11 22:59:53.042549"], ["updated_at", "2016-07-11 22:59:53.042549"]]
+  [1m[36mLog Load (0.0ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-07-11 22:59:53.045883"], ["current_sign_in_at", "2016-07-11 22:59:53.045883"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2016-07-11 22:59:53.046746"], ["id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.25ms)
+Completed 201 Created in 105ms (Views: 0.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/log" for ::1 at 2016-07-11 15:59:53 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."created_at" DESC  [["log_id", 2]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (1.54ms)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/chapters/7" for ::1 at 2016-07-11 16:00:00 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."created_at" DESC LIMIT 1  [["id", 7]]
+  [1m[36mLog Load (0.2ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  Rendered text template (0.0ms)
+Completed 403 Forbidden in 15ms (Views: 6.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-07-11 16:00:09 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 62ms (Views: 61.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/angular-messages/angular-messages.self-610bd021345e5d730e9058e90ee044ea5dfc661c60d341488064a65acb8a83c7.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/app.self-8c2dbd49e7c3ac342d83df9861dc043273f340384f8889b2da8ade2b55475c24.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/auth/ApplicationController.self-f49ef3e335765d1109295d947cd3de3bd8736e04aacc0be9550f2b09d4b3e974.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-75b15f34882de9421181a4b5e57d4cab5f2c17566006eeb42a2b3db98631a7ee.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/auth/_signin.self-89058e56fbd5244d78895d00bd70c38af3b45d0c2be86558d730279c6e924d39.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/auth/_signup.self-c255ec99c87d6a062b5814a8489b9529af1bd28ad28207fd009ebaeec9c43e4c.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/chapters/ChapterController.self-f25a5df3c460126ee66e3ec8b37bc9a6f624371a89a1c28c9fe695af2603baec.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/chapters/ChaptersIndexController.self-2e6f989665648a7e239b051dba03d9f6d0b4500c5d300c9bfe5f60172489b6ec.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/chapters/ChaptersController.self-37fb8d85a43da3b07b73d74576e2585499e77fd02a2369b2c41d94403d559992.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/chapters/NewChapterController.self-6d9b8d9dfc998960d534d9324c164b0a82a2edfbd2ed997a631b861b5b6eaa19.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/chapters/_chapters.self-7f1e097e0642517a605859e6cc6a3ce4cd94a02c225bc5f556bf0bfaceb45072.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/chapters/_index.self-5f624eb0d5579df47f594bdaef58f43ac308d220f443f3c6e89e903a7b5783e9.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/chapters/_new.self-be51d445a6113442191026d5959d22dd31b9e7ca5d27bb2fc29624bf1bf51542.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/chapters/_show.self-170ea8d45e37c7804e4f30f3dcdff22aa89d2ae91c44489493aa3e27bcf717f7.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/chapters/chapterService.self-aa401fe6e38c5aa613a93649c1733a4ae825e62a1b34b8d632e0ebc7c6d52b2a.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/log/LogController.self-ed524ca3b2ef4a9e887b2072f771a39dad205c62b8d7248148fd83ff77fff150.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/log/_log.self-2ea84667aa103095e2fb112ffb6a7e702f18ca0a9e833d790c12ca9344e3100f.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/log/logService.self-f02899ea58c99b064d484ae419487131371de84285bf2c9e4e3afe41aa59c62d.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/nav/_nav.self-d5ca55f6c191b9b0a7fee5ddedb5149c081a417146875a22a838e78f0c375c1e.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started GET "/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for ::1 at 2016-07-11 16:00:09 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-11 16:00:09 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (2.63ms)
+Completed 201 Created in 13ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/log" for ::1 at 2016-07-11 16:00:09 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."created_at" DESC  [["log_id", 2]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (2.04ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-11 16:00:10 -0700
