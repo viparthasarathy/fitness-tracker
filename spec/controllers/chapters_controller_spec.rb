@@ -24,7 +24,7 @@ describe ChaptersController, :type => :controller do
         post :create, {:format => :json, :chapter => @chapter_params}
         @chapter_params[:title] = "Diet #2"
         post :create, {:format => :json, :chapter => @chapter_params}
-        expect(@user.log.chapters.map(:title).to_not include("Diet #2")
+        expect(@user.log.chapters.map(:title)).to_not include("Diet #2")
       end
 
       it 'creates a chapter' do
@@ -38,13 +38,12 @@ describe ChaptersController, :type => :controller do
     context 'logged out' do
       it 'redirects users and does not create anything' do
         post :create, {:format => :json, :chapter => @chapter_params}
-
+        expect(response.status).to eq(400)
+        expect(Chapter.first.title).to not_eq("Diet #1")
       end
-
+    end
   end
 
-
-
-
-
+  describe 'put #UPDATE' do
+  end
 end
