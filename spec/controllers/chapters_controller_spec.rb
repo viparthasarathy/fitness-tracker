@@ -22,15 +22,17 @@ describe ChaptersController, :type => :controller do
 
       it 'does not let the user create a chapter unless they have a completed one' do
         post :create, {:format => :json, :chapter => @chapter_params}
+        expect(response.status).to eq(201)
         @chapter_params[:title] = "Diet #2"
         post :create, {:format => :json, :chapter => @chapter_params}
+        expect(response.status).to eq(403)
         expect(@user.log.chapters.map(:title)).to_not include("Diet #2")
       end
 
       it 'creates a chapter' do
         expect(@user.log.chapters.count).to eq(0)
         post :create, {:format => :json, :chapter => @chapter_params}
-        expect(response.status).to eq(200)
+        expect(response.status).to eq(201)
         expect(@user.log.chapters.count).to eq(1)
       end
     end
