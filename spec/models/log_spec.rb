@@ -40,7 +40,6 @@ describe Log, :type => :model do
       @log.latest_chapter.update(completed_at: Date.today)
       expect(@log.has_chapter_in_progress).to eq(false)
     end
-
   end
 
   context 'average calculations' do
