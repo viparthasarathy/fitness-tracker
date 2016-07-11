@@ -36,14 +36,15 @@ describe ChaptersController, :type => :controller do
     end
 
     context 'logged out' do
-      it 'redirects users and does not create anything' do
+      it 'raises an unauthorized error' do
         post :create, {:format => :json, :chapter => @chapter_params}
-        expect(response.status).to eq(400)
+        expect(response.status).to eq(401)
         expect(Chapter.first.title).to not_eq("Diet #1")
       end
     end
   end
 
   describe 'put #UPDATE' do
+    it 'should change the completed at value from nil to the current date for the most recent chapter'
   end
 end
