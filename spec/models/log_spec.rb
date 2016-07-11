@@ -27,18 +27,18 @@ describe Log, :type => :model do
   context 'chapter-related methods' do
     before do
       @log = FactoryGirl.create(:log)
-      @chapter_one = FactoryGirl.create(:chapter, log: @log, completed_at: Date.today - 3)
+      @chapter_one = FactoryGirl.create(:chapter, log: @log)
       @chapter_two = FactoryGirl.create(:chapter, title: "Hey!", log: @log)
     end
 
-    it 'knows its latest chapter' do
-      expect(@log.latest_chapter).to eq(@chapter_two)
+    it 'knows its previous chapter' do
+      expect(@log.previous_chapter).to eq(@chapter_one)
     end
 
     it 'knows whether it has a chapter in progress' do
-      expect(@log.has_chapter_in_progress).to eq(true)
-      @log.latest_chapter.update(completed_at: Date.today)
-      expect(@log.has_chapter_in_progress).to eq(false)
+      expect(@log.has_chapter_in_progress?).to eq(true)
+      @log.previous_chapter.update(completed_at: Date.today)
+      expect(@log.has_chapter_in_progress?).to eq(false)
     end
   end
 
