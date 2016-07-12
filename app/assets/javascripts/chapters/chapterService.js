@@ -6,7 +6,7 @@ function chapterService($http) {
     return $http.get("/chapters/" + id);
   }
   this.updateChapter = function(id) {
-    return $http.put("/chapters/" + id);
+    return $http.patch("/chapters/" + id);
   }
 }
 

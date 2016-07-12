@@ -6,7 +6,6 @@ describe Chapter, :type => :model do
   end
 
   context 'properties' do
-
     before do
       @chapter = FactoryGirl.build(:chapter)
     end

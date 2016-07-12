@@ -4,7 +4,7 @@
 
 <div ng-if="ChapterCtrl.chapter.completed_at === null">
   <h3>Currently in Progress</h3>
-  <btn class="btn btn-danger" ng-click="ChapterCtrl.markComplete()" confirm="Are you sure? This process is irreversible.">Mark Chapter As Complete</btn>
+  <btn class="btn btn-danger" ng-click="ChapterCtrl.markComplete()">Mark Chapter As Complete</btn>
 </div>
 
 <div ng-if="ChapterCtrl.chapter.completed_at !== null">
