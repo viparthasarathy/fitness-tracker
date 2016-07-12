@@ -1,4 +1,19 @@
-{{ChapterCtrl.title}}
+<h1>{{ChapterCtrl.chapter.title}}</h1>
+
+<h3>Created at {{ChapterCtrl.chapter.created_at | date:'longDate'}} </h3>
+
+<div ng-if="ChapterCtrl.chapter.completed_at === null">
+  <h3>Currently in Progress</h3>
+</div>
+
+<div ng-if="ChapterCtrl.chapter.completed_at !== null">
+  <h3>Completed at {{ChapterCtrl.chapter.completed_at | date:'longDate'}} </h3>
+</div>
+
+<div ng-if="ChapterCtrl.chapter.description === null">
+  <p>No description avaliable.</p>
+</div>
+<p>{{ChapterCtrl.chapter.description}}</p>
 
 <div ng-if="ChapterCtrl.chapter.goal > 0">
   <p>Your goal is to gain an average of {{ChapterCtrl.chapter.goal}} lb per week.</p>
@@ -11,3 +26,5 @@
 <div ng-if="ChapterCtrl.chapter.goal < 0">
   <p>Your goal is to lose an average of {{-1 * ChapterCtrl.chapter.goal}} lb per week.</p>
 </div>
+
+<h2>Entries</h2>
