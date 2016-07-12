@@ -147,27 +147,32 @@ describe ChaptersController, :type => :controller do
 
   describe 'GET #index' do
     before do
-      sign_in @user
+      FactoryGirl.create(:chapter, log: @user.log, title: "1")
+      FactoryGirl.create(:chapter, log: @user.log, title: "2")
+      FactoryGirl.create(:chapter, log: @user.log, title: "3")
     end
 
     context 'logged in' do
+      before do
+        sign_in @user
+      end
+
       it 'is successful' do
         get :index, {:format => :json }
         expect(response.status).to eq(200)
       end
 
       it 'returns the users chapters' do
-        FactoryGirl.create(:chapter, log: @user.log)
         get :index, {:format => :json }
         chapters_response = JSON.parse(response.body, symbolize_names: true)
-        expect(chapters_response.chapters.length).to eq(1)
+        expect(chapters_response.length).to eq(3)
       end
 
       it 'does not return other users chapters' do
-        FactoryGirl.create(:chapter, log: @other_user.log)
+        FactoryGirl.create(:chapter, log: @other_user.log, title: "4")
         get :index, {:format => :json }
         chapters_response = JSON.parse(response.body, symbolize_names: true)
-        expect(chapters_response.chapters.length).to eq(0)
+        expect(chapters_response.length).to_not eq(4)
       end
     end
 

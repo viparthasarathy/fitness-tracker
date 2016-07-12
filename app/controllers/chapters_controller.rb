@@ -2,6 +2,9 @@ class ChaptersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_and_authorize_chapter!, only: [:show, :update]
 
+  def index
+    render json: user_log.chapters, status: 200
+  end
 
   def create
     @chapter = user_log.chapters.build(chapter_params)
