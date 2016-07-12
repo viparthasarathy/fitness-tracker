@@ -14,6 +14,16 @@ class ChaptersController < ApplicationController
     render json: @chapter
   end
 
+  def update
+    @chapter = Chapter.find(params[:id])
+    if @chapter.completed_at
+      render nothing: true, status: 403
+    else
+      @chapter.update(completed_at: Date.today)
+      render json: @chapter, status: 200
+    end
+  end
+
   private
 
   def chapter_params
