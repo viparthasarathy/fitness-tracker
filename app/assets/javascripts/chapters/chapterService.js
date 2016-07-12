@@ -8,6 +8,9 @@ function chapterService($http) {
   this.updateChapter = function(id) {
     return $http.patch("/chapters/" + id);
   }
+  this.getChapters = function() {
+    return $http.get("/chapters");
+  }
 }
 
 angular
