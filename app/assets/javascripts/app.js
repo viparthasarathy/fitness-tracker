@@ -53,7 +53,7 @@ angular
           templateUrl: 'chapters/_show.html',
           controller: 'ChapterController as ChapterCtrl',
           resolve: {
-            chapterJSON: function(chapterService, $stateParams, $state) {
+            chapterJSON: function(chapterService, $stateParams) {
               return chapterService.getChapter($stateParams.id);
             }
           }
@@ -61,7 +61,12 @@ angular
         .state('chapters.index', {
           url: '/index',
           templateUrl: 'chapters/_index.html',
-          controller: 'ChaptersIndexController as ChaptersIndexCtrl'
+          controller: 'ChaptersIndexController as ChaptersIndexCtrl',
+          resolve: {
+            chaptersJSON: function(chapterService) {
+              return chapterService.getChapters();
+            }
+          }
         })
 
         $urlRouterProvider.otherwise('/signin');
