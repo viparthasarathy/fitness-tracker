@@ -144,4 +144,39 @@ describe ChaptersController, :type => :controller do
       end
     end
   end
+
+  describe 'GET #index' do
+    before do
+      sign_in @user
+    end
+
+    context 'logged in' do
+      it 'is successful' do
+        get :index, {:format => :json }
+        expect(response.status).to eq(200)
+      end
+
+      it 'returns the users chapters' do
+        FactoryGirl.create(:chapter, log: @user.log)
+        get :index, {:format => :json }
+        chapters_response = JSON.parse(response.body, symbolize_names: true)
+        expect(chapters_response.chapters.length).to eq(1)
+      end
+
+      it 'does not return other users chapters' do
+        FactoryGirl.create(:chapter, log: @other_user.log)
+        get :index, {:format => :json }
+        chapters_response = JSON.parse(response.body, symbolize_names: true)
+        expect(chapters_response.chapters.length).to eq(0)
+      end
+    end
+
+    context 'logged out' do
+      it 'raises an authentication error' do
+        get :index, {:format => :json }
+        expect(response.status).to eq(401)
+      end
+    end
+  end
+
 end

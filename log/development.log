@@ -20784,3 +20784,345 @@ Processing by ChaptersController#show as HTML
   [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
 [active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
 Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-07-12 16:00:15 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (1084.7ms)
+Completed 200 OK in 1119ms (Views: 1118.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-12 16:00:17 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.99ms)
+Completed 201 Created in 51ms (Views: 7.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/log" for ::1 at 2016-07-12 16:00:17 -0700
+Processing by LogsController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.3ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mChapter Load (0.4ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."created_at" DESC[0m  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (20.67ms)
+Completed 200 OK in 73ms (Views: 45.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/chapters/11" for ::1 at 2016-07-12 16:00:19 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."created_at" DESC LIMIT 1[0m  [["id", 11]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/chapters/11" for ::1 at 2016-07-12 16:00:21 -0700
+Processing by ChaptersController#update as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."created_at" DESC LIMIT 1[0m  [["id", 11]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "chapters" SET "completed_at" = ?, "updated_at" = ? WHERE "chapters"."id" = ?[0m  [["completed_at", "2016-07-12"], ["updated_at", "2016-07-12 23:00:21.277517"], ["id", 11]]
+  [1m[35m (8.8ms)[0m  commit transaction
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 200 OK in 17ms (Views: 0.9ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/log" for ::1 at 2016-07-12 16:00:21 -0700
+Processing by LogsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mChapter Load (0.1ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."created_at" DESC[0m  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (2.02ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/chapters" for ::1 at 2016-07-12 16:00:28 -0700
+Processing by ChaptersController#create as HTML
+  Parameters: {"goal"=>0.5, "title"=>"gainz", "chapter"=>{"goal"=>0.5, "title"=>"gainz"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."created_at" DESC  [["log_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chapters" ("title", "goal", "log_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "gainz"], ["goal", 0.5], ["log_id", 1], ["created_at", "2016-07-12 23:00:28.999127"], ["updated_at", "2016-07-12 23:00:28.999127"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 201 Created in 8ms (Views: 0.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/chapters/12" for ::1 at 2016-07-12 16:00:29 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."created_at" DESC LIMIT 1[0m  [["id", 12]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-12 16:00:31 -0700
+
+
+Started PATCH "/chapters/12" for ::1 at 2016-07-12 16:00:32 -0700
+Processing by ChaptersController#update as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."created_at" DESC LIMIT 1[0m  [["id", 12]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "chapters" SET "completed_at" = ?, "updated_at" = ? WHERE "chapters"."id" = ?[0m  [["completed_at", "2016-07-12"], ["updated_at", "2016-07-12 23:00:32.932491"], ["id", 12]]
+  [1m[35m (8.7ms)[0m  commit transaction
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (0.24ms)
+Completed 200 OK in 15ms (Views: 0.8ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/log" for ::1 at 2016-07-12 16:00:32 -0700
+Processing by LogsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mChapter Load (0.1ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."created_at" DESC[0m  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (2.0ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/chapters/12" for ::1 at 2016-07-12 16:00:35 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.2ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."created_at" DESC LIMIT 1[0m  [["id", 12]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (0.43ms)
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-07-12 16:00:55 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (459.4ms)
+Completed 200 OK in 469ms (Views: 468.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/angular-messages/angular-messages.self-610bd021345e5d730e9058e90ee044ea5dfc661c60d341488064a65acb8a83c7.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/app.self-23d50406ebb66a8aee433b6076dcffe14ce96e8e5ca5682f8a521655ffa995a6.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/auth/ApplicationController.self-f49ef3e335765d1109295d947cd3de3bd8736e04aacc0be9550f2b09d4b3e974.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-75b15f34882de9421181a4b5e57d4cab5f2c17566006eeb42a2b3db98631a7ee.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/auth/_signin.self-89058e56fbd5244d78895d00bd70c38af3b45d0c2be86558d730279c6e924d39.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/auth/_signup.self-c255ec99c87d6a062b5814a8489b9529af1bd28ad28207fd009ebaeec9c43e4c.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/chapters/ChapterController.self-a020ce9422cd0f2f1eb1b1e40b4b9e2834bcd734dfe5e92feadb92eec57a52e5.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/chapters/ChaptersController.self-6929e6ed446a8fe6a90e548d0b38e5f958fdf13197b8491de0b2611e273954ad.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/chapters/ChaptersIndexController.self-3a5135ae81b4e334cb4cabbb20aec4e3b63380bd55e54e8363fa08b47a3818a5.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/chapters/NewChapterController.self-273d451e4c585d99bbefcf8a47432e7ef98e4fbdd521ae6540c35dcde5c2878d.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/chapters/_chapters.self-7f1e097e0642517a605859e6cc6a3ce4cd94a02c225bc5f556bf0bfaceb45072.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/chapters/_index.self-5f624eb0d5579df47f594bdaef58f43ac308d220f443f3c6e89e903a7b5783e9.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/chapters/_new.self-b26db8caac0d3299bac477edd508242ca7105c2e94b6a9236e26db397ba569a0.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/chapters/_show.self-9dc7454e8394a7dcbc8d171cbb2d3557f2a2dcc02cdbfa7ef86a0ad6282aaf04.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/chapters/chapterService.self-c71e8083f8515b0e6e405c5ad67a0d32113eff5e814c0f18f8416f2f87914ff0.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/log/LogController.self-ed524ca3b2ef4a9e887b2072f771a39dad205c62b8d7248148fd83ff77fff150.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/log/_log.self-2ea84667aa103095e2fb112ffb6a7e702f18ca0a9e833d790c12ca9344e3100f.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/log/logService.self-f02899ea58c99b064d484ae419487131371de84285bf2c9e4e3afe41aa59c62d.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/nav/_nav.self-d5ca55f6c191b9b0a7fee5ddedb5149c081a417146875a22a838e78f0c375c1e.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-12 16:00:56 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-12 16:00:56 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (1.11ms)
+Completed 201 Created in 13ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/chapters/12" for ::1 at 2016-07-12 16:00:56 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."created_at" DESC LIMIT 1  [["id", 12]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/chapters/12" for ::1 at 2016-07-12 16:00:58 -0700
+Processing by ChaptersController#update as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."created_at" DESC LIMIT 1  [["id", 12]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  Rendered text template (0.0ms)
+Completed 403 Forbidden in 8ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-07-12 16:01:04 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 50ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/angular-messages/angular-messages.self-610bd021345e5d730e9058e90ee044ea5dfc661c60d341488064a65acb8a83c7.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/app.self-23d50406ebb66a8aee433b6076dcffe14ce96e8e5ca5682f8a521655ffa995a6.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/auth/ApplicationController.self-f49ef3e335765d1109295d947cd3de3bd8736e04aacc0be9550f2b09d4b3e974.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-75b15f34882de9421181a4b5e57d4cab5f2c17566006eeb42a2b3db98631a7ee.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/auth/_signin.self-89058e56fbd5244d78895d00bd70c38af3b45d0c2be86558d730279c6e924d39.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/auth/_signup.self-c255ec99c87d6a062b5814a8489b9529af1bd28ad28207fd009ebaeec9c43e4c.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/chapters/ChapterController.self-a020ce9422cd0f2f1eb1b1e40b4b9e2834bcd734dfe5e92feadb92eec57a52e5.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/chapters/ChaptersController.self-6929e6ed446a8fe6a90e548d0b38e5f958fdf13197b8491de0b2611e273954ad.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/chapters/ChaptersIndexController.self-3a5135ae81b4e334cb4cabbb20aec4e3b63380bd55e54e8363fa08b47a3818a5.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/chapters/NewChapterController.self-273d451e4c585d99bbefcf8a47432e7ef98e4fbdd521ae6540c35dcde5c2878d.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/chapters/_chapters.self-7f1e097e0642517a605859e6cc6a3ce4cd94a02c225bc5f556bf0bfaceb45072.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/chapters/_index.self-5f624eb0d5579df47f594bdaef58f43ac308d220f443f3c6e89e903a7b5783e9.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/chapters/_new.self-b26db8caac0d3299bac477edd508242ca7105c2e94b6a9236e26db397ba569a0.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/chapters/_show.self-2733ff28c026ac0608cb4bae4147050960277cca437f00d49fcd3f6b74bd2bbb.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/chapters/chapterService.self-c71e8083f8515b0e6e405c5ad67a0d32113eff5e814c0f18f8416f2f87914ff0.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/log/_log.self-2ea84667aa103095e2fb112ffb6a7e702f18ca0a9e833d790c12ca9344e3100f.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/log/LogController.self-ed524ca3b2ef4a9e887b2072f771a39dad205c62b8d7248148fd83ff77fff150.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/log/logService.self-f02899ea58c99b064d484ae419487131371de84285bf2c9e4e3afe41aa59c62d.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/nav/_nav.self-d5ca55f6c191b9b0a7fee5ddedb5149c081a417146875a22a838e78f0c375c1e.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-12 16:01:04 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-12 16:01:04 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.94ms)
+Completed 201 Created in 14ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/chapters/12" for ::1 at 2016-07-12 16:01:04 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."created_at" DESC LIMIT 1[0m  [["id", 12]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.4ms)
