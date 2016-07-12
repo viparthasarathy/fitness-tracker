@@ -6,3 +6,5 @@
 <a ui-sref="chapters.new" ng-if="LogCtrl.noCurrentChapter()">Create a new chapter to track your progress.</a>
 
 <a ui-sref="chapters.show({id: LogCtrl.chapters[0].id})" ng-if="!LogCtrl.noCurrentChapter()">Head over to your current chapter to add new entries.</a>
+
+<a ui-sref="chapters.index">Head over to all your previous chapters.</a>
