@@ -94,6 +94,23 @@ describe ChaptersController, :type => :controller do
   describe 'PATCH #update' do
     context 'logged in' do
       context 'it belongs to the owner' do
+        before do
+          sign_in @user
+        end
+
+        it 'is successful' do
+          patch :update, {:format => :json, :id => @chapter.id}
+          expect(response.status).to eq(200)
+        end
+
+        it 'returns the chapter with the completed at value filled in' do
+          patch :update, {:format => :json, :id => @chapter.id}
+          chapter_response = JSON.parse(response.body, symbolize_names: true)
+          expect(chapter_response[:id]).to eq(@chapter.id)
+          expect(chapter_response[:completed_at]).to eq(Date.today)
+        end
+
+        it 'raises an error if the chapter already has a completed at value'
       end
 
       context 'it does not belong to the owner' do
