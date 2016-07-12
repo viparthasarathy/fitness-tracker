@@ -1,5 +1,6 @@
 function ChapterController(chapterJSON, $state) {
   var ChapterCtrl = this;
+  ChapterCtrl.chapter = chapterJSON.data;
   
 }
 

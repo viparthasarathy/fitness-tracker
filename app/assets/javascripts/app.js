@@ -38,12 +38,15 @@ angular
         .state('chapters', {
           url: '/chapters',
           templateUrl: 'chapters/_chapters.html',
-          controller: 'ChaptersController as ChaptersCtrl'
+          controller: 'ChaptersController as ChaptersCtrl',
+          onEnter: function($state, Auth) {
+            if (!Auth.isAuthenticated()) { $state.go('signin'); }
+          }
         })
         .state('chapters.new', {
           url: '/new',
           templateUrl: 'chapters/_new.html',
-          controller: 'NewChapterController as NewChapterCtrl',
+          controller: 'NewChapterController as NewChapterCtrl'
         })
         .state('chapters.show', {
           url: '/:id',
@@ -51,12 +54,9 @@ angular
           controller: 'ChapterController as ChapterCtrl',
           resolve: {
             chapterJSON: function(chapterService, $stateParams, $state) {
-              return chapterService.getChapter($stateParams.id).then(function(response) {
-                response.data;
-              }, function(error) {
-                $state.go('log');
-              });
+              return chapterService.getChapter($stateParams.id);
             }
+            
           }
         })
         .state('chapters.index', {

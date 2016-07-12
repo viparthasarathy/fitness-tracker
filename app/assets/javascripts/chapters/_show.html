@@ -1,0 +1,13 @@
+{{ChapterCtrl.title}}
+
+<div ng-if="ChapterCtrl.chapter.goal > 0">
+  <p>Your goal is to gain an average of {{ChapterCtrl.chapter.goal}} lb per week.</p>
+</div>
+
+<div ng-if="ChapterCtrl.chapter.goal === 0">
+  <p>Your goal is to maintain your weight.</p>
+</div>
+
+<div ng-if="ChapterCtrl.chapter.goal < 0">
+  <p>Your goal is to lose an average of {{-1 * ChapterCtrl.chapter.goal}} lb per week.</p>
+</div>
