@@ -1,5 +1,6 @@
 class ChaptersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_and_authorize_chapter!, only: [:show, :update]
 
 
   def create
@@ -9,14 +10,10 @@ class ChaptersController < ApplicationController
   end
 
   def show
-    @chapter = Chapter.find(params[:id])
-    authorize @chapter
-    render json: @chapter
+    render json: @chapter, status: 200
   end
 
   def update
-    @chapter = Chapter.find(params[:id])
-    authorize @chapter
     @chapter.update(completed_at: Date.today)
     render json: @chapter, status: 200
   end
@@ -25,6 +22,11 @@ class ChaptersController < ApplicationController
 
   def chapter_params
     params.require(:chapter).permit(:title, :description, :goal)
+  end
+
+  def set_and_authorize_chapter!
+    @chapter = Chapter.find(params[:id])
+    authorize @chapter
   end
 
 end
