@@ -15,4 +15,4 @@ function NewChapterController(chapterService, $state) {
 
 angular
   .module('fitnessTracker')
-    .controller('NewChapterController', NewChapterController)
+    .controller('NewChapterController', NewChapterController);

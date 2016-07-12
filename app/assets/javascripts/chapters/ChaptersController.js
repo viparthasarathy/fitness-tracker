@@ -4,4 +4,4 @@ function ChaptersController() {
 
 angular
   .module('fitnessTracker')
-    .controller('ChaptersController', ChaptersController)
+    .controller('ChaptersController', ChaptersController);

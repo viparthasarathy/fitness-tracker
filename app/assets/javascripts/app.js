@@ -56,7 +56,6 @@ angular
             chapterJSON: function(chapterService, $stateParams, $state) {
               return chapterService.getChapter($stateParams.id);
             }
-            
           }
         })
         .state('chapters.index', {
