@@ -110,7 +110,12 @@ describe ChaptersController, :type => :controller do
           expect(chapter_response[:completed_at]).to eq(Date.today)
         end
 
-        it 'raises an error if the chapter already has a completed at value'
+        it 'raises an error if the chapter already has a completed at value' do
+          patch :update, {:format => :json, :id => @chapter.id}
+          expect(response.status).to eq(200)
+          patch :update, {:format => :json, :id => @chapter.id}
+          expect(response.status).to eq(403)
+        end
       end
 
       context 'it does not belong to the owner' do
