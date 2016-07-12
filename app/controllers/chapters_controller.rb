@@ -16,12 +16,9 @@ class ChaptersController < ApplicationController
 
   def update
     @chapter = Chapter.find(params[:id])
-    if @chapter.completed_at
-      render nothing: true, status: 403
-    else
-      @chapter.update(completed_at: Date.today)
-      render json: @chapter, status: 200
-    end
+    authorize @chapter
+    @chapter.update(completed_at: Date.today)
+    render json: @chapter, status: 200
   end
 
   private

@@ -5,7 +5,6 @@ describe ChaptersController, :type => :controller do
     @user = FactoryGirl.create(:user)
     @other_user = FactoryGirl.create(:user, email: "hacker@yahoo.com")
     @chapter_params = {goal: -1.0, title: "Diet #1", description: "This is my first diet. Yay."}
-    @chapter = FactoryGirl.create(:chapter, log: @user.log)
   end
 
   describe 'POST #create' do
@@ -26,18 +25,18 @@ describe ChaptersController, :type => :controller do
       it 'does not let the user create a chapter unless they have a completed one' do
         post :create, {:format => :json, :chapter => @chapter_params}
         expect(response.status).to eq(201)
-        expect(@user.log.chapters.count).to eq(2)
+        expect(@user.log.chapters.count).to eq(1)
         @chapter_params[:title] = "Diet #2"
         post :create, {:format => :json, :chapter => @chapter_params}
-        expect(@user.log.chapters.count).to eq(2)
+        expect(@user.log.chapters.count).to eq(1)
         expect(response.status).to eq(403)
       end
 
       it 'creates a chapter' do
-        expect(@user.log.chapters.count).to eq(1)
+        expect(@user.log.chapters.count).to eq(0)
         post :create, {:format => :json, :chapter => @chapter_params}
         expect(response.status).to eq(201)
-        expect(@user.log.chapters.count).to eq(2)
+        expect(@user.log.chapters.count).to eq(1)
       end
     end
 
@@ -45,14 +44,18 @@ describe ChaptersController, :type => :controller do
       it 'raises an unauthorized error' do
         post :create, {:format => :json, :chapter => @chapter_params}
         expect(response.status).to eq(401)
-        expect(Chapter.count).to eq(1)
+        expect(Chapter.count).to eq(0)
       end
     end
   end
 
   describe 'GET #show' do
+    before do
+      @chapter = FactoryGirl.create(:chapter, log: @user.log)
+    end
+
     context 'logged in' do
-      context 'belongs to the user' do
+      context 'as owner' do
         before do
           sign_in @user
         end
@@ -71,7 +74,7 @@ describe ChaptersController, :type => :controller do
         it 'contains references to the chapter entries'
       end
 
-      context 'does not belong to the user' do
+      context 'as non-owner' do
         before do
           sign_in @other_user
         end
@@ -92,8 +95,12 @@ describe ChaptersController, :type => :controller do
   end
 
   describe 'PATCH #update' do
+    before do
+      @chapter = FactoryGirl.create(:chapter, log: @user.log)
+    end
+
     context 'logged in' do
-      context 'it belongs to the owner' do
+      context 'as owner' do
         before do
           sign_in @user
         end
@@ -107,7 +114,7 @@ describe ChaptersController, :type => :controller do
           patch :update, {:format => :json, :id => @chapter.id}
           chapter_response = JSON.parse(response.body, symbolize_names: true)
           expect(chapter_response[:id]).to eq(@chapter.id)
-          expect(chapter_response[:completed_at]).to eq(Date.today)
+          expect(Date.parse(chapter_response[:completed_at])).to eq(Date.today)
         end
 
         it 'raises an error if the chapter already has a completed at value' do
@@ -118,7 +125,7 @@ describe ChaptersController, :type => :controller do
         end
       end
 
-      context 'it does not belong to the owner' do
+      context 'as non-owner' do
         before do
           sign_in @other_user
         end
@@ -136,7 +143,5 @@ describe ChaptersController, :type => :controller do
         expect(response.status).to eq(401)
       end
     end
-
-    it 'changes the completed at value from nil to the current date for the most recent chapter'
   end
 end
