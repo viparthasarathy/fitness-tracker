@@ -9,5 +9,5 @@ class Log < ActiveRecord::Base
   def previous_chapter_in_progress?
     previous_chapter && !previous_chapter.completed_at
   end
-
+  
 end

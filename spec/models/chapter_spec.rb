@@ -21,15 +21,19 @@ describe Chapter, :type => :model do
     it 'responds to title' do
       expect(@chapter).to respond_to(:title)
     end
+    
     it 'responds to description' do
       expect(@chapter).to respond_to(:description)
     end
+
     it 'responds to created at' do
       expect(@chapter).to respond_to(:created_at)
     end
+
     it 'responds to completed at' do
       expect(@chapter).to respond_to(:completed_at)
     end
+
     it 'has many entries'
     it 'has many measurements through entries'
   end
