@@ -5,14 +5,46 @@ describe User do
     expect(FactoryGirl.build(:user)).to be_valid
   end
 
-  it 'responds to email' do
-    user = FactoryGirl.create(:user, email: "me@gmail.com")
-    expect(user.email).to eq("me@gmail.com")
+  context 'properties' do
+    before do
+      @user = FactoryGirl.create(:user)
+    end
+
+    it 'responds to email' do
+      expect(@user).to respond_to(:email)
+    end
+
+    it 'responds to password' do
+      expect(@user).to respond_to(:password)
+    end
+
+    it 'responds to time zone' do
+      expect(@user).to respond_to(:time_zone)
+    end
+
+    it 'has a log' do
+      expect(@user).to respond_to(:log)
+    end
+
+    it 'has a log associated on creation' do
+      expect(@user.log).to be_a(Log)
+    end
   end
 
-  it 'has a log on creation' do
-    user = FactoryGirl.create(:user)
-    expect(user.log).to be_a(Log)
-  end
+  context 'validations' do
+    it 'requires an email' do
+      user = FactoryGirl.build(:user, email: nil)
+      expect(user).to have(1).error_on(:email)
+    end
 
+    it 'requires a password' do
+      user = FactoryGirl.build(:user, password: nil)
+      expect(user).to have(1).error_on(:password)
+    end
+
+    it 'requires a timezone' do
+      user = FactoryGirl.build(:user, time_zone: nil)
+      expect(user).to have(1).error_on(:time_zone)
+    end
+  end
 end
