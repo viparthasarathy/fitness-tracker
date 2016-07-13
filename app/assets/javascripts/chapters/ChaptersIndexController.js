@@ -1,7 +1,7 @@
 function ChaptersIndexController(chaptersJSON) {
-  var ChaptersCtrl = this;
-  ChaptersCtrl.chapters = chaptersJSON.data;
-  console.log(ChaptersCtrl.chapters);
+  var ChaptersIndexCtrl = this;
+  ChaptersIndexCtrl.chapters = chaptersJSON.data;
+  console.log(ChaptersIndexCtrl.chapters);
 }
 
 angular

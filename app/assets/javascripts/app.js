@@ -59,7 +59,6 @@ angular
           }
         })
         .state('chapters.index', {
-          url: '/index',
           templateUrl: 'chapters/_index.html',
           controller: 'ChaptersIndexController as ChaptersIndexCtrl',
           resolve: {
