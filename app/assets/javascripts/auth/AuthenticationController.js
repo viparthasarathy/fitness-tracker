@@ -1,8 +1,5 @@
 function AuthenticationController($scope, $state, Auth) {
-  $scope.time_zone = {
-    "value": "Pacific Time (US & Canada)",
-    "values": ["Pacific Time (US & Canada)", "Mountain Time (US & Canada)"]
-  }
+
   $scope.login = function() {
     Auth.login($scope.user).then(function() {
       $state.go('log')
