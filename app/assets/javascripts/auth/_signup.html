@@ -28,6 +28,21 @@
     </div>
   </div>
 
+  <div class="input-group">
+    <label for="time_zone">Time Zone</label>
+    <select name="time_zone" id="time_zone" required="required" ng-model="user.time_zone">
+      <option value="">-- choose an option --</option>
+      <option value="Hawaii">(GMT-10:00) Hawaii</option>
+      <option value="Alaska">(GMT-09:00) Alaska</option>
+      <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+      <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+      <option value="Central Time (US &amp; Canada)">(GMT-06:00) Central Time (US &amp; Canada)</option>
+      <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+    </select>
+    <div ng-messages="signUpForm.time_zone.$error" ng-if="signUpForm.time_zone.$touched">
+      <div ng-message="required">Please enter a timezone.</div>
+    </div>
+  </div>
 
   <input type="submit" class="btn btn-success" value="Sign Up">
 </form>
