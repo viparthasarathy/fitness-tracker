@@ -29,6 +29,11 @@ describe Chapter, :type => :model do
     it 'responds to completed at' do
       expect(@chapter).to respond_to(:completed_at)
     end
+
+    it 'responds to total calories'
+    it 'responds to total carbs'
+    it 'responds to total fats'
+    it 'responds to total protein'
   end
 
   context 'associations' do
@@ -56,5 +61,16 @@ describe Chapter, :type => :model do
       expect(chapter).to have(1).error_on(:goal)
     end
   end
+
+  context 'methods' do
+    it 'can calculate the average weekly change in weight' #(total change / days passed [completed_at || Date.today]) * 7
+    it 'can calculate the total change in weight' #latest measurement - earliest measurement
+    it 'can calculate the average daily consumption of calories' # total calories / entries.count
+    it 'can calculate the average daily consumption of carbs' # total carbs / entries.count
+    it 'can calculate the average daily consumption of fats' # total fats / entries.count
+    it 'can calculate the average daily consumption of protein' # total protein / entries.count
+    it 'can estimate the total daily expenditure of energy' # use daily change in weight and daily calorie consumption, +-500/day = 1 lb/week
+  end
+
 
 end
