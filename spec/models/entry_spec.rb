@@ -39,8 +39,8 @@ describe Entry do
       expect(@entry).to respond_to(:chapter)
     end
 
-    it 'has many food entries' do
-      expect(@entry).to respond_to(:food_entries)
+    it 'has many foods' do
+      expect(@entry).to respond_to(:foods)
     end
 
     it 'has one measurement' do
@@ -77,6 +77,6 @@ describe Entry do
       entry = FactoryGirl.create(:entry, chapter: @chapter)
       second_entry = FactoryGirl.create(:entry, chapter: @chapter)
       expect(entry).to have(1).error_on(:chapter)
-    end      
+    end
   end
 end
