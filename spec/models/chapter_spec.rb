@@ -1,27 +1,23 @@
 require 'rails_helper'
 
 describe Chapter, :type => :model do
+  before do
+    @chapter = FactoryGirl.build(:chapter)
+  end
+
   it 'has valid factory' do
-    expect(FactoryGirl.build(:chapter)).to be_valid
+    expect(@chapter).to be_valid
   end
 
   context 'properties' do
-    before do
-      @chapter = FactoryGirl.build(:chapter)
-    end
-
     it 'responds to goal' do
       expect(@chapter).to respond_to(:goal)
-    end
-
-    it 'belongs to a log' do
-      expect(@chapter).to respond_to(:log)
     end
 
     it 'responds to title' do
       expect(@chapter).to respond_to(:title)
     end
-    
+
     it 'responds to description' do
       expect(@chapter).to respond_to(:description)
     end
@@ -32,6 +28,12 @@ describe Chapter, :type => :model do
 
     it 'responds to completed at' do
       expect(@chapter).to respond_to(:completed_at)
+    end
+  end
+
+  context 'associations' do
+    it 'belongs to a log' do
+      expect(@chapter).to respond_to(:log)
     end
 
     it 'has many entries'

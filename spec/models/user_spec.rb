@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 describe User do
+  before do
+    @user = FactoryGirl.create(:user)
+  end
+
   it 'has valid factory' do
     expect(FactoryGirl.build(:user)).to be_valid
   end
 
   context 'properties' do
-    before do
-      @user = FactoryGirl.create(:user)
-    end
-
     it 'responds to email' do
       expect(@user).to respond_to(:email)
     end
@@ -21,7 +21,9 @@ describe User do
     it 'responds to time zone' do
       expect(@user).to respond_to(:time_zone)
     end
+  end
 
+  context 'associations' do
     it 'has a log' do
       expect(@user).to respond_to(:log)
     end

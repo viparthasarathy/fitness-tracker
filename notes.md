@@ -16,7 +16,6 @@
   - Like the requirement says, pretty much. Controllers should create objects after receiving $http requests.
 
 
-
 Project Planning:
 
 
@@ -26,11 +25,11 @@ Project Planning:
 
 2. Log Show Page (in progress).
 
-  1. JSON request to backend API for log object (in progress).
+  1. JSON request to backend API for log object (complete).
 
-  2. Link to current chapter if existent or otherwise link to create a new chapter (in progress).
+  2. Link to current chapter if existent or otherwise link to create a new chapter (complete).
 
-  3. Link to chapters index.
+  3. Link to chapters index (complete).
 
   4. List statistical information regarding:
 
@@ -46,15 +45,15 @@ Project Planning:
 
     6. Total time elapsed.
 
-3. Chapter New Page.
+3. Chapter New Page (complete).
 
-  1. Create Chapter model and unit tests.
+  1. Create Chapter model and unit tests (complete).
 
     1. Database columns: goal (float/string?), title(string), description(text), log_id(int), created_at/start_date (date), end_date (date, default: null)
 
-  2. Create Chapter controller and #new/#create controller tests.
+  2. Create Chapter controller and #new/#create controller tests (complete).
 
-  3. Create a view page via Angular to handle Chapter creation with the following options:
+  3. Create a view page via Angular to handle Chapter creation with the following options (complete):
 
     1. Goal: gain weight, lose weight, or maintain? Maybe a tick box, where users can go into negatives, zero, or positive, and text changes to reflect that.
 
@@ -62,13 +61,13 @@ Project Planning:
 
     3. Title: What do you want to call this?
 
-4. Chapter Show Page.
+4. Chapter Show Page (in progress).
 
-  1. Option to mark chapter as complete, fill in end date.
+  1. Option to mark chapter as complete, fill in end date (complete).
 
-  2. Index of previous entries and their respective links.
+  2. Index of previous entries and their respective links (in progress).
 
-  3. Link to today's entry show page.
+  3. Link to today's entry show page (in progress).
 
   4. List statistical information regarding:
 

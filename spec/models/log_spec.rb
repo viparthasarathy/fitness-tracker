@@ -1,15 +1,21 @@
 require 'rails_helper'
 
 describe Log, :type => :model do
+  before do
+    @log = FactoryGirl.build(:log)
+  end
+
   it 'has valid factory' do
-    expect(FactoryGirl.build(:log)).to be_valid
+    expect(@log).to be_valid
   end
 
   context 'properties' do
-   before do
-     @log = FactoryGirl.build(:log)
-   end
+    it 'responds to created at' do
+      expect(@log).to respond_to(:created_at)
+    end
+  end
 
+  context 'associations' do
     it 'has many chapters' do
       expect(@log).to respond_to(:chapters)
     end
@@ -17,15 +23,11 @@ describe Log, :type => :model do
     it 'belongs to a user' do
       expect(@log).to respond_to(:user)
     end
-
-    it 'responds to created at' do
-      expect(@log).to respond_to(:created_at)
-    end
   end
+
 
   context 'chapter-related methods' do
     before do
-      @log = FactoryGirl.create(:log)
       @chapter_one = FactoryGirl.create(:chapter, log: @log)
       @chapter_two = FactoryGirl.create(:chapter, title: "Hey!", log: @log)
     end
