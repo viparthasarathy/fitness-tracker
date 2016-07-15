@@ -10,17 +10,43 @@ describe :Food, :type => :model do
   end
 
   context 'properties' do
-    it 'responds to calories'
-    it 'responds to protein'
-    it 'responds to carbs'
-    it 'responds to fats'
+    it 'responds to calories' do
+      expect (@food).to respond_to(:calories)
+    end
+
+    it 'responds to protein' do
+      expect(@food).to respond_to(:protein)
+    end
+
+    it 'responds to carbs' do
+      expect(@food).to respond_to(:carbs)
+    end
+
+    it 'responds to fats' do
+      expect(@food).to respond_to(:fats)
+    end
   end
 
   context 'validations' do
-    it 'requires the presence of calories'
-    it 'requires the presence of protein'
-    it 'requires the presence of carbs'
-    it 'requires the presence of fats'
+    it 'requires the presence of calories' do
+      food = FactoryGirl.build(:food, calories: nil)
+      expect(food).to have(1).error_on(:calories)
+    end
+
+    it 'requires the presence of protein' do
+      food = FactoryGirl.build(:food, protein: nil)
+      expect(food).to have(1).error_on(:protein)
+    end
+
+    it 'requires the presence of carbs' do
+      food = FactoryGirl.build(:food, carbs: nil)
+      expect(food).to have(1).error_on(:carbs)
+    end
+
+    it 'requires the presence of fats' do
+      food = FactoryGirl.build(:food, fats: nil)
+      expect(food).to have(1).error_on(:fats)
+    end
   end
 
   context 'lifecycle callbacks' do
