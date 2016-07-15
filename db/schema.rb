@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715224624) do
+ActiveRecord::Schema.define(version: 20160715234216) do
 
   create_table "chapters", force: :cascade do |t|
     t.float    "goal"
@@ -43,6 +43,18 @@ ActiveRecord::Schema.define(version: 20160715224624) do
 
   add_index "entries", ["chapter_id"], name: "index_entries_on_chapter_id"
 
+  create_table "foods", force: :cascade do |t|
+    t.integer  "calories"
+    t.integer  "protein"
+    t.integer  "carbs"
+    t.integer  "fats"
+    t.integer  "entry_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "foods", ["entry_id"], name: "index_foods_on_entry_id"
+
   create_table "logs", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "created_at", null: false
@@ -50,6 +62,15 @@ ActiveRecord::Schema.define(version: 20160715224624) do
   end
 
   add_index "logs", ["user_id"], name: "index_logs_on_user_id"
+
+  create_table "measurements", force: :cascade do |t|
+    t.float    "weight"
+    t.integer  "entry_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "measurements", ["entry_id"], name: "index_measurements_on_entry_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
