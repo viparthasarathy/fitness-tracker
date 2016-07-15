@@ -50,7 +50,7 @@ describe Entry, :type => :model do
 
   context 'validations' do
     before do
-      @chapter = FactoryGirl.create(:chapter, created_at: Date.today - 3, completed_at: Date.today - 2)
+      @chapter = FactoryGirl.create(:chapter, created_at: Time.zone.today - 3, completed_at: Time.zone.today - 2)
     end
 
     it 'requires the presence of a chapter'
@@ -71,7 +71,7 @@ describe Entry, :type => :model do
     end
 
     it 'cannot have a day that is after the current date' do
-      entry = FactoryGirl.build(:entry, chapter: @chapter, day: Date.today + 1)
+      entry = FactoryGirl.build(:entry, chapter: @chapter, day: Time.zone.today + 1)
       expect(entry).to have(1).error_on(:day)
     end
 
