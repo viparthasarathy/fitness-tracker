@@ -25,6 +25,10 @@ describe Log, :type => :model do
     end
   end
 
+  context 'validations' do
+    it 'requires the presence of a user'
+  end
+
 
   context 'chapter-related methods' do
     before do

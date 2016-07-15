@@ -76,6 +76,8 @@ describe Chapter, :type => :model do
       @chapter.goal = "I want to be big"
       expect(@chapter).to have(1).error_on(:goal)
     end
+
+    it 'requires the presence of a log'
   end
 
   context 'methods' do

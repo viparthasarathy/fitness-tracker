@@ -53,6 +53,8 @@ describe Entry, :type => :model do
       @chapter = FactoryGirl.create(:chapter, created_at: Date.today - 3, completed_at: Date.today - 2)
     end
 
+    it 'requires the presence of a chapter'
+
     it 'requires the presence of day' do
       entry = FactoryGirl.build(:entry, day: nil)
       expect(entry).to have(1).error_on(:day)

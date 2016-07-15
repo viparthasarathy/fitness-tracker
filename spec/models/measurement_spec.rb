@@ -26,5 +26,7 @@ describe Measurement, :type => :model do
       measurement = FactoryGirl.build(:measurement, weight: nil)
       expect(measurement).to have(1).error_on(:weight)
     end
+
+    it 'requires the presence of an entry'
   end
 end

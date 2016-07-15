@@ -28,6 +28,8 @@ describe :Food, :type => :model do
   end
 
   context 'validations' do
+    it 'requires the presence of an entry'
+    
     it 'requires the presence of calories' do
       food = FactoryGirl.build(:food, calories: nil)
       expect(food).to have(1).error_on(:calories)
