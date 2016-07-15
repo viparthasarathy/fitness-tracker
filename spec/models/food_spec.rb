@@ -49,7 +49,7 @@ describe :Food, :type => :model do
     end
   end
 
-  context 'lifecycle callbacks' do
+  context 'callbacks' do
     before do
       @chapter = FactoryGirl.create(:chapter)
       @entry = FactoryGirl.create(:entry, chapter: @chapter)
@@ -174,14 +174,69 @@ describe :Food, :type => :model do
     end
 
     context 'destroy' do
-      it 'updates total calories for parent entry when destroyed'
-      it 'updates total carbs for parent entry when destroyed'
-      it 'updates total fats for parent entry when destroyed'
-      it 'updates total protein for parent entry when destroyed'
-      it 'updates total calories for grandparent chapter when destroyed'
-      it 'updates total carbs for grandparent chapter when destroyed'
-      it 'updates total fats for grandparent chapter when destroyed'
-      it 'updates total protein for grandparent chapter when destroyed'
+      it 'updates total calories for parent entry when destroyed' do
+        previous_total_calories = @chapter.total_calories
+        @food.save
+        expect(@chapter.total_calories).to eq(previous_total_calories + @food.calories)
+        @food.destroy
+        expect(@chapter.total_calories).to eq(previous_total_calories)
+      end
+
+      it 'updates total carbs for parent entry when destroyed' do
+        previous_total_calories = @chapter.total_calories
+        @food.save
+        expect(@chapter.total_calories).to eq(previous_total_calories + @food.calories)
+        @food.destroy
+        expect(@chapter.total_calories).to eq(previous_total_calories)
+      end
+
+      it 'updates total fats for parent entry when destroyed' do
+        previous_total_calories = @chapter.total_calories
+        @food.save
+        expect(@chapter.total_calories).to eq(previous_total_calories + @food.calories)
+        @food.destroy
+        expect(@chapter.total_calories).to eq(previous_total_calories)
+      end
+
+      it 'updates total protein for parent entry when destroyed' do
+        previous_total_calories = @chapter.total_calories
+        @food.save
+        expect(@chapter.total_calories).to eq(previous_total_calories + @food.calories)
+        @food.destroy
+        expect(@chapter.total_calories).to eq(previous_total_calories)
+      end
+
+      it 'updates total calories for grandparent chapter when destroyed' do
+        previous_total_calories = @chapter.total_calories
+        @food.save
+        expect(@chapter.total_calories).to eq(previous_total_calories + @food.calories)
+        @food.destroy
+        expect(@chapter.total_calories).to eq(previous_total_calories)
+      end
+
+      it 'updates total carbs for grandparent chapter when destroyed' do
+        previous_total_calories = @chapter.total_calories
+        @food.save
+        expect(@chapter.total_calories).to eq(previous_total_calories + @food.calories)
+        @food.destroy
+        expect(@chapter.total_calories).to eq(previous_total_calories)
+      end
+
+      it 'updates total fats for grandparent chapter when destroyed' do
+        previous_total_calories = @chapter.total_calories
+        @food.save
+        expect(@chapter.total_calories).to eq(previous_total_calories + @food.calories)
+        @food.destroy
+        expect(@chapter.total_calories).to eq(previous_total_calories)
+      end
+
+      it 'updates total protein for grandparent chapter when destroyed' do
+        previous_total_calories = @chapter.total_calories
+        @food.save
+        expect(@chapter.total_calories).to eq(previous_total_calories + @food.calories)
+        @food.destroy
+        expect(@chapter.total_calories).to eq(previous_total_calories)
+      end
     end
   end
 end

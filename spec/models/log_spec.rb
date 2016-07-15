@@ -44,10 +44,14 @@ describe Log, :type => :model do
   end
 
   context 'average calculations' do
+    # implement these via angular probably
     it 'has an average weekly change in measurement when attempting to lose'
     it 'has an average weekly change in measurement when attempting to gain'
     it 'has an average weekly change in measurement when attempting to maintain'
     it 'has an average weekly change in measurement overall'
+    it 'knows average daily consumption when attempting to lose'
+    it 'knows average daily consumption when attempting to gain'
+    it 'knows average daily consumption when attempting to maintain'
+    it 'has an total daily expenditure of energy estimate'
   end
-
 end
