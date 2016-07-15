@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Entry do
+describe Entry, :type => :model do
   before do
     @entry = FactoryGirl.build(:entry)
   end

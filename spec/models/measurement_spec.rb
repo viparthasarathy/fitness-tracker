@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Measurement do
+describe Measurement, :type => :model do
   before do
     @measurement = FactoryGirl.build(:measurement)
   end
@@ -27,8 +27,4 @@ describe Measurement do
       expect(measurement).to have(1).error_on(:weight)
     end
   end
-  
-
-
-
 end
