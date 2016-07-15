@@ -77,7 +77,10 @@ describe Chapter, :type => :model do
       expect(@chapter).to have(1).error_on(:goal)
     end
 
-    it 'requires the presence of a log'
+    it 'requires the presence of a log' do
+      @chapter.log = nil
+      expect(@chapter).to have(1).error_on(:log)
+    end
   end
 
   context 'methods' do

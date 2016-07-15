@@ -26,7 +26,10 @@ describe Log, :type => :model do
   end
 
   context 'validations' do
-    it 'requires the presence of a user'
+    it 'requires the presence of a user' do
+      @log.user = nil
+      expect(@log).to have(1).error_on(:user)
+    end
   end
 
 
