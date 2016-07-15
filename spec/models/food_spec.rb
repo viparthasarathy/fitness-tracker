@@ -27,9 +27,15 @@ describe :Food, :type => :model do
     end
   end
 
+  context 'associations' do
+    it 'belongs to an entry' do
+      expect(@food).to respond_to(:entry)
+    end
+  end
+
   context 'validations' do
     it 'requires the presence of an entry'
-    
+
     it 'requires the presence of calories' do
       food = FactoryGirl.build(:food, calories: nil)
       expect(food).to have(1).error_on(:calories)
