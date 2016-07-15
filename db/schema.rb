@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713213351) do
+ActiveRecord::Schema.define(version: 20160714202107) do
 
   create_table "chapters", force: :cascade do |t|
     t.float    "goal"
@@ -24,6 +24,20 @@ ActiveRecord::Schema.define(version: 20160713213351) do
   end
 
   add_index "chapters", ["log_id"], name: "index_chapters_on_log_id"
+
+  create_table "entries", force: :cascade do |t|
+    t.integer  "chapter_id"
+    t.date     "day"
+    t.string   "notes"
+    t.integer  "total_calories"
+    t.integer  "total_carbs"
+    t.integer  "total_fats"
+    t.integer  "total_protein"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "entries", ["chapter_id"], name: "index_entries_on_chapter_id"
 
   create_table "logs", force: :cascade do |t|
     t.integer  "user_id"

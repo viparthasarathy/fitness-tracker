@@ -4,6 +4,10 @@ class CreateEntries < ActiveRecord::Migration
       t.references :chapter, index: true, foreign_key: true
       t.date :day
       t.string :notes
+      t.integer :total_calories
+      t.integer :total_carbs
+      t.integer :total_fats
+      t.integer :total_protein
 
       t.timestamps null: false
     end
