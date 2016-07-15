@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714202107) do
+ActiveRecord::Schema.define(version: 20160715224624) do
 
   create_table "chapters", force: :cascade do |t|
     t.float    "goal"
@@ -19,8 +19,12 @@ ActiveRecord::Schema.define(version: 20160714202107) do
     t.text     "description"
     t.integer  "log_id"
     t.date     "completed_at"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "total_calories"
+    t.integer  "total_carbs"
+    t.integer  "total_fats"
+    t.integer  "total_protein"
   end
 
   add_index "chapters", ["log_id"], name: "index_chapters_on_log_id"
