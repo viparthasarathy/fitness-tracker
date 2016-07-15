@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe Entry, :type => :model do
   before do
-    @entry = FactoryGirl.build(:entry)
+    @chapter = FactoryGirl.create(:chapter, created_at: Time.zone.today - 3, completed_at: Time.zone.today - 2)
+    @entry = FactoryGirl.build(:entry, chapter: @chapter)
   end
   it 'has valid factory' do
     expect(@entry).to be_valid
@@ -49,36 +50,34 @@ describe Entry, :type => :model do
   end
 
   context 'validations' do
-    before do
-      @chapter = FactoryGirl.create(:chapter, created_at: Time.zone.today - 3, completed_at: Time.zone.today - 2)
+    it 'requires the presence of a chapter' do
+      @entry.chapter = nil
+      expect(@entry).to have(1).error_on(:chapter)
     end
 
-    it 'requires the presence of a chapter'
-
     it 'requires the presence of day' do
-      entry = FactoryGirl.build(:entry, day: nil)
-      expect(entry).to have(1).error_on(:day)
+      @entry.day = nil
+      expect(@entry).to have(1).error_on(:day)
     end
 
     it 'cannot have a day that is before the parent chapter start date' do
-      entry = FactoryGirl.build(:entry, chapter: @chapter, day: @chapter.created_at.to_date - 1)
-      expect(entry).to have(1).error_on(:day)
+      @entry.day = @chapter.created_at.to_date - 1
+      expect(@entry).to have(1).error_on(:day)
     end
 
     it 'cannot have a day that is after the parent chapter end date' do
-      entry = FactoryGirl.build(:entry, chapter: @chapter,  day: @chapter.completed_at + 1)
-      expect(entry).to have(1).error_on(:day)
+      @entry.day = @chapter.completed_at + 1
+      expect(@entry).to have(1).error_on(:day)
     end
 
     it 'cannot have a day that is after the current date' do
-      entry = FactoryGirl.build(:entry, chapter: @chapter, day: Time.zone.today + 1)
-      expect(entry).to have(1).error_on(:day)
+      @entry.day = Time.zone.today + 1
+      expect(@entry).to have(1).error_on(:day)
     end
 
     it 'must have a unique day in the context of the log' do
-      entry = FactoryGirl.create(:entry, chapter: @chapter)
       second_entry = FactoryGirl.create(:entry, chapter: @chapter)
-      expect(entry).to have(1).error_on(:chapter)
+      expect(second_entry).to have(1).error_on(:chapter)
     end
   end
 end
