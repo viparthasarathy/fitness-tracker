@@ -71,6 +71,7 @@ describe Entry, :type => :model do
     end
 
     it 'cannot have a day that is after the current date' do
+      @chapter.update(completed_at: Date.current + 2)
       @entry.day = Time.zone.today + 1
       expect(@entry).to have(1).error_on(:day)
     end

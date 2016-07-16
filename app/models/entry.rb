@@ -19,10 +19,15 @@ class Entry < ActiveRecord::Base
     end
   end
 
+  def cannot_be_after_current_day
+    unless self.day.nil?
+      errors.add(:day, "cannot come after current day") if self.day > Date.current
+    end
+  end
+
   def date_related_validations
     cannot_be_before_chapter_start_date
     cannot_be_after_chapter_end_date
+    cannot_be_after_current_day
   end
-
-
 end
