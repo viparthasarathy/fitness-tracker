@@ -27442,3 +27442,15 @@ Migrating to CreateMeasurements (20160715234216)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 
+  [1m[36mChapter Load (2.3ms)[0m  [1mSELECT  "chapters".* FROM "chapters"  ORDER BY "chapters"."created_at" ASC LIMIT 1[0m
+  [1m[35mChapter Load (0.2ms)[0m  SELECT  "chapters".* FROM "chapters"  ORDER BY "chapters"."created_at" ASC LIMIT 1
+  [1m[36mChapter Load (0.3ms)[0m  [1mSELECT  "chapters".* FROM "chapters"  ORDER BY "chapters"."created_at" DESC LIMIT 1[0m
+  [1m[35mChapter Load (0.3ms)[0m  SELECT "chapters".* FROM "chapters"  ORDER BY "chapters"."created_at" DESC
+  [1m[36mLog Load (0.4ms)[0m  [1mSELECT "logs".* FROM "logs"[0m
+  [1m[35mLog Load (0.7ms)[0m  SELECT  "logs".* FROM "logs"  ORDER BY "logs"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "chapters" ("goal", "title", "log_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["goal", -0.5], ["title", "lose weight"], ["log_id", 1], ["created_at", "2016-07-16 19:14:30.567457"], ["updated_at", "2016-07-16 19:14:30.567457"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mChapter Load (0.5ms)[0m  SELECT  "chapters".* FROM "chapters"  ORDER BY "chapters"."created_at" ASC LIMIT 1
+  [1m[36mChapter Load (0.3ms)[0m  [1mSELECT  "chapters".* FROM "chapters"  ORDER BY "chapters"."created_at" DESC LIMIT 1[0m
+  [1m[35mChapter Load (0.9ms)[0m  SELECT  "chapters".* FROM "chapters"  ORDER BY "chapters"."created_at" DESC LIMIT 1

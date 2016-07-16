@@ -17,7 +17,7 @@ class ChaptersController < ApplicationController
   end
 
   def update
-    @chapter.update(completed_at: Date.today)
+    @chapter.update(completed_at: Date.current)
     render json: @chapter, status: 200
   end
 
