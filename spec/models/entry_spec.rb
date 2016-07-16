@@ -76,7 +76,7 @@ describe Entry, :type => :model do
       expect(@entry).to have(1).error_on(:day)
     end
 
-    it 'must have a unique day in the context of the log' do
+    it 'must have a unique day in the context of the chapter' do
       second_entry = FactoryGirl.create(:entry, chapter: @chapter)
       expect(@entry).to have(1).error_on(:day)
     end
