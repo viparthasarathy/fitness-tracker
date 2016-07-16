@@ -2,11 +2,11 @@ require 'rails_helper'
 
 describe User, :type => :model do
   before do
-    @user = FactoryGirl.create(:user)
+    @user = FactoryGirl.build(:user)
   end
 
   it 'has valid factory' do
-    expect(FactoryGirl.build(:user)).to be_valid
+    expect(@user).to be_valid
   end
 
   context 'properties' do
@@ -29,6 +29,7 @@ describe User, :type => :model do
     end
 
     it 'has a log associated on creation' do
+      @user.save
       expect(@user.log).to be_a(Log)
     end
   end

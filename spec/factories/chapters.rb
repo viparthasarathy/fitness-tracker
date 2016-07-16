@@ -6,4 +6,8 @@ FactoryGirl.define do
     association :log, :factory => :log
     completed_at nil
   end
+
+  after :create do |chapter|
+    chapter.update(created_at: Time.zone.today - 5)
+  end
 end

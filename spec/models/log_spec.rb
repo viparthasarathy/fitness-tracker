@@ -36,6 +36,7 @@ describe Log, :type => :model do
   context 'chapter-related methods' do
     before do
       @chapter_one = FactoryGirl.create(:chapter, log: @log)
+      @chapter_one.update(created_at: Time.zone.today - 10)
       @chapter_two = FactoryGirl.create(:chapter, title: "Hey!", log: @log)
     end
 

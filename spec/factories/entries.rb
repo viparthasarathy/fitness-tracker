@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :entry do
     association :chapter, :factory => :chapter
-    day "2016-07-14"
+    day Time.zone.today - 2
     notes "MyString"
   end
 end

@@ -2,7 +2,9 @@ require 'rails_helper'
 
 describe Measurement, :type => :model do
   before do
-    @measurement = FactoryGirl.build(:measurement)
+    @chapter = FactoryGirl.create(:chapter, created_at: Time.zone.today - 3, completed_at: Time.zone.today - 1)
+    @entry = FactoryGirl.create(:entry, chapter: @chapter)
+    @measurement = FactoryGirl.build(:measurement, entry: @entry)
   end
 
   it 'has valid factory' do
@@ -27,6 +29,9 @@ describe Measurement, :type => :model do
       expect(measurement).to have(1).error_on(:weight)
     end
 
-    it 'requires the presence of an entry'
+    it 'requires the presence of an entry' do
+      measurement = FactoryGirl.build(:measurement, entry: nil)
+      expect(measurement).to have(1).error_on(:entry)
+    end
   end
 end

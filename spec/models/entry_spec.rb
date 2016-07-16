@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Entry, :type => :model do
   before do
-    @chapter = FactoryGirl.create(:chapter, created_at: Time.zone.today - 3, completed_at: Time.zone.today - 2)
+    @chapter = FactoryGirl.create(:chapter, completed_at: Time.zone.today - 1)
     @entry = FactoryGirl.build(:entry, chapter: @chapter)
   end
   it 'has valid factory' do
