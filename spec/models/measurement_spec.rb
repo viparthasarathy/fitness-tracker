@@ -2,9 +2,7 @@ require 'rails_helper'
 
 describe Measurement, :type => :model do
   before do
-    @chapter = FactoryGirl.create(:chapter, created_at: Time.zone.today - 3, completed_at: Time.zone.today - 1)
-    @entry = FactoryGirl.create(:entry, chapter: @chapter)
-    @measurement = FactoryGirl.build(:measurement, entry: @entry)
+    @measurement = FactoryGirl.build(:measurement)
   end
 
   it 'has valid factory' do
@@ -25,13 +23,13 @@ describe Measurement, :type => :model do
 
   context 'validations' do
     it 'requires the presence of weight' do
-      measurement = FactoryGirl.build(:measurement, weight: nil)
-      expect(measurement).to have(1).error_on(:weight)
+      @measurement.weight = nil
+      expect(@measurement).to have(1).error_on(:weight)
     end
 
     it 'requires the presence of an entry' do
-      measurement = FactoryGirl.build(:measurement, entry: nil)
-      expect(measurement).to have(1).error_on(:entry)
+      @measurement.entry = nil
+      expect(@measurement).to have(1).error_on(:entry)
     end
   end
 end
