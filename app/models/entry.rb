@@ -2,7 +2,8 @@ class Entry < ActiveRecord::Base
   belongs_to :chapter
   has_many :foods
   has_one :measurement
-  validates :day, :chapter, presence: true
+  validates :chapter, presence: true
+  validates :day, presence: true, uniqueness: {:scope => :chapter}
   validate :date_related_validations
 
   private
