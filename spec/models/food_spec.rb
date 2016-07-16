@@ -11,7 +11,7 @@ describe :Food, :type => :model do
 
   context 'properties' do
     it 'responds to calories' do
-      expect (@food).to respond_to(:calories)
+      expect(@food).to respond_to(:calories)
     end
 
     it 'responds to protein' do
@@ -37,23 +37,23 @@ describe :Food, :type => :model do
     it 'requires the presence of an entry'
 
     it 'requires the presence of calories' do
-      food = FactoryGirl.build(:food, calories: nil)
-      expect(food).to have(1).error_on(:calories)
+      @food.calories = nil
+      expect(@food).to have(1).error_on(:calories)
     end
 
     it 'requires the presence of protein' do
-      food = FactoryGirl.build(:food, protein: nil)
-      expect(food).to have(1).error_on(:protein)
+      @food.protein = nil
+      expect(@food).to have(1).error_on(:protein)
     end
 
     it 'requires the presence of carbs' do
-      food = FactoryGirl.build(:food, carbs: nil)
-      expect(food).to have(1).error_on(:carbs)
+      @food.carbs = nil
+      expect(@food).to have(1).error_on(:carbs)
     end
 
     it 'requires the presence of fats' do
-      food = FactoryGirl.build(:food, fats: nil)
-      expect(food).to have(1).error_on(:fats)
+      @food.fats = nil
+      expect(@food).to have(1).error_on(:fats)
     end
   end
 
@@ -64,6 +64,7 @@ describe :Food, :type => :model do
       @food = FactoryGirl.build(:food, entry: @entry)
     end
 
+    # NOTE: Remove redundant columns from entry and chapter. Use ActiveRecord instead to get total values. Do it for log as well?
     context 'create' do
       it 'updates total calories for parent entry when created' do
         previous_calories = @entry.total_calories

@@ -4,6 +4,6 @@ FactoryGirl.define do
     protein 1
     carbs 1
     fats 1
-    entry nil
+    association :entry, :factory => :entry
   end
 end
