@@ -6,6 +6,8 @@ class Entry < ActiveRecord::Base
   validates :day, presence: true, uniqueness: {:scope => :chapter}
   validate :date_related_validations
 
+  include Totals
+  
   private
 
   def cannot_be_before_chapter_start_date
