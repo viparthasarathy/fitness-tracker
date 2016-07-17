@@ -20,10 +20,6 @@ describe Log, :type => :model do
       expect(@log).to respond_to(:chapters)
     end
 
-    it 'has many entries through chapters' do
-      expect(@log).to respond_to(:entries)
-    end
-
     it 'belongs to a user' do
       expect(@log).to respond_to(:user)
     end

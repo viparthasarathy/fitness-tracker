@@ -59,9 +59,8 @@ describe :Food, :type => :model do
 
   context 'callbacks' do
     before do
-      @chapter = FactoryGirl.create(:chapter)
-      @entry = FactoryGirl.create(:entry, chapter: @chapter)
-      @food = FactoryGirl.build(:food, entry: @entry)
+      @entry = @food.entry
+      @chapter = @entry.chapter
     end
 
     # NOTE: Remove redundant columns from entry and chapter. Use ActiveRecord instead to get total values. Do it for log as well?
@@ -115,7 +114,7 @@ describe :Food, :type => :model do
         previous_calories = @food.calories
         @food.update(calories: 800)
         expect(@entry.total_calories).to eq(previous_total_calories + 800)
-        expect(@entry.total_calories).to not_eq(previous_total_calories + previous_calories)
+        expect(@entry.total_calories).to_not eq(previous_total_calories + previous_calories)
       end
 
       it 'updates total carbs for parent entry when updated' do
@@ -124,7 +123,7 @@ describe :Food, :type => :model do
         previous_carbs = @food.carbs
         @food.update(carbs: 100)
         expect(@entry.total_carbs).to eq(previous_total_carbs + 100)
-        expect(@entry.total_carbs).to not_eq(previous_total_carbs + previous_carbs)
+        expect(@entry.total_carbs).to_not eq(previous_total_carbs + previous_carbs)
       end
 
       it 'updates total fats for parent entry when updated' do
@@ -133,7 +132,7 @@ describe :Food, :type => :model do
         previous_fats = @food.fats
         @food.update(fats: 100)
         expect(@entry.total_fats).to eq(previous_total_fats + 100)
-        expect(@entry.total_fats).to not_eq(previous_total_fats + previous_fats)
+        expect(@entry.total_fats).to_not eq(previous_total_fats + previous_fats)
       end
 
       it 'updates total protein for parent entry when updated' do
@@ -142,7 +141,7 @@ describe :Food, :type => :model do
         previous_protein = @food.protein
         @food.update(protein: 100)
         expect(@entry.total_protein).to eq(previous_total_protein + 100)
-        expect(@entry.total_protein).to not_eq(previous_total_protein + previous_protein)
+        expect(@entry.total_protein).to_not eq(previous_total_protein + previous_protein)
       end
 
       it 'updates total calories for grandparent chapter when updated' do
@@ -151,7 +150,7 @@ describe :Food, :type => :model do
         previous_calories = @food.calories
         @food.update(calories: 800)
         expect(@chapter.total_calories).to eq(previous_total_calories + 800)
-        expect(@chapter.total_calories).to not_eq(previous_total_calories + previous_calories)
+        expect(@chapter.total_calories).to_not eq(previous_total_calories + previous_calories)
       end
 
       it 'updates total carbs for grandparent chapter when updated' do
@@ -160,7 +159,7 @@ describe :Food, :type => :model do
         previous_carbs = @food.carbs
         @food.update(carbs: 100)
         expect(@chapter.total_carbs).to eq(previous_total_carbs + 100)
-        expect(@chapter.total_carbs).to not_eq(previous_total_carbs + previous_carbs)
+        expect(@chapter.total_carbs).to_not eq(previous_total_carbs + previous_carbs)
       end
 
       it 'updates total fats for grandparent chapter when updated' do
@@ -169,7 +168,7 @@ describe :Food, :type => :model do
         previous_fats = @food.fats
         @food.update(fats: 100)
         expect(@chapter.total_fats).to eq(previous_total_fats + 100)
-        expect(@chapter.total_fats).to not_eq(previous_total_fats + previous_fats)
+        expect(@chapter.total_fats).to_not eq(previous_total_fats + previous_fats)
       end
 
       it 'updates total protein for grandparent chapter when updated' do
@@ -178,7 +177,7 @@ describe :Food, :type => :model do
         previous_protein = @food.protein
         @food.update(protein: 100)
         expect(@chapter.total_protein).to eq(previous_total_protein + 100)
-        expect(@chapter.total_protein).to not_eq(previous_total_protein + previous_protein)
+        expect(@chapter.total_protein).to_not eq(previous_total_protein + previous_protein)
       end
     end
 
