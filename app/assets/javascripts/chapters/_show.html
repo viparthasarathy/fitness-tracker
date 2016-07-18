@@ -30,3 +30,7 @@
 </div>
 
 <h2>Entries</h2>
+
+<div ng-repeat="entry in ChapterCtrl.chapter.entries">
+  <a ui-sref="entries({id: entry.id})">{{entry.day}}</a>
+</div>

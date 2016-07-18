@@ -67,6 +67,15 @@ angular
             }
           }
         })
+        .state('entries') {
+          templateUrl: 'entries/_entry.html',
+          controller: 'EntryController as Entry Ctrl',
+          resolve: {
+            EntryJSON: function(entryService, $stateParams) {
+              return entryService.getEntry($stateParams.id)
+            }
+          }
+        }
 
         $urlRouterProvider.otherwise('/signin');
       });
