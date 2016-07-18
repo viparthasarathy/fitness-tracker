@@ -14,13 +14,13 @@ describe EntriesController, :type => :controller do
         sign_in @user
       end
 
-      context 'as owner of chapter'
+      context 'as owner of chapter' do
         it 'should fail if sent invalid data and return the error' do
           @entry_params[:day] = Time.zone.today + 1
           post :create, {:format => :json, :entry => @entry_params}
           expect(response.status).to eq(400)
           error_response = JSON.parse(response.body, symbolize_names: true)
-          expect(error_response[:messages][:day]).to eq("cannot come after current day")
+          expect(error_response[:day][0]).to eq("cannot come after current day")
         end
 
         it 'succeeds if sent proper data' do
@@ -32,21 +32,21 @@ describe EntriesController, :type => :controller do
         it 'returns the entry info on success' do
           post :create, {:format => :json, :entry => @entry_params}
           entry_response = JSON.parse(response.body, symbolize_names: true)
-          expect(chapter_response[:notes).to eq("These are some notes")
+          expect(entry_response[:notes]).to eq("These are some notes")
         end
       end
     end
 
-    context 'as other user' do
-      before do
-        sign_in @other_user
+      context 'as other user' do
+        before do
+          sign_in @other_user
+        end
+
+        it 'raises an authorization error' do
+          post :create, {:format => :json, :entry => @entry_params}
+          expect(response.status).to eq(403)
+        end
       end
-      
-      it 'raises an authorization error' do
-        post :create, {:format => :json, :entry => @entry_params}
-        expect(response.status).to eq(403)
-      end
-    end
 
     context 'logged out' do
       it 'raises an authentication error' do

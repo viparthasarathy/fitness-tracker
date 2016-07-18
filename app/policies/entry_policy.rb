@@ -1,7 +1,7 @@
 class EntryPolicy < ApplicationPolicy
 
   def create?
-    record.log == record.chapter.log
+    record.chapter.log == user.log
   end
-  
+
 end
