@@ -38,7 +38,14 @@ describe EntriesController, :type => :controller do
     end
 
     context 'as other user' do
-      it 'raises an authorization error'
+      before do
+        sign_in @other_user
+      end
+      
+      it 'raises an authorization error' do
+        post :create, {:format => :json, :entry => @entry_params}
+        expect(response.status).to eq(403)
+      end
     end
 
     context 'logged out' do
