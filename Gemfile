@@ -40,6 +40,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'rspec-collection_matchers'
+  gem 'pry'
 end
 
 group :production do

@@ -52,6 +52,7 @@ describe ChaptersController, :type => :controller do
   describe 'GET #show' do
     before do
       @chapter = FactoryGirl.create(:chapter, log: @user.log)
+      @entry = FactoryGirl.create(:entry, chapter: @chapter)
     end
 
     context 'logged in' do
@@ -71,7 +72,12 @@ describe ChaptersController, :type => :controller do
           expect(chapter_response[:id]).to eq(@chapter.id)
         end
 
-        it 'contains references to the chapter entries'
+        it 'contains references to the chapter entries' do
+          get :show, {:format => :json, :id => @chapter.id}
+          chapter_response = JSON.parse(response.body, symbolize_names: true)
+          expect(chapter_response[:entries][0][:id]).to eq(@entry.id)
+          expect(Date.parse(chapter_response[:entries][0][:day])).to eq(@entry.day)
+        end
       end
 
       context 'as non-owner' do

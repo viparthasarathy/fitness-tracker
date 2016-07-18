@@ -1,6 +1,7 @@
 function ChapterController(chapterJSON, $state, chapterService) {
   var ChapterCtrl = this;
   ChapterCtrl.chapter = chapterJSON.data;
+  console.log(chapterJSON)
   ChapterCtrl.markComplete = function() {
     chapterService.updateChapter(ChapterCtrl.chapter.id).then(function(response) {
       $state.go('log');
