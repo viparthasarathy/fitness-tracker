@@ -69,10 +69,10 @@ angular
         })
         .state('entries') {
           templateUrl: 'entries/_entry.html',
-          controller: 'EntryController as Entry Ctrl',
+          controller: 'EntryController as EntryCtrl',
           resolve: {
             EntryJSON: function(entryService, $stateParams) {
-              return entryService.getEntry($stateParams.id)
+              return entryService.getEntry($stateParams.id);
             }
           }
         }
