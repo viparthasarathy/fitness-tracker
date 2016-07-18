@@ -67,7 +67,8 @@ angular
             }
           }
         })
-        .state('entries') {
+        .state('entries', {
+          url: '/entries/:id',
           templateUrl: 'entries/_entry.html',
           controller: 'EntryController as EntryCtrl',
           resolve: {
@@ -75,7 +76,7 @@ angular
               return entryService.getEntry($stateParams.id);
             }
           }
-        }
+        })
 
         $urlRouterProvider.otherwise('/signin');
       });
