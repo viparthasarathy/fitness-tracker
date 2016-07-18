@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160717172302) do
+ActiveRecord::Schema.define(version: 20160718164114) do
 
   create_table "chapters", force: :cascade do |t|
     t.float    "goal"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160717172302) do
     t.integer  "entry_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   add_index "foods", ["entry_id"], name: "index_foods_on_entry_id"

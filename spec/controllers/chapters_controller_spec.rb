@@ -4,7 +4,7 @@ describe ChaptersController, :type => :controller do
   before do
     @user = FactoryGirl.create(:user)
     @other_user = FactoryGirl.create(:user, email: "hacker@yahoo.com")
-    @chapter_params = {goal: -1.0, title: "Diet #1", description: "This is my first diet. Yay."}
+    @chapter = FactoryGirl.build(:chapter, log: @user.log)
   end
 
   describe 'POST #create' do
