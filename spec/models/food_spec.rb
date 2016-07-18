@@ -57,13 +57,12 @@ describe :Food, :type => :model do
     end
   end
 
-  context 'callbacks' do
+  context 'totals' do
     before do
       @entry = @food.entry
       @chapter = @entry.chapter
     end
 
-    # NOTE: Remove redundant columns from entry and chapter. Use ActiveRecord instead to get total values. Do it for log as well?
     context 'create' do
       it 'updates total calories for parent entry when created' do
         previous_calories = @entry.total_calories

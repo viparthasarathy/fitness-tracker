@@ -66,8 +66,6 @@ describe Chapter, :type => :model do
     it 'has many measurements through entries' do
       expect(@chapter).to respond_to(:measurements)
     end
-    
-
   end
 
   context 'validations' do
