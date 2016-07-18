@@ -35,7 +35,7 @@ describe Log, :type => :model do
 
   context 'chapter-related methods' do
     before do
-      @log = FactoryGirl.create(:log)
+      @log.save
       @chapter_one = FactoryGirl.create(:chapter, log: @log, completed_at: Date.current - 3)
       @chapter_two = FactoryGirl.create(:chapter, title: "Hey!", log: @log)
     end
@@ -45,9 +45,9 @@ describe Log, :type => :model do
     end
 
     it 'knows whether it has a chapter in progress' do
-      expect(@log.has_chapter_in_progress).to eq(true)
+      expect(@log.has_chapter_in_progress?).to eq(true)
       @log.latest_chapter.update(completed_at: Date.current)
-      expect(@log.has_chapter_in_progress).to eq(false)
+      expect(@log.has_chapter_in_progress?).to eq(false)
     end
   end
 

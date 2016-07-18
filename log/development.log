@@ -32078,3 +32078,1092 @@ Processing by ChaptersController#show as HTML
 [active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 2]]
 [active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (1.37ms)
 Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+  [1m[36mChapter Load (1.4ms)[0m  [1mSELECT "chapters".* FROM "chapters"  ORDER BY "chapters"."completed_at" ASC[0m
+  [1m[35mChapter Load (0.3ms)[0m  SELECT  "chapters".* FROM "chapters"  ORDER BY "chapters"."completed_at" ASC LIMIT 1
+
+
+Started GET "/" for ::1 at 2016-07-18 14:51:27 -0700
+Processing by ApplicationController#angular as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/application.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 61ms (Views: 53.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/angular-messages/angular-messages.self-610bd021345e5d730e9058e90ee044ea5dfc661c60d341488064a65acb8a83c7.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/app.self-981fd848c6c46f775c2e744e6d1a581ce2601719afa06e7bd058656372d497e5.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/auth/ApplicationController.self-f49ef3e335765d1109295d947cd3de3bd8736e04aacc0be9550f2b09d4b3e974.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-76fb614cd868c1a1b14316fbb411a8e61e368dbbcf71e2a30fcf6b67c98c8e56.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/auth/_signin.self-89058e56fbd5244d78895d00bd70c38af3b45d0c2be86558d730279c6e924d39.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/auth/_signup.self-c984488736655719242b9634bca1a83eb1834f47e00b1c1c5de671e8ecb49c2b.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/chapters/ChapterController.self-9759586a1fec5fa29ad8256095185cd70332007ccb8f1f1547e459ba1baae8af.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/chapters/ChaptersController.self-6929e6ed446a8fe6a90e548d0b38e5f958fdf13197b8491de0b2611e273954ad.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/chapters/NewChapterController.self-273d451e4c585d99bbefcf8a47432e7ef98e4fbdd521ae6540c35dcde5c2878d.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/chapters/ChaptersIndexController.self-4ae07f62d70caf719adedc52fba59642cfa39ff2d2fe08062df604732e0ed176.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/chapters/_chapters.self-e93a49d96d426f50a0a5096e0c92cec3999527face907485b0a82fca7359acca.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/chapters/_index.self-6e71380a83a02a064a6696d556e4d5054b1550c974f3500d54bb19f3a3076b2e.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/chapters/_new.self-b26db8caac0d3299bac477edd508242ca7105c2e94b6a9236e26db397ba569a0.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/chapters/_show.self-2c0c1cd84569282441b8a9475e4c066a242dea1c159158e0af138b08b333790f.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/chapters/chapterService.self-aa15426b30f4b1dea691249c7c7abb917ac18dbe4176c9048964a7a0179b977a.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/entries/EntryController.self-bd1e731dd27000d15836913ab6e4b021339472bd74c2f8082310e0d82ec98539.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/entries/_entry.self-4e271d32f05a06ddb1dd4234c098f41e778a61308f0c5d032fe1cd61dc098ee7.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/entries/entryService.self-fdebd83b3cb8cba7515f05e8c06e022aaa48df16ddcfba03db7a64f372755694.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/log/LogController.self-217f396b6c29ad9cb18768b9a9732a4aaafb7274b7e8e1aff0d7b50d75779edd.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/log/_log.self-9dd3728f705ab0078ee71299846a95e8cd05dc5dc4d4b4ffc0ae8e2e13b029e1.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/log/logService.self-f02899ea58c99b064d484ae419487131371de84285bf2c9e4e3afe41aa59c62d.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/nav/_nav.self-d5ca55f6c191b9b0a7fee5ddedb5149c081a417146875a22a838e78f0c375c1e.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-18 14:51:27 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-18 14:51:27 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (1.16ms)
+Completed 201 Created in 20ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/chapters/2" for ::1 at 2016-07-18 14:51:27 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.2ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.3ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  [["chapter_id", 2]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (12.83ms)
+Completed 200 OK in 46ms (Views: 15.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/chapters" for ::1 at 2016-07-18 14:51:33 -0700
+Processing by ChaptersController#create as HTML
+  Parameters: {"goal"=>1, "title"=>"test", "chapter"=>{"goal"=>1, "title"=>"test"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mChapter Load (0.2ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["log_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["log_id", 1]]
+  Rendered text template (0.0ms)
+Filter chain halted as :authorize_creation! rendered or redirected
+Completed 403 Forbidden in 8ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:51:33 -0700
+Processing by LogsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mChapter Load (0.2ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC[0m  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (2.28ms)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chapters" for ::1 at 2016-07-18 14:51:35 -0700
+Processing by ChaptersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 2]]
+[active_model_serializers]   [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  [["chapter_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.58ms)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chapters/2" for ::1 at 2016-07-18 14:51:36 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 2]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (1.33ms)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/chapters/2" for ::1 at 2016-07-18 14:51:37 -0700
+Processing by ChaptersController#update as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "chapters" SET "completed_at" = ?, "updated_at" = ? WHERE "chapters"."id" = ?[0m  [["completed_at", "2016-07-18"], ["updated_at", "2016-07-18 21:51:37.306613"], ["id", 2]]
+  [1m[35m (8.4ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 2]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (2.82ms)
+Completed 200 OK in 18ms (Views: 3.4ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:51:37 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (2.27ms)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/chapters" for ::1 at 2016-07-18 14:51:41 -0700
+Processing by ChaptersController#create as HTML
+  Parameters: {"goal"=>3, "title"=>"gain", "chapter"=>{"goal"=>3, "title"=>"gain"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["log_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["log_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chapters" ("title", "goal", "log_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "gain"], ["goal", 3.0], ["log_id", 1], ["created_at", "2016-07-18 21:51:41.995227"], ["updated_at", "2016-07-18 21:51:41.995227"]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  [["chapter_id", 3]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (2.39ms)
+Completed 201 Created in 19ms (Views: 3.0ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/chapters/3" for ::1 at 2016-07-18 14:51:42 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["id", 3]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 3]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (1.38ms)
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/chapters" for ::1 at 2016-07-18 14:51:58 -0700
+Processing by ChaptersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 3]]
+[active_model_serializers]   [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  [["chapter_id", 1]]
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.7ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:52:00 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (1.96ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/chapters/3" for ::1 at 2016-07-18 14:52:08 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["id", 3]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 3]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (1.18ms)
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/chapters/3" for ::1 at 2016-07-18 14:52:09 -0700
+Processing by ChaptersController#update as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "chapters" SET "completed_at" = ?, "updated_at" = ? WHERE "chapters"."id" = ?[0m  [["completed_at", "2016-07-18"], ["updated_at", "2016-07-18 21:52:09.762080"], ["id", 3]]
+  [1m[35m (8.6ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 3]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (2.14ms)
+Completed 200 OK in 16ms (Views: 2.7ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:52:09 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (2.84ms)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (8.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20160703173546)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/viparthasarathy/Development/Projects/fitness-tracker/db/migrate/20160703173546_devise_create_users.rb:34)
+  [1m[35m (0.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160703173546"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateLogs (20160707214821)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_logs_on_user_id" ON "logs" ("user_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160707214821"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateChapters (20160708193456)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "chapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goal" float, "title" varchar, "description" text, "log_id" integer, "completed_at" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_chapters_on_log_id" ON "chapters" ("log_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160708193456"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddTimeZoneToUsers (20160713213351)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "time_zone" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160713213351"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEntries (20160714202107)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "chapter_id" integer, "day" date, "notes" varchar, "total_calories" integer, "total_carbs" integer, "total_fats" integer, "total_protein" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_entries_on_chapter_id" ON "entries" ("chapter_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160714202107"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to AddTotalsToChapters (20160715224624)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "chapters" ADD "total_calories" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "chapters" ADD "total_carbs" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "chapters" ADD "total_fats" integer
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "chapters" ADD "total_protein" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160715224624"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateFoods (20160715234115)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "foods" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "calories" integer, "protein" integer, "carbs" integer, "fats" integer, "entry_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_foods_on_entry_id" ON "foods" ("entry_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160715234115"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateMeasurements (20160715234216)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "measurements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "weight" float, "entry_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_measurements_on_entry_id" ON "measurements" ("entry_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160715234216"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveTotalsFromEntriesAndChapters (20160717172302)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "achapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goal" float, "title" varchar, "description" text, "log_id" integer, "completed_at" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "total_calories" integer, "total_carbs" integer, "total_fats" integer, "total_protein" integer) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_chapters_on_log_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_chapters_on_log_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "tindex_achapters_on_log_id" ON "achapters" ("log_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "chapters"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "chapters"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "chapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goal" float, "title" varchar, "description" text, "log_id" integer, "completed_at" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "total_carbs" integer, "total_fats" integer, "total_protein" integer) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_achapters_on_log_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_achapters_on_log_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_chapters_on_log_id" ON "chapters" ("log_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "achapters"[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "achapters"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "achapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goal" float, "title" varchar, "description" text, "log_id" integer, "completed_at" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "total_carbs" integer, "total_fats" integer, "total_protein" integer) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_chapters_on_log_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_chapters_on_log_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "tindex_achapters_on_log_id" ON "achapters" ("log_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "chapters"
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "chapters"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "chapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goal" float, "title" varchar, "description" text, "log_id" integer, "completed_at" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "total_fats" integer, "total_protein" integer) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_achapters_on_log_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_achapters_on_log_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_chapters_on_log_id" ON "chapters" ("log_id")
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "achapters"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "achapters"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "achapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goal" float, "title" varchar, "description" text, "log_id" integer, "completed_at" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "total_fats" integer, "total_protein" integer) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_chapters_on_log_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_chapters_on_log_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "tindex_achapters_on_log_id" ON "achapters" ("log_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "chapters"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "chapters"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "chapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goal" float, "title" varchar, "description" text, "log_id" integer, "completed_at" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "total_protein" integer) 
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_achapters_on_log_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_achapters_on_log_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_chapters_on_log_id" ON "chapters" ("log_id")
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "achapters"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "achapters"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "achapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goal" float, "title" varchar, "description" text, "log_id" integer, "completed_at" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "total_protein" integer) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_chapters_on_log_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_chapters_on_log_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "tindex_achapters_on_log_id" ON "achapters" ("log_id")[0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "chapters"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "chapters"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "chapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goal" float, "title" varchar, "description" text, "log_id" integer, "completed_at" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_achapters_on_log_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_achapters_on_log_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_chapters_on_log_id" ON "chapters" ("log_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "achapters"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "achapters"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "aentries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "chapter_id" integer, "day" date, "notes" varchar, "total_calories" integer, "total_carbs" integer, "total_fats" integer, "total_protein" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entries_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entries_on_chapter_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "tindex_aentries_on_chapter_id" ON "aentries" ("chapter_id")[0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "entries"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "entries"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "chapter_id" integer, "day" date, "notes" varchar, "total_carbs" integer, "total_fats" integer, "total_protein" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aentries_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aentries_on_chapter_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_entries_on_chapter_id" ON "entries" ("chapter_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "aentries"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "aentries"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "aentries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "chapter_id" integer, "day" date, "notes" varchar, "total_carbs" integer, "total_fats" integer, "total_protein" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entries_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entries_on_chapter_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "tindex_aentries_on_chapter_id" ON "aentries" ("chapter_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "entries"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "entries"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "chapter_id" integer, "day" date, "notes" varchar, "total_fats" integer, "total_protein" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aentries_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aentries_on_chapter_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_entries_on_chapter_id" ON "entries" ("chapter_id")
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "aentries"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "aentries"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "aentries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "chapter_id" integer, "day" date, "notes" varchar, "total_fats" integer, "total_protein" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entries_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entries_on_chapter_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "tindex_aentries_on_chapter_id" ON "aentries" ("chapter_id")[0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "entries"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "entries"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "chapter_id" integer, "day" date, "notes" varchar, "total_protein" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aentries_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aentries_on_chapter_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_entries_on_chapter_id" ON "entries" ("chapter_id")
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "aentries"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "aentries"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "aentries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "chapter_id" integer, "day" date, "notes" varchar, "total_protein" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entries_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entries_on_chapter_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "tindex_aentries_on_chapter_id" ON "aentries" ("chapter_id")[0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "entries"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "entries"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "chapter_id" integer, "day" date, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aentries_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aentries_on_chapter_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_entries_on_chapter_id" ON "entries" ("chapter_id")
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "aentries"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "aentries"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160717172302"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to AddNameToFoods (20160718164114)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "foods" ADD "name" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160718164114"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_chapters_on_log_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_chapters_on_log_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entries_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entries_on_chapter_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_foods_on_entry_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_foods_on_entry_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_logs_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_logs_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_measurements_on_entry_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_measurements_on_entry_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for ::1 at 2016-07-18 14:52:35 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#angular as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/application.html.erb within layouts/application (1363.8ms)
+Completed 200 OK in 1410ms (Views: 1389.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/chapters/ChaptersIndexController.self-82a6b70177a64df8c6cc4f7ed1078128ec4ebbccb12941bf7c1522f988b74e2f.js?body=1" for ::1 at 2016-07-18 14:52:36 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-18 14:52:36 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users.json" for ::1 at 2016-07-18 14:52:45 -0700
+Processing by Devise::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]", "time_zone"=>"Mountain Time (US & Canada)"}, "registration"=>{"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]", "time_zone"=>"Mountain Time (US & Canada)"}}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'example@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "time_zone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "example@example.com"], ["encrypted_password", "$2a$10$5UkgITbVrPbXurOp.qdrZuaZ.YRyPBFQKZcN/VO1SrBp1L1WECZXi"], ["time_zone", "Mountain Time (US & Canada)"], ["created_at", "2016-07-18 21:52:45.561919"], ["updated_at", "2016-07-18 21:52:45.561919"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "logs" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)  [["user_id", 1], ["created_at", "2016-07-18 21:52:45.587097"], ["updated_at", "2016-07-18 21:52:45.587097"]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (8.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-07-18 21:52:45.601336"], ["current_sign_in_at", "2016-07-18 21:52:45.601336"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2016-07-18 21:52:45.602791"], ["id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.45ms)
+Completed 201 Created in 170ms (Views: 8.6ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:52:45 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.2ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.2ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (39.25ms)
+Completed 200 OK in 65ms (Views: 58.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-18 14:52:50 -0700
+
+
+Started POST "/chapters" for ::1 at 2016-07-18 14:52:51 -0700
+Processing by ChaptersController#create as HTML
+  Parameters: {"goal"=>1, "title"=>"Gain", "chapter"=>{"goal"=>1, "title"=>"Gain"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mChapter Load (0.2ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["log_id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chapters" ("title", "goal", "log_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Gain"], ["goal", 1.0], ["log_id", 1], ["created_at", "2016-07-18 21:52:51.669018"], ["updated_at", "2016-07-18 21:52:51.669018"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 1]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (12.51ms)
+Completed 201 Created in 40ms (Views: 15.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/chapters/1" for ::1 at 2016-07-18 14:52:51 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.2ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  [["chapter_id", 1]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (2.77ms)
+Completed 200 OK in 12ms (Views: 3.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-07-18 14:52:55 -0700
+Processing by ApplicationController#angular as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application.html.erb within layouts/application (76.3ms)
+Completed 200 OK in 102ms (Views: 99.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/chapters" for ::1 at 2016-07-18 14:53:01 -0700
+Processing by ChaptersController#create as HTML
+  Parameters: {"goal"=>1, "title"=>"Gainnn", "chapter"=>{"goal"=>1, "title"=>"Gainnn"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["log_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["log_id", 1]]
+  Rendered text template (0.0ms)
+Filter chain halted as :authorize_creation! rendered or redirected
+Completed 403 Forbidden in 9ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:53:01 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (2.52ms)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/chapters" for ::1 at 2016-07-18 14:53:03 -0700
+Processing by ChaptersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC[0m  [["log_id", 1]]
+[active_model_serializers]   [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  [["chapter_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.61ms)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/chapters/1" for ::1 at 2016-07-18 14:53:04 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 1]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (1.51ms)
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/chapters/1" for ::1 at 2016-07-18 14:53:04 -0700
+Processing by ChaptersController#update as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "chapters" SET "completed_at" = ?, "updated_at" = ? WHERE "chapters"."id" = ?[0m  [["completed_at", "2016-07-18"], ["updated_at", "2016-07-18 21:53:04.838187"], ["id", 1]]
+  [1m[35m (9.0ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 1]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (2.68ms)
+Completed 200 OK in 20ms (Views: 3.2ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:53:04 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (2.15ms)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/chapters" for ::1 at 2016-07-18 14:53:11 -0700
+Processing by ChaptersController#create as HTML
+  Parameters: {"goal"=>-1, "title"=>"Gain", "chapter"=>{"goal"=>-1, "title"=>"Gain"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mChapter Load (0.2ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["log_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["log_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chapters" ("title", "goal", "log_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Gain"], ["goal", -1.0], ["log_id", 1], ["created_at", "2016-07-18 21:53:11.226743"], ["updated_at", "2016-07-18 21:53:11.226743"]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  [["chapter_id", 2]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (2.17ms)
+Completed 201 Created in 20ms (Views: 2.6ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/chapters/2" for ::1 at 2016-07-18 14:53:11 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 2]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (1.25ms)
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/chapters" for ::1 at 2016-07-18 14:53:16 -0700
+Processing by ChaptersController#create as HTML
+  Parameters: {"goal"=>1, "title"=>"gain", "chapter"=>{"goal"=>1, "title"=>"gain"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["log_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["log_id", 1]]
+  Rendered text template (0.0ms)
+Filter chain halted as :authorize_creation! rendered or redirected
+Completed 403 Forbidden in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:53:16 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (1.93ms)
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/chapters" for ::1 at 2016-07-18 14:53:18 -0700
+Processing by ChaptersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC[0m  [["log_id", 1]]
+[active_model_serializers]   [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  [["chapter_id", 2]]
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.45ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chapters/2" for ::1 at 2016-07-18 14:53:19 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  [["chapter_id", 2]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (1.06ms)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/chapters/2" for ::1 at 2016-07-18 14:53:19 -0700
+Processing by ChaptersController#update as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "chapters" SET "completed_at" = ?, "updated_at" = ? WHERE "chapters"."id" = ?  [["completed_at", "2016-07-18"], ["updated_at", "2016-07-18 21:53:19.964692"], ["id", 2]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  [["chapter_id", 2]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (2.02ms)
+Completed 200 OK in 17ms (Views: 2.5ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:53:19 -0700
+Processing by LogsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mChapter Load (0.1ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC[0m  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (1.8ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:53:23 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (2.14ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:53:25 -0700
+Processing by LogsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mChapter Load (0.1ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC[0m  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (1.97ms)
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+  [1m[36mChapter Load (0.2ms)[0m  [1mSELECT "chapters".* FROM "chapters"  ORDER BY "chapters"."completed_at" ASC[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "chapters" WHERE "chapters"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mChapter Load (0.8ms)[0m  [1mSELECT "chapters".* FROM "chapters"  ORDER BY "chapters"."completed_at" ASC[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "chapters" WHERE "chapters"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mChapter Load (0.3ms)[0m  [1mSELECT "chapters".* FROM "chapters"  ORDER BY "chapters"."completed_at" ASC[0m
+  [1m[35mChapter Load (0.3ms)[0m  SELECT "chapters".* FROM "chapters"  ORDER BY "chapters"."completed_at" ASC
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "chapters" WHERE "chapters"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs"  ORDER BY "logs"."id" ASC LIMIT 1
+  [1m[36mLog Load (0.7ms)[0m  [1mSELECT  "logs".* FROM "logs"  ORDER BY "logs"."id" ASC LIMIT 1[0m
+  [1m[35mChapter Load (0.5ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "chapters" WHERE "chapters"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mChapter Load (0.3ms)[0m  SELECT "chapters".* FROM "chapters"  ORDER BY "chapters"."completed_at" ASC
+  [1m[36mChapter Load (0.9ms)[0m  [1mSELECT  "chapters".* FROM "chapters"  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "chapters" WHERE "chapters"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mChapter Load (1.5ms)[0m  [1mSELECT "chapters".* FROM "chapters"  ORDER BY "chapters"."completed_at" ASC[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "chapters" WHERE "chapters"."id" = ?[0m  [["id", 1]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "chapters" WHERE "chapters"."id" = ?  [["id", 2]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/chapters" for ::1 at 2016-07-18 14:54:23 -0700
+Processing by ChaptersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:54:32 -0700
+Processing by LogsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mChapter Load (0.1ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC[0m  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (1.37ms)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/chapters" for ::1 at 2016-07-18 14:54:36 -0700
+Processing by ChaptersController#create as HTML
+  Parameters: {"goal"=>1, "title"=>"Gain Weight", "chapter"=>{"goal"=>1, "title"=>"Gain Weight"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["log_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chapters" ("title", "goal", "log_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Gain Weight"], ["goal", 1.0], ["log_id", 1], ["created_at", "2016-07-18 21:54:37.001089"], ["updated_at", "2016-07-18 21:54:37.001089"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  [["chapter_id", 3]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (2.23ms)
+Completed 201 Created in 18ms (Views: 2.9ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/chapters/3" for ::1 at 2016-07-18 14:54:37 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["id", 3]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 3]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (1.74ms)
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:54:42 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (1.67ms)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-18 14:54:44 -0700
+Processing by ApplicationController#angular as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application.html.erb within layouts/application (45.8ms)
+Completed 200 OK in 76ms (Views: 74.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/chapters" for ::1 at 2016-07-18 14:54:50 -0700
+Processing by ChaptersController#create as HTML
+  Parameters: {"goal"=>-1, "title"=>"Lose Weight", "chapter"=>{"goal"=>-1, "title"=>"Lose Weight"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["log_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["log_id", 1]]
+  Rendered text template (0.0ms)
+Filter chain halted as :authorize_creation! rendered or redirected
+Completed 403 Forbidden in 5ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:54:50 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (2.07ms)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/chapters" for ::1 at 2016-07-18 14:54:53 -0700
+Processing by ChaptersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC[0m  [["log_id", 1]]
+[active_model_serializers]   [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  [["chapter_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.46ms)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/chapters/3" for ::1 at 2016-07-18 14:54:53 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["id", 3]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 3]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (1.36ms)
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/chapters/3" for ::1 at 2016-07-18 14:54:54 -0700
+Processing by ChaptersController#update as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "chapters" SET "completed_at" = ?, "updated_at" = ? WHERE "chapters"."id" = ?[0m  [["completed_at", "2016-07-18"], ["updated_at", "2016-07-18 21:54:54.513766"], ["id", 3]]
+  [1m[35m (8.9ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 3]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (2.21ms)
+Completed 200 OK in 18ms (Views: 2.8ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:54:54 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (1.86ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/chapters" for ::1 at 2016-07-18 14:54:58 -0700
+Processing by ChaptersController#create as HTML
+  Parameters: {"goal"=>-1, "title"=>"Lose Weight", "chapter"=>{"goal"=>-1, "title"=>"Lose Weight"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mChapter Load (0.2ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["log_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["log_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chapters" ("title", "goal", "log_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Lose Weight"], ["goal", -1.0], ["log_id", 1], ["created_at", "2016-07-18 21:54:58.797896"], ["updated_at", "2016-07-18 21:54:58.797896"]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+[active_model_serializers]   [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  [["chapter_id", 4]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (1.87ms)
+Completed 201 Created in 19ms (Views: 2.4ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/chapters/4" for ::1 at 2016-07-18 14:54:58 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["id", 4]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 4]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (1.82ms)
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:55:01 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (1.85ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-07-18 14:55:03 -0700
+Processing by ApplicationController#angular as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-18 14:55:04 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.89ms)
+Completed 201 Created in 13ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:55:04 -0700
+Processing by LogsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36mChapter Load (0.1ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC[0m  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (1.63ms)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/chapters" for ::1 at 2016-07-18 14:55:07 -0700
+Processing by ChaptersController#create as HTML
+  Parameters: {"goal"=>1, "title"=>"gain", "chapter"=>{"goal"=>1, "title"=>"gain"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["log_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["log_id", 1]]
+  Rendered text template (0.0ms)
+Filter chain halted as :authorize_creation! rendered or redirected
+Completed 403 Forbidden in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/log" for ::1 at 2016-07-18 14:55:07 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (1.96ms)
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.3ms)
