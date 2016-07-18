@@ -1,7 +1,7 @@
 class ChaptersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_and_authorize_chapter!, only: [:show, :update]
-
+  before_action :authorize_creation!, only: [:create]
   def index
     render json: user_log.chapters, status: 200
   end
@@ -31,5 +31,9 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.find(params[:id])
     authorize @chapter
   end
+
+  def authorize_creation!
+  render nothing: true, status: 403 if user_log.has_chapter_in_progress?
+end
 
 end

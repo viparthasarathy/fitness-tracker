@@ -3,12 +3,12 @@ class Log < ActiveRecord::Base
   has_many :chapters
   validates :user, presence: true
 
-  def previous_chapter
-    chapters.second
+  def latest_chapter
+    chapters.first
   end
 
-  def previous_chapter_in_progress?
-    previous_chapter && !previous_chapter.completed_at
+  def has_chapter_in_progress?
+    latest_chapter && !latest_chapter.completed_at
   end
 
 end
