@@ -25,6 +25,10 @@ describe :Food, :type => :model do
     it 'responds to fats' do
       expect(@food).to respond_to(:fats)
     end
+
+    it 'responds to name' do
+      expect(@food).to respond_to(:name)
+    end
   end
 
   context 'associations' do
@@ -34,7 +38,15 @@ describe :Food, :type => :model do
   end
 
   context 'validations' do
-    it 'requires the presence of an entry'
+    it 'requires the presence of an entry' do
+      @food.entry = nil
+      expect(@food).to have(1).error_on(:entry)
+    end
+
+    it 'requires a name' do
+      @food.name = nil
+      expect(@food).to have(1).error_on(:name)
+    end
 
     it 'requires the presence of calories' do
       @food.calories = nil

@@ -5,5 +5,6 @@ FactoryGirl.define do
     carbs 1
     fats 1
     association :entry, :factory => :entry
+    name "Pizza"
   end
 end
