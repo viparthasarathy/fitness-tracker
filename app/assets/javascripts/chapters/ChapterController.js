@@ -28,6 +28,10 @@ function ChapterController(chapterJSON, $state, chapterService, entryService) {
     });
   }
 
+  ChapterCtrl.setServerErrorFalse = function() {
+    ChapterCtrl.newEntryForm.day.$error.server = false;
+  }
+
 }
 
 angular

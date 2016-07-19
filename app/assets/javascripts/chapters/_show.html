@@ -36,7 +36,7 @@
 <form name="ChapterCtrl.newEntryForm" ng-submit="ChapterCtrl.createEntry()">
   <div class="input-group">
     <label for="day">Day</label>
-    <input type="date" id="day" required="required" name="day" ng-model="ChapterCtrl.newEntry.day">
+    <input type="date" id="day" required="required" name="day" ng-model="ChapterCtrl.newEntry.day" ng-change="ChapterCtrl.setServerErrorFalse()">
     <div ng-messages="ChapterCtrl.newEntryForm.day.$error" ng-if="ChapterCtrl.newEntryForm.day.$touched">
       <div ng-message="required">Day is required.</div>
       <div ng-message="date">Your date is not valid.</div>
