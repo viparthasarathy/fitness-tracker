@@ -19,6 +19,12 @@ function ChapterController(chapterJSON, $state, chapterService, entryService) {
       chapter_id: ChapterCtrl.chapter.id,
       notes: ChapterCtrl.newEntry.notes,
       day: ChapterCtrl.newEntry.day
+    }).then(function(response) {
+      console.log(response);
+    }, function(error) {
+      console.log(error)
+      ChapterCtrl.newEntryForm.day.$error.server = true;
+      ChapterCtrl.serverChapterError = "Day " + error.data.day[0] + ".";
     });
   }
 
