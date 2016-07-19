@@ -53,6 +53,7 @@ describe ChaptersController, :type => :controller do
     before do
       @chapter = FactoryGirl.create(:chapter, log: @user.log)
       @entry = FactoryGirl.create(:entry, chapter: @chapter)
+      @food = FactoryGirl.create(:food, entry: @entry)
     end
 
     context 'logged in' do

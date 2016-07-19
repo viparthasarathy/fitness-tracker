@@ -95,8 +95,8 @@ describe EntriesController, :type => :controller do
         it 'contains information regarding its foods' do
           expect(@entry_response).to have_key(:foods)
         end
-        it 'contains information regarding its measurements' do
-          expect(@entry_response).to have_key(:measurements)
+        it 'contains information regarding its measurement' do
+          expect(@entry_response).to have_key(:measurement)
         end
       end
 

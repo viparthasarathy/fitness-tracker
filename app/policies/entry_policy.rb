@@ -4,4 +4,8 @@ class EntryPolicy < ApplicationPolicy
     record.chapter.log == user.log
   end
 
+  def show?
+    user.log == record.chapter.log
+  end
+
 end

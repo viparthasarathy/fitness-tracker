@@ -38914,3 +38914,25 @@ AbstractController::ActionNotFound - The action 'show' could not be found for En
   /Users/viparthasarathy/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
   /Users/viparthasarathy/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
 
+
+
+Started GET "/entries/4" for ::1 at 2016-07-19 15:48:32 -0700
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+[active_model_serializers]   [1m[36mMeasurement Load (0.1ms)[0m  [1mSELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1[0m  [["entry_id", 4]]
+[active_model_serializers] Rendered EntrySerializer with ActiveModelSerializers::Adapter::Attributes (17.04ms)
+Completed 200 OK in 63ms (Views: 18.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-19 15:48:34 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-19 15:48:34 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-19 15:48:34 -0700

@@ -7,6 +7,12 @@ class EntriesController < ApplicationController
     @entry.save ? (render json: @entry, status: 201) : (render json: @entry.errors, status: 400)
   end
 
+  def show
+    @entry = Entry.find(params[:id])
+    authorize @entry
+    render json: @entry, status: 200
+  end
+
   private
 
   def entry_params
