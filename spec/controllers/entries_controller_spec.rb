@@ -66,6 +66,8 @@ describe EntriesController, :type => :controller do
       context 'as owner' do
         before do
           sign_in @user
+          get :show, {:format => :json, :id => @entry.id}
+          @entry_response = JSON.parse(response.body, symbolize_names: true)
         end
 
         it 'is a success' do
@@ -74,22 +76,27 @@ describe EntriesController, :type => :controller do
         end
 
         it 'returns the entry' do
-          get :show, {:format => :json, :id => @entry.id}
-          entry_response = JSON.parse(response.body, symbolize_names: true)
-          expect(entry_response[:id]).to eq(@entry.id)
+          expect(@entry_response[:id]).to eq(@entry.id)
         end
 
-        it 'contains information regarding the entry totals' do
-          get :show, {:format => :json, :id => @entry.id}
-          entry_response = JSON.parse(response.body, symbolize_names: true)
+        it 'contains information regarding the entries total calories' do
+          expect(@entry_response[:total_calories]).to eq(@entry.total_calories)
         end
+        it 'contains information regarding the entries total fats' do
+          expect(@entry_response[:total_fats]).to eq(@entry.total_fats)
+        end
+        it 'contains information regarding the entries total carbs' do
+          expect(@entry_response[:total_carbs]).to eq(@entry.total_carbs)
+        end
+        it 'contains information regarding the entries total protein' do
+          expect(@entry_response[:total_protein]).to eq(@entry.total_protein)
+        end
+
         it 'contains information regarding its foods' do
-          get :show, {:format => :json, :id => @entry.id}
-          entry_response = JSON.parse(response.body, symbolize_names: true)
+          expect(@entry_response).to have_key(:foods)
         end
         it 'contains information regarding its measurements' do
-          get :show, {:format => :json, :id => @entry.id}
-          entry_response = JSON.parse(response.body, symbolize_names: true)
+          expect(@entry_response).to have_key(:measurements)
         end
       end
 
