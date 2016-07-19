@@ -38724,3 +38724,193 @@ AbstractController::ActionNotFound - The action 'show' could not be found for En
   /Users/viparthasarathy/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
   /Users/viparthasarathy/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
 
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-19 15:01:09 -0700
+
+
+Started GET "/" for ::1 at 2016-07-19 15:01:12 -0700
+Processing by ApplicationController#angular as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application.html.erb within layouts/application (49.7ms)
+Completed 200 OK in 86ms (Views: 76.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/app.self-981fd848c6c46f775c2e744e6d1a581ce2601719afa06e7bd058656372d497e5.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/angular-messages/angular-messages.self-610bd021345e5d730e9058e90ee044ea5dfc661c60d341488064a65acb8a83c7.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/auth/ApplicationController.self-f49ef3e335765d1109295d947cd3de3bd8736e04aacc0be9550f2b09d4b3e974.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-0b6bd250c5e1be4eb055eb98d2fcc6b09dfd93d5f084009989fdd054002d32cb.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/auth/_signin.self-4e31036af7574a6661ad261661236285c5823774ad366971c06a2415c1df9b65.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/auth/_signup.self-d3116d03ed3dad3211f89e1368ac590a3d7506856ee46bb99c17b9003bff1aba.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/chapters/ChaptersController.self-6929e6ed446a8fe6a90e548d0b38e5f958fdf13197b8491de0b2611e273954ad.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/chapters/ChaptersIndexController.self-82a6b70177a64df8c6cc4f7ed1078128ec4ebbccb12941bf7c1522f988b74e2f.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/chapters/NewChapterController.self-273d451e4c585d99bbefcf8a47432e7ef98e4fbdd521ae6540c35dcde5c2878d.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/chapters/_chapters.self-e93a49d96d426f50a0a5096e0c92cec3999527face907485b0a82fca7359acca.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/chapters/ChapterController.self-d192c512f3e63ffe7354426dcc7168cfa12594442bcb48370eb3c6fd98a8fde0.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/chapters/_index.self-6e71380a83a02a064a6696d556e4d5054b1550c974f3500d54bb19f3a3076b2e.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/chapters/_new.self-1489bc4882dde64d3471ba1bd39bf5f24ae9b46c0a16e60f5341fbb6a47c96d2.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/chapters/_show.self-ee4718858cb9e34776e7ac081520827d307d28665d4117d1b2db1e396bc46928.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/chapters/chapterService.self-aa15426b30f4b1dea691249c7c7abb917ac18dbe4176c9048964a7a0179b977a.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/entries/EntryController.self-bd1e731dd27000d15836913ab6e4b021339472bd74c2f8082310e0d82ec98539.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/entries/_entry.self-4e271d32f05a06ddb1dd4234c098f41e778a61308f0c5d032fe1cd61dc098ee7.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/entries/entryService.self-fdebd83b3cb8cba7515f05e8c06e022aaa48df16ddcfba03db7a64f372755694.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/log/LogController.self-217f396b6c29ad9cb18768b9a9732a4aaafb7274b7e8e1aff0d7b50d75779edd.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/log/_log.self-9dd3728f705ab0078ee71299846a95e8cd05dc5dc4d4b4ffc0ae8e2e13b029e1.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/log/logService.self-f02899ea58c99b064d484ae419487131371de84285bf2c9e4e3afe41aa59c62d.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/nav/_nav.self-d5ca55f6c191b9b0a7fee5ddedb5149c081a417146875a22a838e78f0c375c1e.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.css.map" for ::1 at 2016-07-19 15:01:13 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-19 15:01:13 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (1.48ms)
+Completed 201 Created in 20ms (Views: 7.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/chapters/11" for ::1 at 2016-07-19 15:01:13 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.4ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["id", 11]]
+  [1m[36mLog Load (0.2ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.2ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36m (0.2ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 11]]
+[active_model_serializers]   [1m[36m (0.2ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35m (0.2ms)[0m  SELECT SUM("foods"."protein") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 11]]
+[active_model_serializers]   [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35mMeasurement Load (0.2ms)[0m  SELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1  [["entry_id", 4]]
+[active_model_serializers]   [1m[36mMeasurement Load (0.1ms)[0m  [1mSELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1[0m  [["entry_id", 5]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (54.27ms)
+Completed 200 OK in 100ms (Views: 54.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/entries/4" for ::1 at 2016-07-19 15:01:14 -0700
+
+AbstractController::ActionNotFound - The action 'show' could not be found for EntriesController:
+  actionpack (4.2.6) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/viparthasarathy/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/viparthasarathy/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/viparthasarathy/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+

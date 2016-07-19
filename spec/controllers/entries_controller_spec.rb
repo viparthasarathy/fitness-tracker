@@ -68,11 +68,29 @@ describe EntriesController, :type => :controller do
           sign_in @user
         end
 
-        it 'is a success'
-        it 'returns the entry'
-        it 'contains information regarding the entry totals'
-        it 'contains information regarding its foods'
-        it 'contains information regarding its measurements'
+        it 'is a success' do
+          get :show, {:format => :json, :id => @entry.id}
+          expect(response.status).to eq(200)
+        end
+
+        it 'returns the entry' do
+          get :show, {:format => :json, :id => @entry.id}
+          entry_response = JSON.parse(response.body, symbolize_names: true)
+          expect(entry_response[:id]).to eq(@entry.id)
+        end
+
+        it 'contains information regarding the entry totals' do
+          get :show, {:format => :json, :id => @entry.id}
+          entry_response = JSON.parse(response.body, symbolize_names: true)
+        end
+        it 'contains information regarding its foods' do
+          get :show, {:format => :json, :id => @entry.id}
+          entry_response = JSON.parse(response.body, symbolize_names: true)
+        end
+        it 'contains information regarding its measurements' do
+          get :show, {:format => :json, :id => @entry.id}
+          entry_response = JSON.parse(response.body, symbolize_names: true)
+        end
       end
 
       context 'as other user' do

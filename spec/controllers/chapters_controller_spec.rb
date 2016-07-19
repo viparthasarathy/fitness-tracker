@@ -60,6 +60,8 @@ describe ChaptersController, :type => :controller do
       context 'as owner' do
         before do
           sign_in @user
+          get :show, {:format => :json, :id => @chapter.id}
+          @chapter_response = JSON.parse(response.body, symbolize_names: true)
         end
 
         it 'is successful' do
@@ -68,47 +70,32 @@ describe ChaptersController, :type => :controller do
         end
 
         it 'returns the chapter' do
-          get :show, {:format => :json, :id => @chapter.id}
-          chapter_response = JSON.parse(response.body, symbolize_names: true)
-          expect(chapter_response[:id]).to eq(@chapter.id)
+          expect(@chapter_response[:id]).to eq(@chapter.id)
         end
 
         it 'contains references to the chapter entries' do
-          get :show, {:format => :json, :id => @chapter.id}
-          chapter_response = JSON.parse(response.body, symbolize_names: true)
-          expect(chapter_response[:entries][0][:id]).to eq(@entry.id)
-          expect(Date.parse(chapter_response[:entries][0][:day])).to eq(@entry.day)
+          expect(@chapter_response[:entries][0][:id]).to eq(@entry.id)
+          expect(Date.parse(@chapter_response[:entries][0][:day])).to eq(@entry.day)
         end
 
         it 'contains information regarding its measurements' do
-          get :show, {:format => :json, :id => @chapter.id}
-          chapter_response = JSON.parse(response.body, symbolize_names: true)
-          expect(chapter_response[:entries][0]).to have_key(:measurement)
+          expect(@chapter_response[:entries][0]).to have_key(:measurement)
         end
 
         it 'contains information regarding its total calories' do
-          get :show, {:format => :json, :id => @chapter.id}
-          chapter_response = JSON.parse(response.body, symbolize_names: true)
-          expect(chapter_response[:total_calories]).to eq(@chapter.total_calories)
+          expect(@chapter_response[:total_calories]).to eq(@chapter.total_calories)
         end
 
         it 'contains information regarding its total fats' do
-          get :show, {:format => :json, :id => @chapter.id}
-          chapter_response = JSON.parse(response.body, symbolize_names: true)
-          expect(chapter_response[:total_fats]).to eq(@chapter.total_fats)
+          expect(@chapter_response[:total_fats]).to eq(@chapter.total_fats)
         end
 
         it 'contains information regarding its total carbs' do
-          get :show, {:format => :json, :id => @chapter.id}
-          chapter_response = JSON.parse(response.body, symbolize_names: true)
-          expect(chapter_response[:total_carbs]).to eq(@chapter.total_carbs)
-          expect(chapter_response[:total_protein]).to eq(@chapter.total_protein)
+          expect(@chapter_response[:total_carbs]).to eq(@chapter.total_carbs)
         end
 
         it 'contains information regarding its total protein' do
-          get :show, {:format => :json, :id => @chapter.id}
-          chapter_response = JSON.parse(response.body, symbolize_names: true)
-          expect(chapter_response[:total_protein]).to eq(@chapter.total_protein)
+          expect(@chapter_response[:total_protein]).to eq(@chapter.total_protein)
         end
       end
 
