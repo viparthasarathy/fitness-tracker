@@ -1,1 +1,28 @@
-<h1>Hello World -- Entry Show </h1>
+<h1>Entry for {{EntryCtrl.entry.day}} </h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Calories</th>
+      <th>Protein</th>
+      <th>Carbs</th>
+      <th>Fat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Total</th>
+      <td>{{EntryCtrl.entry.total_calories}}</td>
+      <td>{{EntryCtrl.entry.total_protein}}</td>
+      <td>{{EntryCtrl.entry.total_carbs}}</td>
+      <td>{{EntryCtrl.entry.total_fats}}</td>
+    </tr>
+      <tr ng-repeat="food in EntryCtrl.entry.foods">
+        <th scope="row">{{food.name}}</th>
+        <td>{{food.calories}}</td>
+        <td>{{food.protein}}</td>
+        <td>{{food.carbs}}</td>
+        <td>{{food.fats}}</td>
+      </tr>
+  </tbody>
