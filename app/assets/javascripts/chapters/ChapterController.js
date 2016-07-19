@@ -20,7 +20,7 @@ function ChapterController(chapterJSON, $state, chapterService, entryService) {
       notes: ChapterCtrl.newEntry.notes,
       day: ChapterCtrl.newEntry.day
     }).then(function(response) {
-      console.log(response);
+      ChapterCtrl.chapter.entries.unshift(response.data)
     }, function(error) {
       console.log(error)
       ChapterCtrl.newEntryForm.day.$error.server = true;
