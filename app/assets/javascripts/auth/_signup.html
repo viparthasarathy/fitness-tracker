@@ -7,7 +7,7 @@
 <form name="signUpForm" ng-submit="register()">
   <div class="input-group">
     <label for="email">Email</label>
-    <input id="email" required="required" name="email" type="email" class="form-control" ng-model="user.email">
+    <input id="email" required="required" name="email" type="email" class="form-control" ng-model="user.email" ng-change="signUpForm.email.$error.server = false">
   </div>
   <div ng-messages="signUpForm.email.$error" ng-if="signUpForm.email.$touched">
     <div ng-message="required">Please enter an email.</div>
@@ -19,7 +19,7 @@
 
   <div class="input-group">
     <label for="password">Password</label>
-    <input id="password" required="required" minlength="5" maxlength="128" name="password" type="password" class="form-control" ng-model="user.password">
+    <input id="password" required="required" minlength="5" maxlength="128" name="password" type="password" class="form-control" ng-model="user.password"　ng-change="signUpForm.password.$error.server = false">
     <div ng-messages="signUpForm.password.$error" ng-if="signUpForm.password.$touched">
       <div ng-message="required">Please enter a password.</div>
       <div ng-message="minlength">Your password must be at least five characters.</div>

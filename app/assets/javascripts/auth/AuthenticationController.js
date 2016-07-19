@@ -22,7 +22,6 @@ function AuthenticationController($scope, $state, Auth) {
           $scope.serverPasswordError = "Password " + error.data.errors.email[0] + "."
         }
       }
-      $scope.signUpForm.email.$error.server = true;
     })
   }
 }

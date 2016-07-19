@@ -38051,3 +38051,211 @@ Processing by Devise::RegistrationsController#create as JSON
   [1m[35m (0.2ms)[0m  rollback transaction
 [active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
 Completed 422 Unprocessable Entity in 85ms (Views: 2.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-07-19 13:58:14 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (1526.9ms)
+Completed 200 OK in 1581ms (Views: 1568.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-19 13:58:16 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (73.0ms)
+Completed 200 OK in 99ms (Views: 97.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/auth/_signin.self-4e31036af7574a6661ad261661236285c5823774ad366971c06a2415c1df9b65.js?body=1" for ::1 at 2016-07-19 13:58:16 -0700
+
+
+Started GET "/assets/auth/_signup.self-d3116d03ed3dad3211f89e1368ac590a3d7506856ee46bb99c17b9003bff1aba.js?body=1" for ::1 at 2016-07-19 13:58:16 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-19 13:58:17 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 21ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-19 13:58:23 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}}}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "example@example.com"]]
+Completed 401 Unauthorized in 113ms (ActiveRecord: 1.2ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-19 13:58:28 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "example@example.com"]]
+Completed 401 Unauthorized in 76ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-19 13:58:30 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "example@example.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-07-19 03:33:17.039157"], ["current_sign_in_at", "2016-07-19 20:58:30.767234"], ["sign_in_count", 3], ["updated_at", "2016-07-19 20:58:30.768071"], ["id", 1]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.37ms)
+Completed 201 Created in 133ms (Views: 16.2ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/log" for ::1 at 2016-07-19 13:58:30 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.7ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.7ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (26.08ms)
+Completed 200 OK in 86ms (Views: 44.0ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/users/sign_out.json" for ::1 at 2016-07-19 13:58:32 -0700
+Processing by SessionsController#destroy as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 204 No Content in 13ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-19 13:58:32 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users.json" for ::1 at 2016-07-19 13:58:40 -0700
+Processing by Devise::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]", "time_zone"=>"Pacific Time (US & Canada)"}, "registration"=>{"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]", "time_zone"=>"Pacific Time (US & Canada)"}}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'example@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 92ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users.json" for ::1 at 2016-07-19 13:58:53 -0700
+Processing by Devise::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"vidul@yahoo.com", "password"=>"[FILTERED]", "time_zone"=>"Pacific Time (US & Canada)"}, "registration"=>{"user"=>{"email"=>"vidul@yahoo.com", "password"=>"[FILTERED]", "time_zone"=>"Pacific Time (US & Canada)"}}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'vidul@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "time_zone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "vidul@yahoo.com"], ["encrypted_password", "$2a$10$4Ovf/cUmxgxBuLn2NKrr3uiRr20Jfo7sEG.YFuKy0rskznCCueB4y"], ["time_zone", "Pacific Time (US & Canada)"], ["created_at", "2016-07-19 20:58:53.219322"], ["updated_at", "2016-07-19 20:58:53.219322"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "logs" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)  [["user_id", 2], ["created_at", "2016-07-19 20:58:53.222016"], ["updated_at", "2016-07-19 20:58:53.222016"]]
+  [1m[36mLog Load (0.0ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-07-19 20:58:53.225004"], ["current_sign_in_at", "2016-07-19 20:58:53.225004"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2016-07-19 20:58:53.225683"], ["id", 2]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.28ms)
+Completed 201 Created in 95ms (Views: 0.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/log" for ::1 at 2016-07-19 13:58:53 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 2]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (1.63ms)
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out.json" for ::1 at 2016-07-19 13:58:56 -0700
+Processing by SessionsController#destroy as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 204 No Content in 3ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-19 13:58:56 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users.json" for ::1 at 2016-07-19 13:59:16 -0700
+Processing by Devise::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]", "time_zone"=>"Eastern Time (US & Canada)"}, "registration"=>{"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]", "time_zone"=>"Eastern Time (US & Canada)"}}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'example@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 422 Unprocessable Entity in 80ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users.json" for ::1 at 2016-07-19 13:59:25 -0700
+Processing by Devise::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"vidul@yahoo.com", "password"=>"[FILTERED]", "time_zone"=>"Eastern Time (US & Canada)"}, "registration"=>{"user"=>{"email"=>"vidul@yahoo.com", "password"=>"[FILTERED]", "time_zone"=>"Eastern Time (US & Canada)"}}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'vidul@yahoo.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 77ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users.json" for ::1 at 2016-07-19 13:59:30 -0700
+Processing by Devise::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"eredy@yahoo.com", "password"=>"[FILTERED]", "time_zone"=>"Eastern Time (US & Canada)"}, "registration"=>{"user"=>{"email"=>"eredy@yahoo.com", "password"=>"[FILTERED]", "time_zone"=>"Eastern Time (US & Canada)"}}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'eredy@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "time_zone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "eredy@yahoo.com"], ["encrypted_password", "$2a$10$zWD5EPFcOAiKxyZouJcR8ek8cM8CPwMS8du5xF/C3uXwwNQtDJ4J."], ["time_zone", "Eastern Time (US & Canada)"], ["created_at", "2016-07-19 20:59:30.170817"], ["updated_at", "2016-07-19 20:59:30.170817"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "logs" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 3], ["created_at", "2016-07-19 20:59:30.172527"], ["updated_at", "2016-07-19 20:59:30.172527"]]
+  [1m[35mLog Load (0.0ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 3]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-07-19 20:59:30.183440"], ["current_sign_in_at", "2016-07-19 20:59:30.183440"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2016-07-19 20:59:30.184421"], ["id", 3]]
+  [1m[35m (0.7ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.3ms)
+Completed 201 Created in 101ms (Views: 0.9ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/log" for ::1 at 2016-07-19 13:59:30 -0700
+Processing by LogsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 3]]
+[active_model_serializers]   [1m[36mChapter Load (0.2ms)[0m  [1mSELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC[0m  [["log_id", 3]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (1.94ms)
+Completed 200 OK in 9ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out.json" for ::1 at 2016-07-19 13:59:31 -0700
+Processing by SessionsController#destroy as JSON
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 204 No Content in 3ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-19 13:59:31 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-19 13:59:37 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "example@example.com"]]
+Completed 401 Unauthorized in 79ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-19 13:59:39 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "example@example.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-07-19 20:58:30.767234"], ["current_sign_in_at", "2016-07-19 20:59:39.358855"], ["sign_in_count", 4], ["updated_at", "2016-07-19 20:59:39.359499"], ["id", 1]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.33ms)
+Completed 201 Created in 98ms (Views: 0.8ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/log" for ::1 at 2016-07-19 13:59:39 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.1ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (2.47ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.3ms)
