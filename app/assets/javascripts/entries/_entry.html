@@ -13,13 +13,13 @@
   <tbody>
     <tr>
       <th scope="row">Total</th>
-      <td>{{EntryCtrl.entry.total_calories}}</td>
-      <td>{{EntryCtrl.entry.total_protein}}</td>
-      <td>{{EntryCtrl.entry.total_carbs}}</td>
-      <td>{{EntryCtrl.entry.total_fats}}</td>
+      <th>{{EntryCtrl.entry.total_calories}}</td>
+      <th>{{EntryCtrl.entry.total_protein}}</td>
+      <th>{{EntryCtrl.entry.total_carbs}}</td>
+      <th>{{EntryCtrl.entry.total_fats}}</td>
     </tr>
       <tr ng-repeat="food in EntryCtrl.entry.foods">
-        <th scope="row">{{food.name}}</th>
+        <td>{{food.name}}</th>
         <td>{{food.calories}}</td>
         <td>{{food.protein}}</td>
         <td>{{food.carbs}}</td>
