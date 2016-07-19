@@ -67,6 +67,12 @@ describe EntriesController, :type => :controller do
         before do
           sign_in @user
         end
+
+        it 'is a success'
+        it 'returns the entry'
+        it 'contains information regarding the entry totals'
+        it 'contains information regarding its foods'
+        it 'contains information regarding its measurements'
       end
 
       context 'as other user' do
