@@ -14,7 +14,7 @@ class ChaptersController < ApplicationController
   end
 
   def show
-    render json: @chapter, status: 200
+    render json: @chapter, include: '*.*', status: 200
   end
 
   def update

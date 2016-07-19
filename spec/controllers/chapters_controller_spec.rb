@@ -53,6 +53,7 @@ describe ChaptersController, :type => :controller do
     before do
       @chapter = FactoryGirl.create(:chapter, log: @user.log)
       @entry = FactoryGirl.create(:entry, chapter: @chapter)
+      @measurement = FactoryGirl.create(:measurement, entry: @entry)
     end
 
     context 'logged in' do
@@ -82,7 +83,7 @@ describe ChaptersController, :type => :controller do
         it 'contains information regarding its measurements' do
           get :show, {:format => :json, :id => @chapter.id}
           chapter_response = JSON.parse(response.body, symbolize_names: true)
-          expect(chapter_response[:measurements]).to be_an(Array)
+          expect(chapter_response[:entries][0]).to have_key(:measurement)
         end
 
         it 'contains information regarding its total calories' do
