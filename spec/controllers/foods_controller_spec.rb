@@ -78,7 +78,7 @@ describe FoodsController, :type => :controller do
           put :update, {:format => :json, :id => @food.id, :food => @food_params}
           expect(response.status).to eq(400)
           error_response = JSON.parse(response.body, symbolize_names: true)
-          expect(error_response[:protein][0]).to eq("cannot be blank")
+          expect(error_response[:protein][0]).to eq("can't be blank")
         end
 
         it 'succeeds with valid data' do
@@ -89,6 +89,7 @@ describe FoodsController, :type => :controller do
         it 'updates the value' do
           expect(@food.name).to eq("Pizza")
           put :update, {:format => :json, :id => @food.id, :food => @food_params}
+          @food.reload
           expect(@food.name).to eq("Burger")
         end
 
