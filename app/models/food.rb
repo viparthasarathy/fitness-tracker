@@ -1,4 +1,5 @@
 class Food < ActiveRecord::Base
   belongs_to :entry
-  validates :name, :calories, :fats, :carbs, :protein, :entry, presence: true
+  validates :entry, :name, presence: true
+  validates :calories, :fats, :carbs, :protein, numericality: { only_integer: true}
 end

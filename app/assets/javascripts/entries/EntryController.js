@@ -10,8 +10,6 @@ function EntryController(EntryJSON, foodService) {
         EntryCtrl.foodForm.$setPristine();
         EntryCtrl.foodForm.$setUntouched();
         EntryCtrl.food = {}
-      }, function(error) {
-        console.log(error);
       });
   }
 }

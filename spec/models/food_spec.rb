@@ -67,6 +67,34 @@ describe :Food, :type => :model do
       @food.fats = nil
       expect(@food).to have(1).error_on(:fats)
     end
+
+    it 'requires calories to be an integer' do
+      @food.calories = 10.50
+      expect(@food).to have(1).error_on(:calories)
+      @food.calories = "wow"
+      expect(@food).to have(1).error_on(:calories)
+    end
+
+    it 'requires protein to be an integer' do
+      @food.protein = 10.50
+      expect(@food).to have(1).error_on(:protein)
+      @food.protein = "wow"
+      expect(@food).to have(1).error_on(:protein)
+    end
+
+    it 'requires carbs to be an integer' do
+      @food.carbs = 10.50
+      expect(@food).to have(1).error_on(:carbs)
+      @food.carbs = "wow"
+      expect(@food).to have(1).error_on(:carbs)
+    end
+
+    it 'requires fats to be an integer' do
+      @food.fats = 10.50
+      expect(@food).to have(1).error_on(:fats)
+      @food.fats = "wow"
+      expect(@food).to have(1).error_on(:fats)
+    end
   end
 
   context 'totals' do
