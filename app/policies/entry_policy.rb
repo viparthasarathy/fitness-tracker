@@ -5,7 +5,7 @@ class EntryPolicy < ApplicationPolicy
   end
 
   def show?
-    user.log == record.chapter.log
+    record.chapter.log == user.log 
   end
 
 end

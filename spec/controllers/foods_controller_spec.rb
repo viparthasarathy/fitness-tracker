@@ -2,39 +2,53 @@ require 'rails_helper'
 
 describe FoodsController, :type => :controller do
   before do
-    @entry = Entry.create(:entry)
-    @user = @entry.user
+    @user = FactoryGirl.create(:user)
+    @chapter = FactoryGirl.create(:chapter, log: @user.log)
+    @entry = FactoryGirl.create(:entry, chapter: @chapter)
     @other_user = FactoryGirl.create(:user, email: "hacker@yahoo.com")
   end
 
   describe 'POST #create' do
     before do
-      @food_params = {name: "Burger", protein: 30, carbs: 30, fat: 20, calories: 600}
+      @food_params = {entry_id: @entry.id, name: "Burger", protein: 30, carbs: 30, fats: 20, calories: 600}
     end
 
     context 'logged in' do
-      before do
-        sign_in @user
+      context 'as owner' do
+        before do
+          sign_in @user
+        end
+
+        it 'should return an error for invalid data' do
+          @food_params[:name] = ""
+          post :create, {:format => :json, :food => @food_params}
+          expect(response.status).to eq(400)
+          error_response = JSON.parse(response.body, symbolize_names: true)
+          expect(error_response[:name][0]).to eq("can't be blank")
+        end
+
+        it 'suceeeds with valid data' do
+          post :create, {:format => :json, :food => @food_params}
+          expect(response.status).to eq(201)
+          expect(@entry.foods.count).to eq(1)
+        end
+
+        it 'should save the return the food info on success' do
+          post :create, {:format => :json, :food => @food_params}
+          food_response = JSON.parse(response.body, symbolize_names: true)
+          expect(food_response[:name]).to eq("Burger")
+        end
       end
 
-      it 'should return an error for invalid data' do
-        @food_params[:name] = ""
-        post :create, {:format => :json, :food => @food_params}
-        expect(response.status).to eq(400)
-        error_response = JSON.parse(response.body, symbolize_names: true)
-        expect(error_response[:name][0]).to eq("cannot be blank")
-      end
+      context 'as other user' do
+        before do
+          sign_in @other_user
+        end
 
-      it 'suceeeds with valid data' do
-        post :create, {:format => :json, :food => @food_params}
-        expect(response.status).to eq(201)
-        expect(@entry.foods.count).to eq(1)
-      end
-
-      it 'should save the return the food info on success' do
-        post :create, {:format => :json, :food => @food_params}
-        food_response = JSON.parse(response.body, symbolize_names: true)
-        expect(food_response[:name]).to eq("Burger")
+        it 'should raise an authorization error' do
+          post :create, {:format => :json, :food => @food_params}
+          expect(response.status).to eq(403)
+        end
       end
     end
 
@@ -50,6 +64,7 @@ describe FoodsController, :type => :controller do
   describe 'PUT #update' do
     before do
       @food = FactoryGirl.create(:food, entry: @entry)
+      @food_params = {entry_id: @entry.id, name: "Burger", protein: 30, carbs: 30, fats: 20, calories: 600}
     end
 
     context 'logged in' do
@@ -141,7 +156,6 @@ describe FoodsController, :type => :controller do
         delete :destroy, {:format => :json, :id => @food.id}
         expect(response.status).to eq(401)
       end
-
     end
   end
 end
