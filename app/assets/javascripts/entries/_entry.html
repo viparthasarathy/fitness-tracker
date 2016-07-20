@@ -54,6 +54,8 @@
       <th>Protein</th>
       <th>Carbs</th>
       <th>Fat</th>
+      <th>Delete</th>
+      <th>Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -63,6 +65,8 @@
       <th>{{EntryCtrl.totalProtein}}</td>
       <th>{{EntryCtrl.totalCarbs}}</td>
       <th>{{EntryCtrl.totalFats}}</td>
+      <th>N/A</th>
+      <th>N/A</th>
     </tr>
       <tr ng-repeat="food in EntryCtrl.entry.foods">
         <td>{{food.name}}</th>
@@ -70,5 +74,6 @@
         <td>{{food.protein}}</td>
         <td>{{food.carbs}}</td>
         <td>{{food.fats}}</td>
+        <td><a href="" ng-click="EntryCtrl.deleteFood(food, $index)">Delete</a></td>
       </tr>
   </tbody>

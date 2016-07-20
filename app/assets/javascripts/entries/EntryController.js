@@ -22,6 +22,14 @@ function EntryController(EntryJSON, foodService, $scope) {
         EntryCtrl.calculateTotals();
       });
   }
+
+  EntryCtrl.deleteFood = function(food, index) {
+    foodService.deleteFood(food.id)
+      .then(function(response) {
+        EntryCtrl.entry.foods.splice(index, 1);
+        EntryCtrl.calculateTotals();
+      });
+  }
 }
 
 angular
