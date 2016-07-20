@@ -14,7 +14,7 @@ class ChaptersController < ApplicationController
   end
 
   def show
-    render json: @chapter, include: ['entries', 'entries.measurement'], status: 200
+    render json: @chapter, include: ['entries', 'entries.measurement', 'entries.foods'], status: 200
   end
 
   def update

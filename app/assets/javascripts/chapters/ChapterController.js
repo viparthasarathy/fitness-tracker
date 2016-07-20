@@ -1,6 +1,7 @@
 function ChapterController(chapterJSON, $state, chapterService, entryService) {
   var ChapterCtrl = this;
   ChapterCtrl.chapter = chapterJSON.data;
+  console.log(ChapterCtrl.chapter);
 
   ChapterCtrl.chapter.created_at = new Date(ChapterCtrl.chapter.created_at);
   if (ChapterCtrl.chapter.completed_at !== null) {
@@ -10,7 +11,7 @@ function ChapterController(chapterJSON, $state, chapterService, entryService) {
   ChapterCtrl.calculateAverage = function(total) {
 
     if (ChapterCtrl.chapter.entries.length > 0) {
-      return Math.round(total / ChapterCtrl.chapter.entries.length) 
+      return Math.round(total / ChapterCtrl.chapter.entries.length)
     } else {
       console.log(ChapterCtrl.chapter.entries);
       return 0;
