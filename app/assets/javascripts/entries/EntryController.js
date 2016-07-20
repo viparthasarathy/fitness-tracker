@@ -1,5 +1,5 @@
 function EntryController(EntryJSON, foodService, $scope) {
-  EntryCtrl = this;
+  var EntryCtrl = this;
   EntryCtrl.entry = EntryJSON.data;
 
   EntryCtrl.calculateTotals = function() {

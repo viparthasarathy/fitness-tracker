@@ -29,6 +29,13 @@
   <p>Your goal is to lose an average of {{-1 * ChapterCtrl.chapter.goal}} lb per week.</p>
 </div>
 
+<p>Average calorie consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_calories)}}</p>
+<p>Average protein consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_protein)}}</p>
+<p>Average carbs consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_carbs)}}</p>
+<p>Average fats consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_fats)}}</p>
+  
+
+
 <h2>Entries</h2>
 
 <h3>Create New Entry</h3>

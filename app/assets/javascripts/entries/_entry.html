@@ -1,4 +1,6 @@
 <h1>Entry for {{EntryCtrl.entry.day}} </h1>
+
+<h4> {{EntryCtrl.entry.notes || "No notes avaliable." }} </h4>
 <form name="EntryCtrl.foodForm" ng-submit="EntryCtrl.createFood()">
   <div class="input-group">
     <label for="name">Name</label>
@@ -55,7 +57,6 @@
       <th>Carbs</th>
       <th>Fat</th>
       <th>Delete</th>
-      <th>Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -65,7 +66,6 @@
       <th>{{EntryCtrl.totalProtein}}</td>
       <th>{{EntryCtrl.totalCarbs}}</td>
       <th>{{EntryCtrl.totalFats}}</td>
-      <th>N/A</th>
       <th>N/A</th>
     </tr>
       <tr ng-repeat="food in EntryCtrl.entry.foods">
