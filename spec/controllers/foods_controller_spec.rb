@@ -54,6 +54,10 @@ describe FoodsController, :type => :controller do
 
     context 'logged in' do
       context 'as owner' do
+        before do
+          sign_in @user
+        end
+
         it 'should return an error for invalid data' do
           @food_params[:protein] = nil
           put :update, {:format => :json, :id => @food.id, :food => @food_params}
@@ -83,6 +87,10 @@ describe FoodsController, :type => :controller do
       end
 
       context 'as other user' do
+        before do
+          sign_in @other_user
+        end
+
         it 'should raise an authorization error' do
           put :update, {:format => :json, :id => @food.id, :food => @food_params}
           expect(response.status).to eq(403)
@@ -99,18 +107,41 @@ describe FoodsController, :type => :controller do
   end
 
   describe 'DELETE #destroy' do
+    before do
+      @food = FactoryGirl.create(:food, entry: @entry)
+    end
+
     context 'logged in' do
       context 'as owner' do
-        it 'should delete the object'
+        before do
+          sign_in @user
+        end
+
+        it 'should delete the object' do
+          delete :destroy, {:format => :json, :id => @food.id}
+          expect(response.status).to eq(204)
+          expect(@entry.foods).to_not include(@food)
+        end
       end
 
       context 'as other user' do
-        it 'should raise an authorization error'
+        before do
+          sign_in @other_user
+        end
+
+        it 'should raise an authorization error' do
+          delete :destroy, {:format => :json, :id => @food.id}
+          expect(response.status).to eq(403)
+        end
       end
     end
 
     context 'logged out' do
-      it 'should raise an authentication error'
+      it 'should raise an authentication error' do
+        delete :destroy, {:format => :json, :id => @food.id}
+        expect(response.status).to eq(401)
+      end
+
     end
   end
 end
