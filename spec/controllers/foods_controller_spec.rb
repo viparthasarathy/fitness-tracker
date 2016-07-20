@@ -18,7 +18,7 @@ describe FoodsController, :type => :controller do
       end
 
       it 'should return an error for invalid data' do
-        @food_params[:name] = nil
+        @food_params[:name] = ""
         post :create, {:format => :json, :food => @food_params}
         expect(response.status).to eq(400)
         error_response = JSON.parse(response.body, symbolize_names: true)
@@ -48,19 +48,53 @@ describe FoodsController, :type => :controller do
   end
 
   describe 'PUT #update' do
+    before do
+      @food = FactoryGirl.create(:food, entry: @entry)
+    end
+
     context 'logged in' do
       context 'as owner' do
-        it 'should return an error for invalid data'
-        it 'should update the object for valid data'
+        it 'should return an error for invalid data' do
+          @food_params[:protein] = nil
+          put :update, {:format => :json, :id => @food.id, :food => @food_params}
+          expect(response.status).to eq(400)
+          error_response = JSON.parse(response.body, symbolize_names: true)
+          expect(error_response[:protein][0]).to eq("cannot be blank")
+        end
+
+        it 'succeeds with valid data' do
+          put :update, {:format => :json, :id => @food.id, :food => @food_params}
+          expect(response.status).to eq(200)
+        end
+
+        it 'updates the value' do
+          expect(@food.name).to eq("Pizza")
+          put :update, {:format => :json, :id => @food.id, :food => @food_params}
+          expect(@food.name).to eq("Burger")
+        end
+
+        it 'returns the updated food info on success' do
+          expect(@food.name).to eq("Pizza")
+          put :update, {:format => :json, :id => @food.id, :food => @food_params}
+          food_response = JSON.parse(response.body, symbolize_names: true)
+          expect(food_response[:id]).to eq(@food.id)
+          expect(food_response[:name]).to eq("Burger")
+        end
       end
 
       context 'as other user' do
-        it 'should raise an authorization error'
+        it 'should raise an authorization error' do
+          put :update, {:format => :json, :id => @food.id, :food => @food_params}
+          expect(response.status).to eq(403)
+        end
       end
     end
 
     context 'logged out' do
-      it 'should raise an authentication error'
+      it 'should raise an authentication error' do
+        put :update, {:format => :json, :id => @food.id, :food => @food_params}
+        expect(response.status).to eq(401)
+      end
     end
   end
 
