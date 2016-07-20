@@ -9,32 +9,36 @@
   </div>
   <div class="input-group">
     <label for="calories">Calories</label>
-    <input type="number" id="calories" name="calories" required="true" ng-model="EntryCtrl.food.calories">
+    <input type="number" id="calories" name="calories" min="0" required="true" ng-model="EntryCtrl.food.calories">
     <div ng-messages="EntryCtrl.foodForm.calories.$error" ng-if="EntryCtrl.foodForm.calories.$touched">
+      <div ng-message="min">Calories must be at least zero.</div>
       <div ng-message="required">Please enter calories.</div>
       <div ng-message="number">Please enter a number.</div>
     </div>
   </div>
   <div class="input-group">
     <label for="protein">Protein</label>
-    <input type="number" id="protein" name="protein" required="true" ng-model="EntryCtrl.food.protein">
+    <input type="number" id="protein" name="protein" min="0" required="true" ng-model="EntryCtrl.food.protein">
     <div ng-messages="EntryCtrl.foodForm.protein.$error" ng-if="EntryCtrl.foodForm.protein.$touched">
+      <div ng-message="min">Protein must be at least zero.</div>
       <div ng-message="required">Please enter protein.</div>
       <div ng-message="number">Please enter a number.</div>
     </div>
   </div>
   <div class="input-group">
     <label for="carbs">Carbs</label>
-    <input type="number" id="carbs" name="carbs" required="true" ng-model="EntryCtrl.food.carbs">
+    <input type="number" id="carbs" name="carbs" min="0" required="true" ng-model="EntryCtrl.food.carbs">
     <div ng-messages="EntryCtrl.foodForm.carbs.$error" ng-if="EntryCtrl.foodForm.carbs.$touched">
+      <div ng-message="min">Carbs must be at least zero.</div>
       <div ng-message="required">Please enter carbs.</div>
       <div ng-message="number">Please enter a number.</div>
     </div>
   </div>
   <div class="input-group">
     <label for="fats">Fats</label>
-    <input type="number" id="fats" name="fats" required="true" ng-model="EntryCtrl.food.fats">
+    <input type="number" id="fats" name="fats" min="0" required="true" ng-model="EntryCtrl.food.fats">
     <div ng-messages="EntryCtrl.foodForm.fats.$error" ng-if="EntryCtrl.foodForm.fats.$touched">
+      <div ng-message="min">Fats must be at least zero.</div>
       <div ng-message="required">Please enter fats.</div>
       <div ng-message="number">Please enter a number.</div>
     </div>
@@ -55,10 +59,10 @@
   <tbody>
     <tr>
       <th scope="row">Total</th>
-      <th>{{EntryCtrl.entry.total_calories}}</td>
-      <th>{{EntryCtrl.entry.total_protein}}</td>
-      <th>{{EntryCtrl.entry.total_carbs}}</td>
-      <th>{{EntryCtrl.entry.total_fats}}</td>
+      <th>{{EntryCtrl.totalCalories}}</td>
+      <th>{{EntryCtrl.totalProtein}}</td>
+      <th>{{EntryCtrl.totalCarbs}}</td>
+      <th>{{EntryCtrl.totalFats}}</td>
     </tr>
       <tr ng-repeat="food in EntryCtrl.entry.foods">
         <td>{{food.name}}</th>
