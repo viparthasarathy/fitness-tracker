@@ -1,9 +1,9 @@
 function foodService($http) {
   this.createFood = function(food) {
-    $http.post('/foods', food);
+    return $http.post('/foods', food);
   }
 }
 
 angular
-  .application('fitnessTracker')
+  .module('fitnessTracker')
     .service('foodService', foodService);
