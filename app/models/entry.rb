@@ -4,10 +4,11 @@ class Entry < ActiveRecord::Base
   has_one :measurement
   validates :chapter, presence: true
   validates :day, presence: true, uniqueness: {:scope => :chapter}
+  default_scope { order(:day => :desc) }
   validate :date_related_validations
 
   include Totals
-  
+
   private
 
   def cannot_be_before_chapter_start_date

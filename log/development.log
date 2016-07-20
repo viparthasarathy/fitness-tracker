@@ -41073,3 +41073,559 @@ Processing by EntriesController#show as HTML
 [active_model_serializers]   [1m[35mFood Load (0.1ms)[0m  SELECT "foods".* FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 4]]
 [active_model_serializers] Rendered EntrySerializer with ActiveModelSerializers::Adapter::Attributes (5.81ms)
 Completed 200 OK in 13ms (Views: 5.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-20 13:15:55 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (1435.5ms)
+Completed 200 OK in 1480ms (Views: 1468.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-20 13:15:56 -0700
+Processing by ApplicationController#angular as HTML
+  Rendered layouts/application.html.erb within layouts/application (54.0ms)
+Completed 200 OK in 70ms (Views: 69.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/chapters/ChapterController.self-14dde97ab9aed18c10e874ca9227ffa7b2f14eb97fba572162fc6c682f4c3c68.js?body=1" for ::1 at 2016-07-20 13:15:56 -0700
+
+
+Started GET "/assets/entries/_entry.self-f176fcf5f5cbf1e81bff3bcc36b4222c8b2870f7b8acacaac7034bfaa5341efe.js?body=1" for ::1 at 2016-07-20 13:15:56 -0700
+
+
+Started GET "/assets/entries/EntryController.self-6d23023ee430a661d0e294a6c806691b400a307b51170db07768bce2b429470a.js?body=1" for ::1 at 2016-07-20 13:15:56 -0700
+
+
+Started GET "/assets/foods/foodService.self-026ff6c3eb7e052fb667266de709fffcd4c48164d96c37d100cec95d919d434c.js?body=1" for ::1 at 2016-07-20 13:15:56 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-20 13:15:57 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-20 13:16:01 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}}}
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "example@example.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-07-19 20:59:39.358855"], ["current_sign_in_at", "2016-07-20 20:16:01.159836"], ["sign_in_count", 5], ["updated_at", "2016-07-20 20:16:01.161069"], ["id", 1]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.3ms)
+Completed 201 Created in 153ms (Views: 6.3ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/log" for ::1 at 2016-07-20 13:16:01 -0700
+Processing by LogsController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.8ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[35mChapter Load (0.7ms)[0m  SELECT "chapters".* FROM "chapters" WHERE "chapters"."log_id" = ?  ORDER BY "chapters"."completed_at" ASC  [["log_id", 1]]
+[active_model_serializers]   [1m[36m (1.2ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35m (0.2ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 11]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."protein") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 11]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 3]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 3]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 3]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."protein") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 3]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 4]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 4]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 4]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."protein") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 4]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 5]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 5]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 5]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."protein") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 5]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 6]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 6]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 6]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."protein") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 6]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 7]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 7]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 7]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."protein") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 7]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 8]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 8]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 8]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."protein") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 8]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 9]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 9]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 9]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."protein") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 9]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 10]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 10]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 10]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."protein") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 10]]
+[active_model_serializers] Rendered LogSerializer with ActiveModelSerializers::Adapter::Attributes (63.41ms)
+Completed 200 OK in 97ms (Views: 70.2ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/chapters/11" for ::1 at 2016-07-20 13:16:02 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.2ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["id", 11]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 11]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."protein") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 11]]
+[active_model_serializers]   [1m[36mEntry Load (7.8ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35mMeasurement Load (0.5ms)[0m  SELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1  [["entry_id", 4]]
+[active_model_serializers]   [1m[36mMeasurement Load (0.1ms)[0m  [1mSELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1[0m  [["entry_id", 5]]
+[active_model_serializers]   [1m[35m (0.2ms)[0m  SELECT SUM("foods"."calories") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 4]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 4]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."protein") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 4]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."carbs") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 4]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."calories") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 5]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 5]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."protein") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 5]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."carbs") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 5]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (43.62ms)
+Completed 200 OK in 50ms (Views: 34.6ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/entries/" for ::1 at 2016-07-20 13:16:08 -0700
+Processing by EntriesController#create as HTML
+  Parameters: {"chapter_id"=>11, "day"=>"2016-07-19T07:00:00.000Z", "entry"=>{"chapter_id"=>11, "day"=>"2016-07-19T07:00:00.000Z"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mChapter Load (0.1ms)[0m  [1mSELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1[0m  [["id", 11]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."day" = '2016-07-19' AND "entries"."chapter_id" = 11) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.07ms)
+Completed 400 Bad Request in 13ms (Views: 2.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/entries/" for ::1 at 2016-07-20 13:16:10 -0700
+Processing by EntriesController#create as HTML
+  Parameters: {"chapter_id"=>11, "day"=>"2016-07-20T07:00:00.000Z", "entry"=>{"chapter_id"=>11, "day"=>"2016-07-20T07:00:00.000Z"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["id", 11]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.1ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT  1 AS one FROM "entries" WHERE ("entries"."day" = '2016-07-20' AND "entries"."chapter_id" = 11) LIMIT 1
+  [1m[36mSQL (8.1ms)[0m  [1mINSERT INTO "entries" ("chapter_id", "day", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["chapter_id", 11], ["day", "2016-07-20"], ["created_at", "2016-07-20 20:16:10.318182"], ["updated_at", "2016-07-20 20:16:10.318182"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 6]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."fats") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 6]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."protein") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 6]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 6]]
+[active_model_serializers]   [1m[36mMeasurement Load (0.1ms)[0m  [1mSELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1[0m  [["entry_id", 6]]
+[active_model_serializers]   [1m[35mFood Load (0.2ms)[0m  SELECT "foods".* FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 6]]
+[active_model_serializers] Rendered EntrySerializer with ActiveModelSerializers::Adapter::Attributes (4.97ms)
+Completed 201 Created in 22ms (Views: 5.1ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/" for ::1 at 2016-07-20 13:16:40 -0700
+Processing by ApplicationController#angular as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 69ms (Views: 61.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/angular-messages/angular-messages.self-610bd021345e5d730e9058e90ee044ea5dfc661c60d341488064a65acb8a83c7.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/app.self-981fd848c6c46f775c2e744e6d1a581ce2601719afa06e7bd058656372d497e5.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/auth/ApplicationController.self-f49ef3e335765d1109295d947cd3de3bd8736e04aacc0be9550f2b09d4b3e974.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-0b6bd250c5e1be4eb055eb98d2fcc6b09dfd93d5f084009989fdd054002d32cb.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/auth/_signin.self-4e31036af7574a6661ad261661236285c5823774ad366971c06a2415c1df9b65.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/auth/_signup.self-d3116d03ed3dad3211f89e1368ac590a3d7506856ee46bb99c17b9003bff1aba.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/chapters/ChapterController.self-14dde97ab9aed18c10e874ca9227ffa7b2f14eb97fba572162fc6c682f4c3c68.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/chapters/ChaptersController.self-6929e6ed446a8fe6a90e548d0b38e5f958fdf13197b8491de0b2611e273954ad.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/chapters/ChaptersIndexController.self-82a6b70177a64df8c6cc4f7ed1078128ec4ebbccb12941bf7c1522f988b74e2f.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/chapters/NewChapterController.self-273d451e4c585d99bbefcf8a47432e7ef98e4fbdd521ae6540c35dcde5c2878d.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/chapters/_chapters.self-e93a49d96d426f50a0a5096e0c92cec3999527face907485b0a82fca7359acca.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/chapters/_index.self-6e71380a83a02a064a6696d556e4d5054b1550c974f3500d54bb19f3a3076b2e.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/chapters/_new.self-1489bc4882dde64d3471ba1bd39bf5f24ae9b46c0a16e60f5341fbb6a47c96d2.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/chapters/_show.self-ee4718858cb9e34776e7ac081520827d307d28665d4117d1b2db1e396bc46928.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/chapters/chapterService.self-aa15426b30f4b1dea691249c7c7abb917ac18dbe4176c9048964a7a0179b977a.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/entries/EntryController.self-6d23023ee430a661d0e294a6c806691b400a307b51170db07768bce2b429470a.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/entries/_entry.self-f176fcf5f5cbf1e81bff3bcc36b4222c8b2870f7b8acacaac7034bfaa5341efe.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/entries/entryService.self-fdebd83b3cb8cba7515f05e8c06e022aaa48df16ddcfba03db7a64f372755694.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/foods/foodService.self-026ff6c3eb7e052fb667266de709fffcd4c48164d96c37d100cec95d919d434c.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/log/LogController.self-217f396b6c29ad9cb18768b9a9732a4aaafb7274b7e8e1aff0d7b50d75779edd.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/log/_log.self-9dd3728f705ab0078ee71299846a95e8cd05dc5dc4d4b4ffc0ae8e2e13b029e1.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/log/logService.self-f02899ea58c99b064d484ae419487131371de84285bf2c9e4e3afe41aa59c62d.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/nav/_nav.self-d5ca55f6c191b9b0a7fee5ddedb5149c081a417146875a22a838e78f0c375c1e.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started GET "/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for ::1 at 2016-07-20 13:16:41 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-20 13:16:41 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.98ms)
+Completed 201 Created in 19ms (Views: 6.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/chapters/11" for ::1 at 2016-07-20 13:16:41 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."completed_at" ASC LIMIT 1  [["id", 11]]
+  [1m[36mLog Load (0.3ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.2ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 11]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35m (0.2ms)[0m  SELECT SUM("foods"."protein") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 11]]
+[active_model_serializers]   [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  ORDER BY "entries"."day" ASC[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35mMeasurement Load (0.2ms)[0m  SELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1  [["entry_id", 4]]
+[active_model_serializers]   [1m[36mMeasurement Load (0.1ms)[0m  [1mSELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1[0m  [["entry_id", 5]]
+[active_model_serializers]   [1m[35mMeasurement Load (0.1ms)[0m  SELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1  [["entry_id", 6]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 4]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."fats") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 4]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."protein") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 4]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 4]]
+[active_model_serializers]   [1m[36m (0.0ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 5]]
+[active_model_serializers]   [1m[35m (0.0ms)[0m  SELECT SUM("foods"."fats") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 5]]
+[active_model_serializers]   [1m[36m (0.0ms)[0m  [1mSELECT SUM("foods"."protein") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 5]]
+[active_model_serializers]   [1m[35m (0.0ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 5]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 6]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."fats") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 6]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."protein") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 6]]
+[active_model_serializers]   [1m[35m (0.0ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 6]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (48.71ms)
+Completed 200 OK in 96ms (Views: 49.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2016-07-20 13:23:33 -0700
+Processing by ApplicationController#angular as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 69ms (Views: 60.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/angular-messages/angular-messages.self-610bd021345e5d730e9058e90ee044ea5dfc661c60d341488064a65acb8a83c7.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/app.self-981fd848c6c46f775c2e744e6d1a581ce2601719afa06e7bd058656372d497e5.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/auth/ApplicationController.self-f49ef3e335765d1109295d947cd3de3bd8736e04aacc0be9550f2b09d4b3e974.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-0b6bd250c5e1be4eb055eb98d2fcc6b09dfd93d5f084009989fdd054002d32cb.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/auth/_signin.self-4e31036af7574a6661ad261661236285c5823774ad366971c06a2415c1df9b65.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/auth/_signup.self-d3116d03ed3dad3211f89e1368ac590a3d7506856ee46bb99c17b9003bff1aba.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/chapters/ChapterController.self-14dde97ab9aed18c10e874ca9227ffa7b2f14eb97fba572162fc6c682f4c3c68.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/chapters/ChaptersController.self-6929e6ed446a8fe6a90e548d0b38e5f958fdf13197b8491de0b2611e273954ad.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/chapters/ChaptersIndexController.self-82a6b70177a64df8c6cc4f7ed1078128ec4ebbccb12941bf7c1522f988b74e2f.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/chapters/NewChapterController.self-273d451e4c585d99bbefcf8a47432e7ef98e4fbdd521ae6540c35dcde5c2878d.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/chapters/_chapters.self-e93a49d96d426f50a0a5096e0c92cec3999527face907485b0a82fca7359acca.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/chapters/_index.self-6e71380a83a02a064a6696d556e4d5054b1550c974f3500d54bb19f3a3076b2e.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/chapters/_new.self-1489bc4882dde64d3471ba1bd39bf5f24ae9b46c0a16e60f5341fbb6a47c96d2.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/chapters/_show.self-ee4718858cb9e34776e7ac081520827d307d28665d4117d1b2db1e396bc46928.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/chapters/chapterService.self-aa15426b30f4b1dea691249c7c7abb917ac18dbe4176c9048964a7a0179b977a.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/entries/EntryController.self-6d23023ee430a661d0e294a6c806691b400a307b51170db07768bce2b429470a.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/entries/_entry.self-f176fcf5f5cbf1e81bff3bcc36b4222c8b2870f7b8acacaac7034bfaa5341efe.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/entries/entryService.self-fdebd83b3cb8cba7515f05e8c06e022aaa48df16ddcfba03db7a64f372755694.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/foods/foodService.self-026ff6c3eb7e052fb667266de709fffcd4c48164d96c37d100cec95d919d434c.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/log/LogController.self-217f396b6c29ad9cb18768b9a9732a4aaafb7274b7e8e1aff0d7b50d75779edd.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/log/_log.self-9dd3728f705ab0078ee71299846a95e8cd05dc5dc4d4b4ffc0ae8e2e13b029e1.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/log/logService.self-f02899ea58c99b064d484ae419487131371de84285bf2c9e4e3afe41aa59c62d.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/nav/_nav.self-d5ca55f6c191b9b0a7fee5ddedb5149c081a417146875a22a838e78f0c375c1e.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started GET "/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for ::1 at 2016-07-20 13:23:33 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-20 13:23:34 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.84ms)
+Completed 201 Created in 21ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/chapters/11" for ::1 at 2016-07-20 13:23:34 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.3ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."created_at" DESC LIMIT 1  [["id", 11]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.2ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 11]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."protein") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 11]]
+[active_model_serializers]   [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  ORDER BY "entries"."day" ASC[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35mMeasurement Load (0.2ms)[0m  SELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1  [["entry_id", 4]]
+[active_model_serializers]   [1m[36mMeasurement Load (0.1ms)[0m  [1mSELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1[0m  [["entry_id", 5]]
+[active_model_serializers]   [1m[35mMeasurement Load (0.1ms)[0m  SELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1  [["entry_id", 6]]
+[active_model_serializers]   [1m[36m (0.2ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 4]]
+[active_model_serializers]   [1m[35m (0.2ms)[0m  SELECT SUM("foods"."fats") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 4]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."protein") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 4]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 4]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 5]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."fats") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 5]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."protein") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 5]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 5]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 6]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."fats") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 6]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."protein") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 6]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 6]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (51.73ms)
+Completed 200 OK in 86ms (Views: 50.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2016-07-20 13:23:44 -0700
+Processing by ApplicationController#angular as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 67ms (Views: 58.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap/dist/css/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/angulardevise/lib/devise.self-633c6de0b47e944b4aab238ff501621349023b511d73dd13f10a376b89ea1a1b.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router.self-75b555bd54e64f7d2b5892cbb6def68576df012a8139b5917c51407de696d0de.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/angular-rails-templates.self-f73a25f00ce684992b28562a01665855f2aabcedd405901b89b47873f76ca8d1.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/angular/angular.self-09d22056f1fb887d7012ce3c2f5b58bf03df2dd7b91b6c2510a961ffccb25380.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/angular-messages/angular-messages.self-610bd021345e5d730e9058e90ee044ea5dfc661c60d341488064a65acb8a83c7.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/app.self-981fd848c6c46f775c2e744e6d1a581ce2601719afa06e7bd058656372d497e5.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/auth/ApplicationController.self-f49ef3e335765d1109295d947cd3de3bd8736e04aacc0be9550f2b09d4b3e974.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/auth/AuthenticationController.self-0b6bd250c5e1be4eb055eb98d2fcc6b09dfd93d5f084009989fdd054002d32cb.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/auth/_signin.self-4e31036af7574a6661ad261661236285c5823774ad366971c06a2415c1df9b65.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/auth/_signup.self-d3116d03ed3dad3211f89e1368ac590a3d7506856ee46bb99c17b9003bff1aba.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/chapters/ChapterController.self-14dde97ab9aed18c10e874ca9227ffa7b2f14eb97fba572162fc6c682f4c3c68.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/chapters/ChaptersController.self-6929e6ed446a8fe6a90e548d0b38e5f958fdf13197b8491de0b2611e273954ad.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/chapters/ChaptersIndexController.self-82a6b70177a64df8c6cc4f7ed1078128ec4ebbccb12941bf7c1522f988b74e2f.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/chapters/NewChapterController.self-273d451e4c585d99bbefcf8a47432e7ef98e4fbdd521ae6540c35dcde5c2878d.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/chapters/_chapters.self-e93a49d96d426f50a0a5096e0c92cec3999527face907485b0a82fca7359acca.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/chapters/_index.self-6e71380a83a02a064a6696d556e4d5054b1550c974f3500d54bb19f3a3076b2e.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/chapters/_new.self-1489bc4882dde64d3471ba1bd39bf5f24ae9b46c0a16e60f5341fbb6a47c96d2.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/chapters/_show.self-ee4718858cb9e34776e7ac081520827d307d28665d4117d1b2db1e396bc46928.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/chapters/chapterService.self-aa15426b30f4b1dea691249c7c7abb917ac18dbe4176c9048964a7a0179b977a.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/entries/EntryController.self-6d23023ee430a661d0e294a6c806691b400a307b51170db07768bce2b429470a.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/entries/_entry.self-f176fcf5f5cbf1e81bff3bcc36b4222c8b2870f7b8acacaac7034bfaa5341efe.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/entries/entryService.self-fdebd83b3cb8cba7515f05e8c06e022aaa48df16ddcfba03db7a64f372755694.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/foods/foodService.self-026ff6c3eb7e052fb667266de709fffcd4c48164d96c37d100cec95d919d434c.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/log/LogController.self-217f396b6c29ad9cb18768b9a9732a4aaafb7274b7e8e1aff0d7b50d75779edd.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/log/_log.self-9dd3728f705ab0078ee71299846a95e8cd05dc5dc4d4b4ffc0ae8e2e13b029e1.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/log/logService.self-f02899ea58c99b064d484ae419487131371de84285bf2c9e4e3afe41aa59c62d.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/nav/_nav.self-d5ca55f6c191b9b0a7fee5ddedb5149c081a417146875a22a838e78f0c375c1e.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started GET "/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for ::1 at 2016-07-20 13:23:44 -0700
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-07-20 13:23:44 -0700
+Processing by SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (1.67ms)
+Completed 201 Created in 25ms (Views: 9.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/chapters/11" for ::1 at 2016-07-20 13:23:44 -0700
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mChapter Load (0.1ms)[0m  SELECT  "chapters".* FROM "chapters" WHERE "chapters"."id" = ?  ORDER BY "chapters"."created_at" DESC LIMIT 1  [["id", 11]]
+  [1m[36mLog Load (0.1ms)[0m  [1mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLog Load (0.2ms)[0m  SELECT  "logs".* FROM "logs" WHERE "logs"."user_id" = ? LIMIT 1  [["user_id", 1]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 11]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."fats") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."protein") FROM "foods" INNER JOIN "entries" ON "foods"."entry_id" = "entries"."id" WHERE "entries"."chapter_id" = ?  [["chapter_id", 11]]
+[active_model_serializers]   [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."chapter_id" = ?  ORDER BY "entries"."day" DESC[0m  [["chapter_id", 11]]
+[active_model_serializers]   [1m[35mMeasurement Load (0.1ms)[0m  SELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1  [["entry_id", 6]]
+[active_model_serializers]   [1m[36mMeasurement Load (0.1ms)[0m  [1mSELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1[0m  [["entry_id", 5]]
+[active_model_serializers]   [1m[35mMeasurement Load (0.1ms)[0m  SELECT  "measurements".* FROM "measurements" WHERE "measurements"."entry_id" = ? LIMIT 1  [["entry_id", 4]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 6]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."fats") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 6]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."protein") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 6]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 6]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 5]]
+[active_model_serializers]   [1m[35m (0.0ms)[0m  SELECT SUM("foods"."fats") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 5]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."protein") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 5]]
+[active_model_serializers]   [1m[35m (0.0ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 5]]
+[active_model_serializers]   [1m[36m (0.1ms)[0m  [1mSELECT SUM("foods"."calories") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 4]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."fats") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 4]]
+[active_model_serializers]   [1m[36m (0.0ms)[0m  [1mSELECT SUM("foods"."protein") FROM "foods" WHERE "foods"."entry_id" = ?[0m  [["entry_id", 4]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  SELECT SUM("foods"."carbs") FROM "foods" WHERE "foods"."entry_id" = ?  [["entry_id", 4]]
+[active_model_serializers] Rendered ChapterSerializer with ActiveModelSerializers::Adapter::Attributes (48.97ms)
+Completed 200 OK in 78ms (Views: 48.8ms | ActiveRecord: 3.4ms)

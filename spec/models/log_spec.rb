@@ -37,6 +37,7 @@ describe Log, :type => :model do
     before do
       @log.save
       @chapter_one = FactoryGirl.create(:chapter, log: @log, completed_at: Date.current - 3)
+      @chapter_one.update(created_at: Time.zone.today - 6)
       @chapter_two = FactoryGirl.create(:chapter, title: "Hey!", log: @log)
     end
 
