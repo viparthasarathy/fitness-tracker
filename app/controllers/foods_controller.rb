@@ -14,6 +14,10 @@ class FoodsController < ApplicationController
   end
 
   def destroy
+    @food = Food.find(params[:id])
+    authorize @food
+    @food.destroy
+    render nothing: true, status: 204
   end
 
   private

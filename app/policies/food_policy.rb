@@ -8,4 +8,8 @@ class FoodPolicy < ApplicationPolicy
     record.entry.chapter.log == user.log
   end
 
+  def destroy?
+    record.entry.chapter.log == user.log
+  end
+
 end
