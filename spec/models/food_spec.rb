@@ -95,6 +95,26 @@ describe :Food, :type => :model do
       @food.fats = "wow"
       expect(@food).to have(1).error_on(:fats)
     end
+
+    it 'requires calories to be at least zero' do
+      @food.calories = -1
+      expect(@food).to have(1).error_on(:calories)
+    end
+
+    it 'requires protein to be at least zero' do
+      @food.protein = -1
+      expect(@food).to have(1).error_on(:protein)
+    end
+
+    it 'requires carbs to be at least zero' do
+      @food.carbs = -1
+      expect(@food).to have(1).error_on(:carbs)
+    end
+
+    it 'requires fats to be at least zero' do
+      @food.fats = -1
+      expect(@food).to have(1).error_on(:fats)
+    end
   end
 
   context 'totals' do
