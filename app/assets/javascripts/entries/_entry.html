@@ -71,12 +71,12 @@
       <th>N/A</th>
     </tr>
       <tr ng-repeat="food in EntryCtrl.entry.foods">
-        <td>{{food.name}}</th>
-        <td>{{food.calories}}</td>
-        <td>{{food.protein}}</td>
-        <td>{{food.carbs}}</td>
-        <td>{{food.fats}}</td>
+        <td><input id="name" name="name" required="true" ng-model="food.name"></th>
+        <td><input type="number" id="calories" name="calories" min="0" required="true" ng-model="food.calories"></td>
+        <td><input type="number" id="protein" name="protein" min="0" required="true" ng-model="food.protein"></td>
+        <td><input type="number" id="carbs" name="carbs" min="0" required="true" ng-model="food.carbs"></td>
+        <td><input type="number" id="fats" name="fats" min="0" required="true" ng-model="food.fats"></td>
         <td><a href="" ng-click="EntryCtrl.deleteFood(food, $index)">Delete</a></td>
-        <td><a href="" ng-click"EntryCtrl.updateFood(food, food.id)">Update</a></td>
+        <td><a href="" ng-click="EntryCtrl.updateFood(food, $index)">Save</a></td>
       </tr>
   </tbody>

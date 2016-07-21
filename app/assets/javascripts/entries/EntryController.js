@@ -30,6 +30,15 @@ function EntryController(EntryJSON, foodService, $scope) {
         EntryCtrl.calculateTotals();
       });
   }
+
+  EntryCtrl.updateFood = function(food, index) {
+    foodService.updateFood(food)
+      .then(function(response) {
+        debugger;
+        EntryCtrl.entry.foods[index] = response.data;
+        EntryCtrl.calculateTotals();
+      });
+  }
 }
 
 angular
