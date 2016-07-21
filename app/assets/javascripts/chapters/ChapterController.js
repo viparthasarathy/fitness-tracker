@@ -13,7 +13,6 @@ function ChapterController(chapterJSON, $state, chapterService, entryService) {
     if (ChapterCtrl.chapter.entries.length > 0) {
       return Math.round(total / ChapterCtrl.chapter.entries.length)
     } else {
-      console.log(ChapterCtrl.chapter.entries);
       return 0;
     }
   }

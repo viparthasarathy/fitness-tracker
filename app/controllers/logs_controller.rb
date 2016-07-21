@@ -3,7 +3,7 @@ class LogsController < ApplicationController
 
   def show
     @log = user_log
-    render json: @log
+    render json: @log, include: ['chapters', 'chapters.entries']
   end
 
 end
