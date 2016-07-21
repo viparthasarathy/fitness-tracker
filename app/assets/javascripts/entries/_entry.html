@@ -11,38 +11,42 @@
   </div>
   <div class="input-group">
     <label for="calories">Calories</label>
-    <input type="number" id="calories" name="calories" min="0" required="true" ng-model="EntryCtrl.food.calories">
+    <input type="number" id="calories" pattern="^\d+$" name="calories" min="0" required="true" ng-model="EntryCtrl.food.calories">
     <div ng-messages="EntryCtrl.foodForm.calories.$error" ng-if="EntryCtrl.foodForm.calories.$touched">
       <div ng-message="min">Calories must be at least zero.</div>
       <div ng-message="required">Please enter calories.</div>
       <div ng-message="number">Please enter a number.</div>
+      <div ng-message="pattern">Please enter a whole number.</div>
     </div>
   </div>
   <div class="input-group">
     <label for="protein">Protein</label>
-    <input type="number" id="protein" name="protein" min="0" required="true" ng-model="EntryCtrl.food.protein">
+    <input type="number" id="protein" pattern="^\d+$" name="protein" min="0" required="true" ng-model="EntryCtrl.food.protein">
     <div ng-messages="EntryCtrl.foodForm.protein.$error" ng-if="EntryCtrl.foodForm.protein.$touched">
       <div ng-message="min">Protein must be at least zero.</div>
       <div ng-message="required">Please enter protein.</div>
       <div ng-message="number">Please enter a number.</div>
+      <div ng-message="pattern">Please enter a whole number.</div>
     </div>
   </div>
   <div class="input-group">
     <label for="carbs">Carbs</label>
-    <input type="number" id="carbs" name="carbs" min="0" required="true" ng-model="EntryCtrl.food.carbs">
+    <input type="number" id="carbs" pattern="^\d+$" name="carbs" min="0" required="true" ng-model="EntryCtrl.food.carbs">
     <div ng-messages="EntryCtrl.foodForm.carbs.$error" ng-if="EntryCtrl.foodForm.carbs.$touched">
       <div ng-message="min">Carbs must be at least zero.</div>
       <div ng-message="required">Please enter carbs.</div>
       <div ng-message="number">Please enter a number.</div>
+      <div ng-message="pattern">Please enter a whole number.</div>
     </div>
   </div>
   <div class="input-group">
     <label for="fats">Fats</label>
-    <input type="number" id="fats" name="fats" min="0" required="true" ng-model="EntryCtrl.food.fats">
+    <input type="number" id="fats" pattern="^\d+$" name="fats" min="0" required="true" ng-model="EntryCtrl.food.fats">
     <div ng-messages="EntryCtrl.foodForm.fats.$error" ng-if="EntryCtrl.foodForm.fats.$touched">
       <div ng-message="min">Fats must be at least zero.</div>
       <div ng-message="required">Please enter fats.</div>
       <div ng-message="number">Please enter a number.</div>
+      <div ng-message="pattern">Please enter a whole number.</div>
     </div>
   </div>
   <input type="submit" class="btn btn-success" value="Create Food">
@@ -72,10 +76,10 @@
     </tr>
       <tr ng-repeat="food in EntryCtrl.entry.foods">
         <td><input id="name" name="name" required="true" ng-model="food.name"></th>
-        <td><input type="number" id="calories" name="calories" min="0" required="true" ng-model="food.calories" ng-change="EntryCtrl.calculateTotals()"></td>
-        <td><input type="number" id="protein" name="protein" min="0" required="true" ng-model="food.protein" ng-change="EntryCtrl.calculateTotals()"></td>
-        <td><input type="number" id="carbs" name="carbs" min="0" required="true" ng-model="food.carbs" ng-change="EntryCtrl.calculateTotals()"></td>
-        <td><input type="number" id="fats" name="fats" min="0" required="true" ng-model="food.fats" ng-change="EntryCtrl.calculateTotals()"></td>
+        <td><input type="number" id="calories" pattern="^\d+$" name="calories" min="0" required="true" ng-model="food.calories" ng-change="EntryCtrl.calculateTotals()"></td>
+        <td><input type="number" id="protein" pattern="^\d+$" name="protein" min="0" required="true" ng-model="food.protein" ng-change="EntryCtrl.calculateTotals()"></td>
+        <td><input type="number" id="carbs" pattern="^\d+$" name="carbs" min="0" required="true" ng-model="food.carbs" ng-change="EntryCtrl.calculateTotals()"></td>
+        <td><input type="number" id="fats" pattern="^\d+$" name="fats" min="0" required="true" ng-model="food.fats" ng-change="EntryCtrl.calculateTotals()"></td>
         <td><a href="" ng-click="EntryCtrl.deleteFood(food, $index)">Delete</a></td>
         <td><a href="" ng-click="EntryCtrl.updateFood(food, $index)">Save</a></td>
       </tr>
