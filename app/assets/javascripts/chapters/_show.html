@@ -33,7 +33,7 @@
 <p>Average protein consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_protein)}}</p>
 <p>Average carbs consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_carbs)}}</p>
 <p>Average fats consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_fats)}}</p>
-  
+
 
 
 <h2>Entries</h2>
@@ -58,6 +58,12 @@
 
   <input type="submit" class="btn btn-success" value="Create Entry">
 </form>
-<div ng-repeat="entry in ChapterCtrl.chapter.entries">
+<br>
+
+<h3>Previous Entries</h3>
+
+<label for="search">Search by Food</labeL>
+<input id="search" name="search" ng-model="ChapterCtrl.search">
+<div ng-repeat="entry in ChapterCtrl.chapter.entries | filter: ChapterCtrl.search">
   <a ui-sref="entries({id: entry.id})">{{entry.day}}</a>
 </div>
