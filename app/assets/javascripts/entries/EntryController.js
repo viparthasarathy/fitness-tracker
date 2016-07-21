@@ -7,6 +7,10 @@ function EntryController(EntryJSON, foodService, $scope) {
     EntryCtrl.totalProtein = EntryCtrl.entry.foods.reduce( (total, food) => total + food.protein, 0);
     EntryCtrl.totalCarbs = EntryCtrl.entry.foods.reduce( (total, food) => total + food.carbs, 0);
     EntryCtrl.totalFats = EntryCtrl.entry.foods.reduce( (total, food) => total + food.fats, 0);
+    if (isNaN(EntryCtrl.totalCalories)) { EntryCtrl.totalCalories = "Invalid input."}
+    if (isNaN(EntryCtrl.totalProtein)) { EntryCtrl.totalProtein = "Invalid input."}
+    if (isNaN(EntryCtrl.totalCarbs)) { EntryCtrl.totalCarbs = "Invalid input."}
+    if (isNaN(EntryCtrl.totalFats)) { EntryCtrl.totalFats = "Invalid input."}
   };
 
   EntryCtrl.calculateTotals();
