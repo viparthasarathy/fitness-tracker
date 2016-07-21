@@ -9,11 +9,15 @@ function LogController(logJSON) {
     var totalCarbs = chapters.reduce( (total, chapter) => total + chapter.total_carbs, 0)
     var totalFats = chapters.reduce( (total, chapter) => total + chapter.total_fats, 0)
     var totalEntries = chapters.reduce( (total, chapter) => total + chapter.entries.length, 0)
-    return {
-      averageCalories: Math.round(totalCalories/totalEntries),
-      averageProtein: Math.round(totalProtein/totalEntries),
-      averageCarbs: Math.round(totalCarbs/totalEntries),
-      averageFats: Math.round(totalFats/totalEntries)
+    if (totalEntries > 0) {
+      return {
+        averageCalories: Math.round(totalCalories/totalEntries),
+        averageProtein: Math.round(totalProtein/totalEntries),
+        averageCarbs: Math.round(totalCarbs/totalEntries),
+        averageFats: Math.round(totalFats/totalEntries)
+      }
+    } else {
+      return false;
     }
   }
 

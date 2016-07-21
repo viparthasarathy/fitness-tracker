@@ -8,3 +8,28 @@
 <a ui-sref="chapters.show({id: LogCtrl.chapters[0].id})" ng-if="!LogCtrl.noCurrentChapter()">Head over to your current chapter to add new entries.</a>
 
 <a ui-sref="chapters.index">Head over to all your previous chapters.</a>
+
+
+<div id="gainStats" ng-if="LogCtrl.gainStats">
+  <p>While trying to gain weight you average...</p>
+  <p>{{LogCtrl.gainStats.averageCalories}} in calorie consumption.</p>
+  <p>{{LogCtrl.gainStats.averageProtein}} in protein consumption.</p>
+  <p>{{LogCtrl.gainStats.averageCarbs}} in carbs consumption.</p>
+  <p>{{LogCtrl.gainStats.averageFats}} in fats consumption.</p>
+</div>
+
+<div id="maintainStats" ng-if="LogCtrl.mainStats">
+  <p>While trying to maintain weight you average...</p>
+  <p>{{LogCtrl.maintainStats.averageCalories}} in calorie consumption.</p>
+  <p>{{LogCtrl.maintainStats.averageProtein}} in protein consumption.</p>
+  <p>{{LogCtrl.maintainStats.averageCarbs}} in carbs consumption.</p>
+  <p>{{LogCtrl.maintainStats.averageFats}} in fats consumption.</p>
+</div>
+
+<div id="loseStats" ng-if="LogCtrl.loseStats">
+  <p>While trying to lose weight you average...</p>
+  <p>{{LogCtrl.loseStats.averageCalories}} in calorie consumption.</p>
+  <p>{{LogCtrl.loseStats.averageProtein}} in protein consumption.</p>
+  <p>{{LogCtrl.loseStats.averageCarbs}} in carbs consumption.</p>
+  <p>{{LogCtrl.loseStats.averageFats}} in fats consumption.</p>
+</div>
