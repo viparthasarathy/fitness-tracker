@@ -6,6 +6,10 @@ function foodService($http) {
   this.deleteFood = function(id) {
     return $http.delete('/foods/' + id)
   }
+
+  this.updateFood = function(food) {
+    return $http.put('/foods/' + food.id, food);
+  }
 }
 
 angular
