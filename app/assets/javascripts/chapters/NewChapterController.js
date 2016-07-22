@@ -6,7 +6,7 @@ function NewChapterController(chapterService, $state) {
       title: NewChapterCtrl.title,
       description: NewChapterCtrl.description
     }).then(function(response) {
-      $state.go('chapters.show', {id: response.data.id});
+      $state.go('showChapter', {id: response.data.id});
     }, function(error) {
       $state.go('log');
     });
