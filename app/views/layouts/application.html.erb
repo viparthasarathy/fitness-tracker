@@ -7,9 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="fitnessTracker" ng-controller="ApplicationController">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <div ng-include="'nav/_nav.html'"></div>
+  <div ng-include="'nav/_nav.html'"></div>
+  <div class="container-fluid">
       <ui-view></ui-view>
     </div>
   </div>

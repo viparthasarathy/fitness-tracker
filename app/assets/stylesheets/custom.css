@@ -1,0 +1,74 @@
+html {
+	overflow-y: scroll;
+}
+
+body {
+	padding-top: 60px;
+}
+
+section {
+	overflow: auto;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.center {
+	text-align: center;
+}
+
+.center h1 {
+	margin-bottom: 10px;
+}
+
+header {
+	height: 50px;
+}
+
+#bootstrap-override {
+	margin-bottom: 0px;
+	padding: 5px;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.center {
+	text-align: center;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6, p {
+  line-height: 1;
+	text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+
+h4 {
+	margin-top: 15px;
+}
+
+header p, header p a {
+	margin-right: 10px;
+	color: #31ADD6;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+
+
+.warning a {
+  color: #BA0000;
+}
+
+.warning {
+	color: #BA0000;
+}
