@@ -37,37 +37,38 @@
     <p>Average fats consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_fats)}}</p>
 
 
+<br></br>
 
     <h2>Entries</h2>
-
-
-<div class="center">
-    <form name="ChapterCtrl.newEntryForm" ng-submit="ChapterCtrl.createEntry()">
-      <div class="inline">
-        <input type="date" id="day" required="required" name="day" ng-model="ChapterCtrl.newEntry.day" ng-change="ChapterCtrl.setServerErrorFalse()">
-        <div ng-messages="ChapterCtrl.newEntryForm.day.$error" ng-if="ChapterCtrl.newEntryForm.day.$touched">
-          <div ng-message="required">Day is required.</div>
-          <div ng-message="date">Your date is not valid.</div>
-          <div ng-message="server">{{ChapterCtrl.serverChapterError}}</div>
+    <div class="center">
+      <div ng-messages="ChapterCtrl.newEntryForm.day.$error" ng-if="ChapterCtrl.newEntryForm.day.$touched">
+        <div ng-message="required">Day is required.</div>
+        <div ng-message="date">Your date is not valid.</div>
+        <div ng-message="server">{{ChapterCtrl.serverChapterError}}</div>
+      </div>
+      <form name="ChapterCtrl.newEntryForm" ng-submit="ChapterCtrl.createEntry()">
+        <div class="inline">
+          <input type="date" id="day" required="required" name="day" ng-model="ChapterCtrl.newEntry.day" ng-change="ChapterCtrl.setServerErrorFalse()">
         </div>
-      </div>
 
-      <div class="inline">
-        <input id="notes" placeholder="Notes" name="notes" ng-model="ChapterCtrl.newEntry.notes">
-      </div>
+        <div class="inline">
+          <input id="notes" placeholder="Notes" name="notes" ng-model="ChapterCtrl.newEntry.notes">
+        </div>
 
-      <input type="submit" class="btn-small btn-success" value="Create Entry">
-    </form>
-  </div>
-    <br>
-
-
-
-    <label for="search">Search by Food</labeL>
-    <input id="search" name="search" ng-model="ChapterCtrl.search">
-    <div ng-repeat="entry in ChapterCtrl.chapter.entries | filter: ChapterCtrl.search">
-      <a ui-sref="showChapter.entry({id: ChapterCtrl.chapter.id, entry_id: entry.id})">{{entry.day}}</a>
+        <input type="submit" class="btn-small btn-success" value="Create Entry">
+      </form>
     </div>
+
+<br>
+    <h5>Search Previous Entries by Food</h5>
+    <div class="center">
+      <input id="search" name="search" ng-model="ChapterCtrl.search">
+      <br></br>
+      <div ng-repeat="entry in ChapterCtrl.chapter.entries | filter: ChapterCtrl.search">
+        <a ui-sref="showChapter.entry({id: ChapterCtrl.chapter.id, entry_id: entry.id})">{{entry.day}}</a>
+      </div>
+    </div>
+
 
     <div ui-view></div>
 
