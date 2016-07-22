@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160722223204) do
+ActiveRecord::Schema.define(version: 20160722224224) do
 
   create_table "chapters", force: :cascade do |t|
     t.float    "goal"
     t.string   "title"
     t.text     "description"
     t.integer  "log_id"
-    t.date     "completed_at"
+    t.datetime "completed_at"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20160722223204) do
 
   create_table "entries", force: :cascade do |t|
     t.integer  "chapter_id"
-    t.datetime "day"
+    t.date     "day"
     t.string   "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
