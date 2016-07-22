@@ -46,6 +46,8 @@ GEM
       sprockets (~> 3.0)
       tilt
     arel (6.0.3)
+    autoprefixer-rails (6.3.6.1)
+      execjs
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -53,6 +55,11 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
+    bootswatch-rails (3.3.5)
+      railties (>= 3.1)
     builder (3.2.2)
     byebug (9.0.5)
     capybara (2.7.1)
@@ -211,6 +218,8 @@ DEPENDENCIES
   active_model_serializers (~> 0.10.0)
   angular-rails-templates
   better_errors
+  bootstrap-sass (~> 3.3.6)
+  bootswatch-rails
   byebug
   capybara
   database_cleaner

@@ -14,6 +14,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'bootswatch-rails'
+
 gem 'angular-rails-templates'
 
 gem 'devise', '~> 3.4.0'
@@ -21,6 +25,7 @@ gem 'devise', '~> 3.4.0'
 gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'pundit'
+
 
 
 # Use ActiveModel has_secure_password
