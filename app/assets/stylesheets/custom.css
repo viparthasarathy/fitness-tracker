@@ -72,3 +72,7 @@ header p, header p a {
 .warning {
 	color: #BA0000;
 }
+
+.center {
+  text-align: center;
+}
