@@ -1,56 +1,61 @@
-<h1>Entry for {{EntryCtrl.entry.day}} </h1>
+<h3>Entry for {{EntryCtrl.entry.day}} </h3>
 
-<h4> {{EntryCtrl.entry.notes || "No notes avaliable." }} </h4>
-<form name="EntryCtrl.foodForm" ng-submit="EntryCtrl.createFood()">
-  <div class="input-group">
-    <label for="name">Name</label>
-    <input id="name" name="name" required="true" ng-model="EntryCtrl.food.name">
-    <div ng-messages="EntryCtrl.foodForm.calories.$error" ng-if="EntryCtrl.foodForm.calories.$touched">
-      <div ng-message="required">Please enter a name.</div>
+<h5> {{EntryCtrl.entry.notes || "No notes avaliable." }} </h5>
+<div class="center">
+  <form name="EntryCtrl.foodForm" ng-submit="EntryCtrl.createFood()">
+    <div class="form-group">
+      <div class="inline">
+        <div ng-messages="EntryCtrl.foodForm.name.$error" ng-if="EntryCtrl.foodForm.name.$touched">
+          <div ng-message="required">Please enter a name.</div>
+        </div>
+        <input id="name" name="name" placeholder="Name" required="true" ng-model="EntryCtrl.food.name">
+
+      </div>
+      <div class="inline">
+        <div ng-messages="EntryCtrl.foodForm.calories.$error" ng-if="EntryCtrl.foodForm.calories.$touched">
+          <div ng-message="min">Calories must be at least zero.</div>
+          <div ng-message="required">Please enter calories.</div>
+          <div ng-message="number">Please enter a number.</div>
+          <div ng-message="pattern">Please enter a whole number.</div>
+        </div>
+        <input type="number" id="calories" placeholder="Calories" pattern="^\d+$" name="calories" min="0" required="true" ng-model="EntryCtrl.food.calories">
+
+      </div>
+      <div class="inline">
+        <div ng-messages="EntryCtrl.foodForm.protein.$error" ng-if="EntryCtrl.foodForm.protein.$touched">
+          <div ng-message="min">Protein must be at least zero.</div>
+          <div ng-message="required">Please enter protein.</div>
+          <div ng-message="number">Please enter a number.</div>
+          <div ng-message="pattern">Please enter a whole number.</div>
+        </div>
+        <input type="number" id="protein" placeholder="Protein" pattern="^\d+$" name="protein" min="0" required="true" ng-model="EntryCtrl.food.protein">
+
+      </div>
+      <div class="inline">
+        <div ng-messages="EntryCtrl.foodForm.carbs.$error" ng-if="EntryCtrl.foodForm.carbs.$touched">
+          <div ng-message="min">Carbs must be at least zero.</div>
+          <div ng-message="required">Please enter carbs.</div>
+          <div ng-message="number">Please enter a number.</div>
+          <div ng-message="pattern">Please enter a whole number.</div>
+        </div>
+        <input type="number" id="carbs" placeholder="Carbs" pattern="^\d+$" name="carbs" min="0" required="true" ng-model="EntryCtrl.food.carbs">
+
+      </div>
+      <div class="inline">
+        <div ng-messages="EntryCtrl.foodForm.fats.$error" ng-if="EntryCtrl.foodForm.fats.$touched">
+          <div ng-message="min">Fats must be at least zero.</div>
+          <div ng-message="required">Please enter fats.</div>
+          <div ng-message="number">Please enter a number.</div>
+          <div ng-message="pattern">Please enter a whole number.</div>
+        </div>
+        <input type="number" id="fats" placeholder="Fats" pattern="^\d+$" name="fats" min="0" required="true" ng-model="EntryCtrl.food.fats">
+
+      </div>
     </div>
-  </div>
-  <div class="input-group">
-    <label for="calories">Calories</label>
-    <input type="number" id="calories" pattern="^\d+$" name="calories" min="0" required="true" ng-model="EntryCtrl.food.calories">
-    <div ng-messages="EntryCtrl.foodForm.calories.$error" ng-if="EntryCtrl.foodForm.calories.$touched">
-      <div ng-message="min">Calories must be at least zero.</div>
-      <div ng-message="required">Please enter calories.</div>
-      <div ng-message="number">Please enter a number.</div>
-      <div ng-message="pattern">Please enter a whole number.</div>
-    </div>
-  </div>
-  <div class="input-group">
-    <label for="protein">Protein</label>
-    <input type="number" id="protein" pattern="^\d+$" name="protein" min="0" required="true" ng-model="EntryCtrl.food.protein">
-    <div ng-messages="EntryCtrl.foodForm.protein.$error" ng-if="EntryCtrl.foodForm.protein.$touched">
-      <div ng-message="min">Protein must be at least zero.</div>
-      <div ng-message="required">Please enter protein.</div>
-      <div ng-message="number">Please enter a number.</div>
-      <div ng-message="pattern">Please enter a whole number.</div>
-    </div>
-  </div>
-  <div class="input-group">
-    <label for="carbs">Carbs</label>
-    <input type="number" id="carbs" pattern="^\d+$" name="carbs" min="0" required="true" ng-model="EntryCtrl.food.carbs">
-    <div ng-messages="EntryCtrl.foodForm.carbs.$error" ng-if="EntryCtrl.foodForm.carbs.$touched">
-      <div ng-message="min">Carbs must be at least zero.</div>
-      <div ng-message="required">Please enter carbs.</div>
-      <div ng-message="number">Please enter a number.</div>
-      <div ng-message="pattern">Please enter a whole number.</div>
-    </div>
-  </div>
-  <div class="input-group">
-    <label for="fats">Fats</label>
-    <input type="number" id="fats" pattern="^\d+$" name="fats" min="0" required="true" ng-model="EntryCtrl.food.fats">
-    <div ng-messages="EntryCtrl.foodForm.fats.$error" ng-if="EntryCtrl.foodForm.fats.$touched">
-      <div ng-message="min">Fats must be at least zero.</div>
-      <div ng-message="required">Please enter fats.</div>
-      <div ng-message="number">Please enter a number.</div>
-      <div ng-message="pattern">Please enter a whole number.</div>
-    </div>
-  </div>
-  <input type="submit" class="btn btn-success" value="Create Food">
-</form>
+    <div class="actions"><input type="submit" class="btn  btn-success" value="Create Food"></div>
+
+  </form>
+  <br>
 
 <table class="table">
   <thead>
@@ -84,3 +89,4 @@
         <td><a href="" ng-click="EntryCtrl.updateFood(food, $index)">Save</a></td>
       </tr>
   </tbody>
+</div>
