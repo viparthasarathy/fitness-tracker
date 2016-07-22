@@ -1,34 +1,33 @@
-<h1>Welcome to your fitness log, {{user.email}}.</h1>
-
-<h2>This log's id is {{LogCtrl.log.id}}</h2>
+<h1>Log Statistics</h1>
 
 
-<a ui-sref="newChapter" ng-if="LogCtrl.noCurrentChapter()">Create a new chapter to track your progress.</a>
+<div id=chapters>
 
+  <p><a ui-sref="newChapter" ng-if="LogCtrl.noCurrentChapter()">Create a new chapter to track your progress.</a></p>
+  <p><a ui-sref="showChapter({id: LogCtrl.chapters[0].id})" ng-if="!LogCtrl.noCurrentChapter()">Head over to your current chapter to add new entries.</a></p>
 
-<a ui-sref="showChapter({id: LogCtrl.chapters[0].id})" ng-if="!LogCtrl.noCurrentChapter()">Head over to your current chapter to add new entries.</a>
-<br></br>
-<a ui-sref="chapters">Head over to all your previous chapters.</a>
+  <p><a ui-sref="chapters">Head over to all your previous chapters.</a></p>
+</div>
 
-<br></br>
+<br>
 <div id="gainStats" ng-if="LogCtrl.gainStats">
-  <p>While trying to gain weight you average...</p>
+  <p><b>While trying to gain weight you average...</b></p>
   <p>{{LogCtrl.gainStats.averageCalories}} in calorie consumption.</p>
   <p>{{LogCtrl.gainStats.averageProtein}} in protein consumption.</p>
   <p>{{LogCtrl.gainStats.averageCarbs}} in carbs consumption.</p>
   <p>{{LogCtrl.gainStats.averageFats}} in fats consumption.</p>
 </div>
-<br></br>
+<br>
 <div id="maintainStats" ng-if="LogCtrl.mainStats">
-  <p>While trying to maintain weight you average...</p>
+  <p><b>While trying to maintain weight you average...</b></p>
   <p>{{LogCtrl.maintainStats.averageCalories}} in calorie consumption.</p>
   <p>{{LogCtrl.maintainStats.averageProtein}} in protein consumption.</p>
   <p>{{LogCtrl.maintainStats.averageCarbs}} in carbs consumption.</p>
   <p>{{LogCtrl.maintainStats.averageFats}} in fats consumption.</p>
 </div>
-<br></br>
+<br>
 <div id="loseStats" ng-if="LogCtrl.loseStats">
-  <p>While trying to lose weight you average...</p>
+  <p><b>While trying to lose weight you average...</b></p>
   <p>{{LogCtrl.loseStats.averageCalories}} in calorie consumption.</p>
   <p>{{LogCtrl.loseStats.averageProtein}} in protein consumption.</p>
   <p>{{LogCtrl.loseStats.averageCarbs}} in carbs consumption.</p>
