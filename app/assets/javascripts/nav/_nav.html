@@ -1,9 +1,16 @@
-<div class="navbar navbar-fixed-top">
-  <ul class="nav navbar-nav">
-    <li ng-hide="signedIn()"><a ui-sref="signin">Sign In</a></li>
-    <li ng-hide="signedIn()"><a ui-sref="signup">Sign Up</a></li>
-    <li ng-show="signedIn()"><a ui-sref="log">{{user.email}}</a></li>
-    <li ng-show="signedIn()"><a ui-sref="log">Log</a></li>
-    <li ng-show="signedIn()"><a ng-click="signout()">Sign Out</a></li>
-  </ul>
-</div>
+<header class="navbar navbar-fixed-top">
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav">
+        <li><a ui-sref="log">Fitness Log</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="signedIn()"><a ui-sref="signin">Sign In</a></li>
+        <li ng-hide="signedIn()"><a ui-sref="signup">Sign Up</a></li>
+        <li ng-show="signedIn()"><a ui-sref="log">{{user.email}}</a></li>
+        <li ng-show="signedIn()"><a ui-sref="log">Log</a></li>
+        <li ng-show="signedIn()"><a ng-click="signout()">Sign Out</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
