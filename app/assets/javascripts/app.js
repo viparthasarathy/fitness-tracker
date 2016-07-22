@@ -37,7 +37,7 @@ angular
         })
         .state('chapters', {
           url: '/chapters',
-          templateUrl: 'chapters/_chapters.html',
+          templateUrl: 'chapters/_index.html',
           controller: 'ChaptersController as ChaptersCtrl',
           onEnter: function($state, Auth) {
             if (!Auth.isAuthenticated()) { $state.go('signin'); }
