@@ -70,12 +70,12 @@ angular
           }
         })
         .state('showChapter.entry', {
-          url: '/entries/:id',
+          url: '/entries/:entry_id',
           templateUrl: 'entries/_entry.html',
           controller: 'EntryController as EntryCtrl',
           resolve: {
             EntryJSON: function(entryService, $stateParams) {
-              return entryService.getEntry($stateParams.id);
+              return entryService.getEntry($stateParams.entry_id);
             }
           }
         })
