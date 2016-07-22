@@ -1,3 +1,5 @@
-<h1> <a ui-sref="log">Return to Log Statistics</a> -- Browsing Chapters  -- <a ui-sref="chapters.index">Chapters Index</a></h1>
+<h3>Your Chapters</h3>
 
-<div ui-view></div>
+<div ng-repeat="chapter in ChaptersCtrl.chapters">
+  <a ui-sref="showChapter({id: chapter.id})">{{chapter.title}}</a>
+</div>

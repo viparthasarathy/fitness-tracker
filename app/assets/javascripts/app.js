@@ -41,33 +41,35 @@ angular
           controller: 'ChaptersController as ChaptersCtrl',
           onEnter: function($state, Auth) {
             if (!Auth.isAuthenticated()) { $state.go('signin'); }
-          }
-        })
-        .state('chapters.new', {
-          url: '/new',
-          templateUrl: 'chapters/_new.html',
-          controller: 'NewChapterController as NewChapterCtrl'
-        })
-        .state('chapters.show', {
-          url: '/:id',
-          templateUrl: 'chapters/_show.html',
-          controller: 'ChapterController as ChapterCtrl',
-          resolve: {
-            chapterJSON: function(chapterService, $stateParams) {
-              return chapterService.getChapter($stateParams.id);
-            }
-          }
-        })
-        .state('chapters.index', {
-          templateUrl: 'chapters/_index.html',
-          controller: 'ChaptersIndexController as ChaptersIndexCtrl',
+          },
           resolve: {
             chaptersJSON: function(chapterService) {
               return chapterService.getChapters();
             }
           }
         })
-        .state('entries', {
+        .state('newChapter', {
+          url: '/chapters/new',
+          templateUrl: 'chapters/_new.html',
+          controller: 'NewChapterController as NewChapterCtrl',
+          onEnter: function($state, Auth) {
+            if (!Auth.isAuthenticated()) { $state.go('signin'); }
+          }
+        })
+        .state('showChapter', {
+          url: '/chapters/:id',
+          templateUrl: 'chapters/_show.html',
+          controller: 'ChapterController as ChapterCtrl',
+          onEnter: function($state, Auth) {
+            if (!Auth.isAuthenticated()) { $state.go('signin'); }
+          },
+          resolve: {
+            chapterJSON: function(chapterService, $stateParams) {
+              return chapterService.getChapter($stateParams.id);
+            }
+          }
+        })
+        .state('showChapter.entry', {
           url: '/entries/:id',
           templateUrl: 'entries/_entry.html',
           controller: 'EntryController as EntryCtrl',

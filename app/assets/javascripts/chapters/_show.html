@@ -65,5 +65,7 @@
 <label for="search">Search by Food</labeL>
 <input id="search" name="search" ng-model="ChapterCtrl.search">
 <div ng-repeat="entry in ChapterCtrl.chapter.entries | filter: ChapterCtrl.search">
-  <a ui-sref="entries({id: entry.id})">{{entry.day}}</a>
+  <a ui-sref="chapters.entries({id: entry.id})">{{entry.day}}</a>
 </div>
+
+<div ui-view></div>
