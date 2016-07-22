@@ -16,9 +16,9 @@ class ChaptersController < ApplicationController
   def show
     render json: @chapter, include: ['entries', 'entries.measurement', 'entries.foods'], status: 200
   end
- 
+
   def update
-    @chapter.update(completed_at: Date.current)
+    @chapter.update(completed_at: Time.zone.now)
     render json: @chapter, status: 200
   end
 
