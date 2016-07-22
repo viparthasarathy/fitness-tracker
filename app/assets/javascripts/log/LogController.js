@@ -25,10 +25,6 @@ function LogController(logJSON) {
   LogCtrl.loseStats = calculateStats(LogCtrl.chapters.filter(function(c) {return c.goal < 0}));
   LogCtrl.maintainStats = calculateStats(LogCtrl.chapters.filter(function(c) {return c.goal === 0}));
 
-  console.log(LogCtrl.gainStats)
-  console.log(LogCtrl.loseStats)
-  console.log(LogCtrl.maintainStats)
-
   LogCtrl.noCurrentChapter = function() {
     return LogCtrl.chapters.length == 0 || LogCtrl.chapters[0].completed_at !== null
   }
