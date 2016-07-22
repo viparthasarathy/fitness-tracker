@@ -24,7 +24,7 @@ angular
         })
         .state('log', {
           url: '/log',
-          templateUrl: 'log/_log.html',
+          templateUrl: 'log/_show.html',
           controller: 'LogController as LogCtrl',
           onEnter: function($state, Auth) {
             if (!Auth.isAuthenticated()) { $state.go('signin'); }
@@ -48,14 +48,6 @@ angular
             }
           }
         })
-        .state('newChapter', {
-          url: '/chapters/new',
-          templateUrl: 'chapters/_new.html',
-          controller: 'NewChapterController as NewChapterCtrl',
-          onEnter: function($state, Auth) {
-            if (!Auth.isAuthenticated()) { $state.go('signin'); }
-          }
-        })
         .state('showChapter', {
           url: '/chapters/:id',
           templateUrl: 'chapters/_show.html',
@@ -71,14 +63,14 @@ angular
         })
         .state('showChapter.entry', {
           url: '/entries/:entry_id',
-          templateUrl: 'entries/_entry.html',
+          templateUrl: 'entries/_show.html',
           controller: 'EntryController as EntryCtrl',
           resolve: {
             EntryJSON: function(entryService, $stateParams) {
               return entryService.getEntry($stateParams.entry_id);
             }
           }
-        })
+        });
 
         $urlRouterProvider.otherwise('/signin');
       });
