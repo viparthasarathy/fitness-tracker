@@ -139,7 +139,7 @@ describe ChaptersController, :type => :controller do
           patch :update, {:format => :json, :id => @chapter.id}
           chapter_response = JSON.parse(response.body, symbolize_names: true)
           expect(chapter_response[:id]).to eq(@chapter.id)
-          expect(Date.parse(chapter_response[:completed_at])).to eq(Date.today)
+          expect(Date.parse(chapter_response[:completed_at])).to eq(Date.current)
         end
 
         it 'raises an error if the chapter already has a completed at value' do

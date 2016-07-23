@@ -66,7 +66,7 @@ describe Entry, :type => :model do
     end
 
     it 'cannot have a day that is after the parent chapter end date' do
-      @entry.day = @chapter.completed_at + 1
+      @entry.day = @chapter.completed_at + 1.day
       expect(@entry).to have(1).error_on(:day)
     end
 
