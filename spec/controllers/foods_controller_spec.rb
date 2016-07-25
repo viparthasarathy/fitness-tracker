@@ -33,7 +33,7 @@ describe FoodsController, :type => :controller do
           expect(@entry.foods.count).to eq(1)
         end
 
-        it 'saves the return the food info on success' do
+        it 'returns the food info on success' do
           post :create, {:format => :json, :food => @food_params}
           food_response = JSON.parse(response.body, symbolize_names: true)
           expect(food_response[:name]).to eq("Burger")
