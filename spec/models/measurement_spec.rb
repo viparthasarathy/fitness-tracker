@@ -39,33 +39,63 @@ describe Measurement, :type => :model do
 
   context 'validations' do
     it 'requires that weight is a number' do
+      @measurement.weight = "test"
+      expect(@measurement).to have(1).error_on(:weight)
+      @measurement.weight = 140.5
+      expect(@measurement).to have(0).errors_on(:weight)
     end
 
     it 'allows weight to be left blank' do
+      @measurement.weight = nil
+      expect(@measurement).to have(0).errors_on(:weight)
     end
 
-    it 'requires that heightis a number' do
+    it 'requires that height is a number' do
+      @measurement.height = "test"
+      expect(@measurement).to have(1).error_on(:height)
+      @measurement.height = 140.5
+      expect(@measurement).to have(0).errors_on(:height)
     end
 
-    it 'allows heightto be left blank' do
+    it 'allows height to be left blank' do
+      @measurement.height = nil
+      expect(@measurement).to have(0).errors_on(:height)
     end
 
     it 'requires that bodyfat is a number' do
+      @measurement.bodyfat = "test"
+      expect(@measurement).to have(1).error_on(:bodyfat)
+      @measurement.bodyfat = 140.5
+      expect(@measurement).to have(0).errors_on(:bodyfat)
     end
 
     it 'allows bodyfat to be left blank' do
+      @measurement.bodyfat = nil
+      expect(@measurement).to have(0).errors_on(:bodyfat)
     end
 
     it 'requires that chest is a number' do
+      @measurement.chest = "test"
+      expect(@measurement).to have(1).error_on(:chest)
+      @measurement.chest = 140.5
+      expect(@measurement).to have(0).errors_on(:chest)
     end
 
     it 'allows chest to be left blank' do
+      @measurement.chest = nil
+      expect(@measurement).to have(0).errors_on(:chest)
     end
 
     it 'requires that waist is a number' do
+      @measurement.waist = "test"
+      expect(@measurement).to have(1).error_on(:waist)
+      @measurement.waist = 140.5
+      expect(@measurement).to have(0).errors_on(:waist)
     end
 
     it 'allows waist to be left blank' do
+      @measurement.waist = nil
+      expect(@measurement).to have(0).errors_on(:waist)
     end
 
     it 'requires the presence of an entry' do
