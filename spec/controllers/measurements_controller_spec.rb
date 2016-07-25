@@ -76,7 +76,7 @@ describe MeasurementsController, :type => :controller do
           put :update, {:format => :json, :id => @measurement.id, :measurement => @measurement_params}
           expect(response.status).to eq(400)
           error_response = JSON.parse(response.body, symbolize_names: true)
-          expect(error_response[:measurement][0]).to eq("is not a number")
+          expect(error_response[:weight][0]).to eq("is not a number")
         end
 
         it 'succeeds with valid data' do

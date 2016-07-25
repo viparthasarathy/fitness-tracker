@@ -7,6 +7,12 @@ class MeasurementsController < ApplicationController
     @measurement.save ? (render json: @measurement, status: 201) : (render json: @measurement.errors, status: 400)
   end
 
+  def update
+    @measurement = Measurement.find(params[:id])
+    authorize @measurement
+    @measurement.update(measurement_params) ? (render json: @measurement, status: 200) : (render json: @measurement.errors, status: 400)
+  end
+
   private
 
   def measurement_params
