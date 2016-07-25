@@ -13,6 +13,22 @@ describe Measurement, :type => :model do
     it 'has a weight' do
       expect(@measurement).to respond_to(:weight)
     end
+
+    it 'has a height' do
+      expect(@measurement).to respond_to(:height)
+    end
+
+    it 'has a bodyfat' do
+      expect(@measurement).to respond_to(:bodyfat)
+    end
+
+    'it has a chest measurement' do
+      expect(@measurement).to respond_to(:chest)
+    end
+
+    it 'has a waist measurement' do
+      expect(@measurement).to respond_to(:waist)
+    end
   end
 
   context 'associations' do
@@ -22,9 +38,34 @@ describe Measurement, :type => :model do
   end
 
   context 'validations' do
-    it 'requires the presence of weight' do
-      @measurement.weight = nil
-      expect(@measurement).to have(1).error_on(:weight)
+    it 'requires that weight is a number' do
+    end
+
+    it 'allows weight to be left blank' do
+    end
+
+    it 'requires that heightis a number' do
+    end
+
+    it 'allows heightto be left blank' do
+    end
+
+    it 'requires that bodyfat is a number' do
+    end
+
+    it 'allows bodyfat to be left blank' do
+    end
+
+    it 'requires that chest is a number' do
+    end
+
+    it 'allows chest to be left blank' do
+    end
+
+    it 'requires that waist is a number' do
+    end
+
+    it 'allows waist to be left blank' do
     end
 
     it 'requires the presence of an entry' do
