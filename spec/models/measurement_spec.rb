@@ -22,7 +22,7 @@ describe Measurement, :type => :model do
       expect(@measurement).to respond_to(:bodyfat)
     end
 
-    'it has a chest measurement' do
+    it 'has a chest measurement' do
       expect(@measurement).to respond_to(:chest)
     end
 

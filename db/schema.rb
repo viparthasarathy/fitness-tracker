@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160722224224) do
+ActiveRecord::Schema.define(version: 20160725214806) do
 
   create_table "chapters", force: :cascade do |t|
     t.float    "goal"
@@ -61,6 +61,10 @@ ActiveRecord::Schema.define(version: 20160722224224) do
     t.integer  "entry_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float    "height"
+    t.float    "bodyfat"
+    t.float    "chest"
+    t.float    "waist"
   end
 
   add_index "measurements", ["entry_id"], name: "index_measurements_on_entry_id"
