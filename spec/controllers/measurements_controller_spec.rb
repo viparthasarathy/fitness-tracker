@@ -20,11 +20,11 @@ describe MeasurementsController, :type => :controller do
         end
 
         it 'returns an error for invalid data' do
-          @measurement_params[:entry_id] = nil
+          @measurement_params[:height] = "very tall"
           post :create, {:format => :json, :measurement => @measurement_params}
           expect(response.status).to eq(400)
           error_response = JSON.parse(response.body, symbolize_names: true)
-          expect(error_response[:entry][0]).to eq("can't be blank")
+          expect(error_response[:height][0]).to eq("is not a number")
         end
 
         it 'succeeds with valid data' do
