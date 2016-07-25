@@ -41,6 +41,9 @@ describe MeasurementsController, :type => :controller do
       end
 
       context 'as other user' do
+        before do
+          sign_in @other_user
+        end
         it 'raises an authorization error' do
           post :create, {:format => :json, :measurement => @measurement_params}
           expect(response.status).to eq(403)
@@ -49,7 +52,7 @@ describe MeasurementsController, :type => :controller do
     end
 
     context 'logged out' do
-      it 'raises a validation error' do
+      it 'raises an authentication error' do
         post :create, {:format => :json, :measurement => @measurement_params}
         expect(response.status).to eq(401)
       end
@@ -57,21 +60,62 @@ describe MeasurementsController, :type => :controller do
   end
 
   describe 'PUT #update' do
+    before do
+      @measurement = FactoryGirl.create(:measurement, entry: @entry)
+      @measurement_params = {entry_id: @entry.id, weight: 150, height: 70, waist: 30.5, chest: nil, bodyfat: 10.5}
+    end
+
     context 'logged in' do
       context 'as owner' do
-        it 'returns an error for invalid data'
-        it 'succeeds with valid data'
-        it 'updates the value'
-        it 'returns the updated measurement info on success'
+        before do
+          sign_in @user
+        end
+
+        it 'returns an error for invalid data' do
+          @measurement_params[:weight] = "very big"
+          put :update, {:format => :json, :id => @measurement.id, :measurement => @measurement_params}
+          expect(response.status).to eq(400)
+          error_response = JSON.parse(response.body, symbolize_names: true)
+          expect(error_response[:measurement][0]).to eq("is not a number")
+        end
+
+        it 'succeeds with valid data' do
+          put :update, {:format => :json, :id => @measurement.id, :measurement => @measurement_params}
+          expect(response.status).to eq(200)
+        end
+
+        it 'updates the value' do
+          expect(@measurement.waist).to eq(nil)
+          put :update, {:format => :json, :id => @measurement.id, :measurement => @measurement_params}
+          @measurement.reload
+          expect(@measurement.waist).to eq(30.5)
+        end
+
+        it 'returns the updated measurement info on success' do
+          expect(@measurement.bodyfat).to eq(15)
+          put :update, {:format => :json, :id => @measurement.id, :measurement => @measurement_params}
+          measurement_response = JSON.parse(response.body, symbolize_names: true)
+          expect(measurement_response[:bodyfat]).to eq(10.5)
+        end
       end
 
       context 'as other user' do
-        it 'raises an authorization error'
+        before do
+          sign_in @other_user
+        end
+
+        it 'raises an authorization error' do
+          put :update, {:format => :json, :id => @measurement.id, :measurement => @measurement_params}
+          expect(response.status).to eq(403)
+        end
       end
     end
 
     context 'logged out' do
-      it 'raises a validation error'
+      it 'raises an authentication error' do
+        put :update, {:format => :json, :id => @measurement.id, :measurement => @measurement_params}
+        expect(response.status).to eq(401)
+      end
     end
   end
 end
