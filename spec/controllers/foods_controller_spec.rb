@@ -19,7 +19,7 @@ describe FoodsController, :type => :controller do
           sign_in @user
         end
 
-        it 'should return an error for invalid data' do
+        it 'returns an error for invalid data' do
           @food_params[:name] = ""
           post :create, {:format => :json, :food => @food_params}
           expect(response.status).to eq(400)
@@ -33,7 +33,7 @@ describe FoodsController, :type => :controller do
           expect(@entry.foods.count).to eq(1)
         end
 
-        it 'should save the return the food info on success' do
+        it 'saves the return the food info on success' do
           post :create, {:format => :json, :food => @food_params}
           food_response = JSON.parse(response.body, symbolize_names: true)
           expect(food_response[:name]).to eq("Burger")
@@ -45,7 +45,7 @@ describe FoodsController, :type => :controller do
           sign_in @other_user
         end
 
-        it 'should raise an authorization error' do
+        it 'raises an authorization error' do
           post :create, {:format => :json, :food => @food_params}
           expect(response.status).to eq(403)
         end
@@ -53,7 +53,7 @@ describe FoodsController, :type => :controller do
     end
 
     context 'logged out' do
-      it 'should raise an authentication error' do
+      it 'raises an authentication error' do
         post :create, {:format => :json, :food => @food_params}
         expect(response.status).to eq(401)
         expect(@entry.foods.count).to eq(0)
@@ -73,7 +73,7 @@ describe FoodsController, :type => :controller do
           sign_in @user
         end
 
-        it 'should return an error for invalid data' do
+        it 'returns an error for invalid data' do
           @food_params[:protein] = nil
           put :update, {:format => :json, :id => @food.id, :food => @food_params}
           expect(response.status).to eq(400)
@@ -107,7 +107,7 @@ describe FoodsController, :type => :controller do
           sign_in @other_user
         end
 
-        it 'should raise an authorization error' do
+        it 'raises an authorization error' do
           put :update, {:format => :json, :id => @food.id, :food => @food_params}
           expect(response.status).to eq(403)
         end
@@ -115,7 +115,7 @@ describe FoodsController, :type => :controller do
     end
 
     context 'logged out' do
-      it 'should raise an authentication error' do
+      it 'raises an authentication error' do
         put :update, {:format => :json, :id => @food.id, :food => @food_params}
         expect(response.status).to eq(401)
       end
@@ -133,7 +133,7 @@ describe FoodsController, :type => :controller do
           sign_in @user
         end
 
-        it 'should delete the object' do
+        it 'deletes the object' do
           delete :destroy, {:format => :json, :id => @food.id}
           expect(response.status).to eq(204)
           expect(@entry.foods).to_not include(@food)
@@ -145,7 +145,7 @@ describe FoodsController, :type => :controller do
           sign_in @other_user
         end
 
-        it 'should raise an authorization error' do
+        it 'raises an authorization error' do
           delete :destroy, {:format => :json, :id => @food.id}
           expect(response.status).to eq(403)
         end
@@ -153,7 +153,7 @@ describe FoodsController, :type => :controller do
     end
 
     context 'logged out' do
-      it 'should raise an authentication error' do
+      it 'raises an authentication error' do
         delete :destroy, {:format => :json, :id => @food.id}
         expect(response.status).to eq(401)
       end

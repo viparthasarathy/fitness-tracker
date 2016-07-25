@@ -15,7 +15,7 @@ describe EntriesController, :type => :controller do
       end
 
       context 'as owner of chapter' do
-        it 'should fail if sent invalid data and return the error' do
+        it 'fails if sent invalid data and return the error' do
           @entry_params[:day] = Time.zone.today + 1
           post :create, {:format => :json, :entry => @entry_params}
           expect(response.status).to eq(400)
