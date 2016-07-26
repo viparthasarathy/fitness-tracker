@@ -61,10 +61,10 @@ angular
             }
           }
         })
-        .state('showChapter.entry', {
-          url: '/entries/:entry_id',
-          templateUrl: 'entries/_show.html',
-          controller: 'EntryController as EntryCtrl',
+        .state('showChapter.entryFoods', {
+          url: '/entries/:entry_id/foods',
+          templateUrl: 'entries/foods/_show.html',
+          controller: 'FoodsController as FoodsCtrl',
           resolve: {
             EntryJSON: function(entryService, $stateParams) {
               return entryService.getEntry($stateParams.entry_id);
