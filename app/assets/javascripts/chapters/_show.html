@@ -14,63 +14,63 @@
     </div>
 
     <br></br>
-    <div ng-if="ChapterCtrl.chapter.description === null">
-      <p>No description avaliable.</p>
-    </div>
-    <p>{{ChapterCtrl.chapter.description}}</p>
 
-    <div ng-if="ChapterCtrl.chapter.goal > 0">
-      <p>Your goal is to gain an average of {{ChapterCtrl.chapter.goal}} lb per week.</p>
-    </div>
-
-    <div ng-if="ChapterCtrl.chapter.goal === 0">
-      <p>Your goal is to maintain your weight.</p>
-    </div>
-
-    <div ng-if="ChapterCtrl.chapter.goal < 0">
-      <p>Your goal is to lose an average of {{-1 * ChapterCtrl.chapter.goal}} lb per week.</p>
-    </div>
-
-    <p>Average calorie consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_calories)}}</p>
-    <p>Average protein consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_protein)}}</p>
-    <p>Average carbs consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_carbs)}}</p>
-    <p>Average fats consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_fats)}}</p>
-
-
-<br></br>
-
-    <h2>Entries</h2>
-    <div class="center">
-      <div ng-messages="ChapterCtrl.newEntryForm.day.$error" ng-if="ChapterCtrl.newEntryForm.day.$touched">
-        <div ng-message="required">Day is required.</div>
-        <div ng-message="date">Your date is not valid.</div>
-        <div ng-message="server">{{ChapterCtrl.serverChapterError}}</div>
+    <div ui-view>
+      <div ng-if="ChapterCtrl.chapter.description === null">
+        <p>No description avaliable.</p>
       </div>
-      <form name="ChapterCtrl.newEntryForm" ng-submit="ChapterCtrl.createEntry()">
-        <div class="inline">
-          <input type="date" id="day" required="required" name="day" ng-model="ChapterCtrl.newEntry.day" ng-change="ChapterCtrl.setServerErrorFalse()">
-        </div>
-
-        <div class="inline">
-          <input id="notes" placeholder="Notes" name="notes" ng-model="ChapterCtrl.newEntry.notes">
-        </div>
-
-        <input type="submit" class="btn btn-sm btn-success" value="Create Entry">
-      </form>
-    </div>
-
-<br>
-    <h5>Search Previous Entries by Food</h5>
-    <div class="center">
-      <input id="search" name="search" ng-model="ChapterCtrl.search">
+      <p>{{ChapterCtrl.chapter.description}}</p>
       <br></br>
-      <div ng-repeat="entry in ChapterCtrl.chapter.entries | filter: ChapterCtrl.search">
-        <a ui-sref="showChapter.entry({id: ChapterCtrl.chapter.id, entry_id: entry.id})">{{entry.day}}</a>
+      <div ng-if="ChapterCtrl.chapter.goal > 0">
+        <p>Your goal is to gain an average of {{ChapterCtrl.chapter.goal}} lb per week.</p>
+      </div>
+
+      <div ng-if="ChapterCtrl.chapter.goal === 0">
+        <p>Your goal is to maintain your weight.</p>
+      </div>
+
+      <div ng-if="ChapterCtrl.chapter.goal < 0">
+        <p>Your goal is to lose an average of {{-1 * ChapterCtrl.chapter.goal}} lb per week.</p>
+      </div>
+
+      <p>Average calorie consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_calories)}}</p>
+      <p>Average protein consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_protein)}}</p>
+      <p>Average carbs consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_carbs)}}</p>
+      <p>Average fats consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_fats)}}</p>
+
+
+  <br></br>
+
+      <h2>Entries</h2>
+      <div class="center">
+        <div ng-messages="ChapterCtrl.newEntryForm.day.$error" ng-if="ChapterCtrl.newEntryForm.day.$touched">
+          <div ng-message="required">Day is required.</div>
+          <div ng-message="date">Your date is not valid.</div>
+          <div ng-message="server">{{ChapterCtrl.serverChapterError}}</div>
+        </div>
+        <form name="ChapterCtrl.newEntryForm" ng-submit="ChapterCtrl.createEntry()">
+          <div class="inline">
+            <input type="date" id="day" required="required" name="day" ng-model="ChapterCtrl.newEntry.day" ng-change="ChapterCtrl.setServerErrorFalse()">
+          </div>
+
+          <div class="inline">
+            <input id="notes" placeholder="Notes" name="notes" ng-model="ChapterCtrl.newEntry.notes">
+          </div>
+
+          <input type="submit" class="btn btn-sm btn-success" value="Create Entry">
+        </form>
+      </div>
+
+  <br>
+      <h5>Search Previous Entries by Food</h5>
+      <div class="center">
+        <input id="search" name="search" ng-model="ChapterCtrl.search">
+        <br></br>
+        <div ng-repeat="entry in ChapterCtrl.chapter.entries | filter: ChapterCtrl.search">
+          <p>{{entry.day}} - <a ui-sref="showChapter.entryFoods({id: ChapterCtrl.chapter.id, entry_id: entry.id})">Foods</a> - Measurements</p>
+        </div>
       </div>
     </div>
-
-
-    <div ui-view></div>
 
   </div>
 </div>
