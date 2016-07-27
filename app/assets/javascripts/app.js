@@ -61,6 +61,16 @@ angular
             }
           }
         })
+        .state('showChapter.stats', {
+          url: '/stats',
+          templateUrl: 'chapters/_stats.html',
+          controller: 'ChapterStatsController as ChapterStatsCtrl',
+          resolve: {
+            chapterJSON: function(chapterService, $stateParams) {
+              return chapterService.getChapter($stateParams.id);
+            }
+          }
+        })
         .state('showChapter.entryFoods', {
           url: '/entries/:entry_id/foods',
           templateUrl: 'entries/foods/_show.html',
