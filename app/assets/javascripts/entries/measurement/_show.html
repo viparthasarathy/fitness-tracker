@@ -6,41 +6,36 @@
 <div class="center">
   <form name="MeasurementCtrl.measurementForm" ng-submit="MeasurementCtrl.saveMeasurement()">
     <div class="form-group">
-      <div class="field">
-        <label for="weight">Weight</label>
-        <input id="weight" name="weight" min="0.1" step="0.1" value="0.1" required="true" type="number" ng-model="MeasurementCtrl.measurement.weight">
+      <div class="inline">
         <div ng-messages="MeasurementCtrl.measurementForm.weight.$error" ng-if="MeasurementCtrl.measurementForm.weight.$touched">
           <div ng-message="required">Weight cannot be blank.</div>
           <div ng-message="min">Weight must be over zero.</div>
         </div>
+        <input id="weight" placeholder="Weight" name="weight" min="0.1" step="0.1" value="0.1" required="true" type="number" ng-model="MeasurementCtrl.measurement.weight">
       </div>
-      <div class="field">
-        <label for="bodyfat">Bodyfat</label>
-        <input id="bodyfat" name="bodyfat" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementCtrl.measurement.bodyfat">
+      <div class="inline">
         <div ng-messages="MeasurementCtrl.measurementForm.bodyfat.$error" ng-if="MeasurementCtrl.measurementForm.bodyfat.$touched">
           <div ng-message="min">Bodyfat must be over zero.</div>
         </div>
+        <input id="bodyfat" placeholder="Bodyfat" name="bodyfat" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementCtrl.measurement.bodyfat">
       </div>
-      <div class="field">
-        <label for="height">Height</label>
-        <input id="height" name="height" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementCtrl.measurement.height">
+      <div class="inline">
         <div ng-messages="MeasurementCtrl.measurementForm.height.$error" ng-if="MeasurementCtrl.measurementForm.height.$touched">
           <div ng-message="min">Height must be over zero.</div>
         </div>
+        <input id="height" placeholder="Height" name="height" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementCtrl.measurement.height">
       </div>
-      <div class="field">
-        <label for="waist">Waist</label>
-        <input id="waist" name="waist" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementCtrl.measurement.waist">
+      <div class="inline">
         <div ng-messages="MeasurementCtrl.measurementForm.waist.$error" ng-if="MeasurementCtrl.measurementForm.waist.$touched">
           <div ng-message="min">Waist must be over zero.</div>
         </div>
+        <input id="waist" placeholder="Waist" name="waist" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementCtrl.measurement.waist">
       </div>
-      <div class="field">
-        <label for="chest">Chest</label>
-        <input id="chest" name="chest" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementCtrl.measurement.chest">
+      <div class="inline">
         <div ng-messages="MeasurementCtrl.measurementForm.chest.$error" ng-if="MeasurementCtrl.measurementForm.chest.$touched">
           <div ng-message="min">Chest must be over zero.</div>
         </div>
+        <input id="chest" placeholder="Chest" name="chest" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementCtrl.measurement.chest">
       </div>
     </div>
     <div class="actions"><input type="submit" class="btn btn-success" value="Save Measurement"></div>
