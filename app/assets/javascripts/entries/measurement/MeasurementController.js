@@ -2,20 +2,20 @@ function MeasurementController(EntryJSON, MeasurementService, $state) {
   var MeasurementCtrl = this;
   MeasurementCtrl.entry = EntryJSON.data;
   MeasurementCtrl.measurement = MeasurementCtrl.entry.measurement;
+  MeasurementCtrl.message = "Create or update an existing measurement."
 
   MeasurementCtrl.saveMeasurement = function() {
     MeasurementCtrl.measurement.entry_id = MeasurementCtrl.entry.id;
-    if (MeasurementCtrl.measurement.id === null) {
-      console.log(MeasurementCtrl.measurement);
+    if (MeasurementCtrl.measurement.id === undefined) {
       MeasurementService.createMeasurement(MeasurementCtrl.measurement)
         .then(function(response) {
-          console.log(response);
+          MeasurementCtrl.message = "Measurement created."
+          MeasurementCtrl.measurement.id = response.data.id;
       });
     } else {
-      console.log(MeasurementCtrl.measurement);
       MeasurementService.updateMeasurement(MeasurementCtrl.measurement)
         .then(function(response) {
-          console.log(response);
+          MeasurementCtrl.message = "Measurement updated."
         });
     }
   }

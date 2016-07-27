@@ -2,7 +2,7 @@
 <h4><a ui-sref="showChapter({id: ChapterCtrl.chapter.id})">Return to Chapter</a></h4>
 <h5> {{MeasurementCtrl.entry.notes || "No notes available." }} </h5>
 
-
+<h5>{{MeasurementCtrl.message}}</h5>
 <div class="center">
   <form name="MeasurementCtrl.measurementForm" ng-submit="MeasurementCtrl.saveMeasurement()">
     <div class="form-group">
