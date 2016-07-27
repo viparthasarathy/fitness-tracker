@@ -7,15 +7,6 @@ function ChapterController(chapterJSON, $state, chapterService, entryService) {
     ChapterCtrl.chapter.completed_at = new Date(ChapterCtrl.chapter.completed_at);
   }
 
-  ChapterCtrl.calculateAverage = function(total) {
-
-    if (ChapterCtrl.chapter.entries.length > 0) {
-      return Math.round(total / ChapterCtrl.chapter.entries.length)
-    } else {
-      return 0;
-    }
-  }
-
   ChapterCtrl.markComplete = function() {
     chapterService.updateChapter(ChapterCtrl.chapter.id).then(function(response) {
       $state.go('log');
