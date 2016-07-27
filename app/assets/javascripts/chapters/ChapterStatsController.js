@@ -13,6 +13,9 @@ function ChapterStatsController(chapterJSON) {
   ChapterStatsCtrl.firstEntryID = ChapterStatsCtrl.chapter.entries[ChapterStatsCtrl.chapter.entries.length - 1].id;
   ChapterStatsCtrl.firstMeasurement = ChapterStatsCtrl.chapter.measurements[ChapterStatsCtrl.chapter.measurements.length - 1];
 
+  ChapterStatsCtrl.thisWeekMeasurements = ChapterStatsCtrl.chapter.measurements.slice(0, 7);
+  ChapterStatsCtrl.lastWeeksMeasurement = ChapterStatsCtrl.chapter.measurements.slice(7, 14);
+
 }
 
 angular
