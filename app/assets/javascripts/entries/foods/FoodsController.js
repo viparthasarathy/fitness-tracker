@@ -1,4 +1,4 @@
-function FoodsController(EntryJSON, foodService, $scope) {
+function FoodsController(EntryJSON, foodService) {
   var FoodsCtrl = this;
   FoodsCtrl.entry = EntryJSON.data;
 

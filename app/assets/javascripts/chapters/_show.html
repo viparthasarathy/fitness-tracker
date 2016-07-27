@@ -1,4 +1,4 @@
-<h2>{{ChapterCtrl.chapter.title}}</a></h2>
+<h2>{{ChapterCtrl.chapter.title}}</h2>
 
 <h5>Created at {{ChapterCtrl.chapter.created_at | date:'longDate'}} </h5>
 <div class="row">
@@ -17,10 +17,9 @@
 
     <div ui-view>
       <div ng-if="ChapterCtrl.chapter.description === null">
-        <p>No description avaliable.</p>
+        <p>No description available.</p>
       </div>
       <p>{{ChapterCtrl.chapter.description}}</p>
-      <br></br>
       <div ng-if="ChapterCtrl.chapter.goal > 0">
         <p>Your goal is to gain an average of {{ChapterCtrl.chapter.goal}} lb per week.</p>
       </div>

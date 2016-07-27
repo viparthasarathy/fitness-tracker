@@ -70,6 +70,16 @@ angular
               return entryService.getEntry($stateParams.entry_id);
             }
           }
+        })
+        .state('showChapter.entryMeasurements', {
+          url: '/entries/:entry_id/measurements',
+          templateUrl: 'entries/measurements/_show.html',
+          controller: 'MeasurementsController as MeasurementsCtrl',
+          resolve: {
+            EntryJSON: function(entryService, $stateParams) {
+              return entryService.getEntry($stateParams.entry_id);
+            }
+          }
         });
 
         $urlRouterProvider.otherwise('/signin');
