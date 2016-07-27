@@ -42,12 +42,29 @@ function ChapterStatsController(chapterJSON) {
     };
   }
 
+  function calculateChange(firstMeasurements, secondMeasurements) {
+    if (secondMeasurements) {
+      return {
+        weight:  firstMeasurements.weight - secondMeasurements.weight,
+        bodyfat: firstMeasurements.bodyfat - secondMeasurements.bodyfat,
+        height:  firstMeasurements.height - secondMeasurements.height,
+        waist: firstMeasurements.waist - secondMeasurements.waist,
+        chest:  firstMeasurements.chest - secondMeasurements.chest
+      };
+    }
+    else {
+      return {};
+    }
+  }
+
   ChapterStatsCtrl.firstEntryID = ChapterStatsCtrl.chapter.entries[ChapterStatsCtrl.chapter.entries.length - 1].id;
   ChapterStatsCtrl.firstMeasurement = ChapterStatsCtrl.chapter.measurements[ChapterStatsCtrl.chapter.measurements.length - 1];
 
   ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyAverages(ChapterStatsCtrl.chapter.measurements.slice(0, 7));
   ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyAverages(ChapterStatsCtrl.chapter.measurements.slice(7, 14));
+  ChapterStatsCtrl.measurementChange = calculateChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastweekMeasurements);
 
+  console.log(ChapterStatsCtrl.measurementChange);
 }
 
 angular
