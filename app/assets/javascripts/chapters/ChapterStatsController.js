@@ -10,22 +10,6 @@ function ChapterStatsController(chapterJSON) {
     }
   }
 
-  function calculateWeeklyAverages(measurements) {
-    var weightVals = measurements.map(function(measurement) { return measurement.weight});
-    var bodyfatVals = measurements.map(function(measurement) { return measurement.bodyfat; });
-    var heightVals = measurements.map(function(measurement) { return measurement.height; });
-    var waistVals = measurements.map(function(measurement) { return measurement.waist; });
-    var chestVals = measurements.map(function(measurement) { return measurement.chest; });
-
-    return {
-      weight: findMean(weightVals),
-      bodyfat: findMean(bodyfatVals),
-      height: findMean(heightVals),
-      waist: findMean(waistVals),
-      chest: findMean(chestVals)
-    };
-  }
-
   function findMean(values) {
     var sum = 0;
     var count = 0;
@@ -42,14 +26,28 @@ function ChapterStatsController(chapterJSON) {
     }
   }
 
+  function calculateWeeklyAverages(measurements) {
+    var weightVals = measurements.map(function(measurement) { return measurement.weight});
+    var bodyfatVals = measurements.map(function(measurement) { return measurement.bodyfat; });
+    var heightVals = measurements.map(function(measurement) { return measurement.height; });
+    var waistVals = measurements.map(function(measurement) { return measurement.waist; });
+    var chestVals = measurements.map(function(measurement) { return measurement.chest; });
+
+    return {
+      weight: findMean(weightVals),
+      bodyfat: findMean(bodyfatVals),
+      height: findMean(heightVals),
+      waist: findMean(waistVals),
+      chest: findMean(chestVals)
+    };
+  }
+
   ChapterStatsCtrl.firstEntryID = ChapterStatsCtrl.chapter.entries[ChapterStatsCtrl.chapter.entries.length - 1].id;
   ChapterStatsCtrl.firstMeasurement = ChapterStatsCtrl.chapter.measurements[ChapterStatsCtrl.chapter.measurements.length - 1];
 
   ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyAverages(ChapterStatsCtrl.chapter.measurements.slice(0, 7));
   ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyAverages(ChapterStatsCtrl.chapter.measurements.slice(7, 14));
 
-  console.log(ChapterStatsCtrl.thisWeekMeasurements);
-  console.log(ChapterStatsCtrl.lastWeekMeasurements);
 }
 
 angular
