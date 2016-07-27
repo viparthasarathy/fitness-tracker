@@ -71,10 +71,10 @@ angular
             }
           }
         })
-        .state('showChapter.entryMeasurements', {
-          url: '/entries/:entry_id/measurements',
-          templateUrl: 'entries/measurements/_show.html',
-          controller: 'MeasurementsController as MeasurementsCtrl',
+        .state('showChapter.entryMeasurement', {
+          url: '/entries/:entry_id/measurement',
+          templateUrl: 'entries/measurement/_show.html',
+          controller: 'MeasurementController as MeasurementCtrl',
           resolve: {
             EntryJSON: function(entryService, $stateParams) {
               return entryService.getEntry($stateParams.entry_id);
