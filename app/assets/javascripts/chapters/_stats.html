@@ -1,0 +1,20 @@
+<div ng-if="ChapterStatsCtrl.chapter.description === null">
+  <p>No description available.</p>
+</div>
+<p>{{ChapterStatsCtrl.chapter.description}}</p>
+<div ng-if="ChapterStatsCtrl.chapter.goal > 0">
+  <p>Your goal is to gain an average of {{ChapterStatsCtrl.chapter.goal}} lb per week.</p>
+</div>
+
+<div ng-if="ChapterStatsCtrl.chapter.goal === 0">
+  <p>Your goal is to maintain your weight.</p>
+</div>
+
+<div ng-if="ChapterStatsCtrl.chapter.goal < 0">
+  <p>Your goal is to lose an average of {{-1 * ChapterStatsCtrl.chapter.goal}} lb per week.</p>
+</div>
+
+<p>Average calorie consumption: {{ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_calories)}}</p>
+<p>Average protein consumption: {{ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_protein)}}</p>
+<p>Average carbs consumption: {{ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_carbs)}}</p>
+<p>Average fats consumption: {{ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_fats)}}</p>

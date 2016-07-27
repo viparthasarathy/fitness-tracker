@@ -14,32 +14,9 @@
     </div>
 
     <br></br>
+      <h3><a ui-sref="showChapter.stats({id: ChapterCtrl.chapter.id})">Head to Chapter Statistics</a></h3>
 
     <div ui-view>
-      <div ng-if="ChapterCtrl.chapter.description === null">
-        <p>No description available.</p>
-      </div>
-      <p>{{ChapterCtrl.chapter.description}}</p>
-      <div ng-if="ChapterCtrl.chapter.goal > 0">
-        <p>Your goal is to gain an average of {{ChapterCtrl.chapter.goal}} lb per week.</p>
-      </div>
-
-      <div ng-if="ChapterCtrl.chapter.goal === 0">
-        <p>Your goal is to maintain your weight.</p>
-      </div>
-
-      <div ng-if="ChapterCtrl.chapter.goal < 0">
-        <p>Your goal is to lose an average of {{-1 * ChapterCtrl.chapter.goal}} lb per week.</p>
-      </div>
-
-      <p>Average calorie consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_calories)}}</p>
-      <p>Average protein consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_protein)}}</p>
-      <p>Average carbs consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_carbs)}}</p>
-      <p>Average fats consumption: {{ChapterCtrl.calculateAverage(ChapterCtrl.chapter.total_fats)}}</p>
-
-
-  <br></br>
-
       <h2>Entries</h2>
       <div class="center">
         <div ng-messages="ChapterCtrl.newEntryForm.day.$error" ng-if="ChapterCtrl.newEntryForm.day.$touched">
@@ -60,7 +37,7 @@
         </form>
       </div>
 
-  <br>
+      <br>
       <h5>Search Previous Entries by Food</h5>
       <div class="center">
         <input id="search" name="search" ng-model="ChapterCtrl.search">
@@ -70,6 +47,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
