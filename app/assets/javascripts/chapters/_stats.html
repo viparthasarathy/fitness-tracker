@@ -13,6 +13,19 @@
   <p>Your goal is to lose an average of {{-1 * ChapterStatsCtrl.chapter.goal}} lb per week.</p>
 </div>
 
+
+<h4>First Measurements</h4>
+  <p>Weight: {{ChapterStatsCtrl.firstMeasurement.weight.toFixed(1) || "Unknown."}}</p>
+  <p>Bodyfat: {{ChapterStatsCtrl.firstMeasurement.bodyfat.toFixed(1) || "Unknown."}}</p>
+  <p>Height: {{ChapterStatsCtrl.firstMeasurement.height.toFixed(1) || "Unknown."}}</p>
+  <p>Waist: {{ChapterStatsCtrl.firstMeasurement.waist.toFixed(1) || "Unknown."}}</p>
+  <p>Chest: {{ChapterStatsCtrl.firstMeasurement.chest.toFixed(1) || "Unknown."}}</p>
+
+<h4>Latest Measurements</h4>
+
+
+<h4>Average Performance</h4>
+
 <p>Average calorie consumption: {{ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_calories)}}</p>
 <p>Average protein consumption: {{ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_protein)}}</p>
 <p>Average carbs consumption: {{ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_carbs)}}</p>
