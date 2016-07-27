@@ -1,0 +1,48 @@
+<h3>Measurement Entries for {{MeasurementsCtrl.entry.day}} </h3>
+<h4><a ui-sref="showChapter({id: ChapterCtrl.chapter.id})">Return to Chapter</a></h4>
+<h5> {{MeasurementsCtrl.entry.notes || "No notes available." }} </h5>
+
+
+<div class="center">
+  <form name="MeasurementsCtrl.measurementForm" ng-submit="MeasurementsCtrl.createMeasurement()">
+    <div class="form-group">
+      <div class="field">
+        <label for="weight">Weight</label>
+        <input id="weight" name="weight" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementsCtrl.measurement.weight">
+        <div ng-messages="MeasurementsCtrl.measurementForm.weight.$error" ng-if="MeasurementsCtrl.measurementForm.weight.$touched">
+          <div ng-message="min">Weight must be over zero.</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="bodyfat">Bodyfat</label>
+        <input id="bodyfat" name="bodyfat" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementsCtrl.measurement.bodyfat">
+        <div ng-messages="MeasurementsCtrl.measurementForm.bodyfat.$error" ng-if="MeasurementsCtrl.measurementForm.bodyfat.$touched">
+          <div ng-message="min">Bodyfat must be over zero.</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="height">Height</label>
+        <input id="height" name="height" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementsCtrl.measurement.height">
+        <div ng-messages="MeasurementsCtrl.measurementForm.height.$error" ng-if="MeasurementsCtrl.measurementForm.height.$touched">
+          <div ng-message="min">Height must be over zero.</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="waist">waist</label>
+        <input id="waist" name="waist" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementsCtrl.measurement.waist">
+        <div ng-messages="MeasurementsCtrl.measurementForm.waist.$error" ng-if="MeasurementsCtrl.measurementForm.waist.$touched">
+          <div ng-message="min">Waist must be over zero.</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="chest">Chest</label>
+        <input id="chest" name="chest" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementsCtrl.measurement.chest">
+        <div ng-messages="MeasurementsCtrl.measurementForm.chest.$error" ng-if="MeasurementsCtrl.measurementForm.chest.$touched">
+          <div ng-message="min">Chest must be over zero.</div>
+        </div>
+      </div>
+    </div>
+    <div class="actions"><input type="submit" class="btn btn-success" value="Save Measurements"></div>
+
+  </form>
+</div>
