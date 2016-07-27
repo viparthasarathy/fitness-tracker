@@ -6,11 +6,13 @@ function MeasurementController(EntryJSON, MeasurementService, $state) {
   MeasurementCtrl.saveMeasurement = function() {
     MeasurementCtrl.measurement.entry_id = MeasurementCtrl.entry.id;
     if (MeasurementCtrl.measurement.id === null) {
+      console.log(MeasurementCtrl.measurement);
       MeasurementService.createMeasurement(MeasurementCtrl.measurement)
         .then(function(response) {
           console.log(response);
       });
     } else {
+      console.log(MeasurementCtrl.measurement);
       MeasurementService.updateMeasurement(MeasurementCtrl.measurement)
         .then(function(response) {
           console.log(response);

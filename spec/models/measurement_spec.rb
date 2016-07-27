@@ -45,9 +45,9 @@ describe Measurement, :type => :model do
       expect(@measurement).to have(0).errors_on(:weight)
     end
 
-    it 'allows weight to be left blank' do
+    it 'does not allow weight to be left blank' do
       @measurement.weight = nil
-      expect(@measurement).to have(0).errors_on(:weight)
+      expect(@measurement).to have(1).errors_on(:weight)
     end
 
     it 'requires that height is a number' do

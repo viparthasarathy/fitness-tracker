@@ -8,8 +8,9 @@
     <div class="form-group">
       <div class="field">
         <label for="weight">Weight</label>
-        <input id="weight" name="weight" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementCtrl.measurement.weight">
+        <input id="weight" name="weight" min="0.1" step="0.1" value="0.1" required="true" type="number" ng-model="MeasurementCtrl.measurement.weight">
         <div ng-messages="MeasurementCtrl.measurementForm.weight.$error" ng-if="MeasurementCtrl.measurementForm.weight.$touched">
+          <div ng-message="required">Weight cannot be blank.</div>
           <div ng-message="min">Weight must be over zero.</div>
         </div>
       </div>
@@ -28,7 +29,7 @@
         </div>
       </div>
       <div class="field">
-        <label for="waist">waist</label>
+        <label for="waist">Waist</label>
         <input id="waist" name="waist" min="0.1" step="0.1" value="0.1" type="number" ng-model="MeasurementCtrl.measurement.waist">
         <div ng-messages="MeasurementCtrl.measurementForm.waist.$error" ng-if="MeasurementCtrl.measurementForm.waist.$touched">
           <div ng-message="min">Waist must be over zero.</div>
