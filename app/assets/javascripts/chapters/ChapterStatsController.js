@@ -1,6 +1,6 @@
 function ChapterStatsController(chapterJSON) {
   var ChapterStatsCtrl = this;
-  var ChapterStatsCtrl.chapter = ChapterJSON.data;
+  ChapterStatsCtrl.chapter = chapterJSON.data;
 
   ChapterStatsCtrl.calculateAverage = function(total) {
 

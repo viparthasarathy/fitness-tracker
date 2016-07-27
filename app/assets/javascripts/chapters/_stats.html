@@ -1,7 +1,6 @@
-<div ng-if="ChapterStatsCtrl.chapter.description === null">
-  <p>No description available.</p>
-</div>
-<p>{{ChapterStatsCtrl.chapter.description}}</p>
+<h3>Statistics for Chapter</h3>
+<h4><a ui-sref="showChapter({id: ChapterCtrl.chapter.id})">Return to Chapter</a></h4>
+
 <div ng-if="ChapterStatsCtrl.chapter.goal > 0">
   <p>Your goal is to gain an average of {{ChapterStatsCtrl.chapter.goal}} lb per week.</p>
 </div>

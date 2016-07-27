@@ -1,11 +1,17 @@
-<h2>{{ChapterCtrl.chapter.title}}</h2>
 
-<h5>Created at {{ChapterCtrl.chapter.created_at | date:'longDate'}} </h5>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+    <h2>{{ChapterCtrl.chapter.title}}</h2>
+
+    <h5>Created at {{ChapterCtrl.chapter.created_at | date:'longDate'}} </h5>
+
+    <div ng-if="ChapterCtrl.chapter.description === null">
+      <p>No description available.<p>
+    </div>
+    <p>{{ChapterCtrl.chapter.description}}</p>
+
     <div ng-if="ChapterCtrl.chapter.completed_at === null">
       <h5>Currently in Progress</h5>
-      <br>
       <div class="center"><btn class="btn btn-danger" ng-click="ChapterCtrl.markComplete()">Mark Chapter As Complete</btn></div>
     </div>
 
@@ -13,10 +19,8 @@
       <h5>Completed at {{ChapterCtrl.chapter.completed_at | date:'longDate'}} </h5>
     </div>
 
-    <br></br>
-      <h3><a ui-sref="showChapter.stats({id: ChapterCtrl.chapter.id})">Head to Chapter Statistics</a></h3>
-
     <div ui-view>
+      <h5><a ui-sref="showChapter.stats({id: ChapterCtrl.chapter.id})">Head to Chapter Statistics</a></h5>
       <h2>Entries</h2>
       <div class="center">
         <div ng-messages="ChapterCtrl.newEntryForm.day.$error" ng-if="ChapterCtrl.newEntryForm.day.$touched">
