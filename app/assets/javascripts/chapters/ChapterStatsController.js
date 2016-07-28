@@ -26,7 +26,7 @@ function ChapterStatsController(chapterJSON) {
     }
   }
 
-  function calculateWeeklyAverages(measurements) {
+  function calculateWeeklyMeasurementAverages(measurements) {
     var weightVals = measurements.map(function(measurement) { return measurement.weight});
     var bodyfatVals = measurements.map(function(measurement) { return measurement.bodyfat; });
     var heightVals = measurements.map(function(measurement) { return measurement.height; });
@@ -42,7 +42,21 @@ function ChapterStatsController(chapterJSON) {
     };
   }
 
-  function calculateChange(firstMeasurements, secondMeasurements) {
+  function calculateWeeklyIntakeAverages(foods) {
+    var calories = foods.map(function(food) { return food.calories });
+    var protein = foods.map(function(food) { return food.protein});
+    var carbs = foods.map(function(food) { return food.carbs });
+    var fats = foods.map(function(food) { return food.fats });
+
+    return {
+      calories: findMean(calories),
+      protein: findMean(protein),
+      carbs: findMean(carbs),
+      fats: findMean(fats)
+    }
+  }
+
+  function calculateMeasurementChange(firstMeasurements, secondMeasurements) {
     if (secondMeasurements) {
       return {
         weight:  (firstMeasurements.weight - secondMeasurements.weight),
@@ -88,12 +102,17 @@ function ChapterStatsController(chapterJSON) {
   var thisWeeksMeasurements = thisWeeksEntries.map(function(entry) { return entry.measurement; }).filter(notNull);
   var lastWeeksMeasurements = lastWeeksEntries.map(function(entry) { return entry.measurement; }).filter(notNull);
 
+  var thisWeeksFoods = thisWeeksEntries.map(function(entry) { return entry.foods }).reduce(function(allFoods, foods) { return allFoods.concat(foods) }, []);
+  var lastWeeksFoods = lastWeeksEntries.map(function(entry) { return entry.foods }).reduce(function(allFoods, foods) { return allFoods.concat(foods) }, []);
+
+  ChapterStatsCtrl.thisWeeksIntakes = calculateWeeklyIntakeAverages(thisWeeksFoods);
+  ChapterStatsCtrl.lastWeeksIntakes = calculateWeeklyIntakeAverages(lastWeeksFoods);
 
 
-  ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyAverages(thisWeeksMeasurements);
-  ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyAverages(lastWeeksMeasurements);
+  ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyMeasurementAverages(thisWeeksMeasurements);
+  ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyMeasurementAverages(lastWeeksMeasurements);
 
-  ChapterStatsCtrl.measurementChange = calculateChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements)
+  ChapterStatsCtrl.measurementChange = calculateMeasurementChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements)
 
   for (var measurement in ChapterStatsCtrl.measurementChange) {
     if (ChapterStatsCtrl.measurementChange.hasOwnProperty(measurement)) {

@@ -15,18 +15,22 @@
 
 
 <h4><a ui-sref="showChapter.entryMeasurement({id: ChapterStatsCtrl.chapter.id, entry_id: ChapterStatsCtrl.firstEntryID})">First Measurements</a></h4>
-  <p>Weight: {{ChapterStatsCtrl.firstMeasurement.weight.toFixed(1) || "N/A"}}</p>
-  <p>Bodyfat: {{ChapterStatsCtrl.firstMeasurement.bodyfat.toFixed(1) || "N/A"}}</p>
-  <p>Height: {{ChapterStatsCtrl.firstMeasurement.height.toFixed(1) || "N/A"}}</p>
-  <p>Waist: {{ChapterStatsCtrl.firstMeasurement.waist.toFixed(1) || "N/A"}}</p>
-  <p>Chest: {{ChapterStatsCtrl.firstMeasurement.chest.toFixed(1) || "N/A"}}</p>
+<p>Weight: {{ChapterStatsCtrl.firstMeasurement.weight.toFixed(1) || "N/A"}}</p>
+<p>Bodyfat: {{ChapterStatsCtrl.firstMeasurement.bodyfat.toFixed(1) || "N/A"}}</p>
+<p>Height: {{ChapterStatsCtrl.firstMeasurement.height.toFixed(1) || "N/A"}}</p>
+<p>Waist: {{ChapterStatsCtrl.firstMeasurement.waist.toFixed(1) || "N/A"}}</p>
+<p>Chest: {{ChapterStatsCtrl.firstMeasurement.chest.toFixed(1) || "N/A"}}</p>
 
 <h4>Latest Averages</h4>
-  <p>Weight: {{ChapterStatsCtrl.thisWeekMeasurements.weight.toFixed(1) || "N/A"}}</p>
-  <p>Bodyfat: {{ChapterStatsCtrl.thisWeekMeasurements.bodyfat.toFixed(1) || "N/A"}}</p>
-  <p>Height: {{ChapterStatsCtrl.thisWeekMeasurements.height.toFixed(1) || "N/A"}}</p>
-  <p>Waist: {{ChapterStatsCtrl.thisWeekMeasurements.waist.toFixed(1) || "N/A"}}</p>
-  <p>Chest: {{ChapterStatsCtrl.thisWeekMeasurements.chest.toFixed(1) || "N/A"}}</p>
+<p>Weight: {{ChapterStatsCtrl.thisWeekMeasurements.weight.toFixed(1) || "N/A"}}</p>
+<p>Bodyfat: {{ChapterStatsCtrl.thisWeekMeasurements.bodyfat.toFixed(1) || "N/A"}}</p>
+<p>Height: {{ChapterStatsCtrl.thisWeekMeasurements.height.toFixed(1) || "N/A"}}</p>
+<p>Waist: {{ChapterStatsCtrl.thisWeekMeasurements.waist.toFixed(1) || "N/A"}}</p>
+<p>Chest: {{ChapterStatsCtrl.thisWeekMeasurements.chest.toFixed(1) || "N/A"}}</p>
+<p>Calories/day: {{ChapterStatsCtrl.thisWeeksIntakes.calories.toFixed(0) || "N/A"}}</p>
+<p>Protein/day: {{ChapterStatsCtrl.thisWeeksIntakes.protein.toFixed(0) || "N/A"}}</p>
+<p>Carbs/day: {{ChapterStatsCtrl.thisWeeksIntakes.carbs.toFixed(0) || "N/A"}}</p>
+<p>Fats/day: {{ChapterStatsCtrl.thisWeeksIntakes.fats.toFixed(0) || "N/A"}}</p>
 
 <h4>Change from Last Week Averages</h4>
 <p>Weight: {{ChapterStatsCtrl.measurementChange.weight}}</p>
