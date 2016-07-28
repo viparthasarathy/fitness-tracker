@@ -84,9 +84,15 @@ function ChapterStatsController(chapterJSON) {
   ChapterStatsCtrl.firstEntryID = ChapterStatsCtrl.chapter.entries[ChapterStatsCtrl.chapter.entries.length - 1].id;
   ChapterStatsCtrl.firstMeasurement = ChapterStatsCtrl.chapter.measurements[ChapterStatsCtrl.chapter.measurements.length - 1];
 
+  function notNull(value) {
+    return value !== null;
+  }
 
-  ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyAverages(ChapterStatsCtrl.chapter.measurements.slice(0, 7));
-  ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyAverages(ChapterStatsCtrl.chapter.measurements.slice(7, 14));
+  var thisWeeksMeasurements = thisWeeksEntries.map(function(entry) { return entry.measurement; }).filter(notNull);
+  var lastWeeksMeasurements = lastWeeksEntries.map(function(entry) { return entry.measurement; }).filter(notNull);
+
+  ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyAverages(thisWeeksMeasurements);
+  ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyAverages(lastWeeksMeasurements);
 
   ChapterStatsCtrl.measurementChange = calculateChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements);
 
