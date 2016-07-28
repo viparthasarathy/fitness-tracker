@@ -98,14 +98,14 @@ function ChapterStatsController(chapterJSON) {
   for (var measurement in ChapterStatsCtrl.measurementChange) {
     if (ChapterStatsCtrl.measurementChange.hasOwnProperty(measurement)) {
       if (isNaN(ChapterStatsCtrl.measurementChange[measurement])) {
-        ChapterStatsCtrl.measurementChange[measurement] = "Unknown."
+        ChapterStatsCtrl.measurementChange[measurement] = "N/A"
       } else {
         ChapterStatsCtrl.measurementChange[measurement] = ChapterStatsCtrl.measurementChange[measurement].toFixed(1);
       }
     };
   }
 
-  console.log(ChapterStatsCtrl.measurementChange);
+  ChapterStatsCtrl.averageChangeWeight = ((ChapterStatsCtrl.thisWeekMeasurements.weight - ChapterStatsCtrl.firstMeasurement.weight) / 7).toFixed(2);
 }
 
 angular
