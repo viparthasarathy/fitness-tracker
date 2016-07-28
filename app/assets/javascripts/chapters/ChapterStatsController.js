@@ -57,7 +57,7 @@ function ChapterStatsController(chapterJSON) {
     }
   }
 
-  function filterWeeklyEntires(startOfWeek, entries) {
+  function filterWeeklyEntries(startOfWeek, entries) {
     var endOfWeek = new Date();
     endOfWeek.setDate(startOfWeek.getDate() + 7);
     var weeksEntries = []
