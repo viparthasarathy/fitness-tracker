@@ -1,7 +1,6 @@
 function ChapterStatsController(chapterJSON) {
   var ChapterStatsCtrl = this;
   ChapterStatsCtrl.chapter = chapterJSON.data;
-  console.log(ChapterStatsCtrl.chapter);
 
   ChapterStatsCtrl.calculateAverage = function(total) {
     if (ChapterStatsCtrl.chapter.entries.length > 0) {
@@ -58,8 +57,11 @@ function ChapterStatsController(chapterJSON) {
     }
   }
 
+  console.log(ChapterStatsCtrl.chapter.entries);
+
   ChapterStatsCtrl.firstEntryID = ChapterStatsCtrl.chapter.entries[ChapterStatsCtrl.chapter.entries.length - 1].id;
   ChapterStatsCtrl.firstMeasurement = ChapterStatsCtrl.chapter.measurements[ChapterStatsCtrl.chapter.measurements.length - 1];
+
 
   ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyAverages(ChapterStatsCtrl.chapter.measurements.slice(0, 7));
   ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyAverages(ChapterStatsCtrl.chapter.measurements.slice(7, 14));
