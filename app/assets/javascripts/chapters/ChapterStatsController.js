@@ -1,6 +1,7 @@
 function ChapterStatsController(chapterJSON) {
   var ChapterStatsCtrl = this;
   ChapterStatsCtrl.chapter = chapterJSON.data;
+  console.log(ChapterStatsCtrl.chapter);
 
   ChapterStatsCtrl.calculateAverage = function(total) {
     if (ChapterStatsCtrl.chapter.entries.length > 0) {
@@ -63,10 +64,9 @@ function ChapterStatsController(chapterJSON) {
   ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyAverages(ChapterStatsCtrl.chapter.measurements.slice(0, 7));
   ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyAverages(ChapterStatsCtrl.chapter.measurements.slice(7, 14));
 
-  console.log(ChapterStatsCtrl.lastWeekMeasurements);
   ChapterStatsCtrl.measurementChange = calculateChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements);
 
-  console.log(ChapterStatsCtrl.measurementChange);
+
 }
 
 angular
