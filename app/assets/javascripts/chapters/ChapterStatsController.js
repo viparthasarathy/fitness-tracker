@@ -42,17 +42,25 @@ function ChapterStatsController(chapterJSON) {
     };
   }
 
-  function calculateWeeklyIntakeAverages(foods) {
+  function calculateWeeklyIntakeAverages(foods, entryCount) {
     var calories = foods.map(function(food) { return food.calories });
     var protein = foods.map(function(food) { return food.protein});
     var carbs = foods.map(function(food) { return food.carbs });
     var fats = foods.map(function(food) { return food.fats });
-
-    return {
-      calories: findMean(calories),
-      protein: findMean(protein),
-      carbs: findMean(carbs),
-      fats: findMean(fats)
+    if (entryCount > 0) {
+      return {
+        calories: calories.reduce( (total, calories) => total + calories, 0)/entryCount,
+        protein: protein.reduce( (total, protein) => total + protein, 0)/entryCount,
+        carbs: carbs.reduce( (total, carbs) => total + carbs, 0)/entryCount,
+        fats: fats.reduce( (total, fats) => total + fats, 0)/entryCount
+      }
+    } else {
+      return {
+        calories: undefined,
+        protein: undefined,
+        carbs: undefined,
+        fats: undefined
+      }
     }
   }
 
@@ -128,10 +136,11 @@ function ChapterStatsController(chapterJSON) {
   var thisWeeksFoods = thisWeeksEntries.map(function(entry) { return entry.foods }).reduce(function(allFoods, foods) { return allFoods.concat(foods) }, []);
   var lastWeeksFoods = lastWeeksEntries.map(function(entry) { return entry.foods }).reduce(function(allFoods, foods) { return allFoods.concat(foods) }, []);
 
-  ChapterStatsCtrl.thisWeeksIntakes = calculateWeeklyIntakeAverages(thisWeeksFoods);
-  ChapterStatsCtrl.lastWeeksIntakes = calculateWeeklyIntakeAverages(lastWeeksFoods);
+  ChapterStatsCtrl.thisWeeksIntakes = calculateWeeklyIntakeAverages(thisWeeksFoods, thisWeeksEntries.length);
+  ChapterStatsCtrl.lastWeeksIntakes = calculateWeeklyIntakeAverages(lastWeeksFoods, lastWeeksEntries.length);
   ChapterStatsCtrl.intakeChange = calculateIntakeChange(ChapterStatsCtrl.thisWeeksIntakes, ChapterStatsCtrl.lastWeeksIntakes);
-  formatProperties(chapterStatsCtrl.intakeChange);
+  formatProperties(ChapterStatsCtrl.intakeChange);
+  console.log(ChapterStatsCtrl.intakeChange);
 
   ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyMeasurementAverages(thisWeeksMeasurements);
   ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyMeasurementAverages(lastWeeksMeasurements);
