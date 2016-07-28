@@ -71,6 +71,15 @@ function ChapterStatsController(chapterJSON) {
     }
   }
 
+  function calculateIntakeChange(firstIntakes, secondIntakes) {
+    return {
+      calories: (firstIntakes.calories - secondIntakes.calories),
+      protein: (firstIntakes.protein - secondIntakes.protein),
+      carbs: (firstIntakes.carbs - secondIntakes.carbs),
+      fats: (firstIntakes.fats - secondIntakes.fats)
+    }
+  }
+
   function filterWeeklyEntries(startOfWeek, entries) {
     var endOfWeek = new Date();
     endOfWeek.setDate(startOfWeek.getDate() + 7);
@@ -121,11 +130,12 @@ function ChapterStatsController(chapterJSON) {
 
   ChapterStatsCtrl.thisWeeksIntakes = calculateWeeklyIntakeAverages(thisWeeksFoods);
   ChapterStatsCtrl.lastWeeksIntakes = calculateWeeklyIntakeAverages(lastWeeksFoods);
+  ChapterStatsCtrl.intakeChange = calculateIntakeChange(ChapterStatsCtrl.thisWeeksIntakes, ChapterStatsCtrl.lastWeeksIntakes);
+  formatProperties(chapterStatsCtrl.intakeChange);
 
   ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyMeasurementAverages(thisWeeksMeasurements);
   ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyMeasurementAverages(lastWeeksMeasurements);
-
-  ChapterStatsCtrl.measurementChange = calculateMeasurementChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements)
+  ChapterStatsCtrl.measurementChange = calculateMeasurementChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements);
   formatProperties(ChapterStatsCtrl.measurementChange);
 
   ChapterStatsCtrl.averageChangeWeight = ((ChapterStatsCtrl.thisWeekMeasurements.weight - ChapterStatsCtrl.firstMeasurement.weight) / 7).toFixed(2);
