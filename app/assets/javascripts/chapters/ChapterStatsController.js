@@ -84,6 +84,22 @@ function ChapterStatsController(chapterJSON) {
     return weeksEntries;
   }
 
+  function notNull(value) {
+    return value !== null;
+  }
+
+  function formatProperties(object) {
+    for (var key in object) {
+      if (object.hasOwnProperty(key)) {
+        if (isNaN(object[key])) {
+          object[key] = "N/A"
+        } else {
+          object[key] = object[key].toFixed(1);
+        }
+      };
+    }
+  }
+
   var startOfThisWeek = new Date();
   startOfThisWeek.setDate(startOfThisWeek.getDate() - 7)
   var startOfLastWeek = new Date();
@@ -95,9 +111,7 @@ function ChapterStatsController(chapterJSON) {
   ChapterStatsCtrl.firstEntryID = ChapterStatsCtrl.chapter.entries[ChapterStatsCtrl.chapter.entries.length - 1].id;
   ChapterStatsCtrl.firstMeasurement = ChapterStatsCtrl.chapter.measurements[ChapterStatsCtrl.chapter.measurements.length - 1];
 
-  function notNull(value) {
-    return value !== null;
-  }
+
 
   var thisWeeksMeasurements = thisWeeksEntries.map(function(entry) { return entry.measurement; }).filter(notNull);
   var lastWeeksMeasurements = lastWeeksEntries.map(function(entry) { return entry.measurement; }).filter(notNull);
@@ -108,21 +122,11 @@ function ChapterStatsController(chapterJSON) {
   ChapterStatsCtrl.thisWeeksIntakes = calculateWeeklyIntakeAverages(thisWeeksFoods);
   ChapterStatsCtrl.lastWeeksIntakes = calculateWeeklyIntakeAverages(lastWeeksFoods);
 
-
   ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyMeasurementAverages(thisWeeksMeasurements);
   ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyMeasurementAverages(lastWeeksMeasurements);
 
   ChapterStatsCtrl.measurementChange = calculateMeasurementChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements)
-
-  for (var measurement in ChapterStatsCtrl.measurementChange) {
-    if (ChapterStatsCtrl.measurementChange.hasOwnProperty(measurement)) {
-      if (isNaN(ChapterStatsCtrl.measurementChange[measurement])) {
-        ChapterStatsCtrl.measurementChange[measurement] = "N/A"
-      } else {
-        ChapterStatsCtrl.measurementChange[measurement] = ChapterStatsCtrl.measurementChange[measurement].toFixed(1);
-      }
-    };
-  }
+  formatProperties(ChapterStatsCtrl.measurementChange);
 
   ChapterStatsCtrl.averageChangeWeight = ((ChapterStatsCtrl.thisWeekMeasurements.weight - ChapterStatsCtrl.firstMeasurement.weight) / 7).toFixed(2);
   ChapterStatsCtrl.estimatedTDE = ChapterStatsCtrl.averageChangeWeight * 500 + ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_calories)
