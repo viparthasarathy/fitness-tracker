@@ -45,11 +45,11 @@ function ChapterStatsController(chapterJSON) {
   function calculateChange(firstMeasurements, secondMeasurements) {
     if (secondMeasurements) {
       return {
-        weight:  firstMeasurements.weight - secondMeasurements.weight,
-        bodyfat: firstMeasurements.bodyfat - secondMeasurements.bodyfat,
-        height:  firstMeasurements.height - secondMeasurements.height,
-        waist: firstMeasurements.waist - secondMeasurements.waist,
-        chest:  firstMeasurements.chest - secondMeasurements.chest
+        weight:  (firstMeasurements.weight - secondMeasurements.weight || undefined),
+        bodyfat: (firstMeasurements.bodyfat - secondMeasurements.bodyfat || undefined),
+        height:  (firstMeasurements.height - secondMeasurements.height || undefined),
+        waist: (firstMeasurements.waist - secondMeasurements.waist || undefined),
+        chest:  (firstMeasurements.chest - secondMeasurements.chest || undefined)
       };
     }
     else {
@@ -62,7 +62,9 @@ function ChapterStatsController(chapterJSON) {
 
   ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyAverages(ChapterStatsCtrl.chapter.measurements.slice(0, 7));
   ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyAverages(ChapterStatsCtrl.chapter.measurements.slice(7, 14));
-  ChapterStatsCtrl.measurementChange = calculateChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastweekMeasurements);
+
+  console.log(ChapterStatsCtrl.lastWeekMeasurements);
+  ChapterStatsCtrl.measurementChange = calculateChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements);
 
   console.log(ChapterStatsCtrl.measurementChange);
 }
