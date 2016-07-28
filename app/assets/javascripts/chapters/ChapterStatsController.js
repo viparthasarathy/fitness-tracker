@@ -45,11 +45,11 @@ function ChapterStatsController(chapterJSON) {
   function calculateChange(firstMeasurements, secondMeasurements) {
     if (secondMeasurements) {
       return {
-        weight:  (firstMeasurements.weight - secondMeasurements.weight || undefined),
-        bodyfat: (firstMeasurements.bodyfat - secondMeasurements.bodyfat || undefined),
-        height:  (firstMeasurements.height - secondMeasurements.height || undefined),
-        waist: (firstMeasurements.waist - secondMeasurements.waist || undefined),
-        chest:  (firstMeasurements.chest - secondMeasurements.chest || undefined)
+        weight:  (firstMeasurements.weight - secondMeasurements.weight),
+        bodyfat: (firstMeasurements.bodyfat - secondMeasurements.bodyfat),
+        height:  (firstMeasurements.height - secondMeasurements.height),
+        waist: (firstMeasurements.waist - secondMeasurements.waist),
+        chest:  (firstMeasurements.chest - secondMeasurements.chest)
       };
     }
     else {
@@ -78,9 +78,6 @@ function ChapterStatsController(chapterJSON) {
   var thisWeeksEntries = filterWeeklyEntries(startOfThisWeek, ChapterStatsCtrl.chapter.entries.slice(0, 7));
   var lastWeeksEntries = filterWeeklyEntries(startOfLastWeek, ChapterStatsCtrl.chapter.entries.slice(0, 14));
 
-  console.log(thisWeeksEntries);
-  console.log(lastWeeksEntries);
-
   ChapterStatsCtrl.firstEntryID = ChapterStatsCtrl.chapter.entries[ChapterStatsCtrl.chapter.entries.length - 1].id;
   ChapterStatsCtrl.firstMeasurement = ChapterStatsCtrl.chapter.measurements[ChapterStatsCtrl.chapter.measurements.length - 1];
 
@@ -91,12 +88,24 @@ function ChapterStatsController(chapterJSON) {
   var thisWeeksMeasurements = thisWeeksEntries.map(function(entry) { return entry.measurement; }).filter(notNull);
   var lastWeeksMeasurements = lastWeeksEntries.map(function(entry) { return entry.measurement; }).filter(notNull);
 
+
+
   ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyAverages(thisWeeksMeasurements);
   ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyAverages(lastWeeksMeasurements);
 
-  ChapterStatsCtrl.measurementChange = calculateChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements);
+  ChapterStatsCtrl.measurementChange = calculateChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements)
 
+  for (var measurement in ChapterStatsCtrl.measurementChange) {
+    if (ChapterStatsCtrl.measurementChange.hasOwnProperty(measurement)) {
+      if (isNaN(ChapterStatsCtrl.measurementChange[measurement])) {
+        ChapterStatsCtrl.measurementChange[measurement] = "Unknown."
+      } else {
+        ChapterStatsCtrl.measurementChange[measurement] = ChapterStatsCtrl.measurementChange[measurement].toFixed(1);
+      }
+    };
+  }
 
+  console.log(ChapterStatsCtrl.measurementChange);
 }
 
 angular
