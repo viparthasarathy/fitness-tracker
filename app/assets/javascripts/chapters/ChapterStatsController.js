@@ -105,13 +105,13 @@ function ChapterStatsController(chapterJSON) {
     return value !== null;
   }
 
-  function formatProperties(object) {
+  function formatProperties(object, fix) {
     for (var key in object) {
       if (object.hasOwnProperty(key)) {
         if (isNaN(object[key])) {
           object[key] = "N/A"
         } else {
-          object[key] = object[key].toFixed(1);
+          object[key] = object[key].toFixed(fix);
         }
       };
     }
@@ -136,16 +136,17 @@ function ChapterStatsController(chapterJSON) {
   var thisWeeksFoods = thisWeeksEntries.map(function(entry) { return entry.foods }).reduce(function(allFoods, foods) { return allFoods.concat(foods) }, []);
   var lastWeeksFoods = lastWeeksEntries.map(function(entry) { return entry.foods }).reduce(function(allFoods, foods) { return allFoods.concat(foods) }, []);
 
+
   ChapterStatsCtrl.thisWeeksIntakes = calculateWeeklyIntakeAverages(thisWeeksFoods, thisWeeksEntries.length);
   ChapterStatsCtrl.lastWeeksIntakes = calculateWeeklyIntakeAverages(lastWeeksFoods, lastWeeksEntries.length);
   ChapterStatsCtrl.intakeChange = calculateIntakeChange(ChapterStatsCtrl.thisWeeksIntakes, ChapterStatsCtrl.lastWeeksIntakes);
-  formatProperties(ChapterStatsCtrl.intakeChange);
+  formatProperties(ChapterStatsCtrl.intakeChange, 0);
   console.log(ChapterStatsCtrl.intakeChange);
 
   ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyMeasurementAverages(thisWeeksMeasurements);
   ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyMeasurementAverages(lastWeeksMeasurements);
   ChapterStatsCtrl.measurementChange = calculateMeasurementChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements);
-  formatProperties(ChapterStatsCtrl.measurementChange);
+  formatProperties(ChapterStatsCtrl.measurementChange, 1);
 
   ChapterStatsCtrl.averageChangeWeight = ((ChapterStatsCtrl.thisWeekMeasurements.weight - ChapterStatsCtrl.firstMeasurement.weight) / 7).toFixed(2);
   ChapterStatsCtrl.estimatedTDE = ChapterStatsCtrl.averageChangeWeight * 500 + ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_calories)
