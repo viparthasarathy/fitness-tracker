@@ -20,7 +20,7 @@
     </div>
 
     <div ui-view>
-      <h5><a ui-sref="showChapter.stats({id: ChapterCtrl.chapter.id})">Head to Chapter Statistics</a></h5>
+      <h5 ng-if="ChapterCtrl.chapter.entries.length > 0"><a ui-sref="showChapter.stats({id: ChapterCtrl.chapter.id})">Head to Chapter Statistics</a></h5>
       <h2>Entries</h2>
       <div class="center">
         <div ng-messages="ChapterCtrl.newEntryForm.day.$error" ng-if="ChapterCtrl.newEntryForm.day.$touched">
