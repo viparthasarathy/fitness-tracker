@@ -126,8 +126,7 @@ function ChapterStatsController(chapterJSON) {
   var lastWeeksEntries = filterWeeklyEntries(startOfLastWeek, ChapterStatsCtrl.chapter.entries.slice(0, 14));
 
   ChapterStatsCtrl.firstEntryID = ChapterStatsCtrl.chapter.entries[ChapterStatsCtrl.chapter.entries.length - 1].id;
-  ChapterStatsCtrl.firstMeasurement = ChapterStatsCtrl.chapter.measurements[ChapterStatsCtrl.chapter.measurements.length - 1];
-
+  ChapterStatsCtrl.firstMeasurement = ChapterStatsCtrl.chapter.measurements[ChapterStatsCtrl.chapter.measurements.length - 1] || {};
 
 
   var thisWeeksMeasurements = thisWeeksEntries.map(function(entry) { return entry.measurement; }).filter(notNull);
@@ -143,6 +142,7 @@ function ChapterStatsController(chapterJSON) {
   formatProperties(ChapterStatsCtrl.intakeChange, 0);
 
   ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyMeasurementAverages(thisWeeksMeasurements);
+  console.log(ChapterStatsCtrl.thisWeekMeasurements);
   ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyMeasurementAverages(lastWeeksMeasurements);
   ChapterStatsCtrl.measurementChange = calculateMeasurementChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements);
   formatProperties(ChapterStatsCtrl.measurementChange, 1);
@@ -155,12 +155,9 @@ function ChapterStatsController(chapterJSON) {
   }
   if (daysPassed == 0) { daysPassed = 1; }
 
-  console.log(ChapterStatsCtrl.chapter.completed_at);
-  console.log(daysPassed);
-
-
-  ChapterStatsCtrl.averageChangeWeight = ((ChapterStatsCtrl.thisWeekMeasurements.weight - ChapterStatsCtrl.firstMeasurement.weight) / daysPassed).toFixed(2);
-  ChapterStatsCtrl.estimatedTDE = ChapterStatsCtrl.averageChangeWeight * 500 + ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_calories)
+  ChapterStatsCtrl.averageChangeWeight = ((ChapterStatsCtrl.thisWeekMeasurements.weight - ChapterStatsCtrl.firstMeasurement.weight) / daysPassed) || "N/A";
+  if (ChapterStatsCtrl.averageChangeWeight !== "N/A") { ChapterStatsCtrl.averageChangeWeight.toFixed(2); }
+  ChapterStatsCtrl.estimatedTDE = ChapterStatsCtrl.averageChangeWeight * 500 + ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_calories) || "N/A";
 }
 
 angular
