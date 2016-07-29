@@ -142,7 +142,7 @@ function ChapterStatsController(chapterJSON) {
   formatProperties(ChapterStatsCtrl.intakeChange, 0);
 
   ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyMeasurementAverages(thisWeeksMeasurements);
-  console.log(ChapterStatsCtrl.thisWeekMeasurements);
+
   ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyMeasurementAverages(lastWeeksMeasurements);
   ChapterStatsCtrl.measurementChange = calculateMeasurementChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements);
   formatProperties(ChapterStatsCtrl.measurementChange, 1);
