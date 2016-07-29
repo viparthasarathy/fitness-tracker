@@ -155,8 +155,8 @@ function ChapterStatsController(chapterJSON) {
   }
   if (daysPassed == 0) { daysPassed = 1; }
 
-  ChapterStatsCtrl.averageChangeWeight = ((ChapterStatsCtrl.thisWeekMeasurements.weight - ChapterStatsCtrl.firstMeasurement.weight) / daysPassed) || "N/A";
-  if (ChapterStatsCtrl.averageChangeWeight !== "N/A") { ChapterStatsCtrl.averageChangeWeight.toFixed(2); }
+  ChapterStatsCtrl.averageChangeWeight = ((ChapterStatsCtrl.thisWeekMeasurements.weight - ChapterStatsCtrl.firstMeasurement.weight) / daysPassed).toFixed(2);
+  if (ChapterStatsCtrl.averageChangeWeight === "NaN") { ChapterStatsCtrl.averageChangeWeight = "N/A" }
   ChapterStatsCtrl.estimatedTDE = ChapterStatsCtrl.averageChangeWeight * 500 + ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_calories) || "N/A";
 }
 
