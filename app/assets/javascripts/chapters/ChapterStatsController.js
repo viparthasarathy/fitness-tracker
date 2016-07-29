@@ -148,7 +148,10 @@ function ChapterStatsController(chapterJSON) {
   ChapterStatsCtrl.measurementChange = calculateMeasurementChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements);
   formatProperties(ChapterStatsCtrl.measurementChange, 1);
 
-  ChapterStatsCtrl.averageChangeWeight = ((ChapterStatsCtrl.thisWeekMeasurements.weight - ChapterStatsCtrl.firstMeasurement.weight) / 7).toFixed(2);
+  var daysPassed = Math.round((new Date() - new Date(ChapterStatsCtrl.chapter.created_at)) / (60*60*24*1000))
+
+
+  ChapterStatsCtrl.averageChangeWeight = ((ChapterStatsCtrl.thisWeekMeasurements.weight - ChapterStatsCtrl.firstMeasurement.weight) / daysPassed).toFixed(2);
   ChapterStatsCtrl.estimatedTDE = ChapterStatsCtrl.averageChangeWeight * 500 + ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_calories)
 }
 
