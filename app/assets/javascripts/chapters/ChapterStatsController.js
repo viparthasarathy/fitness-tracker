@@ -141,14 +141,22 @@ function ChapterStatsController(chapterJSON) {
   ChapterStatsCtrl.lastWeeksIntakes = calculateWeeklyIntakeAverages(lastWeeksFoods, lastWeeksEntries.length);
   ChapterStatsCtrl.intakeChange = calculateIntakeChange(ChapterStatsCtrl.thisWeeksIntakes, ChapterStatsCtrl.lastWeeksIntakes);
   formatProperties(ChapterStatsCtrl.intakeChange, 0);
-  console.log(ChapterStatsCtrl.intakeChange);
 
   ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyMeasurementAverages(thisWeeksMeasurements);
   ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyMeasurementAverages(lastWeeksMeasurements);
   ChapterStatsCtrl.measurementChange = calculateMeasurementChange(ChapterStatsCtrl.thisWeekMeasurements, ChapterStatsCtrl.lastWeekMeasurements);
   formatProperties(ChapterStatsCtrl.measurementChange, 1);
 
-  var daysPassed = Math.round((new Date() - new Date(ChapterStatsCtrl.chapter.created_at)) / (60*60*24*1000))
+
+  if (ChapterStatsCtrl.chapter.completed_at !== null) {
+    var daysPassed = Math.round((new Date(ChapterStatsCtrl.chapter.completed_at) - new Date(ChapterStatsCtrl.chapter.created_at)) / (60*60*24*1000));
+  } else {
+    var daysPassed = Math.round((new Date() - new Date(ChapterStatsCtrl.chapter.created_at)) / (60*60*24*1000));
+  }
+  if (daysPassed == 0) { daysPassed = 1; }
+
+  console.log(ChapterStatsCtrl.chapter.completed_at);
+  console.log(daysPassed);
 
 
   ChapterStatsCtrl.averageChangeWeight = ((ChapterStatsCtrl.thisWeekMeasurements.weight - ChapterStatsCtrl.firstMeasurement.weight) / daysPassed).toFixed(2);
