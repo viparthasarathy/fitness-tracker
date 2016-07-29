@@ -26,6 +26,8 @@ gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'pundit'
 
+gem 'ngannotate-rails'
+
 
 
 # Use ActiveModel has_secure_password

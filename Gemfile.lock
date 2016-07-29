@@ -106,6 +106,9 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
+    ngannotate-rails (1.2.2)
+      execjs
+      rails (>= 3.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -226,6 +229,7 @@ DEPENDENCIES
   devise (~> 3.4.0)
   factory_girl_rails
   jbuilder (~> 2.0)
+  ngannotate-rails
   pg
   pry
   pundit
