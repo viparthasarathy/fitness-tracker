@@ -1,5 +1,5 @@
 //= require angular
-//= require angulardevise
+//= require AngularDevise
 //= require angular-rails-templates
 //= require angular-ui-router
 //= require angular-messages
