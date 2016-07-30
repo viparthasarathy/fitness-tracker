@@ -17,10 +17,17 @@ function ChapterStatsController(chapterJSON) {
     return weeksEntries;
   }
 
-  var startOfThisWeek = new Date();
+  if (ChapterStatsCtrl.chapter.completed_at !== null) {
+    var startOfThisWeek = new Date(ChapterStatsCtrl.chapter.completed_at);
+    var startOfLastWeek = new Date(ChapterStatsCtrl.chapter.completed_at);
+  } else {
+    var startOfThisWeek = new Date();
+    var startOfLastWeek = new Date();
+  }
+
   startOfThisWeek.setDate(startOfThisWeek.getDate() - 7)
-  var startOfLastWeek = new Date();
   startOfLastWeek.setDate(startOfLastWeek.getDate() - 14)
+
   var thisWeeksEntries = filterWeeklyEntries(startOfThisWeek, ChapterStatsCtrl.chapter.entries.slice(0, 7));
   var lastWeeksEntries = filterWeeklyEntries(startOfLastWeek, ChapterStatsCtrl.chapter.entries.slice(0, 14));
 
