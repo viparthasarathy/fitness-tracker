@@ -1,5 +1,6 @@
 function NewChapterController(chapterService, $state) {
   var NewChapterCtrl = this;
+
   NewChapterCtrl.create = function() {
     chapterService.createChapter({
       goal: NewChapterCtrl.goal,
@@ -11,6 +12,7 @@ function NewChapterController(chapterService, $state) {
       $state.go('log');
     });
   }
+
 }
 
 angular
