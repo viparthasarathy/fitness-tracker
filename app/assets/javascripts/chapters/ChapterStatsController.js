@@ -31,6 +31,11 @@ function ChapterStatsController(chapterJSON) {
   var thisWeeksEntries = filterWeeklyEntries(startOfThisWeek, ChapterStatsCtrl.chapter.entries.slice(0, 7));
   var lastWeeksEntries = filterWeeklyEntries(startOfLastWeek, ChapterStatsCtrl.chapter.entries.slice(0, 14));
 
+  console.log(thisWeeksEntries)
+  console.log(ChapterStatsCtrl.chapter)
+  console.log(startOfThisWeek)
+  
+
 
   // measurements
 
