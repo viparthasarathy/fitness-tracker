@@ -15,7 +15,7 @@ Afterwards, head over to your local server in the browser. You should be able to
 
 ## Demo
 
-You can see a demo of this project [here](https://my-fitness-tracker.herokuapp.com/) hosted via Heroku.
+You can see a demo of this project [here](https://my-fitness-tracker.herokuapp.com/) hosted via Heroku. An example account is included -- just log in.
 
 ## Contributing
 
