@@ -81,10 +81,4 @@ describe Entry, :type => :model do
       expect(@entry).to have(1).error_on(:day)
     end
   end
-
-  context 'scope' do
-    it 'returns entries with the entry with the latest day being first in the collection'
-    it 'returns entries with the entry with the earliest day being last in the collection'
-  end
-
 end

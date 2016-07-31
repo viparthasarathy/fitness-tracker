@@ -44,10 +44,6 @@ describe Chapter, :type => :model do
     it 'responds to total protein' do
       expect(@chapter).to respond_to(:total_protein)
     end
-
-    #Implement via Angular as these won't be DB columns.
-    it 'responds to first measurement'
-    it 'responds to last measurement'
   end
 
   context 'associations' do
@@ -89,17 +85,4 @@ describe Chapter, :type => :model do
       expect(@chapter).to have(1).error_on(:log)
     end
   end
-
-  context 'methods' do
-    # probably do all this with Angular
-    it 'can calculate the average weekly change in weight' #(total change / days passed [completed_at || Date.today]) * 7
-    it 'can calculate the total change in weight' #latest measurement - earliest measurement
-    it 'can calculate the average daily consumption of calories' # total calories / entries.count
-    it 'can calculate the average daily consumption of carbs' # total carbs / entries.count
-    it 'can calculate the average daily consumption of fats' # total fats / entries.count
-    it 'can calculate the average daily consumption of protein' # total protein / entries.count
-    it 'can estimate the total daily expenditure of energy' # use daily change in weight and daily calorie consumption, +-500/day = 1 lb/week
-  end
-
-
 end
