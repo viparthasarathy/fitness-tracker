@@ -79,19 +79,6 @@ describe EntriesController, :type => :controller do
           expect(@entry_response[:id]).to eq(@entry.id)
         end
 
-        it 'contains information regarding the entries total calories' do
-          expect(@entry_response[:total_calories]).to eq(@entry.total_calories)
-        end
-        it 'contains information regarding the entries total fats' do
-          expect(@entry_response[:total_fats]).to eq(@entry.total_fats)
-        end
-        it 'contains information regarding the entries total carbs' do
-          expect(@entry_response[:total_carbs]).to eq(@entry.total_carbs)
-        end
-        it 'contains information regarding the entries total protein' do
-          expect(@entry_response[:total_protein]).to eq(@entry.total_protein)
-        end
-
         it 'contains information regarding its foods' do
           expect(@entry_response).to have_key(:foods)
         end
