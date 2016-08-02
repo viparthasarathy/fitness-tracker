@@ -4,10 +4,22 @@ class ChapterSerializer < ActiveModel::Serializer
   has_many :measurements
 
   def last_weeks_entries
-    object.entries.where(day: 2.weeks.ago..1.week.ago)
+    if object.completed_at
+      two_weeks_from_end = object.completed_at - 2.weeks
+      one_week_from_end = object.completed_at - 1.week
+      object.entries.where(day: two_weeks_from_end..one_week_from_end)
+    else
+      object.entries.where(day: 2.weeks.ago..1.week.ago)
+    end
   end
 
   def this_weeks_entries
-    object.entries.where(day: 1.week.ago..Date.today)
+    if object.completed_at
+      one_week_from_end = object.completed_at - 1.week
+      object.entries.where(day: one_week_from_end..object.completed_at)
+    else
+      object.entries.where(day: 1.week.ago..Date.today)
+    end
   end
+
 end
