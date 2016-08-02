@@ -1,7 +1,6 @@
 function ChapterStatsController(chapterJSON) {
   var ChapterStatsCtrl = this;
   ChapterStatsCtrl.chapter = chapterJSON.data;
-  console.log(ChapterStatsCtrl.chapter);
 
   // entries
 
@@ -31,6 +30,11 @@ function ChapterStatsController(chapterJSON) {
 
   var thisWeeksEntries = filterWeeklyEntries(startOfThisWeek, ChapterStatsCtrl.chapter.entries.slice(0, 7));
   var lastWeeksEntries = filterWeeklyEntries(startOfLastWeek, ChapterStatsCtrl.chapter.entries.slice(0, 14));
+
+  console.log(ChapterStatsCtrl.chapter.this_weeks_measurements);
+  console.log(thisWeeksEntries);
+  console.log(ChapterStatsCtrl.chapter.last_weeks_measurements)
+  console.log(lastWeeksEntries);
 
   // measurements
 
@@ -67,8 +71,8 @@ function ChapterStatsController(chapterJSON) {
 
   ChapterStatsCtrl.firstEntryID = ChapterStatsCtrl.chapter.entries[ChapterStatsCtrl.chapter.entries.length - 1].id;
   ChapterStatsCtrl.firstMeasurement = ChapterStatsCtrl.chapter.measurements[ChapterStatsCtrl.chapter.measurements.length - 1] || {};
-  var thisWeeksMeasurements = thisWeeksEntries.map(function(entry) { return entry.measurement; }).filter(notNull);
-  var lastWeeksMeasurements = lastWeeksEntries.map(function(entry) { return entry.measurement; }).filter(notNull);
+  var thisWeeksMeasurements = ChapterStatsCtrl.chapter.this_weeks_measurements.filter(notNull);
+  var lastWeeksMeasurements = ChapterStatsCtrl.chapter.last_weeks_measurements.filter(notNull);
 
   ChapterStatsCtrl.thisWeekMeasurements = calculateWeeklyMeasurementAverages(thisWeeksMeasurements);
   ChapterStatsCtrl.lastWeekMeasurements = calculateWeeklyMeasurementAverages(lastWeeksMeasurements);

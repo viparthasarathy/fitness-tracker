@@ -1,5 +1,5 @@
 class ChapterSerializer < ActiveModel::Serializer
-  attributes :id, :created_at, :completed_at, :title, :description, :goal, :total_calories, :total_carbs, :total_fats, :total_protein, :last_weeks_measurements, :this_weeks_measurements
+  attributes :id, :created_at, :completed_at, :title, :description, :goal, :total_calories, :total_carbs, :total_fats, :total_protein, :last_weeks_measurements, :this_weeks_measurements, :last_weeks_foods, :this_weeks_foods
   has_many :entries
   has_many :measurements
 
