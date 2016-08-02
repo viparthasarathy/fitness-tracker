@@ -1,6 +1,7 @@
 function ChapterStatsController(chapterJSON) {
   var ChapterStatsCtrl = this;
   ChapterStatsCtrl.chapter = chapterJSON.data;
+  console.log(ChapterStatsCtrl.chapter);
 
   // entries
 

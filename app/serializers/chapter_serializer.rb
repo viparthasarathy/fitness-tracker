@@ -1,5 +1,5 @@
 class ChapterSerializer < ActiveModel::Serializer
-  attributes :id, :created_at, :completed_at, :title, :description, :goal, :total_calories, :total_carbs, :total_fats, :total_protein, :last_weeks_entries, :this_weeks_entries
+  attributes :id, :created_at, :completed_at, :title, :description, :goal, :total_calories, :total_carbs, :total_fats, :total_protein, :last_weeks_measurements, :this_weeks_measurements
   has_many :entries
   has_many :measurements
 
@@ -20,6 +20,14 @@ class ChapterSerializer < ActiveModel::Serializer
     else
       object.entries.where(day: 1.week.ago..Date.today)
     end
+  end
+
+  def last_weeks_measurements
+    last_weeks_entries.map(&:measurement)
+  end
+
+  def this_weeks_measurements
+    this_weeks_entries.map(&:measurement)
   end
 
 end
