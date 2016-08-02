@@ -97,6 +97,17 @@ describe ChaptersController, :type => :controller do
         it 'contains information regarding its total protein' do
           expect(@chapter_response[:total_protein]).to eq(@chapter.total_protein)
         end
+
+        it 'contains information regarding this weeks entries' do
+          expect(@chapter_response[:this_weeks_entries][0][:id]).to eq(@entry.id)
+        end
+
+        it 'contains information regarding last weeks entries' do
+          second_entry = @chapter.entries.create(day: Date.current - 8)
+          get :show, {:format => :json, :id => @chapter.id}
+          @chapter_response = JSON.parse(response.body, symbolize_names: true)
+          expect(@chapter_repsonse)[:last_weeks_entries][0][:id]).to eq(second_entry.id)
+        end
       end
 
       context 'as non-owner' do
