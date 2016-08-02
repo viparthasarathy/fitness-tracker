@@ -3,6 +3,8 @@ class ChapterSerializer < ActiveModel::Serializer
   has_many :entries
   has_many :measurements
 
+  # Look into creating a different ChapterSerializer that's only used in the Angular chapter.stats state.
+  
   def last_weeks_measurements
     last_weeks_entries.map(&:measurement)
   end
