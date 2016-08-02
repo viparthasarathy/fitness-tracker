@@ -3,6 +3,24 @@ class ChapterSerializer < ActiveModel::Serializer
   has_many :entries
   has_many :measurements
 
+  def last_weeks_measurements
+    last_weeks_entries.map(&:measurement)
+  end
+
+  def this_weeks_measurements
+    this_weeks_entries.map(&:measurement)
+  end
+
+  def last_weeks_foods
+    last_weeks_entries.map(&:foods)
+  end
+
+  def this_weeks_foods
+    this_weeks_entries.map(&:foods)
+  end
+
+  private
+
   def last_weeks_entries
     if object.completed_at
       two_weeks_from_end = object.completed_at - 2.weeks
@@ -22,12 +40,5 @@ class ChapterSerializer < ActiveModel::Serializer
     end
   end
 
-  def last_weeks_measurements
-    last_weeks_entries.map(&:measurement)
-  end
-
-  def this_weeks_measurements
-    this_weeks_entries.map(&:measurement)
-  end
 
 end
