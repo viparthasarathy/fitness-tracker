@@ -4,10 +4,10 @@ class ChapterSerializer < ActiveModel::Serializer
   has_many :measurements
 
   def last_weeks_entries
-    object.entries.where(2.weeks.ago...1.week.ago)
+    object.entries.where(day: 2.weeks.ago..1.week.ago)
   end
 
   def this_weeks_entries
-    object.entries.where(1.week.ago..Date.today)
+    object.entries.where(day: 1.week.ago..Date.today)
   end
 end

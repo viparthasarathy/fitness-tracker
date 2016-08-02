@@ -52,6 +52,7 @@ describe ChaptersController, :type => :controller do
   describe 'GET #show' do
     before do
       @chapter = FactoryGirl.create(:chapter, log: @user.log)
+      @chapter.update(created_at: Time.zone.today - 10)
       @entry = FactoryGirl.create(:entry, chapter: @chapter)
       @food = FactoryGirl.create(:food, entry: @entry)
     end
@@ -106,7 +107,7 @@ describe ChaptersController, :type => :controller do
           second_entry = @chapter.entries.create(day: Date.current - 8)
           get :show, {:format => :json, :id => @chapter.id}
           @chapter_response = JSON.parse(response.body, symbolize_names: true)
-          expect(@chapter_repsonse)[:last_weeks_entries][0][:id]).to eq(second_entry.id)
+          expect(@chapter_response[:last_weeks_entries][0][:id]).to eq(second_entry.id)
         end
       end
 
