@@ -11,6 +11,9 @@ function chapterService($http) {
   this.getChapters = function() {
     return $http.get("/chapters");
   }
+  this.getChapterStats = function(id) {
+    return $http.get("/chapters/" + id + "/stats");
+  }
 }
 
 angular

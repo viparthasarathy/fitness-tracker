@@ -67,7 +67,7 @@ angular
           controller: 'ChapterStatsController as ChapterStatsCtrl',
           resolve: {
             chapterJSON: function(chapterService, $stateParams) {
-              return chapterService.getChapter($stateParams.id);
+              return chapterService.getChapterStats($stateParams.id);
             }
           }
         })
