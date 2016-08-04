@@ -1,6 +1,6 @@
 class ChaptersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_and_authorize_chapter!, only: [:show, :update]
+  before_action :set_and_authorize_chapter!, only: [:show, :update, :stats]
   before_action :authorize_creation!, only: [:create]
 
   def index
@@ -15,6 +15,10 @@ class ChaptersController < ApplicationController
 
   def show
     render json: @chapter, include: ['entries', 'entries.measurement', 'entries.foods', 'measurements'], status: 200
+  end
+
+  def stats
+    render json: @chapter, serializer: ChapterStatsSerializer, include: ['entries', 'measurements'], status: 200
   end
 
   def update

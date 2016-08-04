@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :entries, only: [:create, :show]
   resources :foods, only: [:create, :update, :destroy]
   resources :measurements, only: [:create, :update]
+  get 'chapter/:id/stats', to: 'chapters#stats'
   root 'application#angular'
 
 end
