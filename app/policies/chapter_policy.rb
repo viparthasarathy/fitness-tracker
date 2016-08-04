@@ -8,6 +8,10 @@ class ChapterPolicy < ApplicationPolicy
     record.log == user.log
   end
 
+  def stats?
+    record.log == user.log
+  end
+
   def update?
     record.log == user.log && !record.completed_at
   end
