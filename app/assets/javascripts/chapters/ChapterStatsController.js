@@ -113,11 +113,14 @@ function ChapterStatsController(chapterJSON) {
     }
   }
 
-  var thisWeeksFoods = thisWeeksEntries.map(function(entry) { return entry.foods }).reduce(function(allFoods, foods) { return allFoods.concat(foods) }, []);
-  var lastWeeksFoods = lastWeeksEntries.map(function(entry) { return entry.foods }).reduce(function(allFoods, foods) { return allFoods.concat(foods) }, []);
+  var thisWeeksEntryLength = ChapterStatsCtrl.chapter.this_weeks_foods.length;
+  var lastWeeksEntryLength = ChapterStatsCtrl.chapter.last_weeks_foods.length;
 
-  ChapterStatsCtrl.thisWeeksIntakes = calculateWeeklyIntakeAverages(thisWeeksFoods, thisWeeksEntries.length);
-  ChapterStatsCtrl.lastWeeksIntakes = calculateWeeklyIntakeAverages(lastWeeksFoods, lastWeeksEntries.length);
+  var thisWeeksFoods = ChapterStatsCtrl.chapter.this_weeks_foods.reduce(function(allFoods, foods) { return allFoods.concat(foods) }, []);
+  var lastWeeksFoods = ChapterStatsCtrl.chapter.last_weeks_foods.reduce(function(allFoods, foods) { return allFoods.concat(foods) }, []);
+
+  ChapterStatsCtrl.thisWeeksIntakes = calculateWeeklyIntakeAverages(thisWeeksFoods, thisWeeksEntryLength);
+  ChapterStatsCtrl.lastWeeksIntakes = calculateWeeklyIntakeAverages(lastWeeksFoods, lastWeeksEntryLength);
 
   ChapterStatsCtrl.intakeChange = calculateIntakeChange(ChapterStatsCtrl.thisWeeksIntakes, ChapterStatsCtrl.lastWeeksIntakes);
   formatProperties(ChapterStatsCtrl.intakeChange, 0);
