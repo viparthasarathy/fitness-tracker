@@ -2,40 +2,6 @@ function ChapterStatsController(chapterJSON) {
   var ChapterStatsCtrl = this;
   ChapterStatsCtrl.chapter = chapterJSON.data;
 
-  // entries
-
-  function filterWeeklyEntries(startOfWeek, entries) {
-    var endOfWeek = new Date();
-    endOfWeek.setDate(startOfWeek.getDate() + 7);
-    var weeksEntries = []
-    for (i = 0; i < entries.length; i++) {
-      var entryDay = new Date(entries[i].day);
-      if (entryDay > startOfWeek && entryDay <= endOfWeek) {
-        weeksEntries.push(entries[i]);
-      }
-    }
-    return weeksEntries;
-  }
-
-  if (ChapterStatsCtrl.chapter.completed_at !== null) {
-    var startOfThisWeek = new Date(ChapterStatsCtrl.chapter.completed_at);
-    var startOfLastWeek = new Date(ChapterStatsCtrl.chapter.completed_at);
-  } else {
-    var startOfThisWeek = new Date();
-    var startOfLastWeek = new Date();
-  }
-
-  startOfThisWeek.setDate(startOfThisWeek.getDate() - 7)
-  startOfLastWeek.setDate(startOfLastWeek.getDate() - 14)
-
-  var thisWeeksEntries = filterWeeklyEntries(startOfThisWeek, ChapterStatsCtrl.chapter.entries.slice(0, 7));
-  var lastWeeksEntries = filterWeeklyEntries(startOfLastWeek, ChapterStatsCtrl.chapter.entries.slice(0, 14));
-
-  console.log(ChapterStatsCtrl.chapter.this_weeks_measurements);
-  console.log(thisWeeksEntries);
-  console.log(ChapterStatsCtrl.chapter.last_weeks_measurements)
-  console.log(lastWeeksEntries);
-
   // measurements
 
   function calculateWeeklyMeasurementAverages(measurements) {
@@ -71,6 +37,7 @@ function ChapterStatsController(chapterJSON) {
 
   ChapterStatsCtrl.firstEntryID = ChapterStatsCtrl.chapter.entries[ChapterStatsCtrl.chapter.entries.length - 1].id;
   ChapterStatsCtrl.firstMeasurement = ChapterStatsCtrl.chapter.measurements[ChapterStatsCtrl.chapter.measurements.length - 1] || {};
+
   var thisWeeksMeasurements = ChapterStatsCtrl.chapter.this_weeks_measurements.filter(notNull);
   var lastWeeksMeasurements = ChapterStatsCtrl.chapter.last_weeks_measurements.filter(notNull);
 
@@ -177,7 +144,7 @@ function ChapterStatsController(chapterJSON) {
   ChapterStatsCtrl.averageChangeWeight = ((ChapterStatsCtrl.thisWeekMeasurements.weight - ChapterStatsCtrl.firstMeasurement.weight) * 7 / daysPassed).toFixed(2);
   if (ChapterStatsCtrl.averageChangeWeight === "NaN") { ChapterStatsCtrl.averageChangeWeight = "N/A" }
 
-  ChapterStatsCtrl.estimatedTDE = ChapterStatsCtrl.averageChangeWeight * 500 + ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_calories) || "N/A";
+  ChapterStatsCtrl.estimatedTDE = ChapterStatsCtrl.averageChangeWeight * -500 + ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_calories) || "N/A";
 
 }
 
