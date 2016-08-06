@@ -1,0 +1,55 @@
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2>{{ChapterCtrl.chapter.title}}</h2>
+
+    <h5>Created at {{ChapterCtrl.chapter.created_at | date:'longDate'}} </h5>
+
+    <div ng-if="ChapterCtrl.chapter.description === null">
+      <p>No description available.<p>
+    </div>
+    <p>{{ChapterCtrl.chapter.description}}</p>
+
+    <div ng-if="ChapterCtrl.chapter.completed_at === null">
+      <h5>Currently in Progress</h5>
+      <div class="center"><btn class="btn btn-danger" ng-click="ChapterCtrl.markComplete()">Mark Chapter As Complete</btn></div>
+    </div>
+
+    <div ng-if="ChapterCtrl.chapter.completed_at !== null">
+      <h5>Completed at {{ChapterCtrl.chapter.completed_at | date:'longDate'}} </h5>
+    </div>
+
+    <div ui-view>
+      <h5 ng-if="ChapterCtrl.chapter.entries.length > 0"><a ui-sref="showChapter.stats({id: ChapterCtrl.chapter.id})">Head to Chapter Statistics</a></h5>
+      <h4>Add new entries to track your food and measurements.</h4>
+      <div class="center">
+        <div ng-messages="ChapterCtrl.newEntryForm.day.$error" ng-if="ChapterCtrl.newEntryForm.day.$touched">
+          <div ng-message="required">Day is required.</div>
+          <div ng-message="date">Your date is not valid.</div>
+          <div ng-message="server">{{ChapterCtrl.serverChapterError}}</div>
+        </div>
+        <form name="ChapterCtrl.newEntryForm" ng-submit="ChapterCtrl.createEntry()">
+          <div class="inline">
+            <input type="date" id="day" required="required" name="day" ng-model="ChapterCtrl.newEntry.day" ng-change="ChapterCtrl.setServerErrorFalse()">
+          </div>
+
+          <div class="inline">
+            <input id="notes" placeholder="Notes" name="notes" ng-model="ChapterCtrl.newEntry.notes">
+          </div>
+
+          <input type="submit" class="btn btn-sm btn-success" value="Create Entry">
+        </form>
+      </div>
+
+      <br>
+      <h5>Search Previous Entries by Food</h5>
+      <div class="center">
+        <input id="search" name="search" ng-model="ChapterCtrl.search">
+        <br></br>
+        <div ng-repeat="entry in ChapterCtrl.chapter.entries | filter: ChapterCtrl.search">
+          <p>{{entry.day | date:'longDate' }} - <a ui-sref="showChapter.entryFoods({id: ChapterCtrl.chapter.id, entry_id: entry.id})">Foods</a> - <a ui-sref="showChapter.entryMeasurement({id: ChapterCtrl.chapter.id, entry_id: entry.id})">Measurement</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
