@@ -1,4 +1,4 @@
-<h3>Measurement Entry for {{MeasurementCtrl.entry.day}} </h3>
+<h3>Measurement Entry for {{MeasurementCtrl.entry.day | date:'longDate'}} </h3>
 <h4><a ui-sref="showChapter({id: ChapterCtrl.chapter.id})">Return to Chapter</a></h4>
 <h5> {{MeasurementCtrl.entry.notes || "No notes available." }} </h5>
 

@@ -47,7 +47,7 @@
         <input id="search" name="search" ng-model="ChapterCtrl.search">
         <br></br>
         <div ng-repeat="entry in ChapterCtrl.chapter.entries | filter: ChapterCtrl.search">
-          <p>{{entry.day}} - <a ui-sref="showChapter.entryFoods({id: ChapterCtrl.chapter.id, entry_id: entry.id})">Foods</a> - <a ui-sref="showChapter.entryMeasurement({id: ChapterCtrl.chapter.id, entry_id: entry.id})">Measurement</a></p>
+          <p>{{entry.day | date:'longDate' }} - <a ui-sref="showChapter.entryFoods({id: ChapterCtrl.chapter.id, entry_id: entry.id})">Foods</a> - <a ui-sref="showChapter.entryMeasurement({id: ChapterCtrl.chapter.id, entry_id: entry.id})">Measurement</a></p>
         </div>
       </div>
     </div>
