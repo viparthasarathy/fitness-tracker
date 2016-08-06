@@ -1,6 +1,7 @@
 class Log < ActiveRecord::Base
   belongs_to :user
   has_many :chapters
+  has_many :entries, :through => :chapters
   validates :user, presence: true
 
   def latest_chapter
