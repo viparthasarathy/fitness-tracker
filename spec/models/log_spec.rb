@@ -55,4 +55,18 @@ describe Log, :type => :model do
       expect(@log.has_chapter_in_progress?).to eq(false)
     end
   end
+
+  context 'entry-related methods' do
+    before do
+      @log.save
+      @chapter = FactoryGirl.create(:chapter, log: @log)
+      @earlier_entry = FactoryGirl.create(:entry, chapter: @chapter, day: Time.zone.today - 1)
+      @entry = FactoryGirl.create(:entry, chapter: @chapter)
+    end
+
+    it 'knows its latest entry' do
+      expect(@log.latest_entry).to eq(@earlier_entry)
+    end
+  end
+
 end
