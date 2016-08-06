@@ -30,9 +30,7 @@ function LogController(logJSON) {
     return LogCtrl.chapters.length == 0 || LogCtrl.chapters[0].completed_at !== null
   }
 
-  LogCtrl.hasLatestEntry = function() {
-    !(LogCtrl.latest_entry === null);
-  }
+
 
   // Additional features: Display earliest measurement, latest measurement average, total change, and average change in weight while gaining, losing, and maintaining.
 }
