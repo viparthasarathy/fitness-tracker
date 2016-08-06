@@ -12,4 +12,8 @@ class Log < ActiveRecord::Base
     latest_chapter && !latest_chapter.completed_at
   end
 
+  def latest_entry
+    entries.first
+  end
+
 end
