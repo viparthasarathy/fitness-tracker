@@ -2,6 +2,7 @@ function LogController(logJSON) {
   var LogCtrl = this;
   LogCtrl.log = logJSON.data;
   LogCtrl.chapters = LogCtrl.log.chapters;
+  console.log(LogCtrl.chapters);
 
   function calculateStats(chapters) {
     var totalCalories = chapters.reduce( (total, chapter) => total + chapter.total_calories, 0)

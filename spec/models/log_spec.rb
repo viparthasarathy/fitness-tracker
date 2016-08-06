@@ -23,6 +23,10 @@ describe Log, :type => :model do
     it 'belongs to a user' do
       expect(@log).to respond_to(:user)
     end
+
+    it 'has many entries through chapters' do
+      expect(@log).to respond_to(:entries)
+    end
   end
 
   context 'validations' do
