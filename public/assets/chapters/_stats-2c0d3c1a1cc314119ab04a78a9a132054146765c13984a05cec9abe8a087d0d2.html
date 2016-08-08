@@ -1,0 +1,85 @@
+
+<h4><a ui-sref="showChapter({id: ChapterCtrl.chapter.id})">Return to Chapter</a></h4>
+
+
+
+<h3>Chapter Statistics</h3>
+<div ng-if="ChapterStatsCtrl.chapter.goal > 0">
+  <p>Your goal is to gain an average of {{ChapterStatsCtrl.chapter.goal}} lb per week.</p>
+</div>
+
+<div ng-if="ChapterStatsCtrl.chapter.goal === 0">
+  <p>Your goal is to maintain your weight.</p>
+</div>
+
+<div ng-if="ChapterStatsCtrl.chapter.goal < 0">
+  <p>Your goal is to lose an average of {{-1 * ChapterStatsCtrl.chapter.goal}} lb per week.</p>
+</div>
+
+<p>Estimated total daily expenditure of energy: {{ChapterStatsCtrl.estimatedTDE}}</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Weight</th>
+      <th>Bodyfat</th>
+      <th>Height</th>
+      <th>Waist</th>
+      <th>Chest</th>
+      <th>Calories/day</th>
+      <th>Protein/day</th>
+      <th>Carbs/day</th>
+      <th>Fats/day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><a ui-sref="showChapter.entryMeasurement({id: ChapterStatsCtrl.chapter.id, entry_id: ChapterStatsCtrl.firstEntryID})">Initial Measurements</a></th>
+      <td>{{ChapterStatsCtrl.firstMeasurement.weight.toFixed(1) || "N/A"}}</td>
+      <td>{{ChapterStatsCtrl.firstMeasurement.bodyfat.toFixed(1) || "N/A"}}</td>
+      <td>{{ChapterStatsCtrl.firstMeasurement.height.toFixed(1) || "N/A"}}</td>
+      <td>{{ChapterStatsCtrl.firstMeasurement.waist.toFixed(1) || "N/A"}}</td>
+      <td>{{ChapterStatsCtrl.firstMeasurement.chest.toFixed(1) || "N/A"}}</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th scope="row">Weekly Average</th>
+      <td>{{ChapterStatsCtrl.thisWeekMeasurements.weight.toFixed(1) || "N/A"}}</td>
+      <td>{{ChapterStatsCtrl.thisWeekMeasurements.bodyfat.toFixed(1) || "N/A"}}</td>
+      <td>{{ChapterStatsCtrl.thisWeekMeasurements.height.toFixed(1) || "N/A"}}</td>
+      <td>{{ChapterStatsCtrl.thisWeekMeasurements.waist.toFixed(1) || "N/A"}}</td>
+      <td>{{ChapterStatsCtrl.thisWeekMeasurements.chest.toFixed(1) || "N/A"}}</td>
+      <td>{{ChapterStatsCtrl.thisWeeksIntakes.calories.toFixed(0) || "N/A"}}</td>
+      <td>{{ChapterStatsCtrl.thisWeeksIntakes.protein.toFixed(0) || "N/A"}}</td>
+      <td>{{ChapterStatsCtrl.thisWeeksIntakes.carbs.toFixed(0) || "N/A"}}</td>
+      <td>{{ChapterStatsCtrl.thisWeeksIntakes.fats.toFixed(0) || "N/A"}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Change from Last Week</th>
+      <td>{{ChapterStatsCtrl.measurementChange.weight}}</td>
+      <td>{{ChapterStatsCtrl.measurementChange.bodyfat}}</td>
+      <td>{{ChapterStatsCtrl.measurementChange.height}}</td>
+      <td>{{ChapterStatsCtrl.measurementChange.waist}}</td>
+      <td>{{ChapterStatsCtrl.measurementChange.chest}}</td>
+      <td>{{ChapterStatsCtrl.intakeChange.calories}}</td>
+      <td>{{ChapterStatsCtrl.intakeChange.protein}}</td>
+      <td>{{ChapterStatsCtrl.intakeChange.carbs}}</td>
+      <td>{{ChapterStatsCtrl.intakeChange.fats}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Total Average</th>
+      <td> {{ChapterStatsCtrl.averageChangeWeight}} </td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>{{ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_calories)}}</td>
+      <td>{{ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_protein)}}</td>
+      <td>{{ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_carbs)}}</td>
+      <td>{{ChapterStatsCtrl.calculateAverage(ChapterStatsCtrl.chapter.total_fats)}}</td>
+    </tr>
+  </tbody>
+</table>
