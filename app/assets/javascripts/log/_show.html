@@ -1,4 +1,4 @@
-<h1>Log Statistics</h1>
+<h2>Your Fitness Log</h2>
 
 
 <div id=chapters>
@@ -38,27 +38,38 @@
 
 </div>
 
-<br>
-<div id="gainStats" ng-if="LogCtrl.gainStats">
-  <p><b>While trying to gain weight you average...</b></p>
-  <p>{{LogCtrl.gainStats.averageCalories}} in calorie consumption.</p>
-  <p>{{LogCtrl.gainStats.averageProtein}} in protein consumption.</p>
-  <p>{{LogCtrl.gainStats.averageCarbs}} in carbs consumption.</p>
-  <p>{{LogCtrl.gainStats.averageFats}} in fats consumption.</p>
-</div>
-<br>
-<div id="maintainStats" ng-if="LogCtrl.maintainStats">
-  <p><b>While trying to maintain weight you average...</b></p>
-  <p>{{LogCtrl.maintainStats.averageCalories}} in calorie consumption.</p>
-  <p>{{LogCtrl.maintainStats.averageProtein}} in protein consumption.</p>
-  <p>{{LogCtrl.maintainStats.averageCarbs}} in carbs consumption.</p>
-  <p>{{LogCtrl.maintainStats.averageFats}} in fats consumption.</p>
-</div>
-<br>
-<div id="loseStats" ng-if="LogCtrl.loseStats">
-  <p><b>While trying to lose weight you average...</b></p>
-  <p>{{LogCtrl.loseStats.averageCalories}} in calorie consumption.</p>
-  <p>{{LogCtrl.loseStats.averageProtein}} in protein consumption.</p>
-  <p>{{LogCtrl.loseStats.averageCarbs}} in carbs consumption.</p>
-  <p>{{LogCtrl.loseStats.averageFats}} in fats consumption.</p>
-</div>
+<h3>Statistics</h3>
+<table class="table" ng-if="LogCtrl.gainStats || logCtrl.loseStats || logCtrl.maintainStats">
+  <thead>
+    <tr>
+      <th>Goal</th>
+      <th>Average Calories</th>
+      <th>Average Protein</th>
+      <th>Average Carbs</th>
+      <th>Average Fat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-if="LogCtrl.gainStats">
+      <th scope="row">Gain</th>
+      <td>{{LogCtrl.gainStats.averageCalories}}</td>
+      <td>{{LogCtrl.gainStats.averageProtein}}</td>
+      <td>{{LogCtrl.gainStats.averageCarbs}}</td>
+      <td>{{LogCtrl.gainStats.averageFats}}</td>
+    </tr>
+    <tr ng-if="LogCtrl.maintainStats">
+      <th scope="row">Maintain</th>
+      <td>{{LogCtrl.maintainStats.averageCalories}}</td>
+      <td>{{LogCtrl.maintainStats.averageProtein}}</td>
+      <td>{{LogCtrl.maintainStats.averageCarbs}}</td>
+      <td>{{LogCtrl.maintainStats.averageFats}}</td>
+    </tr>
+    <tr ng-if="LogCtrl.loseStats">
+      <th scope="row">Lose</th>
+      <td>{{LogCtrl.loseStats.averageCalories}}</td>
+      <td>{{LogCtrl.loseStats.averageProtein}}</td>
+      <td>{{LogCtrl.loseStats.averageCarbs}}</td>
+      <td>{{LogCtrl.loseStats.averageFats}}</td>
+    </tr>
+  </tbody>
+</table>
