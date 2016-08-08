@@ -1,75 +1,82 @@
-<h2>Your Fitness Log</h2>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2>Your Fitness Log</h2>
 
 
-<div id=chapters>
+    <div id=chapters>
 
-  <div ng-if="LogCtrl.noCurrentChapter()" ng-controller="NewChapterController as NewChapterCtrl">
-    <p>Create a new chapter to track your progress.</p>
-    <form name="newChapterForm" ng-submit="NewChapterCtrl.create()">
-      <div class="center">
-        <div class="inline">
-          <div ng-messages="newChapterForm.title.$error" ng-if="newChapterForm.title.$touched">
-            <div ng-message="required">Please enter a title.</div>
+      <div ng-if="LogCtrl.noCurrentChapter()" ng-controller="NewChapterController as NewChapterCtrl">
+        <p>Create a new chapter to track your progress.</p>
+        <form name="newChapterForm" ng-submit="NewChapterCtrl.create()">
+          <div class="center">
+            <div class="inline">
+              <div ng-messages="newChapterForm.title.$error" ng-if="newChapterForm.title.$touched">
+                <div ng-message="required">Please enter a title.</div>
+              </div>
+              <input id="title" name="title" placeholder="Title" required="true" ng-model="NewChapterCtrl.title">
+            </div>
+
+            <div class="inline">
+              <input placeholder="Description (Optional)" ng-model="NewChapterCtrl.description">
+            </div>
+
+            <div class="inline">
+              <div ng-messages="newChapterForm.goal.$error" ng-if="newChapterForm.goal.$touched">
+                <div ng-message="required">Please enter a goal.</div>
+                <div ng-message="number">Please enter a number.</div>
+              </div>
+              <input id="goal" placeholder="Weekly Goal" type="number" step="0.1" value="0.0" name="goal" required="true" ng-model="NewChapterCtrl.goal">
+            </div>
+            <input type="submit" class="btn btn-success" value="Create Chapter">
           </div>
-          <input id="title" name="title" placeholder="Title" required="true" ng-model="NewChapterCtrl.title">
-        </div>
-
-        <div class="inline">
-          <input placeholder="Description (Optional)" ng-model="NewChapterCtrl.description">
-        </div>
-
-        <div class="inline">
-          <div ng-messages="newChapterForm.goal.$error" ng-if="newChapterForm.goal.$touched">
-            <div ng-message="required">Please enter a goal.</div>
-            <div ng-message="number">Please enter a number.</div>
-          </div>
-          <input id="goal" placeholder="Weekly Goal" type="number" step="0.1" value="0.0" name="goal" required="true" ng-model="NewChapterCtrl.goal">
-        </div>
-        <input type="submit" class="btn btn-success" value="Create Chapter">
+        </form>
       </div>
-    </form>
+
+      <p><a ui-sref="showChapter({id: LogCtrl.chapters[0].id})" ng-if="!LogCtrl.noCurrentChapter()">Head over to your current chapter to add new entries, add new food entries, and create new measurements.</a></p>
+      <p><a ui-sref="showChapter.entryMeasurement({id: LogCtrl.log.latest_entry.chapter_id, entry_id: LogCtrl.log.latest_entry.id})" ng-if="LogCtrl.log.latest_entry">Head over to the measurements page for your most recent entry.</a></p>
+      <p><a ui-sref="showChapter.entryFoods({id: LogCtrl.log.latest_entry.chapter_id, entry_id: LogCtrl.log.latest_entry.id})" ng-if="LogCtrl.log.latest_entry">Head over to the foods page for your most recent entry.</a></p>
+
+      <p><a ui-sref="chapters">Head over to all your previous chapters.</a></p>
+
+    </div>
+
+    <div ng-if="LogCtrl.gainStats || logCtrl.loseStats || logCtrl.maintainStats">
+      <h3>Statistics</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Goal</th>
+            <th>Average Calories</th>
+            <th>Average Protein</th>
+            <th>Average Carbs</th>
+            <th>Average Fat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-if="LogCtrl.gainStats">
+            <th scope="row">Gain</th>
+            <td>{{LogCtrl.gainStats.averageCalories}}</td>
+            <td>{{LogCtrl.gainStats.averageProtein}}</td>
+            <td>{{LogCtrl.gainStats.averageCarbs}}</td>
+            <td>{{LogCtrl.gainStats.averageFats}}</td>
+          </tr>
+          <tr ng-if="LogCtrl.maintainStats">
+            <th scope="row">Maintain</th>
+            <td>{{LogCtrl.maintainStats.averageCalories}}</td>
+            <td>{{LogCtrl.maintainStats.averageProtein}}</td>
+            <td>{{LogCtrl.maintainStats.averageCarbs}}</td>
+            <td>{{LogCtrl.maintainStats.averageFats}}</td>
+          </tr>
+          <tr ng-if="LogCtrl.loseStats">
+            <th scope="row">Lose</th>
+            <td>{{LogCtrl.loseStats.averageCalories}}</td>
+            <td>{{LogCtrl.loseStats.averageProtein}}</td>
+            <td>{{LogCtrl.loseStats.averageCarbs}}</td>
+            <td>{{LogCtrl.loseStats.averageFats}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-
-  <p><a ui-sref="showChapter({id: LogCtrl.chapters[0].id})" ng-if="!LogCtrl.noCurrentChapter()">Head over to your current chapter to add new entries, add new food entries, and create new measurements.</a></p>
-  <p><a ui-sref="showChapter.entryMeasurement({id: LogCtrl.log.latest_entry.chapter_id, entry_id: LogCtrl.log.latest_entry.id})" ng-if="LogCtrl.log.latest_entry">Head over to the measurements page for your most recent entry.</a></p>
-  <p><a ui-sref="showChapter.entryFoods({id: LogCtrl.log.latest_entry.chapter_id, entry_id: LogCtrl.log.latest_entry.id})" ng-if="LogCtrl.log.latest_entry">Head over to the foods page for your most recent entry.</a></p>
-
-  <p><a ui-sref="chapters">Head over to all your previous chapters.</a></p>
-
 </div>
-
-<h3>Statistics</h3>
-<table class="table" ng-if="LogCtrl.gainStats || logCtrl.loseStats || logCtrl.maintainStats">
-  <thead>
-    <tr>
-      <th>Goal</th>
-      <th>Average Calories</th>
-      <th>Average Protein</th>
-      <th>Average Carbs</th>
-      <th>Average Fat</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-if="LogCtrl.gainStats">
-      <th scope="row">Gain</th>
-      <td>{{LogCtrl.gainStats.averageCalories}}</td>
-      <td>{{LogCtrl.gainStats.averageProtein}}</td>
-      <td>{{LogCtrl.gainStats.averageCarbs}}</td>
-      <td>{{LogCtrl.gainStats.averageFats}}</td>
-    </tr>
-    <tr ng-if="LogCtrl.maintainStats">
-      <th scope="row">Maintain</th>
-      <td>{{LogCtrl.maintainStats.averageCalories}}</td>
-      <td>{{LogCtrl.maintainStats.averageProtein}}</td>
-      <td>{{LogCtrl.maintainStats.averageCarbs}}</td>
-      <td>{{LogCtrl.maintainStats.averageFats}}</td>
-    </tr>
-    <tr ng-if="LogCtrl.loseStats">
-      <th scope="row">Lose</th>
-      <td>{{LogCtrl.loseStats.averageCalories}}</td>
-      <td>{{LogCtrl.loseStats.averageProtein}}</td>
-      <td>{{LogCtrl.loseStats.averageCarbs}}</td>
-      <td>{{LogCtrl.loseStats.averageFats}}</td>
-    </tr>
-  </tbody>
-</table>
